@@ -2,7 +2,7 @@ PWD /Users/nova/infinity-compression/infinity-compression-lean/papers/Mathlib_Co
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT Mathlib_Cocycle_Splitting_Companion.tex
+INPUT /Users/nova/infinity-compression/infinity-compression-lean/papers/Mathlib_Cocycle_Splitting_Companion/Mathlib_Cocycle_Splitting_Companion.tex
 OUTPUT Mathlib_Cocycle_Splitting_Companion.log
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
