@@ -47,6 +47,8 @@ import InfinityCompression.Frontier.CompressionSelectivity
 import InfinityCompression.Frontier.PolarityBalance
 import InfinityCompression.Frontier.ProofToolValidation
 import InfinityCompression.Validation.QuotientFiberBenchmark
+import InfinityCompression.Validation.ProductProjectionFiberBenchmark
+import InfinityCompression.Validation.SigmaFiberBenchmark
 import InfinityCompression.MetaProof.SummitTargets
 import InfinityCompression.MetaProof.DependencyShape
 import InfinityCompression.MetaProof.AdmissibleDerivations

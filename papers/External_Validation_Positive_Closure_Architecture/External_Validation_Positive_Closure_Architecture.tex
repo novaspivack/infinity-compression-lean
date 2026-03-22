@@ -1,0 +1,467 @@
+% Consolidated external validation paper: quotients (T1), products (T2), dependent sums (T3).
+% Normative: specs/COMPLETE/EPIC_016_WV2A_EXTERNAL_VALIDATION_BENCHMARK_PAPER_SPEC.md;
+%            multi-tranche survey content (former EPIC_016_WV2B) merged herein.
+\documentclass[11pt]{article}
+\input{../suite_preamble}
+\usepackage{longtable}
+\usepackage{listings}
+\lstdefinelanguage{lean}{
+  keywords={def, theorem, lemma, structure, class, instance, where, by, exact, rfl, simp, intro, have, let, refine, rcases, obtain, cases, fun},
+  keywordstyle=\bfseries,
+  ndkeywords={Prop, Type, Sort, Nat},
+  ndkeywordstyle=\bfseries,
+  sensitive=true,
+  comment=[l]{--},
+  morecomment=[s]{/-}{-/},
+  commentstyle=\itshape,
+  stringstyle=\ttfamily,
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  showstringspaces=false
+}
+\input{../suite_macros}
+
+\newcommand{\IC}{\ensuremath{\mathsf{IC}}}
+\newcommand{\Fib}{\mathrm{Fib}}
+
+\title{External Validation of a Positive-Closure Proof Architecture\\[0.35em]
+\large A Multi-Tranche Survey: Quotients, Products, and Dependent Sums in Lean}
+\author{Nova Spivack}
+\date{2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The Infinity Compression (\IC{}) formalization develops a layered positive-closure proof
+architecture: collapse to a bare certificate, a typed forgetful map, fiber structure over
+that certificate, and, where appropriate, canonical witnesses or sections. A natural
+methodological concern is that this architecture may be endogenous to the flagship
+NEMS-style case rather than a reusable proof pattern. This paper presents a
+\textbf{consolidated machine-checked external validation}: three independent tranches of
+ordinary mathematics, each formalized in Lean without importing the \IC{} spine, each
+comparing a \emph{flat baseline} (the obvious Mathlib-shaped existence or representability
+statement) with an \emph{architecture-guided} theorem bundle (nonempty fibers, surjectivity
+of the forgetful map, \texttt{HasRightInverse}, an identified \texttt{RightInverse} section,
+and a uniform canonical witness in each fiber).
+
+Tranche \textbf{T1} is the setoid quotient benchmark (collapse by an equivalence relation;
+baseline \texttt{Quotient.exists\_rep}). Tranche \textbf{T2} is the Cartesian product with
+first projection (many enriched pairs over one bare image---\emph{multi-route} without
+quotienting). Tranche \textbf{T3} is the dependent sum $\Sigma_{b:B} E\,b$ with
+\texttt{Sigma.fst} (bundle projection; dependent generalization of T2). The contribution is
+not a catalog of new classical theorems; it is a demonstration that the same architectural
+lens organizes \emph{all three} external families and yields strengthened, reusable proof
+interfaces in each case. Under the project's validation rubric, the combined evidence
+supports a unified \textbf{STRONG} verdict for methodological transferability. We situate
+the work in the NEMS / APS / IC / Strata stack and state explicitly that APS is not tested
+by these tranches.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}\label{sec:intro}
+
+The Infinity Compression (\IC{}) program develops a positive-closure proof architecture
+organized around four layers: a collapsed bare layer, a projection from enriched to bare
+structure, fibers over bare points, and, when available, canonical witnesses or sections.
+In the flagship \IC{} formalization this architecture is load-bearing: it organizes the
+distinction between theorem-level certification and richer reflective realization.
+\textbf{The central claim of this paper is that the positive-closure architecture is a
+reusable proof pattern---not merely a custom narrative for the flagship case---and that
+claim is supported by multiple independent external benchmarks.}
+
+A single quotient formalization already begins to answer the worry that the architecture
+might be idiosyncratic; this document \emph{consolidates} that quotient tranche with two
+additional standard constructions---Cartesian products and dependent sums---so that the
+evidence base is explicitly multi-family. The result is one self-contained validation paper:
+readers need not cross-reference a separate ``survey'' manuscript for the product and bundle
+stories.
+
+\paragraph{Scope.}
+We do not claim a universal theorem that every closure problem in mathematics must be
+formalized in \IC{}'s types. We claim that, in Lean, on three concrete external families,
+the architecture exports cleanly, yields structured theorem bundles beyond flat baselines,
+and aligns with the flagship forgetful / fiber / section narrative~\cite{SpivackIC}.
+
+\section{The positive-closure architecture as a reusable schema}\label{sec:schema}
+
+Let $\pi$ denote a forgetful projection from an \emph{enriched} carrier to a \emph{bare}
+certificate space (a collapsed layer where theorem-level records live). Write $E$ for an
+enriched carrier and $B$ for a bare layer. The schema is:
+\begin{equation}\label{eq:schema}
+E \xrightarrow{\;\pi\;} B,
+\qquad
+\Fib(b) \coloneqq \pi^{-1}(b)\ \text{ for } b\in B,
+\qquad
+\text{optionally } s : B \to E \text{ with } \pi \circ s = \mathrm{id}_B.
+\end{equation}
+Here $\Fib(b)$ is the fiber over a bare point; a section $s$ is a global choice of preimage.
+
+Each tranche below instantiates \eqref{eq:schema} with different $E$, $B$, and $\pi$. The
+quotient tranche uses Mathlib's quotient map and \texttt{Quotient.out}; the product tranche
+uses first projection and a parametric section $x \mapsto (x,y_0)$; the bundle tranche uses
+\texttt{Sigma.fst} and a \texttt{noncomputable} section from classical choice when
+$\forall b,\ \mathrm{Nonempty}(E\,b)$.
+
+\section{Unified methodology: baseline vs.\ architecture-guided bundle}\label{sec:method}
+
+In every tranche we record:
+\begin{itemize}[leftmargin=2em]
+  \item a \textbf{baseline} statement profile matching how Mathlib users typically see the
+    mathematics (existence of representatives, trivial points in fibers, etc.);
+  \item an \textbf{architecture-guided bundle}: named bare layer, named projection, fiber
+    type as a subtype or structured copy, surjectivity of $\pi$, \texttt{HasRightInverse},
+    a concrete \texttt{RightInverse} witness, and a \texttt{canonical\ldots Witness} in
+    each fiber.
+\end{itemize}
+The methodological gain is \emph{interface structure}: the bundle is a reusable template
+parallel to the flagship story, not a claim of new classical content.
+
+\section{Tranche T1: Setoid quotients}\label{sec:t1}
+
+\subsection{Why quotients}\label{sec:t1-why}
+
+This tranche is a positive-closure benchmark in the sense relevant to \IC{}: it exhibits
+collapse, fibers, and a uniform section-like recovery mechanism (\texttt{Quotient.out}), not
+only an existential shadow.
+
+The quotient construction is standard mathematics (see, e.g., \cite{MacLane}); it has a
+genuine collapse map from carriers to quotient points; it admits a classical baseline
+(\texttt{Quotient.exists\_rep}); and it supports a section story via \texttt{Quotient.out}.
+The benchmark imports only \texttt{Mathlib.Data.Setoid.Basic} and
+\texttt{Mathlib.Logic.Function.Basic}.
+
+\subsection{Lean formalization and main bundle}\label{sec:t1-lean}
+
+All definitions and theorems live in
+\texttt{InfinityCompression/Validation/QuotientFiberBenchmark.lean} (namespace
+\texttt{InfinityCompression.Validation}). Layering: \texttt{BareQuotient},
+\texttt{EnrichedCarrier}, \texttt{forgetToQuotient}, \texttt{QuotientFiber},
+\texttt{canonicalQuotientFiberWitness}.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.34\textwidth}>{\raggedright\arraybackslash}p{0.36\textwidth}>{\raggedright\arraybackslash}p{0.24\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{Meaning} & \textbf{Baseline vs.\ architecture} \\
+\midrule
+\path{quotient_fiber_nonempty} &
+each quotient point has a witness in its \texttt{QuotientFiber} &
+baseline-plus (typed fiber nonempty) \\
+\path{forgetToQuotient_surjective} &
+\texttt{forgetToQuotient} hits every bare point &
+architecture \\
+\path{forgetToQuotient_hasRightInverse} &
+projection admits a global right inverse &
+architecture \\
+\path{quotientOut_rightInverse_forgetToQuotient} &
+\texttt{Quotient.out} is a \texttt{RightInverse} of \texttt{forgetToQuotient} &
+architecture \\
+\path{canonicalQuotientFiberWitness} &
+uniform canonical witness in each fiber &
+architecture \\
+\bottomrule
+\end{tabular}
+\caption{T1 (quotient): main named results in the architecture-guided bundle.}
+\label{tab:t1}
+\end{table}
+
+\subsection{What the architectural packaging adds}\label{sec:t1-pack}
+
+Classically, every quotient class has \emph{some} representative (\texttt{Quotient.exists\_rep}).
+The architecture-guided view reorganizes the same fact under \eqref{eq:schema}: surjectivity,
+\texttt{HasRightInverse}, identification of \texttt{Quotient.out} as \texttt{RightInverse}, and
+\texttt{canonicalQuotientFiberWitness}. Methodologically, this upgrades a pointwise existential
+into a named, reusable interface---the same move the positive-closure architecture is designed
+to expose internally.
+
+\section{Tranche T2: Cartesian product and first projection}\label{sec:t2}
+
+\subsection{Mathematical story}
+
+Let $X$ and $Y$ be types. The first projection $\pi : X \times Y \to X$ forgets the second
+coordinate. For fixed nonempty $Y$, many pairs $(x,y_1)$ and $(x,y_2)$ share the same bare
+image $x$: this is \emph{multi-route over one bare certificate} without any quotient---a
+clean stress test for ``fiber + section'' language distinct from equivalence collapsing.
+
+\subsection{Baseline vs.\ bundle}
+
+\textbf{Baseline:} once $Y$ is inhabited, each $x : X$ has some pair mapping to it (e.g.\
+$(x,y_0)$ for a chosen $y_0$). \textbf{Architecture bundle:} we package
+\texttt{ProductFiberAt X Y x}, surjectivity of \texttt{forgetFirst}, \texttt{HasRightInverse},
+the parametric section \texttt{productSection y0}, \texttt{RightInverse} compatibility, and
+\texttt{canonicalProductFiberWitness}. The Lean module is
+\texttt{ProductProjectionFiberBenchmark.lean}; it imports only
+\texttt{Mathlib.Logic.Function.Basic}.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.36\textwidth}>{\raggedright\arraybackslash}p{0.56\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\path{forgetFirst} & first projection $X \times Y \to X$. \\
+\path{ProductFiberAt X Y x} & fiber of \path{forgetFirst} over \path{x} (\path{Y} explicit in the name). \\
+\path{product_fiber_nonempty} & each bare \path{x} has a nonempty fiber (given \path{y0 : Y}). \\
+\path{forgetFirst_surjective} & \path{forgetFirst} is surjective (given \path{y0}). \\
+\path{forgetFirst_hasRightInverse} & surjectivity $\Rightarrow$ \texttt{HasRightInverse}. \\
+\path{productSection_rightInverse_forgetFirst} & \path{productSection y0} is \texttt{RightInverse} to \path{forgetFirst}. \\
+\path{canonicalProductFiberWitness} & distinguished point \path{⟨(x, y0), rfl⟩} in each fiber. \\
+\bottomrule
+\end{tabular}
+\caption{T2 (product projection): architecture-guided bundle.}
+\label{tab:t2}
+\end{table}
+
+\section{Tranche T3: Dependent sums and the bundle projection}\label{sec:t3}
+
+\subsection{Mathematical story}
+
+For $E : B \to \mathrm{Type}$, the dependent sum $\Sigma_{b:B} E\,b$ is the standard
+\emph{bundle} total space; \texttt{Sigma.fst} projects to the base. The fiber over
+$b : B$ is (equivalent to) $E\,b$. This generalizes T2: product is the special case of a
+constant family $E\,b = Y$.
+
+\subsection{Hypothesis and classical section}
+
+We assume $\forall b : B,\ \mathrm{Nonempty}(E\,b)$ so that \texttt{Sigma.fst} is surjective.
+The global section \path{sigmaSection} uses \path{Classical.choose} per fiber; the
+module is \path{noncomputable} where required. Baseline: each base point has \emph{some}
+fiber point. Bundle: \path{SigmaFiber}, surjectivity, \path{HasRightInverse},
+\path{sigmaSection_rightInverse_sigma_fst}, \path{canonicalSigmaFiberWitness}.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.36\textwidth}>{\raggedright\arraybackslash}p{0.56\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\path{SigmaFiber E b} & points in $\Sigma\, E$ lying over \path{b}. \\
+\path{sigma_fiber_nonempty} & nonempty fibers from $\forall b,\ \mathrm{Nonempty}(E\,b)$. \\
+\path{sigma_fst_surjective} & \texttt{Sigma.fst} surjective. \\
+\path{sigma_fst_hasRightInverse} & \texttt{HasRightInverse} for \texttt{Sigma.fst}. \\
+\path{chooseFiber} / \path{sigmaSection} & classical section of the bundle. \\
+\path{sigmaSection_rightInverse_sigma_fst} & \texttt{RightInverse} law. \\
+\path{canonicalSigmaFiberWitness} & uniform witness in each \texttt{SigmaFiber}. \\
+\bottomrule
+\end{tabular}
+\caption{T3 (dependent sum): architecture-guided bundle (\texttt{SigmaFiberBenchmark.lean}).}
+\label{tab:t3}
+\end{table}
+
+\section{Comparative synthesis across tranches}\label{sec:synth}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}l>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}p{0.26\textwidth}>{\raggedright\arraybackslash}p{0.18\textwidth}@{}}
+\toprule
+\textbf{Tr.} & \textbf{Bare $B$} & \textbf{Projection $\pi$} & \textbf{What varies in the fiber} & \textbf{Section flavor} \\
+\midrule
+T1 & quotient & \texttt{forgetToQuotient} / \texttt{Quotient.mk} & equivalence classes & \texttt{Quotient.out} (canonical) \\
+T2 & $X$ & \texttt{forgetFirst} & second coordinate $y : Y$ & \texttt{productSection y0} (parametric) \\
+T3 & $B$ & \texttt{Sigma.fst} & dependent $E\,b$ & \texttt{sigmaSection} (\texttt{noncomputable}) \\
+\bottomrule
+\end{tabular}
+\caption{Side-by-side view: three instantiations of the same architectural schema.}
+\label{tab:synth}
+\end{table}
+
+\noindent
+\textbf{T1} isolates \emph{collapse by an equivalence relation}; \textbf{T2} isolates
+\emph{multi-route} without quotienting; \textbf{T3} is the dependent-type generalization of
+T2. In all three cases the \textbf{STRONG} rubric applies for the same reason: the
+architecture-guided bundle is strictly richer than the flat baseline as a typed interface.
+
+\section{Unified validation verdict and the meaning of \textbf{STRONG}}\label{sec:verdict}
+
+Under the project's validation rubric~\cite{EPIC015WV1}, a benchmark is rated \textbf{STRONG}
+when it exports the architecture cleanly to external mathematics and yields a theorem bundle
+structurally richer than the obvious baseline. Each tranche here satisfies that criterion on
+its own; \emph{collectively}, they strengthen the methodological claim: the pattern is not
+tied to quotients alone.
+
+\textbf{STRONG} encodes methodological transfer and corollary structure, not difficulty of
+raw mathematical content. No tranche proves a new ``summit'' theorem for the \IC{} landscape;
+together they support external validity of the \emph{packaging}.
+
+\section{Place in the larger program}\label{sec:stack}
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{\IC{} flagship (internal):} the positive-closure architecture and main
+    certification / reflective splits---load-bearing inside the library.
+  \item \textbf{External validation (this paper):} machine-checked demonstrations that the
+    same pattern applies \emph{outside} the flagship modules, on quotients, products, and
+    dependent sums.
+  \item \textbf{Strata:} abstract synthesis and bridge laws~\cite{SpivackStrata}.
+  \item \textbf{APS:} local-to-global backbone elsewhere in the stack. \textbf{These tranches
+    do not test APS directly;} they test reusable positive-closure \emph{packaging} on
+    external mathematics.
+  \item \textbf{NEMS:} outer burden and interface story for the paper suite.
+\end{itemize}
+
+\section{Limitations and future work}\label{sec:limits}
+
+Three finite families do not exhaust all closure or fibration patterns. Natural extensions
+include: settings where sections are non-unique or only locally defined; competing enriched
+layers over one collapse map; and domain-specific benchmarks outside pure type theory. Such
+work would extend the \emph{evidence base} without changing the logical status of the
+positive-closure architecture inside \IC{}.
+
+\appendix
+
+\section{Theorem indices (Lean names by module)}\label{app:index}
+
+\subsection*{\texttt{QuotientFiberBenchmark.lean}}
+
+{\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.40\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{c}{\textit{(continued)}} \\
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{2}{r}{\textit{continued on next page}} \\
+\endfoot
+\bottomrule
+\endlastfoot
+
+\texttt{BareQuotient} &
+quotient type as bare certificate layer after collapse. \\
+
+\texttt{EnrichedCarrier} &
+carrier before quotienting (enriched layer). \\
+
+\texttt{forgetToQuotient} &
+projection \texttt{Quotient.mk} from carrier to quotient. \\
+
+\texttt{QuotientFiber} &
+fiber over a bare quotient point (subtype of the carrier). \\
+
+\texttt{quotient\_fiber\_nonempty} &
+each bare point has a nonempty fiber (from \texttt{exists\_rep}). \\
+
+\texttt{forgetToQuotient\_surjective} &
+\texttt{forgetToQuotient} is surjective onto the quotient. \\
+
+\texttt{forgetToQuotient\_hasRightInverse} &
+projection has a global right inverse (section exists). \\
+
+\texttt{quotientOut\_rightInverse\_forgetToQuotient} &
+\texttt{Quotient.out} is a right inverse of \texttt{forgetToQuotient}. \\
+
+\texttt{canonicalQuotientFiberWitness} &
+canonical distinguished point in each \texttt{QuotientFiber}. \\
+
+\texttt{quotient\_fiber\_nonempty'} &
+nonemptiness via \texttt{canonicalQuotientFiberWitness}. \\
+
+\end{longtable}
+}
+
+\subsection*{\texttt{ProductProjectionFiberBenchmark.lean}}
+
+{\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.40\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{c}{\textit{(continued)}} \\
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+
+\texttt{forgetFirst} & first projection $X \times Y \to X$. \\
+\texttt{ProductFiberAt X Y x} & fiber of \texttt{forgetFirst} over \texttt{x}. \\
+\texttt{productSection} & section $x \mapsto (x, y_0)$ at fixed \texttt{y0}. \\
+\texttt{product\_fiber\_nonempty} & nonempty \texttt{ProductFiberAt} given \texttt{y0}. \\
+\texttt{forgetFirst\_surjective} & \texttt{forgetFirst} surjective given \texttt{y0}. \\
+\texttt{forgetFirst\_hasRightInverse} & \texttt{HasRightInverse} for \texttt{forgetFirst}. \\
+\texttt{productSection\_rightInverse\_forgetFirst} & \texttt{RightInverse} law. \\
+\texttt{canonicalProductFiberWitness} & canonical witness in each fiber. \\
+\texttt{product\_fiber\_nonempty'} & nonemptiness via canonical witness. \\
+
+\end{longtable}
+}
+
+\subsection*{\texttt{SigmaFiberBenchmark.lean}}
+
+{\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.40\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{c}{\textit{(continued)}} \\
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+
+\texttt{SigmaFiber} & fiber of \texttt{Sigma.fst} over \texttt{b}. \\
+\texttt{sigma\_fiber\_nonempty} & nonempty fibers from global nonemptiness. \\
+\texttt{sigma\_fst\_surjective} & \texttt{Sigma.fst} surjective. \\
+\texttt{sigma\_fst\_hasRightInverse} & \texttt{HasRightInverse}. \\
+\texttt{chooseFiber} & \texttt{Classical.choice} in each fiber. \\
+\texttt{sigmaSection} & global section of the bundle. \\
+\texttt{sigmaSection\_rightInverse\_sigma\_fst} & \texttt{RightInverse} law. \\
+\texttt{canonicalSigmaFiberWitness} & canonical witness in each \texttt{SigmaFiber}. \\
+
+\end{longtable}
+}
+
+\begin{thebibliography}{99}
+
+\bibitem{SpivackIC}
+N.~Spivack.
+\newblock \emph{Canonical Certification Does Not Exhaust Reflective Structure: Reflective Split, Strict Refinement, and Fiber Structure in Infinity Compression}.
+\newblock Manuscript, 2026.
+\newblock Companion \LaTeX{} source: \texttt{papers/Canonical\_Certification\_and\_Enriched\_Reflective\_Realization/}.
+
+\bibitem{SpivackStrata}
+N.~Spivack.
+\newblock \emph{Strata: Abstract Synthesis and Bridge Laws (Infinity Compression)}.
+\newblock Companion manuscript in preparation, 2026.
+
+\bibitem{EPIC015WV1}
+Infinity Compression contributors.
+\newblock \emph{EPIC\_015\_WV1 --- External Proof Architecture Validation} (specification and validation verdict notes).
+\newblock \texttt{infinity-compression} repository, \texttt{specs/} tree, 2026.
+
+\bibitem{Lean4}
+L.~de Moura and S.~Ullrich.
+\newblock The Lean 4 theorem prover and programming language.
+\newblock In \emph{Automated Deduction --- CADE 28}, volume 12699 of \emph{Lecture Notes in Computer Science}, pages 625--635. Springer, 2021.
+
+\bibitem{Mathlib}
+The Mathlib community.
+\newblock The Lean mathematical library.
+\newblock In \emph{Proceedings of the 9th ACM SIGPLAN International Conference on Certified Programs and Proofs (CPP)}, pages 367--381, 2020.
+\newblock \textsc{doi}: \href{https://doi.org/10.1145/3372885.3373824}{10.1145/3372885.3373824}.
+\newblock Mathlib~4 repository: \url{https://github.com/leanprover-community/mathlib4}.
+
+\bibitem{MacLane}
+S.~Mac Lane.
+\newblock \emph{Categories for the Working Mathematician}, chapter I (categories of algebraic structures; universal constructions motivating quotients).
+\newblock Springer, 2nd edition, 1998.
+
+\end{thebibliography}
+
+\end{document}

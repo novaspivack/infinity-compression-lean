@@ -2,9 +2,9 @@
 
 **Toolchain:** leanprover/lean4 — pinned in `lakefile.toml` / `lean-toolchain`  
 **Mathlib:** v4.29.0-rc3 (via lake)  
-**Build:** From this directory: `lake build`  
+**Build:** From this directory: `lake build`. **Program W only (fast):** `lake build InfinityCompression.Validation.QuotientFiberBenchmark InfinityCompression.Validation.ProductProjectionFiberBenchmark InfinityCompression.Validation.SigmaFiberBenchmark` — do **not** use this as a substitute for a full release check of the whole library.  
 **Root import:** `InfinityCompression.lean` (imports every production module below)  
-**Last verified:** 2026-03-21 — clean full build; no `sorry` in proof terms under `InfinityCompression/` (see Sorry status). **Program W:** `Validation/QuotientFiberBenchmark.lean` (EPIC_015_WV1).
+**Last verified:** 2026-03-22 — Program W papers: consolidated external validation (T1–T3). **Program W:** `Validation/QuotientFiberBenchmark.lean` (EPIC_015_WV1) + `ProductProjectionFiberBenchmark.lean`, `SigmaFiberBenchmark.lean` (EPIC_016_WV2B merged paper).
 
 ---
 
@@ -26,7 +26,7 @@
 | Bridges | `InfinityCompression/Bridges/` | 010–012 |
 | Meta | `InfinityCompression/Meta/` | 013–014 |
 | MetaProof | `InfinityCompression/MetaProof/` | EPIC_002_BH2 Route B + EPIC_003_BH6 continuation |
-| Validation | `InfinityCompression/Validation/` | EPIC_015_WV1 Program W (external benchmark) |
+| Validation | `InfinityCompression/Validation/` | EPIC_015_WV1 Program W + EPIC_016_WV2 consolidated paper (T1–T3) |
 | Frontier | `InfinityCompression/Frontier/` | 015–019 + §2.5 summit |
 | Root import | `InfinityCompression.lean` | — |
 | Papers (LaTeX) | `papers/` | EPIC_016_WV2 — shared `suite_preamble` / `suite_macros`; per-paper subdirs (see `papers/README.md`) |
@@ -104,6 +104,8 @@
 | File | Role |
 |------|------|
 | `QuotientFiberBenchmark.lean` | EPIC_015_WV1 Program W: quotient fiber benchmark (`BareQuotient`, `forgetToQuotient`, `QuotientFiber`, **T-WV.2.1** `quotient_fiber_nonempty`; **T-WV.strong** `forgetToQuotient_hasRightInverse`, `quotientOut_rightInverse_forgetToQuotient`, `canonicalQuotientFiberWitness`); external parallel to EPIC_009 `fiberAtBare` story |
+| `ProductProjectionFiberBenchmark.lean` | EPIC_016_WV2 **T2:** first projection `forgetFirst`, `ProductFiberAt`, `productSection`, `forgetFirst_surjective`, `forgetFirst_hasRightInverse`, `canonicalProductFiberWitness` |
+| `SigmaFiberBenchmark.lean` | EPIC_016_WV2 **T3:** bundle `SigmaFiber`, `sigma_fst_surjective`, `sigma_fst_hasRightInverse`, `sigmaSection`, `canonicalSigmaFiberWitness` (hypothesis `∀ b, Nonempty (E b)`) |
 
 ### Frontier (`InfinityCompression/Frontier/`)
 

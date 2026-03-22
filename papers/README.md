@@ -17,7 +17,7 @@ Each paper has its **own subdirectory** and main `.tex` file. From a paper direc
 | Directory | Paper |
 |-----------|--------|
 | `Canonical_Certification_and_Enriched_Reflective_Realization/` | Flagship IC paper (canonical bare certification vs enriched realization; fibers; NEMS spine). |
-| `Program_W_External_Validation/` | Program W methods / external validation benchmark (quotient / fiber / section). **In progress.** |
+| `External_Validation_Positive_Closure_Architecture/` | External validation of the positive-closure architecture (**multi-tranche:** quotient T1, product T2, Sigma T3). |
 
 ## Build (example)
 
@@ -26,4 +26,5 @@ cd papers/Canonical_Certification_and_Enriched_Reflective_Realization
 latexmk -pdf Canonical_Certification_and_Enriched_Reflective_Realization.tex
 ```
 
-Normative paper program specs: `specs/IN-PROCESS/EPIC_016_WV2_PROGRAM_W_PAPERS_SPEC.md` (parent repo).
+Normative paper program: `specs/COMPLETE/EPIC_016_WV2_PROGRAM_W_PAPERS_SPEC.md` (parent repo).
+

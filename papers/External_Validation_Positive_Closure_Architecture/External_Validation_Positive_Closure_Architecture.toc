@@ -1,0 +1,19 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {paragraph}{Scope.}{3}{section*.2}%
+\contentsline {section}{\numberline {2}The positive-closure architecture as a reusable schema}{3}{section.2}%
+\contentsline {section}{\numberline {3}Unified methodology: baseline vs.\ architecture-guided bundle}{3}{section.3}%
+\contentsline {section}{\numberline {4}Tranche T1: Setoid quotients}{4}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Why quotients}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Lean formalization and main bundle}{4}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}What the architectural packaging adds}{4}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Tranche T2: Cartesian product and first projection}{4}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Mathematical story}{4}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Baseline vs.\ bundle}{4}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Tranche T3: Dependent sums and the bundle projection}{5}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Mathematical story}{5}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Hypothesis and classical section}{5}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Comparative synthesis across tranches}{5}{section.7}%
+\contentsline {section}{\numberline {8}Unified validation verdict and the meaning of \textbf {STRONG}}{6}{section.8}%
+\contentsline {section}{\numberline {9}Place in the larger program}{6}{section.9}%
+\contentsline {section}{\numberline {10}Limitations and future work}{6}{section.10}%
+\contentsline {section}{\numberline {A}Theorem indices (Lean names by module)}{6}{appendix.A}%
