@@ -1,8 +1,5 @@
-% Consolidated external validation paper: quotients (T1), products (T2), dependent sums (T3),
-% sums / coproduct discriminant (T4), subtype projection (T5), orbit quotient (T6), ideal quotient (T7).
-% Normative: specs/COMPLETE/EPIC_016_WV2A_EXTERNAL_VALIDATION_BENCHMARK_PAPER_SPEC.md;
-%            extended dimensions: specs/COMPLETE/EPIC_017_EV1_EXTENDED_EXTERNAL_VALIDATION_DIMENSIONS_SPEC.md;
-%            multi-tranche survey content (former EPIC_016_WV2B) merged herein.
+% Consolidated external validation paper: T1--T12 (see EPIC_016/017/018 specs in specs/COMPLETE/).
+% Normative: EPIC_016_WV2A; EPIC_017_EV1 (T4--T7); EPIC_018_XC1 (T8--T12).
 \documentclass[11pt]{article}
 \input{../suite_preamble}
 \usepackage{longtable}
@@ -27,7 +24,7 @@
 \newcommand{\Fib}{\mathrm{Fib}}
 
 \title{External Validation of a Positive-Closure Proof Architecture\\[0.35em]
-\large A Multi-Tranche Survey: Seven Benchmark Dimensions in Lean}
+\large A Multi-Tranche Survey: Twelve Benchmark Dimensions in Lean}
 \author{Nova Spivack}
 \date{2026}
 
@@ -41,25 +38,29 @@ architecture: collapse to a bare certificate, a typed forgetful map, fiber struc
 that certificate, and, where appropriate, canonical witnesses or sections. A natural
 methodological concern is that this architecture may be endogenous to the flagship
 NEMS-style case rather than a reusable proof pattern. This paper presents a
-\textbf{consolidated machine-checked external validation}: seven independent tranches of
+\textbf{consolidated machine-checked external validation}: twelve independent tranches of
 ordinary mathematics, each formalized in Lean without importing the \IC{} spine, each
 comparing a \emph{flat baseline} (the obvious Mathlib-shaped existence or representability
 statement) with an \emph{architecture-guided} theorem bundle (nonempty fibers, surjectivity
 of the forgetful map, \texttt{HasRightInverse}, an identified \texttt{RightInverse} section,
-and a uniform canonical witness in each fiber).
+and a uniform canonical witness in each fiber), \emph{except} tranche \textbf{T12}, which
+records an explicit \textbf{MODERATE} / control pattern for a \emph{non-surjective} collapse.
 
 Tranche \textbf{T1} is the setoid quotient benchmark (collapse by an equivalence relation;
 baseline \texttt{Quotient.exists\_rep}). Tranche \textbf{T2} is the Cartesian product with
 first projection (many enriched pairs over one bare image---\emph{multi-route} without
 quotienting). Tranche \textbf{T3} is the dependent sum $\Sigma_{b:B} E\,b$ with
 \texttt{Sigma.fst} (bundle projection; dependent generalization of T2). Tranches
-\textbf{T4}--\textbf{T7} extend the same rubric to the sum type with discriminant collapse,
-subtype projection, an orbit equivalence quotient from a group action, and a commutative
-ring quotient modulo an ideal. The contribution is
+\textbf{T4}--\textbf{T7} cover sum discriminants, subtype projection, orbit quotients, and
+ideal quotients. Tranches \textbf{T8}--\textbf{T11} add pushout glueing, set membership as
+classifier, localization via fraction pairs, and pullbacks (sheaf-style fiber products).
+Tranche \textbf{T12} is \texttt{Nat.succ}: fibers are nonempty exactly off zero, with no
+global right inverse. The contribution is
 not a catalog of new classical theorems; it is a demonstration that the same architectural
-lens organizes \emph{all seven} external families and yields strengthened, reusable proof
-interfaces in each case. Under the project's validation rubric, the combined evidence
-supports a unified \textbf{STRONG} verdict for methodological transferability. We situate
+lens organizes \emph{twelve} external families and yields strengthened, reusable proof
+interfaces where the rubric applies. Under the project's validation rubric, tranches T1--T11
+support a \textbf{STRONG} verdict; T12 documents a complementary \textbf{MODERATE} boundary
+case. We situate
 the work in the NEMS / APS / IC / Strata stack and state explicitly that APS is not tested
 by these tranches.
 \end{abstract}
@@ -79,16 +80,17 @@ reusable proof pattern---not merely a custom narrative for the flagship case---a
 claim is supported by multiple independent external benchmarks.}
 
 A single quotient formalization already begins to answer the worry that the architecture
-might be idiosyncratic; this document \emph{consolidates} that quotient tranche with six
-additional standard constructions---Cartesian products, dependent sums, coproduct discriminants,
-subtypes, orbit quotients, and ideal quotients---so that the
+might be idiosyncratic; this document \emph{consolidates} that quotient tranche with eleven
+additional standard constructions---products, dependent sums, coproduct discriminants,
+subtypes, orbit and ideal quotients, pushouts, classifiers, localization pairs, pullbacks,
+and a non-surjective control---so that the
 evidence base is explicitly multi-family. The result is one self-contained validation paper:
 readers need not cross-reference a separate ``survey'' manuscript for the product and bundle
 stories.
 
 \paragraph{Scope.}
 We do not claim a universal theorem that every closure problem in mathematics must be
-formalized in \IC{}'s types. We claim that, in Lean, on seven concrete external families,
+formalized in \IC{}'s types. We claim that, in Lean, on twelve concrete external families,
 the architecture exports cleanly, yields structured theorem bundles beyond flat baselines,
 and aligns with the flagship forgetful / fiber / section narrative~\cite{SpivackIC}.
 
@@ -362,6 +364,119 @@ quotient parallel to T1's setoid quotient. Module: \texttt{IdealQuotientFiberBen
 \label{tab:t7}
 \end{table}
 
+\section{Tranche T8: Pushout / colimit glueing}\label{sec:t8}
+
+Glueing \texttt{inl a0} with \texttt{inr b0} in \texttt{Sum A B} is presented as the equivalence
+generated by \texttt{Relation.EqvGen} on explicit symmetric edges (\texttt{PushoutCoequalizerFiberBenchmark.lean}).
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.36\textwidth}>{\raggedright\arraybackslash}p{0.56\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\texttt{pushoutRel} & generating edges for glueing. \\
+\texttt{forgetToPushout} & \texttt{Quotient.mk} to the pushout type. \\
+\texttt{forgetToPushout\_surjective} & surjectivity. \\
+\texttt{quotientOut\_rightInverse\_forgetToPushout} & \texttt{Quotient.out} as \texttt{RightInverse}. \\
+\texttt{canonicalPushoutFiberWitness} & canonical witness in each fiber. \\
+\bottomrule
+\end{tabular}
+\caption{T8 (pushout): architecture-guided bundle.}
+\label{tab:t8}
+\end{table}
+
+\section{Tranche T9: Membership classifier}\label{sec:t9}
+
+Subsets as maps to \texttt{Prop} and \texttt{Subtype} of membership in \texttt{S}: \texttt{SetClassifierFiberBenchmark.lean}
+packages membership fibers and global sections when every \texttt{x} lies in \texttt{S}.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.36\textwidth}>{\raggedright\arraybackslash}p{0.56\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\texttt{membershipClassifier} & characteristic predicate \texttt{x in S}. \\
+\texttt{ClassifierFiber} & fiber over \texttt{x} for \texttt{Subtype.val}. \\
+\texttt{classifier\_fiber\_nonempty\_of\_mem} & nonempty fiber when \texttt{x} lies in \texttt{S}. \\
+\texttt{subtypeVal\_surjectiveOn} & surjectivity of \texttt{Subtype.val} under global membership. \\
+\texttt{classifierSection\_rightInverse\_subtypeVal} & \texttt{RightInverse} for the section. \\
+\bottomrule
+\end{tabular}
+\caption{T9 (classifier / subset): architecture-guided bundle.}
+\label{tab:t9}
+\end{table}
+
+\section{Tranche T10: Localization pairs}\label{sec:t10}
+
+Fraction presentation \texttt{mk'} from \texttt{R × M} is surjective; \texttt{LocalizationPairFiberBenchmark.lean}
+uses \texttt{IsLocalization.sec} as canonical preimage data.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.36\textwidth}>{\raggedright\arraybackslash}p{0.56\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\texttt{forgetPairToLocalization} & \texttt{IsLocalization.mk'} on pairs. \\
+\texttt{forgetPairToLocalization\_surjective} & pair-map surjectivity. \\
+\texttt{sec\_rightInverse\_forgetPairToLocalization} & \texttt{IsLocalization.sec} as \texttt{RightInverse}. \\
+\texttt{canonicalLocalizationPairFiberWitness} & canonical pair in each fiber. \\
+\bottomrule
+\end{tabular}
+\caption{T10 (localization pairs): architecture-guided bundle.}
+\label{tab:t10}
+\end{table}
+
+\section{Tranche T11: Pullback / fiber product}\label{sec:t11}
+
+Given \texttt{f : A → C}, \texttt{g : B → C}, the subtype of \texttt{A × B} with \texttt{f a = g b}
+is the pullback; \texttt{pullbackFst} projects to \texttt{A} (\texttt{PullbackFiberBenchmark.lean}).
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.36\textwidth}>{\raggedright\arraybackslash}p{0.56\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\texttt{PullbackType} & fiber-product subtype. \\
+\texttt{pullbackFst} & first projection (renamed to avoid product-tranche clash). \\
+\texttt{pullbackFst\_surjective} & surjectivity assuming overlap (for all \texttt{a} some \texttt{b} matches). \\
+\texttt{pullbackSection\_rightInverse\_pullbackFst} & chosen section is \texttt{RightInverse}. \\
+\bottomrule
+\end{tabular}
+\caption{T11 (pullback): architecture-guided bundle.}
+\label{tab:t11}
+\end{table}
+
+\section{Tranche T12: Non-surjective collapse (MODERATE)}\label{sec:t12}
+
+\texttt{Nat.succ} is not surjective; fibers over \texttt{n > 0} are nonempty singletons.
+\texttt{NonSurjectiveSuccFiberBenchmark.lean} records \texttt{¬ HasRightInverse succ} and
+\texttt{pred\_leftInverse\_succ}.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.36\textwidth}>{\raggedright\arraybackslash}p{0.56\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\texttt{succFiber} & fiber of \texttt{succ} over \texttt{n}. \\
+\texttt{succFiber\_nonempty\_iff} & nonempty iff \texttt{n} is not zero. \\
+\texttt{nat\_succ\_not\_surjective} & obstruction to global section. \\
+\texttt{pred\_leftInverse\_succ} & standard left-inverse identity. \\
+\bottomrule
+\end{tabular}
+\caption{T12 (MODERATE control): \texttt{Nat.succ}.}
+\label{tab:t12}
+\end{table}
+
 \section{Comparative synthesis across tranches}\label{sec:synth}
 
 \begin{table}[htbp]
@@ -378,9 +493,14 @@ T4 & \texttt{Bool} & \texttt{forgetSumIsLeft} & tagged \texttt{Sum} values & \te
 T5 & $\alpha$ & \texttt{Subtype.val} & proof data (singleton fibers) & \texttt{subtypeSection} \\
 T6 & orbit quotient & \texttt{to\_orbit\_quotient} & orbit classes & \texttt{Quotient.out} (canonical) \\
 T7 & $R/I$ & \texttt{forgetToIdealQuotient} & cosets mod $I$ & \texttt{Quotient.out} (canonical) \\
+T8 & pushout & \texttt{forgetToPushout} & \texttt{EqvGen} classes & \texttt{Quotient.out} (canonical) \\
+T9 & $\alpha$ & \texttt{Subtype.val} on \texttt{S} & membership fibers & \texttt{classifierSection} \\
+T10 & localized ring & \texttt{forgetPairToLocalization} & denominator pairs & \texttt{IsLocalization.sec} \\
+T11 & $A$ & \texttt{pullbackFst} & compatible $B$-legs & \texttt{pullbackSection} (\texttt{noncomputable}) \\
+T12 & \texttt{Nat} & \texttt{Nat.succ} & predecessor fibers & \texttt{Nat.pred} (left inverse only) \\
 \bottomrule
 \end{tabular}
-\caption{Side-by-side view: seven instantiations of the same architectural schema.}
+\caption{Side-by-side view: twelve instantiations (T12 is a MODERATE boundary case).}
 \label{tab:synth}
 \end{table}
 
@@ -389,16 +509,19 @@ T7 & $R/I$ & \texttt{forgetToIdealQuotient} & cosets mod $I$ & \texttt{Quotient.
 \emph{multi-route} without quotienting; \textbf{T3} is the dependent-type generalization of
 T2; \textbf{T4} is the coproduct-side dual tag story; \textbf{T5} is the subtype refinement
 pattern; \textbf{T6} and \textbf{T7} are quotient benchmarks (group action or ideal).
-In all cases the \textbf{STRONG} rubric applies for the same reason: the
-architecture-guided bundle is strictly richer than the flat baseline as a typed interface.
+\textbf{T8}--\textbf{T11} extend the story to colimits, classifiers, localization pairs, and pullbacks.
+\textbf{T12} is the explicit \textbf{MODERATE} control. For \textbf{T1}--\textbf{T11}, the
+\textbf{STRONG} rubric applies where stated; \textbf{T12} documents a boundary where global
+\texttt{HasRightInverse} fails.
 
 \section{Unified validation verdict and the meaning of \textbf{STRONG}}\label{sec:verdict}
 
 Under the project's validation rubric~\cite{EPIC015WV1}, a benchmark is rated \textbf{STRONG}
 when it exports the architecture cleanly to external mathematics and yields a theorem bundle
-structurally richer than the obvious baseline. Each tranche here satisfies that criterion on
-its own; \emph{collectively}, they strengthen the methodological claim: the pattern is not
-tied to a single family of examples.
+structurally richer than the obvious baseline. Tranches \textbf{T1}--\textbf{T11} are recorded
+with that ambition; \textbf{T12} is an explicit \textbf{MODERATE} / methodological control:
+non-surjective collapse with nonempty fibers only on the image. \emph{Collectively}, the
+tranches strengthen the claim that the pattern is not tied to a single family of examples.
 
 \textbf{STRONG} encodes methodological transfer and corollary structure, not difficulty of
 raw mathematical content. No tranche proves a new ``summit'' theorem for the \IC{} landscape;
@@ -411,7 +534,8 @@ together they support external validity of the \emph{packaging}.
     certification / reflective splits---load-bearing inside the library.
   \item \textbf{External validation (this paper):} machine-checked demonstrations that the
     same pattern applies \emph{outside} the flagship modules, on quotients, products, dependent
-    sums, coproduct discriminants, subtypes, orbit quotients, and ideal quotients.
+    sums, coproduct discriminants, subtypes, orbit and ideal quotients, pushouts, classifiers,
+    localization pairs, pullbacks, and a non-surjective control tranche.
   \item \textbf{Strata:} abstract synthesis and bridge laws~\cite{SpivackStrata}.
   \item \textbf{APS:} local-to-global backbone elsewhere in the stack. \textbf{These tranches
     do not test APS directly;} they test reusable positive-closure \emph{packaging} on
@@ -421,7 +545,7 @@ together they support external validity of the \emph{packaging}.
 
 \section{Limitations and future work}\label{sec:limits}
 
-Seven finite families do not exhaust all closure or fibration patterns. Natural extensions
+Twelve finite families do not exhaust all closure or fibration patterns. Natural extensions
 include: settings where sections are non-unique or only locally defined; competing enriched
 layers over one collapse map; and domain-specific benchmarks outside pure type theory. Such
 work would extend the \emph{evidence base} without changing the logical status of the
@@ -648,6 +772,135 @@ nonemptiness via \texttt{canonicalQuotientFiberWitness}. \\
 \texttt{forgetToIdealQuotient\_hasRightInverse} & \texttt{HasRightInverse}. \\
 \texttt{idealQuotientOut\_rightInverse\_forgetToIdealQuotient} & \texttt{Quotient.out} as \texttt{RightInverse}. \\
 \texttt{canonicalIdealQuotientFiberWitness} & canonical witness in each fiber. \\
+
+\end{longtable}
+}
+
+\subsection*{\texttt{PushoutCoequalizerFiberBenchmark.lean}}
+
+{\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.40\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{c}{\textit{(continued)}} \\
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+\texttt{pushoutRel} & generating symmetric edges for glueing. \\
+\texttt{pushoutSetoid} & \texttt{EqvGen.setoid} presentation. \\
+\texttt{forgetToPushout} & collapse to the pushout quotient. \\
+\texttt{PushoutFiber} & fiber over a glued class. \\
+\texttt{forgetToPushout\_surjective} & surjectivity. \\
+\texttt{quotientOut\_rightInverse\_forgetToPushout} & \texttt{Quotient.out} as \texttt{RightInverse}. \\
+\texttt{canonicalPushoutFiberWitness} & canonical witness in each fiber. \\
+
+\end{longtable}
+}
+
+\subsection*{\texttt{SetClassifierFiberBenchmark.lean}}
+
+{\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.40\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{c}{\textit{(continued)}} \\
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+\texttt{membershipClassifier} & characteristic map \texttt{x in S} to \texttt{Prop}. \\
+\texttt{ClassifierFiber} & fiber of \texttt{Subtype.val} over \texttt{x}. \\
+\texttt{classifier\_fiber\_nonempty\_of\_mem} & nonempty when \texttt{x} lies in \texttt{S}. \\
+\texttt{subtypeVal\_surjectiveOn} & surjectivity under global membership. \\
+\texttt{subtypeVal\_hasRightInverse} & \texttt{HasRightInverse} under global membership. \\
+\texttt{classifierSection\_rightInverse\_subtypeVal} & \texttt{RightInverse} law. \\
+
+\end{longtable}
+}
+
+\subsection*{\texttt{LocalizationPairFiberBenchmark.lean}}
+
+{\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.40\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{c}{\textit{(continued)}} \\
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+\texttt{forgetPairToLocalization} & \texttt{IsLocalization.mk'} on \texttt{R × M}. \\
+\texttt{forgetPairToLocalization\_surjective} & surjectivity of the pair map. \\
+\texttt{forgetPairToLocalization\_hasRightInverse} & \texttt{HasRightInverse}. \\
+\texttt{sec\_rightInverse\_forgetPairToLocalization} & \texttt{IsLocalization.sec} as \texttt{RightInverse}. \\
+\texttt{LocalizationPairFiber} & fiber over a localized element. \\
+\texttt{canonicalLocalizationPairFiberWitness} & canonical pair witness. \\
+
+\end{longtable}
+}
+
+\subsection*{\texttt{PullbackFiberBenchmark.lean}}
+
+{\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.40\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{c}{\textit{(continued)}} \\
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+\texttt{PullbackType} & pullback as subtype of \texttt{A × B}. \\
+\texttt{pullbackFst} & first projection (renamed; avoids clash with T2). \\
+\texttt{pullbackFst\_surjective} & surjectivity under overlap hypothesis. \\
+\texttt{pullbackFst\_hasRightInverse} & \texttt{HasRightInverse}. \\
+\texttt{pullbackSection\_rightInverse\_pullbackFst} & \texttt{RightInverse} for chosen section. \\
+
+\end{longtable}
+}
+
+\subsection*{\texttt{NonSurjectiveSuccFiberBenchmark.lean}}
+
+{\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.40\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{c}{\textit{(continued)}} \\
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+\texttt{succFiber} & fiber of \texttt{Nat.succ}. \\
+\texttt{succFiber\_nonempty\_iff} & nonempty iff not zero. \\
+\texttt{nat\_succ\_not\_surjective} & no global section onto \texttt{Nat}. \\
+\texttt{nat\_succ\_not\_hasRightInverse} & obstruction to \texttt{HasRightInverse}. \\
+\texttt{pred\_leftInverse\_succ} & \texttt{Nat.pred} as left inverse of \texttt{succ}. \\
 
 \end{longtable}
 }

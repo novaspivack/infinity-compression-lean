@@ -13,7 +13,8 @@ lake build
 ## Release / audit (freeze checklist)
 
 - **Build:** `lake build` succeeds.
-- **Manifest:** `MANIFEST.md` — full module inventory, EPIC mapping, open `def`s, summit/landscape theorems.
+- **Manifest:** `MANIFEST.md` — full module inventory, EPIC mapping, open `def`s, summit/landscape theorems, Program W validation **T1–T12**.
+- **Artifact companion:** `ARTIFACT.md` — citation-facing summary, spec/LaTeX pointers, reproducibility note.
 - **Crown reader:** `../specs/NOTES/Crown_Summit_Reader.md`
 - **Closed vs open:** `../specs/NOTES/IC_Closed_Open_Ledger.md`
 - **Route B roadmap (prose):** `../specs/NOTES/Summit_B.md`

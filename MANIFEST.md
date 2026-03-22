@@ -2,9 +2,9 @@
 
 **Toolchain:** leanprover/lean4 — pinned in `lakefile.toml` / `lean-toolchain`  
 **Mathlib:** v4.29.0-rc3 (via lake)  
-**Build:** From this directory: `lake build`. **Program W only (fast):** `lake build InfinityCompression.Validation.QuotientFiberBenchmark InfinityCompression.Validation.ProductProjectionFiberBenchmark InfinityCompression.Validation.SigmaFiberBenchmark` — do **not** use this as a substitute for a full release check of the whole library.  
+**Build:** From this directory: `lake build`. **Program W validation only (fast):** pass each `InfinityCompression.Validation.*` module from the table below as a `lake build` target (twelve files; there is no single `Validation.lean` wrapper). Do **not** use a partial build as a substitute for a full release check of the whole library.  
 **Root import:** `InfinityCompression.lean` (imports every production module below)  
-**Last verified:** 2026-03-22 — Program W papers: consolidated external validation (T1–T3). **Program W:** `Validation/QuotientFiberBenchmark.lean` (EPIC_015_WV1) + `ProductProjectionFiberBenchmark.lean`, `SigmaFiberBenchmark.lean` (EPIC_016_WV2B merged paper).
+**Last verified:** 2026-03-22 — Program W papers: consolidated external validation **T1–T12** (`papers/External_Validation_Positive_Closure_Architecture/`). **Wave 1:** EPIC_015_WV1 (`QuotientFiberBenchmark`). **WV2B:** EPIC_016_WV2 (`ProductProjectionFiberBenchmark`, `SigmaFiberBenchmark`). **Extended:** EPIC_017_EV1 T4–T7. **Second wave:** EPIC_018_XC1 T8–T12.
 
 ---
 
@@ -26,7 +26,7 @@
 | Bridges | `InfinityCompression/Bridges/` | 010–012 |
 | Meta | `InfinityCompression/Meta/` | 013–014 |
 | MetaProof | `InfinityCompression/MetaProof/` | EPIC_002_BH2 Route B + EPIC_003_BH6 continuation |
-| Validation | `InfinityCompression/Validation/` | EPIC_015_WV1 Program W + EPIC_016_WV2 consolidated paper (T1–T3) |
+| Validation | `InfinityCompression/Validation/` | EPIC_015_WV1 (T1) + EPIC_016_WV2 (T2–T3) + EPIC_017_EV1 (T4–T7) + EPIC_018_XC1 (T8–T12) Program W benchmarks |
 | Frontier | `InfinityCompression/Frontier/` | 015–019 + §2.5 summit |
 | Root import | `InfinityCompression.lean` | — |
 | Papers (LaTeX) | `papers/` | EPIC_016_WV2 — shared `suite_preamble` / `suite_macros`; per-paper subdirs (see `papers/README.md`) |
@@ -99,13 +99,22 @@
 | `CompressionCollapse.lean` | `CompressionCollapseConjecture` (open), `collapse_for_same_polarity_positive_chain` |
 | `NEMSSpineAsArchitecture.lean` | NEMS spine chain as architecture |
 
-### Validation (`InfinityCompression/Validation/`)
+### Validation (`InfinityCompression/Validation/`) — Program W external benchmarks (T1–T12)
 
 | File | Role |
 |------|------|
-| `QuotientFiberBenchmark.lean` | EPIC_015_WV1 Program W: quotient fiber benchmark (`BareQuotient`, `forgetToQuotient`, `QuotientFiber`, **T-WV.2.1** `quotient_fiber_nonempty`; **T-WV.strong** `forgetToQuotient_hasRightInverse`, `quotientOut_rightInverse_forgetToQuotient`, `canonicalQuotientFiberWitness`); external parallel to EPIC_009 `fiberAtBare` story |
-| `ProductProjectionFiberBenchmark.lean` | EPIC_016_WV2 **T2:** first projection `forgetFirst`, `ProductFiberAt`, `productSection`, `forgetFirst_surjective`, `forgetFirst_hasRightInverse`, `canonicalProductFiberWitness` |
-| `SigmaFiberBenchmark.lean` | EPIC_016_WV2 **T3:** bundle `SigmaFiber`, `sigma_fst_surjective`, `sigma_fst_hasRightInverse`, `sigmaSection`, `canonicalSigmaFiberWitness` (hypothesis `∀ b, Nonempty (E b)`) |
+| `QuotientFiberBenchmark.lean` | EPIC_015_WV1 **T1:** quotient fiber (`BareQuotient`, `forgetToQuotient`, `QuotientFiber`, **T-WV.2.1** `quotient_fiber_nonempty`; **T-WV.strong** `forgetToQuotient_hasRightInverse`, `quotientOut_rightInverse_forgetToQuotient`, `canonicalQuotientFiberWitness`); parallel to EPIC_009 `fiberAtBare` story |
+| `ProductProjectionFiberBenchmark.lean` | EPIC_016_WV2 **T2:** Cartesian product / first projection — `forgetFirst`, `ProductFiberAt`, `productSection`, `forgetFirst_surjective`, `forgetFirst_hasRightInverse`, `canonicalProductFiberWitness` |
+| `SigmaFiberBenchmark.lean` | EPIC_016_WV2 **T3:** dependent sum / bundle — `SigmaFiber`, `sigma_fst_surjective`, `sigma_fst_hasRightInverse`, `sigmaSection`, `canonicalSigmaFiberWitness` (hypothesis `∀ b, Nonempty (E b)`) |
+| `SumCoproductFiberBenchmark.lean` | EPIC_017_EV1 **T4:** sum / coproduct collapse to `Bool` — `forgetSumIsLeft`, `SumFiberAt`, `sumSection`, surjectivity + `HasRightInverse`, `canonicalSumFiberWitness` |
+| `SubtypeValFiberBenchmark.lean` | EPIC_017_EV1 **T5:** subtype / `Subtype.val` — `SubtypeFiberAt`, `subtype_val_surjective`, `subtype_val_hasRightInverse`, `subtypeSection`, `canonicalSubtypeFiberWitness` |
+| `OrbitRelationQuotientFiberBenchmark.lean` | EPIC_017_EV1 **T6:** orbit relation quotient — `to_orbit_quotient`, `OrbitQuotientFiber`, surjectivity + `quotient_out_rightInverse`, `canonical_orbit_quotient_fiber_witness` |
+| `IdealQuotientFiberBenchmark.lean` | EPIC_017_EV1 **T7:** ideal quotient — `forgetToIdealQuotient`, `IdealQuotientFiber`, `forgetToIdealQuotient_hasRightInverse`, `canonicalIdealQuotientFiberWitness` |
+| `PushoutCoequalizerFiberBenchmark.lean` | EPIC_018_XC1 **T8:** pushout / `EqvGen` glueing — `pushoutRel`, `forgetToPushout`, `PushoutFiber`, `forgetToPushout_hasRightInverse`, `quotientOut_rightInverse_forgetToPushout`, `canonicalPushoutFiberWitness` |
+| `SetClassifierFiberBenchmark.lean` | EPIC_018_XC1 **T9:** classifier / membership — `membershipClassifier`, `ClassifierFiber`, `subtypeVal_surjectiveOn`, `classifierSection`, conditional STRONG when `∀ x, x ∈ S` |
+| `LocalizationPairFiberBenchmark.lean` | EPIC_018_XC1 **T10:** localization fraction pairs — `forgetPairToLocalization`, `sec_rightInverse_forgetPairToLocalization`, `LocalizationPairFiber`, `canonicalLocalizationPairFiberWitness` |
+| `PullbackFiberBenchmark.lean` | EPIC_018_XC1 **T11:** pullback / fiber product — `PullbackType`, `pullbackFst`, `PullbackFiber`, `pullbackSection`, `canonicalPullbackFiberWitness` (overlap hypothesis) |
+| `NonSurjectiveSuccFiberBenchmark.lean` | EPIC_018_XC1 **T12:** MODERATE control — `succFiber`, `nat_succ_not_surjective`, `nat_succ_not_hasRightInverse`, `pred_leftInverse_succ` |
 
 ### Frontier (`InfinityCompression/Frontier/`)
 
@@ -169,7 +178,10 @@
 | 017 | `Frontier/NoFinalPositiveCompressor`, `Frontier/InternalCompressionWithoutTotalization` | `no_final_positive_compressor`, `internal_compression_without_totalization` |
 | 018 | `Frontier/CompressionSelectivity`, `Frontier/PolarityBalance` | `compression_selectivity`, `polarity_balance`, `failure_mode_exhaustive` |
 | 019 | `Frontier/ProofToolValidation` | `proof_tool_validation_same_polarity_collapse`, `proof_tool_validation_polarity_complementarity` |
-| EPIC_015_WV1 (Program W) | `Validation/QuotientFiberBenchmark` | **T-WV.2.1** `quotient_fiber_nonempty`; **T-WV.strong** `forgetToQuotient_hasRightInverse`, `quotientOut_rightInverse_forgetToQuotient`, `canonicalQuotientFiberWitness` — external quotient/fiber + section (not Lean tranche EPIC 015) |
+| EPIC_015_WV1 (Program W) | `Validation/QuotientFiberBenchmark` | **T1** / **T-WV.2.1** `quotient_fiber_nonempty`; **T-WV.strong** `forgetToQuotient_hasRightInverse`, `quotientOut_rightInverse_forgetToQuotient`, `canonicalQuotientFiberWitness` — external quotient/fiber + section (not Lean tranche EPIC 015) |
+| EPIC_016_WV2 (Program W papers WV2B) | `Validation/ProductProjectionFiberBenchmark`, `Validation/SigmaFiberBenchmark` | **T2**–**T3** product and sigma bundle benchmarks (consolidated LaTeX with WV2A) |
+| EPIC_017_EV1 (extended validation) | `Validation/SumCoproductFiberBenchmark`, `Validation/SubtypeValFiberBenchmark`, `Validation/OrbitRelationQuotientFiberBenchmark`, `Validation/IdealQuotientFiberBenchmark` | **T4**–**T7** — see `specs/COMPLETE/EPIC_017_EV1_EXTENDED_EXTERNAL_VALIDATION_DIMENSIONS_SPEC.md` |
+| EPIC_018_XC1 (second wave) | `Validation/PushoutCoequalizerFiberBenchmark`, `Validation/SetClassifierFiberBenchmark`, `Validation/LocalizationPairFiberBenchmark`, `Validation/PullbackFiberBenchmark`, `Validation/NonSurjectiveSuccFiberBenchmark` | **T8**–**T12** — see `specs/COMPLETE/EPIC_018_XC1_SECOND_WAVE_EXTENDED_VALIDATION_SPEC.md` |
 | §2.5 summit | `Frontier/ICUniversalTheorem`, `Frontier/ReflexiveArchitectureNecessity`, `Frontier/SummitDerivation` | `ic_universal_theorem_summit` (minimal §2.5 conjunction); `ic_universal_theorem_landscape` (maximal aggregation); S1 spine necessity; S2 joint / interface lemmas; S3 `ic_universal_theorem_summit_iff_components` |
 | EPIC_002_BH2 Route B | `MetaProof/*` | **T-B2.1** `summit_bundle_matches_ic_universal_summit`; **T-B3.1** `standard_shape_matches_summit_iff`; **T-B5.1** `summit_requires_dual_poles` |
 | EPIC_003_BH6 Route B continuation | `MetaProof/*` | **T-B6a.1**–**T-B6b.1** necessity + `CrownEligible` spine example; **T-B7.1** `crown_eligible_induces_mirror`; **T-B8.1** `dependencyShapeStandard_minimal`; **T-B9.1** `reflexive_meta_crown` |

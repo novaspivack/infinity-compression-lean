@@ -1,8 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1774191825.4094 "/Users/nova/infinity-compression/infinity-compression-lean/papers/External_Validation_Positive_Closure_Architecture/External_Validation_Positive_Closure_Architecture.tex" "External_Validation_Positive_Closure_Architecture.pdf" "External_Validation_Positive_Closure_Architecture" 1774191826.14725 0
+["pdflatex"] 1774192521.21199 "External_Validation_Positive_Closure_Architecture.tex" "External_Validation_Positive_Closure_Architecture.pdf" "External_Validation_Positive_Closure_Architecture" 1774192521.94919 0
   "../suite_macros.tex" 1774151281.77416 4836 f12fe65da311b79b2f7da22561a9e569 ""
   "../suite_preamble.tex" 1774151281.77423 1991 457daeb583bf89b49fd67c23c4b4b4d9 ""
-  "/Users/nova/infinity-compression/infinity-compression-lean/papers/External_Validation_Positive_Closure_Architecture/External_Validation_Positive_Closure_Architecture.tex" 1774191825.14507 31624 6d9cbf3566e48c8b5546d5827ec3086f ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -29,6 +28,7 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ectt1200.tfm" 1136768653 1536 487c9b46984a816c7ed238d0674595c7 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tctt0900.tfm" 1136768653 1536 bda3e6bf9784a4cc572c754e0c3eeb00 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tctt1095.tfm" 1136768653 1536 52374f37d7a013fe5a15c958e7ebe485 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm" 1246382020 996 a18840b13b499c08ac2de96a99eda4bc ""
@@ -81,6 +81,7 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb" 1215737283 145929 f25e56369a345c4ff583b067cd87ce8e ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb" 1215737283 136101 f533469f523533d38317ab5729d00c8a ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb" 1215737283 131438 3aa300b3e40e5c8ba7b4e5c6cebc5dd6 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb" 1215737283 183673 6df73819bb3e1246a6315a4913a2d331 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb" 1215737283 186554 e8f0fa8ca05e038f257a06405232745f ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb" 1215737283 196446 8fbbe4b97b83e5182def6d29a44e57fb ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb" 1215737283 170827 2e4b634de7b58578eae1dc93e51dfe48 ""
@@ -166,10 +167,10 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1748572903 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "External_Validation_Positive_Closure_Architecture.aux" 1774191826.02874 9361 c7ddea266ef95b4adb01dc821328f53b "pdflatex"
-  "External_Validation_Positive_Closure_Architecture.out" 1774191826.02971 5106 af359b1931acdae0ff367636a31f2890 "pdflatex"
-  "External_Validation_Positive_Closure_Architecture.tex" 1774191825.14507 31624 6d9cbf3566e48c8b5546d5827ec3086f ""
-  "External_Validation_Positive_Closure_Architecture.toc" 1774191826.03001 2132 5d1afda67561b0eb81f825e366ce9a51 "pdflatex"
+  "External_Validation_Positive_Closure_Architecture.aux" 1774192521.81447 12668 c05ce699db25fbcbaf66268fca27fe2b "pdflatex"
+  "External_Validation_Positive_Closure_Architecture.out" 1774192521.81551 6322 90cd1baef6ccb3d87881299c555357c2 "pdflatex"
+  "External_Validation_Positive_Closure_Architecture.tex" 1774192510.39602 41948 5b4b108c14ed1af5c91aa28c3e2c8dc7 ""
+  "External_Validation_Positive_Closure_Architecture.toc" 1774192521.81578 2608 89084f7cc9c49404a653b43119c16529 "pdflatex"
   (generated)
   "External_Validation_Positive_Closure_Architecture.aux"
   "External_Validation_Positive_Closure_Architecture.log"

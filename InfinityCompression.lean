@@ -53,6 +53,11 @@ import InfinityCompression.Validation.SumCoproductFiberBenchmark
 import InfinityCompression.Validation.SubtypeValFiberBenchmark
 import InfinityCompression.Validation.OrbitRelationQuotientFiberBenchmark
 import InfinityCompression.Validation.IdealQuotientFiberBenchmark
+import InfinityCompression.Validation.PushoutCoequalizerFiberBenchmark
+import InfinityCompression.Validation.SetClassifierFiberBenchmark
+import InfinityCompression.Validation.LocalizationPairFiberBenchmark
+import InfinityCompression.Validation.PullbackFiberBenchmark
+import InfinityCompression.Validation.NonSurjectiveSuccFiberBenchmark
 import InfinityCompression.MetaProof.SummitTargets
 import InfinityCompression.MetaProof.DependencyShape
 import InfinityCompression.MetaProof.AdmissibleDerivations
@@ -132,6 +137,9 @@ def epic015wvProgramW := ()
 
 /-- EPIC_017_EV1 — extended external validation dimensions T4–T7 (`Validation/{SumCoproduct,SubtypeVal,OrbitRelationQuotient,IdealQuotient}FiberBenchmark`). -/
 def epic017evExtendedValidationDimensions := ()
+
+/-- EPIC_018_XC1 — second-wave external validation T8–T12 (pushout, classifier, localization, pullback, MODERATE non-surjective). -/
+def epic018xcSecondWaveValidation := ()
 
 /-- EPIC_001 §2.5 — IC Universal Theorem summit (`Frontier/ICUniversalTheorem.lean`). -/
 def epic001UniversalSummit := ()

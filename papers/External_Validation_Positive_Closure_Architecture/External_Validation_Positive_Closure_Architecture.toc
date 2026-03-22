@@ -16,8 +16,13 @@
 \contentsline {section}{\numberline {8}Tranche T5: Subtype projection}{6}{section.8}%
 \contentsline {section}{\numberline {9}Tranche T6: Orbit quotient from a group action}{6}{section.9}%
 \contentsline {section}{\numberline {10}Tranche T7: Ideal quotient}{6}{section.10}%
-\contentsline {section}{\numberline {11}Comparative synthesis across tranches}{7}{section.11}%
-\contentsline {section}{\numberline {12}Unified validation verdict and the meaning of \textbf {STRONG}}{7}{section.12}%
-\contentsline {section}{\numberline {13}Place in the larger program}{7}{section.13}%
-\contentsline {section}{\numberline {14}Limitations and future work}{8}{section.14}%
-\contentsline {section}{\numberline {A}Theorem indices (Lean names by module)}{8}{appendix.A}%
+\contentsline {section}{\numberline {11}Tranche T8: Pushout / colimit glueing}{7}{section.11}%
+\contentsline {section}{\numberline {12}Tranche T9: Membership classifier}{7}{section.12}%
+\contentsline {section}{\numberline {13}Tranche T10: Localization pairs}{7}{section.13}%
+\contentsline {section}{\numberline {14}Tranche T11: Pullback / fiber product}{7}{section.14}%
+\contentsline {section}{\numberline {15}Tranche T12: Non-surjective collapse (MODERATE)}{8}{section.15}%
+\contentsline {section}{\numberline {16}Comparative synthesis across tranches}{8}{section.16}%
+\contentsline {section}{\numberline {17}Unified validation verdict and the meaning of \textbf {STRONG}}{8}{section.17}%
+\contentsline {section}{\numberline {18}Place in the larger program}{9}{section.18}%
+\contentsline {section}{\numberline {19}Limitations and future work}{9}{section.19}%
+\contentsline {section}{\numberline {A}Theorem indices (Lean names by module)}{10}{appendix.A}%
