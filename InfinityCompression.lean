@@ -60,6 +60,7 @@ import InfinityCompression.Validation.PullbackFiberBenchmark
 import InfinityCompression.Validation.NonSurjectiveSuccFiberBenchmark
 import InfinityCompression.GeneralMethod.GroupExtension.FiberArchitecture
 import InfinityCompression.GeneralMethod.GroupExtension.SchurZassenhaus
+import InfinityCompression.GeneralMethod.GroupExtension.LocalGlobal
 import InfinityCompression.MetaProof.SummitTargets
 import InfinityCompression.MetaProof.DependencyShape
 import InfinityCompression.MetaProof.AdmissibleDerivations
