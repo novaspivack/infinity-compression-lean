@@ -82,9 +82,13 @@ design decisions (namespace placement,
 existing Mathlib infrastructure (\texttt{GroupExtension.Defs},
 \texttt{GroupExtension.Basic}, \texttt{GroupCohomology.LowDegree}), and a roadmap for
 Phase~2 (the $H^1$ and $H^2$ bridges). The contribution builds against Mathlib
-v4.29.0-rc6. This note is Mathlib-reviewer-facing API documentation, not a program
-overview; see~\cite{SpivackSynthesis} for how the suite fits together.
+v4.29.0-rc6. This note is the \emph{technical Mathlib companion}: Mathlib-reviewer-facing
+API documentation, not a program overview; see~\cite{SpivackSynthesis} for how the suite
+fits together. Phase~1 is the exact prerequisite layer for Mathlib's own documented future
+$H^1$/$H^2$ classification theorems.
 \end{abstract}
+
+\SuiteSeriesContext{This manuscript is the \emph{technical Mathlib companion}.}
 
 \keywords{Mathlib, group extensions, section cocycle, splitting criterion, group cohomology, Lean~4}
 \amsclassification{20J06, 18G50, 68V15}
@@ -124,7 +128,10 @@ Mathlib.
 \subsection{What we contribute}
 
 Our contribution is \textbf{Phase~1}: the foundational layer that both classification
-theorems require. Concretely, we add:
+theorems require. The 2-cocycle identity is proved in genuinely \emph{nonabelian} form, with
+factor order arranged so the identity is not a naive commutative transcription---this is
+one of the technically delicate points reviewers should expect to see in the proofs.
+Concretely, we add:
 
 \begin{enumerate}[nosep]
 \item \textbf{The section cocycle} (\texttt{Section.cocycle}): Given a group extension
@@ -155,7 +162,7 @@ theorems require. Concretely, we add:
 
 \subsection{Included now vs.\ deferred}
 
-\noindent\textbf{Included in this PR:}
+\subsubsection*{In scope for this PR}
 \begin{itemize}[nosep]
   \item \texttt{Section.cocycle} --- the $N$-valued 2-cocycle of a set-theoretic section
   \item \texttt{Section.diff} --- pointwise difference between two sections
@@ -164,11 +171,20 @@ theorems require. Concretely, we add:
   \item \texttt{sectionCocycle\_isMulCocycle\textsubscript{2}\_conj} --- 2-cocycle identity
 \end{itemize}
 
-\noindent\textbf{Deferred to Phase~2:}
+\subsubsection*{Explicitly out of scope for this PR (Phase~2)}
 \begin{itemize}[nosep]
   \item $H^1$ conjugacy-class bridge (splittings $\leftrightarrow$ $H^1(G, N)$)
   \item $H^2$ extension-class bridge (extensions $\leftrightarrow$ $H^2(G, N)$)
   \item Full coboundary / change-of-section classification theorem
+\end{itemize}
+
+\subsection{Why this belongs in Mathlib now}
+
+\begin{itemize}[nosep]
+  \item It fills a documented gap in \texttt{GroupExtension/Defs.lean} (Phase~1 toward the
+    stated $H^1$/$H^2$ goals).
+  \item It builds only on existing Mathlib group-extension and low-degree cohomology APIs.
+  \item It supplies the correct algebraic basis for later $H^1$/$H^2$ classification work.
 \end{itemize}
 
 \subsection{Mathematical significance}
@@ -941,7 +957,7 @@ Springer, 2021, pp.~625--635.
 \bibitem{SpivackSynthesis}
 N.~Spivack,
 \emph{Certification, Realization, and Obstruction: A Universal Fiber Architecture},
-program synthesis manuscript, 2026.
+synthesis manuscript, 2026.
 
 \end{thebibliography}
 

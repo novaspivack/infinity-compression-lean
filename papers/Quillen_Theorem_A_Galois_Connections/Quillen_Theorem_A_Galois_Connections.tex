@@ -31,7 +31,8 @@
 \newcommand{\lean}[1]{\texttt{#1}}
 
 \title{Quillen's Theorem~A for Galois Connections:\\[0.35em]
-\large A Machine-Checked Formalization in Lean~4}
+\large A Machine-Checked Formalization in Lean~4\\[0.2em]
+\normalsize Contractible Fibers, Nerve Homotopy Data, and a Topological Discharge}
 \author{Nova Spivack}
 \date{2026}
 
@@ -58,6 +59,8 @@ for the series map and summit claim.
 All results are formalized in Lean~4 with Mathlib, with
 zero \texttt{sorry} placeholders.
 \end{abstract}
+
+\SuiteSeriesContext{This manuscript is the \emph{topology discharge}.}
 
 \keywords{Quillen's Theorem~A, Galois connections, order complex, nerve,
   homotopy equivalence, embedding problems, Lean~4, Mathlib, formalization}
@@ -109,23 +112,27 @@ fiber/section pattern; the algebraic engine for embedding problems is
 in~\cite{SpivackFiber}.
 
 \paragraph{Topology discharge in the series.}
-Read alongside~\cite{SpivackFiber}, this paper is the \emph{combinatorial topology}
-instance of the same architecture: Galois connections induce fiber data on posets,
-contractibility feeds Quillen's hypothesis, and the theorem is a homotopy-level
-``collapse vs.\ enriched structure'' story in the order-complex / nerve layer.
-The unified map~\cite{SpivackSynthesis} and summit statement~\cite{SpivackSummit}
-place this discharge in the larger program without diluting the central formalization
-achievement of Theorem~A for Galois connections.
+This paper supplies the \emph{topological discharge} of the common architecture in a serious
+named classical setting (Quillen's Theorem~A for Galois connections). Read
+alongside~\cite{SpivackFiber}, it is the \emph{combinatorial topology} instance: Galois
+connections induce fiber data on posets, contractibility feeds Quillen's hypothesis, and
+the theorem is a homotopy-level ``collapse vs.\ enriched structure'' story in the
+order-complex / nerve layer. The synthesis manuscript~\cite{SpivackSynthesis} and summit
+manuscript~\cite{SpivackSummit} place this discharge in the larger program without diluting
+the central formalization achievement of Theorem~A for Galois connections.
 
 \paragraph{Theorem status.}
-The following results are \textbf{complete theorems} (zero \texttt{sorry}):
-Quillen's Theorem~A for Galois connections (homotopy equivalence data on
-nerves); nerve connectivity and edge uniqueness for categories with terminal
-objects; embedding-problem solvability iff extension splitting iff cocycle
-vanishing. The following are \textbf{not formalized here}: the general
-Quillen Theorem~A for arbitrary contractible fibers; full topological
-geometric-realization equivalence; the bridge from abstract embedding
-problems to Galois extensions via \texttt{IntermediateField}.
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Proved here (Galois-connection case):} Quillen's Theorem~A for Galois
+    connections, with explicit nerve maps and homotopy-edge data at the simplicial level.
+  \item \textbf{Proved here (supporting):} terminal-object nerve connectivity lemmas used in
+    the contractibility argument.
+  \item \textbf{Not proved here:} Quillen's Theorem~A for arbitrary contractible fibers; full
+    geometric-realization equivalence in Mathlib; the bridge from abstract embedding
+    problems to concrete Galois extensions via \texttt{IntermediateField}.
+  \item \textbf{Proved in companion modules (cited):} embedding-problem solvability iff
+    splitting iff trivial cocycle~\cite{SpivackFiber}.
+\end{itemize}
 
 \paragraph{Scope and precision.}
 Our formalization works at the \textbf{simplicial set level}, not the
@@ -353,17 +360,16 @@ For nerves of categories (which are 2-coskeletal by a theorem in
 Mathlib~\cite{Mathlib}), this is equivalent to topological contractibility of
 the geometric realization.
 
-\section{Broader applications of the architecture}\label{sec:broader}
+\section{Relation to the broader architecture}\label{sec:broader}
 
-The fiber/section/obstruction architecture that organizes the Quillen result
-also applies to other theorem domains. We briefly describe two connections
-formalized in companion modules.
+The Quillen formalization is the \emph{topology discharge}; the algebraic lifting story is
+developed primarily in~\cite{SpivackFiber}. We record two companion connections for context.
 
 \paragraph{Embedding problems.}
 An embedding problem in Galois theory asks whether a surjection
 $H \twoheadrightarrow G$ admits a homomorphic section. This is exactly a
 splitting question for the associated group extension
-$1 \to \ker \to H \to G \to 1$. We prove~\cite{SpivackFiber}:
+$1 \to \ker \to H \to G \to 1$. See~\cite{SpivackFiber}:
 
 \begin{theorem}[Embedding problems as splitting]\label{thm:embed}
 An embedding problem is solvable if and only if the associated group extension
@@ -419,6 +425,10 @@ formalization of any version of Quillen's Theorem~A in a proof assistant, and
 the first formalization connecting embedding problems to group extension
 splitting with cocycle obstructions.
 
+The suite needs this discharge because the architecture is not confined to algebraic
+liftability: contractible fibers and nerve homotopy data show the same comparison pattern
+organizing homotopy-theoretic equivalence statements.
+
 For the Lean ecosystem specifically, the formalization contributes new
 definitions (\texttt{QuillenAData}, \texttt{EmbeddingProblem},
 \texttt{DoublingFiber}, \texttt{TwoTorsionSet}) and theorems
@@ -471,17 +481,17 @@ The Mathlib community.
 N.~Spivack.
 \newblock Fiber architecture for group extensions in Lean~4: cocycles,
   splitting, and the cohomological bridge.
-\newblock Companion manuscript, 2026.
+\newblock General-method manuscript, 2026.
 
 \bibitem{SpivackSynthesis}
 N.~Spivack.
 \newblock \emph{Certification, Realization, and Obstruction: A Universal Fiber Architecture}.
-\newblock Program synthesis manuscript, 2026.
+\newblock Synthesis manuscript, 2026.
 
 \bibitem{SpivackSummit}
 N.~Spivack.
-\newblock \emph{Reflective Non-Exhaustion: Certification, Realization, and the Summit Program}.
-\newblock Program manuscript, 2026.
+\newblock \emph{Reflective Non-Exhaustion: Certification, Realization, Fibers, and Obstruction}.
+\newblock Summit manuscript, 2026.
 
 \end{thebibliography}
 

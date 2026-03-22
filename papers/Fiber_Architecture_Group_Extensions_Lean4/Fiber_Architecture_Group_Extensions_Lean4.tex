@@ -88,8 +88,12 @@ cocycles and Mathlib gap-filling, this paper is the \emph{algebraic and arithmet
 engine} of the summit program: embedding problems, the tower/arithmetic bridge to
 inverse Galois theory, and obstruction packaged as fiber/section data. Companion
 work discharges the topological instance (Quillen's Theorem~A)~\cite{SpivackQuillen};
-the program map is~\cite{SpivackSynthesis}. All results are fully machine-checked with zero \lean{sorry}.
+the program map is~\cite{SpivackSynthesis}. In one line: this paper supplies the
+\emph{algebraic and arithmetic discharge} of the common fiber/section/obstruction architecture,
+not only a Mathlib-shaped formalization milestone. All results are fully machine-checked with zero \lean{sorry}.
 \end{abstract}
+
+\SuiteSeriesContext{This manuscript is the \emph{algebraic and arithmetic engine}.}
 
 \keywords{Lean 4, Mathlib, group extensions, 2-cocycle, splitting criterion,
   group cohomology, interactive theorem proving, formal verification}
@@ -143,6 +147,17 @@ invariants (fibers, sections, cocycles) as first-class proof objects.  To our
 knowledge, no prior formalization in any proof assistant provides the section
 cocycle and splitting criterion at this level of generality, connected to a
 library-standard cohomological predicate.
+
+\paragraph{Three strands of the contribution.}
+\begin{enumerate}[label=(\arabic*), leftmargin=2em]
+  \item \textbf{Library gap addressed:} explicit Mathlib TODOs for the cohomological bridge
+    motivate Phase~1 (cocycle, splitting criterion, identity).
+  \item \textbf{Theorem package:} the fiber architecture, splitting iff trivial cocycle,
+    local-to-global obstruction, and embedding-problem equivalences are fully formalized.
+  \item \textbf{Arithmetic interpretation:} abstract embedding problems are packaged as
+    extension splitting with kernel-valued cocycle obstruction---the arithmetic face of the
+    same architecture used in the flagship certification story.
+\end{enumerate}
 
 \paragraph{The fiber architecture.}
 Our approach is organized around a \emph{fiber decomposition} of the extension.
@@ -984,6 +999,13 @@ theorem solvable_iff_trivial_cocycle (ep : EmbeddingProblem G H) :
 \end{lstlisting}
 \end{theorem}
 
+\paragraph{Arithmetic face of the architecture.}
+Solvability of an embedding problem is not a primitive predicate: it is a \emph{liftability}
+question controlled by kernel-valued obstruction---exactly the same fiber/section pattern as
+elsewhere in the suite, with the cocycle as the explicit witness that splitting has failed or
+succeeded. This is the arithmetic discharge of the common architecture at the abstract
+group-theoretic level.
+
 \noindent
 This connects the Galois-theoretic lifting question directly to the cohomological
 obstruction from group extension theory. The architecture decomposes the problem
@@ -992,10 +1014,13 @@ group $H$), the fiber (kernel $N$), and the obstruction (cocycle class). To our
 knowledge, this is the first Lean formalization connecting embedding problems to
 group extension splitting with cocycle obstructions.
 
-\paragraph{Scope.}
-The formalization works at the abstract group-theoretic level. The bridge to
-actual Galois extensions---connecting \lean{EmbeddingProblem} to Mathlib's
-\lean{IntermediateField} and \lean{IsGalois}---is future work.
+\paragraph{Scope (arithmetic bridge).}
+Abstract embedding problems and their equivalence with splitting/trivial cocycle are
+formalized here. The repository also contains a \emph{tower} instance
+(\texttt{TowerEmbeddingProblem.lean}: \texttt{towerEmbeddingProblem} and
+\texttt{towerEmbeddingProblem\_solvable\_iff\_trivial\_cocycle}) packaging normal
+\lean{IntermediateField} data; this paper focuses on the abstract group-theoretic engine and
+cites the tower layer as companion infrastructure rather than reproducing it in full detail.
 
 %=======================================================================
 \section{Faithfully Flat Descent as Conservative Instance}\label{sec:descent}
@@ -1151,6 +1176,12 @@ Readers approaching the Infinity Compression paper suite should treat this manus
 the discharge of algebra and (abstract) arithmetic obstruction into standard group theory,
 with~\cite{SpivackSynthesis} supplying the cross-domain dictionary and~\cite{SpivackSummit}
 stating the summit-level reflective non-exhaustion claim.
+
+\paragraph{Beyond gap-filling.}
+The work does close documented Mathlib-facing gaps, but its role in the suite is not
+``infrastructure only'': it is a substantive \emph{domain discharge} of the common
+collapse/refinement/fiber/obstruction architecture into classical group theory and embedding
+problems.
 
 \paragraph{Future work.}
 The path toward Mathlib's documented $H^2$ TODO requires: (1)~the $H^2$ bridge
@@ -1435,29 +1466,29 @@ J.~J.~Rotman.
 N.~Spivack.
 \newblock \emph{Canonical Certification Does Not Exhaust Reflective Structure:
   Reflective Split, Strict Refinement, and Fiber Structure in Infinity Compression}.
-\newblock Companion manuscript, 2026.
+\newblock Flagship manuscript, 2026.
 
 \bibitem{SpivackValidation}
 N.~Spivack.
 \newblock \emph{External Validation of a Positive-Closure Proof Architecture:
   A Multi-Tranche Survey}.
-\newblock Companion manuscript, 2026.
+\newblock Validation manuscript, 2026.
 
 \bibitem{SpivackSynthesis}
 N.~Spivack.
 \newblock \emph{Certification, Realization, and Obstruction: A Universal Fiber Architecture}.
-\newblock Program synthesis manuscript, 2026.
+\newblock Synthesis manuscript, 2026.
 
 \bibitem{SpivackSummit}
 N.~Spivack.
-\newblock \emph{Reflective Non-Exhaustion: Certification, Realization, and the Summit Program}.
-\newblock Program manuscript, 2026.
+\newblock \emph{Reflective Non-Exhaustion: Certification, Realization, Fibers, and Obstruction}.
+\newblock Summit manuscript, 2026.
 
 \bibitem{SpivackQuillen}
 N.~Spivack.
 \newblock \emph{Quillen's Theorem~A for Galois Connections: A Machine-Checked
   Formalization in Lean~4}.
-\newblock Companion manuscript, 2026.
+\newblock General-method manuscript, 2026.
 
 \end{thebibliography}
 

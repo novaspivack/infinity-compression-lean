@@ -1,6 +1,7 @@
 % Program synthesis paper — map of the Infinity Compression paper suite and Lean artifact.
 \documentclass[11pt]{article}
 \input{../suite_preamble}
+\usepackage{graphicx}
 \input{../suite_macros}
 
 \title{Certification, Realization, and Obstruction:\\[0.35em]
@@ -25,6 +26,8 @@ and what remains open. The intended reader is an advanced mathematician who has 
 the series; citations point to the formal manuscripts and the Lean repository.
 \end{abstract}
 
+\SuiteSeriesContext{This manuscript is the \emph{synthesis map}.}
+
 \keywords{formal verification, certification vs.\ realization, fibers, obstruction,
   Infinity Compression, Lean~4, program architecture}
 
@@ -38,21 +41,42 @@ exhaust structurally significant information: the gap is organized by a forgetfu
 nontrivial fibers, and explicit obstructions---and that pattern repeats across internal
 formalization, external benchmarks, and classical mathematical domains.
 
+\paragraph{What compresses.}
+Quotient language, section language, obstruction language, and the implementation-vs.-certificate
+distinction are often treated as separate methodological topics. This program shows they are
+instances of one \emph{comparison architecture}: fix carriers, fix a forgetful map $\pi$,
+ask where collapse occurs, and analyze fibers and obstructions when it does not. That
+compression---from scattered idioms to one reusable pattern---is the synthesis-level
+payoff.
+
 \section{Certification, realization, and non-exhaustion}
 
 \paragraph{Certification.}
-A \emph{certification} layer is a theorem-level invariant packaged as a canonical record
-(proof-irrelevant at that carrier): many routes may exist, but the official statement
-collapses to a unique bare certificate.
+\emph{Certification} means a theorem-level invariant packaged as a canonical record at a
+\emph{bare} carrier (proof-irrelevant at that carrier when the type forces it): many
+derivation routes may exist, but the official statement names a single certified outcome.
+It does \emph{not} mean informal ``approval'' or social certification; it means the
+library's designated bare certificate type and its collapse theorems.
 
 \paragraph{Realization.}
-\emph{Realization} refers to proof-relevant or structured data above that collapse:
-witnesses, roles, sections, or fiber points that are mathematically load-bearing once the
-comparison map is fixed.
+\emph{Realization} means structured or proof-relevant data above that bare layer: witnesses,
+roles, sections, splittings, nerve data, or fiber points that remain mathematically
+load-bearing once $\pi : E \to B$ is fixed. It is not mere ``extra syntax'': it is the
+carrier on which non-injectivity and fiber lemmas become meaningful.
 
 \paragraph{Non-exhaustion.}
 \emph{Non-exhaustion} is the proved claim that certification does not determine realization:
-distinct legitimate data can share the same bare image, organized by $\pi$ and fibers.
+distinct legitimate data can share the same bare image under $\pi$, organized by fibers and
+obstruction laws. It does \emph{not} assert that every formal system exhibits this
+phenomenon; it is established on \emph{named} carriers and explicit hypotheses in the
+artifact.
+
+\paragraph{Examples (suite instances).}
+Flagship Infinity Compression: collapse at the bare summit record; non-injectivity of
+$\pi_A$ on enriched splits~\cite{SpivackIC}. Group extensions: splitting iff trivial
+cocycle~\cite{SpivackFiber}. Benchmark families: structured bundles beyond flat
+baselines~\cite{SpivackValidation}. Quillen / Galois connections: contractible fibers
+feeding Theorem~A data~\cite{SpivackQuillen}.
 
 \section{Flagship internal theorem}
 
@@ -63,8 +87,8 @@ carriers.
 
 \section{External validation (transferability)}
 
-The twelve-tranche survey~\cite{SpivackValidation} establishes \emph{transferability}:
-the same schema applies to quotients, products, dependent sums, coproducts, subtypes,
+The twelve-tranche survey~\cite{SpivackValidation} is the \emph{transferability paper}: the
+same schema applies to quotients, products, dependent sums, coproducts, subtypes,
 orbit and ideal quotients, pushouts, classifiers, localization, pullbacks, and a
 non-surjective control. Its job is not theorem-level leverage in classical fields; it
 rules out idiosyncrasy.
@@ -95,19 +119,21 @@ this synthesis paper does not restate every definition.
 The following table is a navigational index, not a formal commuting diagram.
 
 \begin{center}
-\small
-\begin{tabular}{@{}p{0.22\textwidth}p{0.34\textwidth}p{0.36\textwidth}@{}}
+\resizebox{\textwidth}{!}{%
+\footnotesize
+\begin{tabular}{@{}p{1.1cm}p{1.7cm}p{1.7cm}p{1.9cm}p{2.2cm}@{}}
 \toprule
-\textbf{Domain} & \textbf{Carrier intuition} & \textbf{Obstruction / fiber role} \\
+\textbf{Domain} & \textbf{Bare / cert.} & \textbf{Enriched} & \textbf{Comparison} & \textbf{Headline / obstruction} \\
 \midrule
-Internal IC & Bare summit certificate vs.\ enriched split & Non-injectivity of $\pi_A$; canonical fiber \\
-External T1--T12 & Baseline vs.\ structured bundle & Fibers, sections, right inverses \\
-Algebra & Group extension & Section cocycle; splitting \\
-Arithmetic bridge & Embedding problem & Solvable iff trivial cocycle \\
-Topology & Galois connection $l \dashv u$ & Contractible down-set fibers \\
-Computability & Self-certification predicates & Undecidability anchors \\
+IC flagship & canonical bare cert. & enriched split & $\pi_A$ & non-inj.; nontrivial fiber \\
+T1--T12 & flat baseline & structured bundle & projection & fibers, sections (T12: boundary) \\
+Group ext. & section exists & splitting data & section data & split $\Leftrightarrow$ trivial cocycle \\
+Embedding & quotient data & liftings & extension cmp. & solvable $\Leftrightarrow$ trivial cocycle \\
+Quillen GC & nerve image & homotopy witn. & nerve maps & contractible fibers \\
+Computability & cert.\ layer & realized behav. & cert.\ cmp. & halting / Rice \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{center}
 
 \section{Routes C, A, B, and D (program labels)}
@@ -129,6 +155,37 @@ comparison must move upstairs, and \emph{what} invariant obstructs lifting---ind
 of any single application domain. Lean provides a checkable artifact; the paper suite
 separates internal origin, transferability, domain discharges, and summit-level claims.
 
+\paragraph{Operational recipe.}
+\begin{enumerate}[label=\arabic*., leftmargin=2em]
+  \item Identify the bare certificate carrier $B$.
+  \item Identify an enriched carrier $E$ tracking realization data.
+  \item Define the forgetful or comparison map $\pi : E \to B$.
+  \item Prove or locate \emph{collapse}: when many routes hit one bare point in $B$.
+  \item Test injectivity of $\pi$; if it fails, work on fibers $\pi^{-1}(b)$.
+  \item Extract obstruction laws (cocycle, contractibility, non-certifiability) governing
+    liftability and equivalence.
+\end{enumerate}
+
+\section{What this architecture is not}
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Not} a claim that all of mathematics reduces to one master theorem.
+  \item \textbf{Not} a generic restatement of dependent-type proof relevance: the
+    contribution is \emph{where} collapse and non-injectivity are proved, on named carriers.
+  \item \textbf{Not} mere packaging rhetoric: the suite contains formal theorems with
+    zero \texttt{sorry} in the scoped modules.
+  \item \textbf{Not} (yet) a single universal quantified Lean theorem over all domains at
+    once: that unification remains a frontier goal.
+\end{itemize}
+
+\section{Portability vs.\ inevitability}
+
+The current suite establishes strong \emph{portability}: the same comparison pattern
+reappears across internal, benchmark, and classical discharges. A stronger
+\emph{inevitability} claim---that every reflective certification setup must exhibit
+non-exhaustion in a single abstract class---remains a summit-level ambition, not a
+finished theorem.
+
 \section{What remains open}
 
 Full fiber classification in the flagship setting; complete simplicial homotopy
@@ -147,30 +204,30 @@ Repository: \url{https://github.com/novaspivack/infinity-compression-lean}.
 N.~Spivack.
 \newblock \emph{Canonical Certification Does Not Exhaust Reflective Structure:
   Reflective Split, Strict Refinement, and Fiber Structure in Infinity Compression}.
-\newblock Companion manuscript, 2026.
+\newblock Flagship manuscript, 2026.
 
 \bibitem{SpivackValidation}
 N.~Spivack.
 \newblock \emph{External Validation of a Positive-Closure Proof Architecture:
   A Multi-Tranche Survey}.
-\newblock Companion manuscript, 2026.
+\newblock Validation manuscript, 2026.
 
 \bibitem{SpivackFiber}
 N.~Spivack.
 \newblock \emph{Fiber Architecture for Group Extensions in Lean~4: Cocycles, Splitting,
   and the Cohomological Bridge}.
-\newblock Companion manuscript, 2026.
+\newblock General-method manuscript, 2026.
 
 \bibitem{SpivackQuillen}
 N.~Spivack.
 \newblock \emph{Quillen's Theorem~A for Galois Connections: A Machine-Checked
   Formalization in Lean~4}.
-\newblock Companion manuscript, 2026.
+\newblock General-method manuscript, 2026.
 
 \bibitem{SpivackSummit}
 N.~Spivack.
-\newblock \emph{Reflective Non-Exhaustion: Certification, Realization, and the Summit Program}.
-\newblock Program manuscript, 2026.
+\newblock \emph{Reflective Non-Exhaustion: Certification, Realization, Fibers, and Obstruction}.
+\newblock Summit manuscript, 2026.
 
 \end{thebibliography}
 

@@ -24,7 +24,8 @@
 \newcommand{\Fib}{\mathrm{Fib}}
 
 \title{External Validation of a Positive-Closure Proof Architecture\\[0.35em]
-\large A Multi-Tranche Survey: Twelve Benchmark Dimensions in Lean}
+\large A Multi-Tranche Survey: Twelve Benchmark Dimensions in Lean\\[0.25em]
+\normalsize\texorpdfstring{\itshape (portability of the comparison pattern, not a universality theorem)}{(portability of the comparison pattern, not a universality theorem)}}
 \author{Nova Spivack}
 \date{2026}
 
@@ -109,6 +110,19 @@ connections. A program-level map tying internal origin, transfer, and discharges
 together is~\cite{SpivackSynthesis}; the distilled summit claim is~\cite{SpivackSummit}.
 The principal value of the tranche survey is methodological transfer; it must not be
 read as a substitute for those theorem papers or for the synthesis manuscript.
+
+\subsection{Executive interpretation}\label{sec:exec}
+
+The twelve tranches are not twelve unrelated curiosities: together they show that the same
+\emph{packaging}---bare layer, forgetful map, fibers, optional sections---survives across
+quotient-like collapses (T1, T6--T8), projection- and bundle-like fibers (T2, T3, T5, T9,
+T11), a structured algebraic presentation layer (T10), and a non-surjective boundary (T12).
+That is evidence for \emph{portability} of the architecture across ordinary Mathlib-shaped
+mathematics; it is \emph{not} a single theorem quantifying over all mathematical settings,
+and it does not by itself supply the theorem-level depth of the group-extension or Quillen
+manuscripts---which is exactly why those papers exist.
+
+\SuiteSeriesContext{This manuscript is the \emph{transferability paper}.}
 
 \section{The positive-closure architecture as a reusable schema}\label{sec:schema}
 
@@ -520,15 +534,22 @@ T12 & \texttt{Nat} & \texttt{Nat.succ} & predecessor fibers & \texttt{Nat.pred} 
 \label{tab:synth}
 \end{table}
 
-\noindent
-\textbf{T1} isolates \emph{collapse by an equivalence relation}; \textbf{T2} isolates
-\emph{multi-route} without quotienting; \textbf{T3} is the dependent-type generalization of
-T2; \textbf{T4} is the coproduct-side dual tag story; \textbf{T5} is the subtype refinement
-pattern; \textbf{T6} and \textbf{T7} are quotient benchmarks (group action or ideal).
-\textbf{T8}--\textbf{T11} extend the story to colimits, classifiers, localization pairs, and pullbacks.
-\textbf{T12} is the explicit \textbf{MODERATE} control. For \textbf{T1}--\textbf{T11}, the
-\textbf{STRONG} rubric applies where stated; \textbf{T12} documents a boundary where global
-\texttt{HasRightInverse} fails.
+\paragraph{Conceptual grouping.}
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Quotient-like collapse:} T1, T6, T7, T8 (equivalence classes, orbits, ideals, pushout glueing).
+  \item \textbf{Projection / bundle fibers:} T2, T3, T5, T9, T11 (products, dependent sums, subtypes, classifiers, pullbacks).
+  \item \textbf{Structured algebraic presentation:} T10 (localization pairs).
+  \item \textbf{Non-surjective boundary:} T12 (\texttt{Nat.succ}---local structure without global section).
+\end{itemize}
+
+\subsection{What this validation shows (and does not)}\label{sec:validate-scope}
+
+\textbf{Validates:} that the positive-closure comparison pattern is portable across the
+twelve families under the stated rubric.
+
+\textbf{Does not validate:} a universal metatheorem; automatic theorem-level depth in
+algebra or topology. The \emph{general-method manuscripts}~\cite{SpivackFiber,SpivackQuillen}
+exist precisely for that latter kind of leverage.
 
 \section{Unified validation verdict and the meaning of \textbf{STRONG}}\label{sec:verdict}
 
@@ -1142,7 +1163,7 @@ claim remains open---rather than of relabeling the conjecture.
 \bibitem{SpivackIC}
 N.~Spivack.
 \newblock \emph{Canonical Certification Does Not Exhaust Reflective Structure: Reflective Split, Strict Refinement, and Fiber Structure in Infinity Compression}.
-\newblock Manuscript, 2026.
+\newblock Flagship manuscript, 2026.
 \newblock Companion \LaTeX{} source: \texttt{papers/Canonical\_Certification\_and\_Enriched\_Reflective\_Realization/}.
 
 \bibitem{SpivackStrata}
@@ -1175,22 +1196,22 @@ S.~Mac Lane.
 \bibitem{SpivackFiber}
 N.~Spivack.
 \newblock \emph{Fiber Architecture for Group Extensions in Lean~4: Cocycles, Splitting, and the Cohomological Bridge}.
-\newblock Companion manuscript, 2026.
+\newblock General-method manuscript, 2026.
 
 \bibitem{SpivackQuillen}
 N.~Spivack.
 \newblock \emph{Quillen's Theorem~A for Galois Connections: A Machine-Checked Formalization in Lean~4}.
-\newblock Companion manuscript, 2026.
+\newblock General-method manuscript, 2026.
 
 \bibitem{SpivackSynthesis}
 N.~Spivack.
 \newblock \emph{Certification, Realization, and Obstruction: A Universal Fiber Architecture}.
-\newblock Program synthesis manuscript, 2026.
+\newblock Synthesis manuscript, 2026.
 
 \bibitem{SpivackSummit}
 N.~Spivack.
-\newblock \emph{Reflective Non-Exhaustion: Certification, Realization, and the Summit Program}.
-\newblock Program manuscript, 2026.
+\newblock \emph{Reflective Non-Exhaustion: Certification, Realization, Fibers, and Obstruction}.
+\newblock Summit manuscript, 2026.
 
 \end{thebibliography}
 

@@ -27,8 +27,11 @@
 \maketitle
 
 \begin{abstract}
-Many formal theories seek a principal closure or certification theorem: a canonical, theorem-level record that a designated invariant holds. The open question is whether such certification exhausts all structurally significant information in reflective settings. This paper is the \emph{internal origin theorem} of a larger program: we answer negatively first in the Infinity Compression native environment, where the architecture is proved on the library's named carriers. We prove universal collapse of standard Phase-2 extraction to a unique bare certificate; a reflective split (canonical bare certification alongside nontrivial enriched autonomous mirror structure); strict refinement of the typed forgetful map $\pi_A$ (existence of distinct enriched reflective splits with equal $\pi_A$-image); and a forgetful--fiber layer in which the canonical fiber is nontrivial and role assignments inject into a distinguished standard subfamily. We treat a concrete NEMS-style flagship spine and extend under explicit intermediate crown hypotheses (role-rich and role-pair-diverse classes). Methodologically, the proofs are organized by collapse audits and carrier-sensitive route comparison. The result is a formal theorem of separation between theorem-level invariants and realization-level structure. Companion papers show that the same collapse/refinement/fiber architecture transfers to external mathematics across twelve benchmark families and yields theorem-level results in group extensions, embedding problems, and Quillen's Theorem~A for Galois connections. All main claims are machine-checked in Lean~4 (zero \texttt{sorry} in proof terms under \texttt{InfinityCompression/}; Mathlib and kernel axioms only); \Cref{app:theorem-index} maps paper statements to named definitions and theorems in the artifact.
+Formal theories often collapse many derivations to a single canonical certified record: the question is whether that \emph{collapse} exhausts everything structurally significant about the realized routes that produced it. This paper is the \emph{internal origin theorem} of a larger program: we prove that it does not, on named machine-checked carriers in the Infinity Compression
+native environment. We prove universal collapse of standard Phase-2 extraction to a unique bare certificate; a reflective split (canonical bare certification alongside nontrivial enriched autonomous mirror structure); strict refinement of the typed forgetful map $\pi_A$ (existence of distinct enriched reflective splits with equal $\pi_A$-image); and a forgetful--fiber layer in which the canonical fiber is nontrivial and role assignments inject into a distinguished standard subfamily. We treat a concrete NEMS-style flagship spine and extend under explicit intermediate crown hypotheses (role-rich and role-pair-diverse classes). Methodologically, the proofs are organized by collapse audits and carrier-sensitive route comparison. The result is a formal theorem of separation between theorem-level invariants and realization-level structure. Companion papers show that the same collapse/refinement/fiber architecture transfers to external mathematics across twelve benchmark families and yields theorem-level results in group extensions, embedding problems, and Quillen's Theorem~A for Galois connections. All main claims are machine-checked in Lean~4 (zero \texttt{sorry} in proof terms under \texttt{InfinityCompression/}; Mathlib and kernel axioms only); \Cref{app:theorem-index} maps paper statements to named definitions and theorems in the artifact.
 \end{abstract}
+
+\SuiteSeriesContext{This manuscript is the flagship \emph{internal origin theorem} paper.}
 
 \keywords{formal verification, proof architecture, certification vs.\ realization, fiber structure, forgetful maps, Lean~4, Mathlib}
 \amsclassification{03B70, 18A30, 68V15, 68V20}
@@ -64,6 +67,16 @@ Fix a compression architecture $A$ and the standard Phase-2 / roles+extraction i
 \end{enumerate}
 \end{theorem}
 
+\begin{center}
+\fbox{\begin{minipage}{0.94\textwidth}
+\small
+\textbf{Reading the main cluster.}
+Bare \emph{certification} collapses: every standard route lands on the same canonical bare certificate.
+\emph{Enriched realization} does not collapse: distinct enriched witnesses can share that bare image.
+The non-collapse is \emph{measured} by non-injectivity of the typed forgetful map $\pi_A$ and by nontriviality of the canonical fiber $\mathrm{Fib}_A(b^\ast_A)$, with role data embedding injectively along a standard subfamily---not by informal ``richness'' talk.
+\end{minipage}}
+\end{center}
+
 \noindent
 In summary: the bare certification layer collapses to a unique canonical certificate; the enriched realization layer does not collapse---distinct routes produce genuinely distinct enriched witnesses; and the non-collapse is organized by the forgetful map $\pi_A$ and its canonical fiber, where role data injects along a standard subfamily.
 
@@ -86,7 +99,15 @@ The significance of the paper does \emph{not} require classifying every conceiva
 \subsection{Relation to incompleteness, fixed points, and certification}\label{sec:intro-comparison}
 Classical metamathematics supplies \emph{barrier} theorems (diagonalization, incompleteness): they exhibit limits or failures of closure. Fixed-point constructions yield existence of solutions to self-referential equations; certification in verification collapses many proofs to one output certificate. Those modes do not, by themselves, supply a \emph{positive} classification of what remains above a \emph{chosen} canonical certification carrier.
 
-This paper's novelty is not ``proof relevance exists'' (true in dependent type theory) nor ``some map is non-injective'' in isolation. It is a \textbf{layered positive structure theorem}: (i) a \emph{proved} canonical collapse at the bare certification carrier (\Cref{thm:canonical-cert-math}); (ii) a \emph{proved} strict refinement upstairs via a typed $\pi_A$ and $\mathrm{ProperExtensionViaForgetful}$ (\Cref{thm:strict-refinement}, \Cref{thm:gen-refinement}); (iii) fiber nontriviality and \emph{partial} fiber classification along a standard subfamily (\Cref{thm:fiber-nontrivial}, \Cref{thm:role-inject}). The architecture is therefore: collapse downstairs, structured comparison and fibers upstairs---not a single barrier statement, and not merely informal quotient/fiber language.
+\smallskip
+\noindent\textbf{Contrast (three layers).}
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Generic proof relevance} (dependent type theory): richer types may carry nontrivial inhabitants in principle, without locating where distinctions vanish.
+  \item \textbf{Proved collapse at one carrier:} \Cref{thm:canonical-cert-math} forces standard Phase-2 extraction to a \emph{unique} bare certificate at $\mathcal{B}_{\mathrm{can}}$---not a metaphor, a theorem on named types.
+  \item \textbf{Proved non-injectivity at another carrier:} \Cref{thm:strict-refinement} / \Cref{thm:gen-refinement} show $\pi_A$ is not injective on enriched splits; fibers organize the residue (\Cref{thm:fiber-nontrivial}, \Cref{thm:role-inject}).
+\end{itemize}
+
+This paper's novelty is not ``proof relevance exists'' nor ``some map is non-injective'' in isolation. It is a \textbf{layered positive structure theorem}: (i) a \emph{proved} canonical collapse at the bare certification carrier (\Cref{thm:canonical-cert-math}); (ii) a \emph{proved} strict refinement upstairs via a typed $\pi_A$ and $\mathrm{ProperExtensionViaForgetful}$ (\Cref{thm:strict-refinement}, \Cref{thm:gen-refinement}); (iii) fiber nontriviality and \emph{partial} fiber classification along a standard subfamily (\Cref{thm:fiber-nontrivial}, \Cref{thm:role-inject}). The architecture is therefore: collapse downstairs, structured comparison and fibers upstairs---not a single barrier statement, and not merely informal quotient/fiber language.
 
 Skeptical readers may still ask whether this is only ``theorem vs.\ proof object'' repackaged; the answer is that the paper fixes \emph{named} carriers in a machine-checked library, proves collapse at $\mathcal{B}_{\mathrm{can}}$, and then proves non-injectivity and fiber lemmas on \emph{those} carriers with the same hypotheses used in the formal development (\Cref{app:theorem-index}).
 
@@ -318,6 +339,10 @@ The paper proves that canonical certification at the bare carrier does not exhau
 
 Once collapse at $\mathcal{B}(A)$ is established (\Cref{thm:canonical-cert-math}), a mathematically serious continuation that asks reflective comparison questions in this framework is \emph{structurally directed} toward enriched carriers, typed $\pi_A$, and fiber-theoretic organization---not because of stylistic preference, but because collapse \emph{locates} where distinctions cannot live. The present development follows that route. This is \textbf{not} a claim that the development is the unique possible proof architecture (no uniqueness theorem for ``all of mathematics'' is offered), nor that the library ``explains itself'' in any metaphysical sense. It \emph{is} the claim that the program's own proof architecture is an example of the certification/realization split the theory establishes, and that the move upstairs is the natural forced continuation once bare collapse is a theorem.
 
+\smallskip
+\noindent\textbf{Bridge.}
+The point is not that ``one carrier is richer'' in the abstract; it is that the library proves \emph{exactly where} distinctions vanish (bare certification) and \emph{exactly where} they survive (enriched routes and fibers), on explicit hypotheses and machine-checked carriers.
+
 \section{Significance across fields}\label{sec:significance}
 
 Each paragraph: \emph{theorem claim} $\to$ one \emph{reading}.
@@ -363,7 +388,7 @@ Stronger comparison laws (dominance between reflective architectures), carrier r
 \Cref{thm:fiber-nontrivial} and \Cref{thm:role-inject} place multiplicity in $\mathrm{Fib}_A(b^\ast_A)$ with partial coordinates, not in generic prose.
 
 \section{Summary}\label{sec:summary}
-Machine-checked: collapse at $\mathcal{B}(A)$, strict refinement of $\pi_A$, nontrivial $\mathrm{Fib}_A(b^\ast_A)$ with partial role injection. After collapse, compare upstairs in $\mathcal{E}(A)$ and fibers---not by ad hoc bare fields. The development itself exemplifies the distinction it proves: the final certified statements do not exhaust the mathematical content of the route by which they are established (\Cref{sec:reflexive-location}).
+This paper's local result, in one line of audit language: Phase-2 collapse at the bare carrier; strict refinement of $\pi_A$ on enriched splits; nontrivial canonical fiber with partial role injection along a standard patch (\Cref{thm:main-results}). After collapse, comparison belongs upstairs in $\mathcal{E}(A)$ and in fibers---not in ad hoc bare-field distinctions. The development instantiates the split it proves (\Cref{sec:reflexive-location}).
 
 \appendix
 
@@ -465,14 +490,8 @@ The verified Infinity Compression library spans landscape/summit statements, rou
 
 \section{Conclusion}\label{sec:conclusion}
 
-\paragraph{What is proved.}
-This paper establishes a formal theorem of separation between certification and realization in the Infinity Compression formalization: bare certification collapses to a unique canonical certificate, while enriched realization retains nontrivial structure above that collapse. The non-collapse is organized by the forgetful map $\pi_A$ and its canonical fiber, with injective role data along a standard subfamily. All results are machine-checked in Lean~4 with zero \texttt{sorry}.
-
-\paragraph{What it means architecturally.}
-The proved stratification---collapse downstairs, structured comparison and fibers upstairs---is not a type-theoretic platitude about proof relevance. It is a theorem about named carriers in a machine-checked library, with explicit comparison maps and fiber lemmas. The architecture (collapse / split / refinement / fiber) provides a reusable pattern for analyzing the gap between theorem-level invariants and realization-level structure.
-
-\paragraph{How the companion papers extend it.}
-The same collapse/refinement/fiber analysis is not confined to the Infinity Compression flagship setting. An external validation paper~\cite{SpivackValidation} demonstrates transfer across twelve independent mathematical families. General-method papers~\cite{SpivackFiber,SpivackQuillen} then show that the architecture yields theorem-level results: a splitting criterion for group extensions (filling a documented Mathlib gap), an embedding-problem equivalence connecting to inverse Galois theory, and Quillen's Theorem~A for Galois connections. Together the series moves from internal architecture theorem to external transfer to mathematical leverage on recognized problems. Synthesis and summit manuscripts~\cite{SpivackSynthesis,SpivackSummit} state the unified program map and the candidate summit theorem (reflective non-exhaustion) without displacing this paper's role as the internal origin theorem.
+\paragraph{Role in the full program.}
+This flagship manuscript is where the architecture is first proved as a load-bearing internal development (not the suite map). The \emph{transferability paper}~\cite{SpivackValidation}, \emph{general-method manuscripts}~\cite{SpivackFiber,SpivackQuillen}, and the \emph{synthesis} / \emph{summit} manuscripts~\cite{SpivackSynthesis,SpivackSummit} extend and contextualize that origin without replacing it. All main results here are machine-checked in Lean~4 with zero \texttt{sorry} in proof terms under \texttt{InfinityCompression/} on explicit hypotheses.
 
 \appendix
 
@@ -528,27 +547,27 @@ The Univalent Foundations Program.
 \bibitem{SpivackValidation}
 N.~Spivack.
 \newblock \emph{External Validation of a Positive-Closure Proof Architecture: A Multi-Tranche Survey}.
-\newblock Companion manuscript, 2026.
+\newblock Validation manuscript, 2026.
 
 \bibitem{SpivackFiber}
 N.~Spivack.
 \newblock \emph{Fiber Architecture for Group Extensions in Lean~4: Cocycles, Splitting, and the Cohomological Bridge}.
-\newblock Companion manuscript, 2026.
+\newblock General-method manuscript, 2026.
 
 \bibitem{SpivackQuillen}
 N.~Spivack.
 \newblock \emph{Quillen's Theorem~A for Galois Connections: A Machine-Checked Formalization in Lean~4}.
-\newblock Companion manuscript, 2026.
+\newblock General-method manuscript, 2026.
 
 \bibitem{SpivackSynthesis}
 N.~Spivack.
 \newblock \emph{Certification, Realization, and Obstruction: A Universal Fiber Architecture}.
-\newblock Program synthesis manuscript, 2026.
+\newblock Synthesis manuscript, 2026.
 
 \bibitem{SpivackSummit}
 N.~Spivack.
 \newblock \emph{Reflective Non-Exhaustion: Certification, Realization, and the Summit Program}.
-\newblock Program manuscript, 2026.
+\newblock Summit manuscript, 2026.
 
 \end{thebibliography}
 
