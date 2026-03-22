@@ -29,6 +29,7 @@
 | Validation | `InfinityCompression/Validation/` | EPIC_015_WV1 Program W (external benchmark) |
 | Frontier | `InfinityCompression/Frontier/` | 015–019 + §2.5 summit |
 | Root import | `InfinityCompression.lean` | — |
+| Papers (LaTeX) | `papers/` | EPIC_016_WV2 — shared `suite_preamble` / `suite_macros`; per-paper subdirs (see `papers/README.md`) |
 
 ---
 

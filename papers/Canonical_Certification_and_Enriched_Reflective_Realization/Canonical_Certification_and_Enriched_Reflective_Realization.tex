@@ -1,5 +1,5 @@
 \documentclass[11pt]{article}
-\input{suite_preamble}
+\input{../suite_preamble}
 \usepackage{longtable}
 \usepackage{listings}
 \lstdefinelanguage{lean}{
@@ -16,7 +16,7 @@
   breaklines=true,
   showstringspaces=false
 }
-\input{suite_macros}
+\input{../suite_macros}
 
 \title{Canonical Certification Does Not Exhaust Reflective Structure:\\Reflective Split, Strict Refinement, and Fiber Structure in Infinity Compression}
 \author{Nova Spivack}
@@ -447,7 +447,7 @@ The verified Infinity Compression library spans landscape/summit statements, rou
 
 \section{Artifact and build details}\label{app:artifact}
 \begin{itemize}
-    \item \textbf{Repository layout:} the Lean project lives at \texttt{infinity-compression/infinity-compression-lean/} relative to the \texttt{infinity-compression} monorepo root (this paper's \texttt{.tex} file is under \texttt{infinity-compression-lean/paper/}).
+    \item \textbf{Repository layout:} the Lean project lives at \texttt{infinity-compression/infinity-compression-lean/} relative to the \texttt{infinity-compression} monorepo root (this paper's \texttt{.tex} file is under \texttt{infinity-compression-lean/papers/Canonical\_Certification\_and\_Enriched\_Reflective\_Realization/}).
     \item \textbf{Root module:} \texttt{InfinityCompression.lean} (import closure of the library).
     \item \textbf{Lean toolchain (pinned):} \texttt{leanprover/lean4:v4.29.0-rc3} (\texttt{infinity-compression-lean/lean-toolchain}).
     \item \textbf{Mathlib pin:} \texttt{require mathlib} at tag \texttt{v4.29.0-rc3} in \texttt{lakefile.lean} (same tag family as the Lean toolchain).

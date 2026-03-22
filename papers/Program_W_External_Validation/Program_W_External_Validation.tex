@@ -1,0 +1,73 @@
+% Program W — External validation of the positive-closure proof architecture
+% Normative spec: specs/IN-PROCESS/EPIC_016_WV2A_EXTERNAL_VALIDATION_BENCHMARK_PAPER_SPEC.md
+\documentclass[11pt]{article}
+\input{../suite_preamble}
+\usepackage{longtable}
+\usepackage{listings}
+\lstdefinelanguage{lean}{
+  keywords={def, theorem, lemma, structure, class, instance, where, by, exact, rfl, simp, intro, have, let, refine, rcases, obtain, cases, fun},
+  keywordstyle=\bfseries,
+  ndkeywords={Prop, Type, Sort, Nat},
+  ndkeywordstyle=\bfseries,
+  sensitive=true,
+  comment=[l]{--},
+  morecomment=[s]{/-}{-/},
+  commentstyle=\itshape,
+  stringstyle=\ttfamily,
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  showstringspaces=false
+}
+\input{../suite_macros}
+
+\newcommand{\IC}{\ensuremath{\mathsf{IC}}}
+
+\title{Program W: External Validation of the Positive-Closure Proof Architecture\\[0.35em]
+\large Quotients, Fibers, and Canonical Sections in Lean}
+\author{Nova Spivack}
+\date{2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The Infinity Compression (\IC{}) formalization develops a layered \emph{positive-closure} proof architecture: collapse to a bare certificate, a typed forgetful map, fiber structure over that certificate, and---where appropriate---canonical witnesses or sections. A legitimate methodological concern is that this architecture might be an artifact tailored to the flagship NEMS-style spine rather than a reusable proof pattern. \textbf{Program W} is the first machine-checked \emph{external} validation tranche: we formalize an ordinary quotient/setoid benchmark in Lean, package it in the same collapse/forgetful/fiber/section language, and compare a flat baseline (\texttt{Quotient.exists_rep}) to an architecture-guided theorem bundle (nonempty fibers, surjectivity of the projection, existence of a global right inverse, Mathlib's \texttt{Quotient.out} as a canonical section). We record an explicit validation verdict (\textbf{STRONG}) in the EPIC\_015\_WV1 sense: not new classical mathematics, but a strengthened, organized interface that exports cleanly from the \IC{} story. This paper states the honest scope---external validity and transferability, not a universal claim over all future closure problems---and positions Program W within the larger NEMS / APS / IC / Strata stack.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+What is being validated; why internal success of the flagship formalization is insufficient; why an external benchmark matters for methodology.
+
+\section{The positive-closure architecture}
+Collapse; forgetful projection; fiber; section or canonical witness. Brief alignment with the flagship IC paper and EPIC\_009 fiber language.
+
+\section{Benchmark choice and baseline}
+Setoid quotients; classical representative existence; baseline theorem profile (\texttt{exists_rep}).
+
+\section{Lean formalization}
+Path: \texttt{InfinityCompression/Validation/QuotientFiberBenchmark.lean}. Summary of \texttt{BareQuotient}, \texttt{EnrichedCarrier}, \texttt{forgetToQuotient}, \texttt{QuotientFiber}; theorem bundle including \texttt{forgetToQuotient\_hasRightInverse}, \texttt{quotientOut\_rightInverse\_forgetToQuotient}, \texttt{canonicalQuotientFiberWitness}.
+
+\section{What the architectural packaging adds}
+Right inverse and \texttt{HasRightInverse}; canonical witness; section language; comparison to flat baseline.
+
+\section{Validation verdict and epistemology}
+Why \textbf{STRONG} in the EPIC sense; why this is not a claim of new pure quotient theory; methodological significance.
+
+\section{Place in the larger program}
+NEMS (outer burden); APS (local-to-global exactness); IC flagship (internal positive closure); Program W (external validation); Strata (abstract synthesis). Program W answers the concern that the positive architecture is only endogenous to \IC{}.
+
+\section{Limitations and future work}
+Single external benchmark to date; deferred multi-benchmark survey paper (EPIC\_016\_WV2B); optional harder field-facing targets.
+
+\appendix
+\section{Theorem index (Lean names)}
+% Mirror \texttt{MANIFEST.md} and EPIC\_015\_WV1 inventory; map statements to \texttt{QuotientFiberBenchmark.lean}.
+
+\begin{thebibliography}{9}
+\bibitem{EPIC015} EPIC\_015\_WV1 specification and Program W notes (repository).
+\end{thebibliography}
+
+\end{document}
