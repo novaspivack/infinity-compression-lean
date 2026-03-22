@@ -15,7 +15,9 @@
   | Logic / computability (Route D) | `RouteD/SelfCertificationHalting` — `routeD_certification_cannot_equal_halting_realization` |
 
   **Note:** IC “flagship” theorems live in `MetaProof/` (not re-imported here to avoid pulling the
-  entire meta-layer into `GeneralMethod` for users who only want algebra–topology–Galois).
+  entire meta-layer into `GeneralMethod` for users who only want algebra–topology–Galois). For the
+  **RCA abstract row** + non-exhaustion on `layeredCertificationRCA Bool`, see
+  `Summit/CrossDomainDictionaryFull.lean`.
 -/
 
 import InfinityCompression.GeneralMethod.GroupExtension.SchurZassenhaus

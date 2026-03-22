@@ -14,11 +14,10 @@
   *actual* Galois groups once one packages `φ = restrictNormalHom E`. Mathlib already proves
   surjectivity (`AlgEquiv.restrictNormalHom_surjective`).
 
-  **Lean note:** Bundling `EmbeddingProblem (Gal(E/K)) (Gal(L/K))` in one definition can hit
-  elaboration friction around `Gal` and `IntermediateField` coercions; use
-  `EmbeddingProblem.mk` with `φ := AlgEquiv.restrictNormalHom E` and
-  `AlgEquiv.restrictNormalHom_surjective` in contexts where instances are available, or invoke
-  the abstract theorems (`solvable_iff_splits`, `solvable_iff_trivial_cocycle`) on a
+  **Lean note:** Bundling can hit elaboration friction around `Gal` and `IntermediateField`
+  coercions. The **completed** packaged definition is `TowerEmbeddingProblem.lean`:
+  `towerEmbeddingProblem` with Mathlib’s `set_option backward.isDefEq.respectTransparency false`
+  and `open scoped Pointwise` (see that file). Alternatively, invoke the abstract theorems on a
   manually constructed `EmbeddingProblem`.
 
   **Reference:** `FieldTheory.Galois.Basic`, `FieldTheory.Normal.Basic`.
