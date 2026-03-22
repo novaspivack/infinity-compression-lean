@@ -543,13 +543,67 @@ together they support external validity of the \emph{packaging}.
   \item \textbf{NEMS:} outer burden and interface story for the paper suite.
 \end{itemize}
 
+\section{Beyond retrospective validation: group extensions}\label{sec:general}
+
+The twelve tranches above apply the architecture to problems whose flat baselines were
+already provable. A stronger test is whether the decomposition helps on problems where the
+distinction between layers is \emph{load-bearing}---where the bare and enriched levels carry
+genuinely different mathematical content.
+
+Group extensions provide exactly this test. A short exact sequence
+$1 \to N \to E \xrightarrow{\pi} G \to 1$ always admits a set-theoretic section
+(the bare layer: $\pi$ is surjective, so \texttt{HasRightInverse} holds). But a
+\emph{homomorphic} section---a splitting---is additional algebraic structure that may or may
+not exist. The obstruction is a 2-cocycle valued in $N$: given any set-theoretic section
+$\sigma$, define $c(g_1,g_2) = \sigma(g_1)\,\sigma(g_2)\,\sigma(g_1 g_2)^{-1}$, which
+lands in the kernel $\mathrm{im}(\iota) \cong N$. The extension splits if and only if
+some section has identically trivial cocycle.
+
+We formalize this in three Lean modules
+(\texttt{GeneralMethod/GroupExtension/\{FiberArchitecture, SchurZassenhaus, LocalGlobal\}.lean}),
+building on Mathlib's \texttt{GroupExtension} API. The main results, all with zero
+\texttt{sorry}:
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Fiber architecture.} \texttt{ExtensionFiber S g} is the preimage
+    $\pi^{-1}(g)$; fibers are nonempty (surjectivity), and each fiber is an $N$-torsor
+    (free and transitive kernel action: \texttt{kernelAct\_free},
+    \texttt{kernelAct\_transitive}).
+  \item \textbf{2-cocycle and splitting criterion.} \texttt{sectionCocycle S} extracts the
+    $N$-valued cocycle from any set-theoretic section. \texttt{splits\_iff\_trivial\_cocycle}:
+    the extension splits if and only if there exists a section whose cocycle is identically~1.
+    This fills a gap explicitly listed as a TODO in Mathlib's
+    \texttt{GroupExtension/Defs.lean}.
+  \item \textbf{Obstruction theorem.} \texttt{not\_splits\_of\_all\_cocycles\_nontrivial}:
+    if every section has a nontrivial cocycle, the extension does not split.
+  \item \textbf{Restriction to subgroups.} \texttt{restrictExtension S H} pulls back the
+    extension along a subgroup $H \le G$.
+    \texttt{global\_split\_implies\_local\_split}: if the extension splits globally, it
+    splits over every subgroup. The contrapositive
+    (\texttt{local\_nonsplit\_obstructs\_global}) gives a local obstruction to global
+    splitting.
+  \item \textbf{Direct product example.} \texttt{directProductExtension} is the trivially
+    split extension $1 \to N \to N \times G \to G \to 1$ with identically trivial cocycle.
+\end{itemize}
+
+\noindent
+The architecture's contribution here is not a single new tactic but a \textbf{structured
+decomposition} that makes the gap between set-theoretic and algebraic sections visible as
+a layer, with the cocycle as the precise invariant separating them. The restriction and
+contrapositive theorems show how the fiber language organizes the local-to-global question:
+global splitting implies local splitting over every subgroup, and a single non-splitting
+restriction obstructs the global section.
+
 \section{Limitations and future work}\label{sec:limits}
 
-Twelve finite families do not exhaust all closure or fibration patterns. Natural extensions
-include: settings where sections are non-unique or only locally defined; competing enriched
-layers over one collapse map; and domain-specific benchmarks outside pure type theory. Such
-work would extend the \emph{evidence base} without changing the logical status of the
-positive-closure architecture inside \IC{}.
+The twelve retrospective tranches do not exhaust all closure or fibration patterns, and the
+group extension work is a first application rather than a comprehensive treatment. Natural
+extensions include: the full $H^2 \leftrightarrow \text{extensions}$ bijection (connecting
+the cocycle to Mathlib's group cohomology API), effective descent for modules over ring maps,
+and obstruction-theoretic problems in algebraic topology where the architecture's
+collapse/fiber/section layers map onto Postnikov towers. Such work would extend the
+\emph{evidence base} and, in the group extension case, fill further gaps in Mathlib's
+formalization of classical algebra.
 
 \appendix
 
@@ -901,6 +955,87 @@ nonemptiness via \texttt{canonicalQuotientFiberWitness}. \\
 \texttt{nat\_succ\_not\_surjective} & no global section onto \texttt{Nat}. \\
 \texttt{nat\_succ\_not\_hasRightInverse} & obstruction to \texttt{HasRightInverse}. \\
 \texttt{pred\_leftInverse\_succ} & \texttt{Nat.pred} as left inverse of \texttt{succ}. \\
+
+\end{longtable}
+}
+
+\subsection*{\texttt{FiberArchitecture.lean} (group extensions)}
+
+{\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.40\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{c}{\textit{(continued)}} \\
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+\texttt{ExtensionFiber} & preimage fiber of the quotient map. \\
+\texttt{extension\_fiber\_nonempty} & nonempty fibers (surjectivity). \\
+\texttt{rightHom\_surjective\_hasRightInverse} & set-theoretic \texttt{HasRightInverse}. \\
+\texttt{canonicalFiberWitness} & canonical element in each fiber. \\
+\texttt{kernelActOnFiber} & kernel action on fibers. \\
+\texttt{kernelAct\_free} & kernel acts freely. \\
+\texttt{kernelAct\_transitive} & kernel acts transitively ($N$-torsor). \\
+\texttt{splitting\_iff\_section\_is\_homomorphism} & splitting iff some section is a homomorphism. \\
+
+\end{longtable}
+}
+
+\subsection*{\texttt{SchurZassenhaus.lean} (2-cocycle and splitting)}
+
+{\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.40\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{c}{\textit{(continued)}} \\
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+\texttt{sectionCocycle} & $N$-valued 2-cocycle of a set-theoretic section. \\
+\texttt{sectionCocycle\_spec} & defining equation for the cocycle. \\
+\texttt{section\_mul\_eq} & decomposition: $\sigma(g_1)\sigma(g_2) = \iota(c(g_1,g_2))\,\sigma(g_1 g_2)$. \\
+\texttt{splits\_iff\_trivial\_cocycle} & splits iff some section has trivial cocycle. \\
+
+\end{longtable}
+}
+
+\subsection*{\texttt{LocalGlobal.lean} (restriction and examples)}
+
+{\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.40\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{c}{\textit{(continued)}} \\
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+\texttt{directProductExtension} & trivially split extension $N \times G$. \\
+\texttt{directProductSplitting} & canonical splitting of the direct product. \\
+\texttt{directProduct\_has\_trivial\_cocycle} & trivial cocycle for the splitting section. \\
+\texttt{not\_splits\_of\_all\_cocycles\_nontrivial} & obstruction: nontrivial cocycles block splitting. \\
+\texttt{pullbackSubgroup} & preimage subgroup $\pi^{-1}(H)$. \\
+\texttt{restrictExtension} & pullback extension to a subgroup $H \le G$. \\
+\texttt{splitting\_restricts} & global splitting restricts to subgroups. \\
+\texttt{global\_split\_implies\_local\_split} & global split implies local split. \\
+\texttt{local\_nonsplit\_obstructs\_global} & contrapositive: local obstruction blocks global. \\
 
 \end{longtable}
 }

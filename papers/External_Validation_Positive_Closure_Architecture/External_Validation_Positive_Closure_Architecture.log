@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  22 MAR 2026 11:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  22 MAR 2026 12:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -732,73 +732,80 @@ Overfull \hbox (7.55115pt too wide) in paragraph at lines 485--503
 
 
 [8]
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 558.
 
-Overfull \hbox (5.77856pt too wide) in paragraph at lines 598--598
+[9]
+Overfull \hbox (5.13313pt too wide) in paragraph at lines 562--566
+[]\T1/cmr/m/n/10.95 (-20) We for-mal-ize this in three Lean mod-ules (\T1/cmtt/
+m/n/10.95 GeneralMethod/GroupExtension/{FiberArchitecture,
+ []
+
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 612.
+
+Overfull \hbox (5.77856pt too wide) in paragraph at lines 652--652
 []|\T1/cmtt/m/n/9 quotientOut_rightInverse_forgetToQuotient|  
  []
 
 
 
-[9] [10]
-Overfull \hbox (15.22626pt too wide) in paragraph at lines 746--746
+[10]
+
+[11]
+Overfull \hbox (15.22626pt too wide) in paragraph at lines 800--800
 []|\T1/cmtt/m/n/9 quotient_out_rightInverse_to_orbit_quotient|  
  []
 
 
-Overfull \hbox (53.01703pt too wide) in paragraph at lines 773--773
+Overfull \hbox (53.01703pt too wide) in paragraph at lines 827--827
 []|\T1/cmtt/m/n/9 idealQuotientOut_rightInverse_forgetToIdealQuotient|  
  []
 
 
-Overfull \hbox (1.05472pt too wide) in paragraph at lines 800--800
+Overfull \hbox (1.05472pt too wide) in paragraph at lines 854--854
 []|\T1/cmtt/m/n/9 quotientOut_rightInverse_forgetToPushout|  
  []
 
 
-
-[11]
-Overfull \hbox (5.77856pt too wide) in paragraph at lines 827--827
+Overfull \hbox (5.77856pt too wide) in paragraph at lines 881--881
 []|\T1/cmtt/m/n/9 classifierSection_rightInverse_subtypeVal|  
- []
-
-
-Overfull \hbox (1.05472pt too wide) in paragraph at lines 850--850
-[]|\T1/cmtt/m/n/9 forgetPairToLocalization_hasRightInverse|  
- []
-
-
-Overfull \hbox (5.77856pt too wide) in paragraph at lines 851--851
-[]|\T1/cmtt/m/n/9 sec_rightInverse_forgetPairToLocalization|  
- []
-
-
-Overfull \hbox (1.05472pt too wide) in paragraph at lines 878--878
-[]|\T1/cmtt/m/n/9 pullbackSection_rightInverse_pullbackFst|  
  []
 
 
 
 [12]
+Overfull \hbox (1.05472pt too wide) in paragraph at lines 904--904
+[]|\T1/cmtt/m/n/9 forgetPairToLocalization_hasRightInverse|  
+ []
+
+
+Overfull \hbox (5.77856pt too wide) in paragraph at lines 905--905
+[]|\T1/cmtt/m/n/9 sec_rightInverse_forgetPairToLocalization|  
+ []
+
+
+Overfull \hbox (1.05472pt too wide) in paragraph at lines 932--932
+[]|\T1/cmtt/m/n/9 pullbackSection_rightInverse_pullbackFst|  
+ []
 
 [13]
 
-[14] (./External_Validation_Positive_Closure_Architecture.aux)
+[14]
+
+[15] (./External_Validation_Positive_Closure_Architecture.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `External_Validation_Positive_Closure_Archite
 cture.out' has not changed.
-(rerunfilecheck)             Checksum: 9FC98F16DC54D295C4D23E7709033132;6557.
+(rerunfilecheck)             Checksum: D75670FCB793082C6FB32643C219483E;6859.
  ) 
 Here is how much of TeX's memory you used:
- 17423 strings out of 473190
- 282918 string characters out of 5715801
- 727970 words of memory out of 5000000
- 40095 multiletter control sequences out of 15000+600000
- 594483 words of font info for 235 fonts, out of 8000000 for 9000
+ 17445 strings out of 473190
+ 283131 string characters out of 5715801
+ 730194 words of memory out of 5000000
+ 40101 multiletter control sequences out of 15000+600000
+ 594751 words of font info for 239 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,12n,82p,1046b,626s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
@@ -812,32 +819,33 @@ exlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
 ive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
 /2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/
 2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
-025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/202
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025/
-texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2025/te
-xmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2025/texm
-f-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2025/texmf-
-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2025/texmf-di
-st/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2025/texmf-dist
-/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2025/texmf-dist/f
-onts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fon
-ts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-dist/fonts
-/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/t
-ype1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/typ
-e1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1
-/public/cm-super/sfrm1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/p
-ublic/cm-super/sfti0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/pub
-lic/cm-super/sfti1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/publi
-c/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/
-cm-super/sftt0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm
--super/sftt1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-s
-uper/sftt1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-sup
-er/sftt1200.pfb>
-Output written on External_Validation_Positive_Closure_Architecture.pdf (14 pag
-es, 600929 bytes).
+025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/202
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025/te
+xmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2025/texm
+f-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2025/texmf-
+dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2025/texmf-di
+st/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2025/texmf-dist
+/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2025/texmf-dist/f
+onts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2025/texmf-dist/fon
+ts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fonts
+/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/t
+ype1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/typ
+e1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1
+/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/p
+ublic/cm-super/sfrm1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/pub
+lic/cm-super/sfti0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/publi
+c/cm-super/sfti1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/
+cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm
+-super/sftt0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-s
+uper/sftt1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-sup
+er/sftt1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super
+/sftt1200.pfb>
+Output written on External_Validation_Positive_Closure_Architecture.pdf (15 pag
+es, 621488 bytes).
 PDF statistics:
- 468 PDF objects out of 1000 (max. 8388607)
- 381 compressed objects within 4 object streams
- 96 named destinations out of 1000 (max. 500000)
- 70881 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 490 PDF objects out of 1000 (max. 8388607)
+ 400 compressed objects within 4 object streams
+ 104 named destinations out of 1000 (max. 500000)
+ 70889 words of extra memory for PDF output out of 74296 (max. 10000000)
 

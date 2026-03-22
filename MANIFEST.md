@@ -27,6 +27,7 @@
 | Meta | `InfinityCompression/Meta/` | 013–014 |
 | MetaProof | `InfinityCompression/MetaProof/` | EPIC_002_BH2 Route B + EPIC_003_BH6 continuation |
 | Validation | `InfinityCompression/Validation/` | EPIC_015_WV1 (T1) + EPIC_016_WV2 (T2–T3) + EPIC_017_EV1 (T4–T7) + EPIC_018_XC1 (T8–T12) Program W benchmarks |
+| GeneralMethod | `InfinityCompression/GeneralMethod/` | EPIC_019_GA1 — positive-closure architecture as general proof method (group extensions) |
 | Frontier | `InfinityCompression/Frontier/` | 015–019 + §2.5 summit |
 | Root import | `InfinityCompression.lean` | — |
 | Papers (LaTeX) | `papers/` | EPIC_016_WV2 — shared `suite_preamble` / `suite_macros`; per-paper subdirs (see `papers/README.md`) |
@@ -116,6 +117,14 @@
 | `PullbackFiberBenchmark.lean` | EPIC_018_XC1 **T11:** pullback / fiber product — `PullbackType`, `pullbackFst`, `PullbackFiber`, `pullbackSection`, `canonicalPullbackFiberWitness` (overlap hypothesis) |
 | `NonSurjectiveSuccFiberBenchmark.lean` | EPIC_018_XC1 **T12:** MODERATE control — `succFiber`, `nat_succ_not_surjective`, `nat_succ_not_hasRightInverse`, `pred_leftInverse_succ` |
 
+### GeneralMethod (`InfinityCompression/GeneralMethod/`) — EPIC_019_GA1
+
+| File | Role |
+|------|------|
+| `GroupExtension/FiberArchitecture.lean` | EPIC_019_GA1: `ExtensionFiber`, `extension_fiber_nonempty`, `canonicalFiberWitness`, `kernelAct_free`, `kernelAct_transitive` (N-torsor), `splitting_iff_section_is_homomorphism` |
+| `GroupExtension/SchurZassenhaus.lean` | EPIC_019_GA1: `sectionCocycle`, `sectionCocycle_spec`, `section_mul_eq`, `splits_iff_trivial_cocycle` (splitting iff cocycle trivial) |
+| `GroupExtension/LocalGlobal.lean` | EPIC_019_GA1: `directProductExtension`, `directProductSplitting`, `not_splits_of_all_cocycles_nontrivial`, `pullbackSubgroup`, `restrictExtension`, `splitting_restricts`, `global_split_implies_local_split`, `local_nonsplit_obstructs_global` |
+
 ### Frontier (`InfinityCompression/Frontier/`)
 
 | File | Role |
@@ -182,6 +191,7 @@
 | EPIC_016_WV2 (Program W papers WV2B) | `Validation/ProductProjectionFiberBenchmark`, `Validation/SigmaFiberBenchmark` | **T2**–**T3** product and sigma bundle benchmarks (consolidated LaTeX with WV2A) |
 | EPIC_017_EV1 (extended validation) | `Validation/SumCoproductFiberBenchmark`, `Validation/SubtypeValFiberBenchmark`, `Validation/OrbitRelationQuotientFiberBenchmark`, `Validation/IdealQuotientFiberBenchmark` | **T4**–**T7** — see `specs/COMPLETE/EPIC_017_EV1_EXTENDED_EXTERNAL_VALIDATION_DIMENSIONS_SPEC.md` |
 | EPIC_018_XC1 (second wave) | `Validation/PushoutCoequalizerFiberBenchmark`, `Validation/SetClassifierFiberBenchmark`, `Validation/LocalizationPairFiberBenchmark`, `Validation/PullbackFiberBenchmark`, `Validation/NonSurjectiveSuccFiberBenchmark` | **T8**–**T12** — see `specs/COMPLETE/EPIC_018_XC1_SECOND_WAVE_EXTENDED_VALIDATION_SPEC.md` |
+| EPIC_019_GA1 (general method) | `GeneralMethod/GroupExtension/FiberArchitecture`, `GeneralMethod/GroupExtension/SchurZassenhaus`, `GeneralMethod/GroupExtension/LocalGlobal` | Group extension fiber architecture, 2-cocycle splitting criterion, restriction to subgroups — see `specs/IN-PROCESS/EPIC_019_GA1_POSITIVE_CLOSURE_GENERAL_METHOD_SPEC.md` |
 | §2.5 summit | `Frontier/ICUniversalTheorem`, `Frontier/ReflexiveArchitectureNecessity`, `Frontier/SummitDerivation` | `ic_universal_theorem_summit` (minimal §2.5 conjunction); `ic_universal_theorem_landscape` (maximal aggregation); S1 spine necessity; S2 joint / interface lemmas; S3 `ic_universal_theorem_summit_iff_components` |
 | EPIC_002_BH2 Route B | `MetaProof/*` | **T-B2.1** `summit_bundle_matches_ic_universal_summit`; **T-B3.1** `standard_shape_matches_summit_iff`; **T-B5.1** `summit_requires_dual_poles` |
 | EPIC_003_BH6 Route B continuation | `MetaProof/*` | **T-B6a.1**–**T-B6b.1** necessity + `CrownEligible` spine example; **T-B7.1** `crown_eligible_induces_mirror`; **T-B8.1** `dependencyShapeStandard_minimal`; **T-B9.1** `reflexive_meta_crown` |
