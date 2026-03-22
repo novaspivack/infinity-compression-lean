@@ -4,7 +4,7 @@
 
 ## What this artifact is
 
-Lean 4 formalization of the **Infinity Compression** program (EPIC_001) and the **General Method** program (EPICs 019–022). Root import: `InfinityCompression.lean`. Papers live under `papers/`; external-validation benchmarks under `InfinityCompression/Validation/`; general-method modules under `InfinityCompression/GeneralMethod/`. The **Gödel-scale summit program** (EPIC_GS1) is tracked in `specs/IN-PROCESS/EPIC_GS1_GODEL_SCALE_SUMMIT_PROGRAM_SPEC.md`; Milestone 1 arithmetic bridge is in `GeneralMethod/Galois/GaloisEmbeddingBridge.lean`.
+Lean 4 formalization of the **Infinity Compression** program (EPIC_001) and the **General Method** program (EPICs 019–022). Root import: `InfinityCompression.lean`. Papers live under `papers/`; external-validation benchmarks under `InfinityCompression/Validation/`; general-method modules under `InfinityCompression/GeneralMethod/`. The **Gödel-scale summit program** (EPIC_GS1) is tracked in `specs/IN-PROCESS/EPIC_GS1_GODEL_SCALE_SUMMIT_PROGRAM_SPEC.md`. **Lean:** Milestone 1 — `GeneralMethod/Galois/GaloisEmbeddingBridge.lean`; Milestone 2 (Route D) — `GeneralMethod/RouteD/SelfCertificationHalting.lean`; Milestones 4–6 — `GeneralMethod/Summit/ReflectiveNonExhaustion.lean`; Milestone 5 dictionary hub — `GeneralMethod/Summit/CrossDomainDictionary.lean`. **Prose (Milestone 3 draft):** `specs/IN-PROCESS/EPIC_GS1_M3_MANIFESTO_SYNTHESIS_DRAFT.md`.
 
 ## Authoritative inventories
 
@@ -21,6 +21,9 @@ Lean 4 formalization of the **Infinity Compression** program (EPIC_001) and the 
 | `solvable_iff_trivial_cocycle` | `Galois/EmbeddingProblem.lean` | Embedding problem solvable iff cocycle vanishes |
 | `quillenA` | `Quillen/QuillenTheoremA.lean` | Quillen's Theorem A for Galois connections |
 | `nerve_connected_to_terminal` | `Quillen/NerveContractibility.lean` | Nerve contractibility for terminal categories |
+| `routeD_certification_cannot_equal_halting_realization` | `RouteD/SelfCertificationHalting.lean` | EPIC_GS1 Route D: halting not a computable predicate on codes (Mathlib halting problem) |
+| `reflective_non_exhaustion_existential` | `Summit/ReflectiveNonExhaustion.lean` | EPIC_GS1: from any `ReflectiveCertificationArchitecture`, two realizations share a bare certificate |
+| `crossDomain_dictionary_imports_ok` | `Summit/CrossDomainDictionary.lean` | EPIC_GS1 Milestone 5: single import hub for five discharge stacks |
 
 ## Papers (5-paper series)
 

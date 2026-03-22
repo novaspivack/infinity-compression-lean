@@ -4,7 +4,7 @@
 **Mathlib:** v4.29.0-rc6 (via lake)  
 **Build:** From this directory: `lake build`. **Program W validation only (fast):** pass each `InfinityCompression.Validation.*` module from the table below as a `lake build` target (twelve files; there is no single `Validation.lean` wrapper). Do **not** use a partial build as a substitute for a full release check of the whole library.  
 **Root import:** `InfinityCompression.lean` (imports every production module below)  
-**Last verified:** 2026-03-22 — Full library build (3400+ jobs, zero sorry). **Program W:** T1–T12 validation benchmarks. **GeneralMethod:** 21 modules across GroupExtension (cocycles, splitting, obstruction, Mathlib bridge), Quillen (Theorem A for Galois connections, nerve contractibility), Galois (embedding problems), Descent (faithfully flat, 2-torsion torsor). **Papers:** 5-paper series (IC flagship, external validation, ITP/CPP group extensions, Mathlib companion, Quillen Theorem A).
+**Last verified:** 2026-03-22 — Full library build (3487 jobs, zero sorry). **Program W:** T1–T12 validation benchmarks. **GeneralMethod:** 25 `.lean` modules across GroupExtension (cocycles, splitting, obstruction, Mathlib bridge), Quillen (Theorem A for Galois connections, nerve contractibility), Galois (embedding problems + EPIC_GS1 bridge), Descent (faithfully flat, 2-torsion torsor), RouteD (halting computability anchor), Summit (RCA non-exhaustion, cross-domain dictionary hub). **Papers:** 5-paper series (IC flagship, external validation, ITP/CPP group extensions, Mathlib companion, Quillen Theorem A).
 
 ---
 
@@ -27,7 +27,7 @@
 | Meta | `InfinityCompression/Meta/` | 013–014 |
 | MetaProof | `InfinityCompression/MetaProof/` | EPIC_002_BH2 Route B + EPIC_003_BH6 continuation |
 | Validation | `InfinityCompression/Validation/` | EPIC_015_WV1 (T1) + EPIC_016_WV2 (T2–T3) + EPIC_017_EV1 (T4–T7) + EPIC_018_XC1 (T8–T12) Program W benchmarks |
-| GeneralMethod | `InfinityCompression/GeneralMethod/` | EPIC_019_GA1 — positive-closure architecture as general proof method (group extensions); EPIC_GS1 Milestone 1 — `Galois/GaloisEmbeddingBridge.lean` |
+| GeneralMethod | `InfinityCompression/GeneralMethod/` | EPIC_019_GA1 — general method; EPIC_GS1 — `Galois/GaloisEmbeddingBridge.lean` (M1), `RouteD/SelfCertificationHalting.lean` (M2), `Summit/ReflectiveNonExhaustion.lean` + `Summit/CrossDomainDictionary.lean` (M4–M6, M5); manifesto draft `specs/IN-PROCESS/EPIC_GS1_M3_MANIFESTO_SYNTHESIS_DRAFT.md` (M3) |
 | Frontier | `InfinityCompression/Frontier/` | 015–019 + §2.5 summit |
 | Root import | `InfinityCompression.lean` | — |
 | Papers (LaTeX) | `papers/` | EPIC_016_WV2 — shared `suite_preamble` / `suite_macros`; per-paper subdirs (see `papers/README.md`) |
@@ -135,6 +135,9 @@
 | `Quillen/FiberLemma.lean` | EPIC_022_OP1 (infrastructure): `PosetFiberBelow/At`, `surjective_iff_fiberAt_nonempty`, `fiberBelowMono`, `compFiberBelow` — poset fiber data toward Quillen Theorem A; NOT the full theorem |
 | `Galois/EmbeddingProblem.lean` | EPIC_022_OP1 (theorem): `EmbeddingProblem`, `solvable_iff_splits`, `solvable_iff_trivial_cocycle`, `solvable_of_split` — embedding problems as extension splitting (genuine theorem) |
 | `Galois/GaloisEmbeddingBridge.lean` | EPIC_GS1 Milestone 1: `galois_restrictNormalHom_surjective`, `galois_restrictNormalHom_ker` — Galois restriction ↔ embedding problem (Mathlib re-exports + packaging note) |
+| `RouteD/SelfCertificationHalting.lean` | EPIC_GS1 Milestone 2 (Route D): `routeD_halting_notComputablePred`, `routeD_certification_cannot_equal_halting_realization`, `routeD_halting_re`, `routeD_halting_complement_not_re` — halting not computable as predicate on codes (Mathlib `ComputablePred.halting_problem`) |
+| `Summit/ReflectiveNonExhaustion.lean` | EPIC_GS1 Milestones 4 & 6: `rca_forget_not_injective`, `reflective_non_exhaustion_existential`, `reflective_non_exhaustion_nontrivial_fiber`, `milestone6_reflective_non_exhaustion` — from `ReflectiveCertificationArchitecture` |
+| `Summit/CrossDomainDictionary.lean` | EPIC_GS1 Milestone 5: import hub for algebra / Quillen / Galois / descent / Route D rows + `crossDomain_dictionary_imports_ok` |
 
 ### Frontier (`InfinityCompression/Frontier/`)
 
@@ -206,7 +209,7 @@
 | EPIC_020_ML1 (Mathlib bridge) | `GeneralMethod/GroupExtension/{ConjugationAction,CocycleIdentity,MathlibAdapter}` | Conjugation action, cocycle identity, Mathlib `IsCocycle₂` adapter — IN PROGRESS |
 | EPIC_021_NR1 (new results) | `GeneralMethod/GroupExtension/{NonAbelianObstruction,SchurMultiplier}` | Q₈ boundary, central extensions, Schur multiplier concepts |
 | EPIC_022_OP1 (famous problems) | `GeneralMethod/Quillen/FiberLemma`, `GeneralMethod/Descent/EllipticCurveDescent`, `GeneralMethod/Galois/EmbeddingProblem` | Poset fiber infrastructure (toward Quillen A), doubling-map torsor (toward 2-descent), embedding problems ↔ splitting (genuine theorem) |
-| EPIC_GS1 (Gödel-scale summit program) | `GeneralMethod/Galois/GaloisEmbeddingBridge.lean` (+ depends on EPIC_019–022 stack) | Milestone 1 arithmetic bridge: restriction surjectivity + kernel vs fixing subgroup; ties `EmbeddingProblem` to actual `IntermediateField` / `Gal` data (see spec) |
+| EPIC_GS1 (Gödel-scale summit program) | `GeneralMethod/Galois/GaloisEmbeddingBridge.lean`, `GeneralMethod/RouteD/SelfCertificationHalting.lean`, `GeneralMethod/Summit/ReflectiveNonExhaustion.lean`, `GeneralMethod/Summit/CrossDomainDictionary.lean` (+ EPIC_019–022 stack); prose M3: `specs/IN-PROCESS/EPIC_GS1_M3_MANIFESTO_SYNTHESIS_DRAFT.md` | M1: Galois restriction bridge. M2: halting not `ComputablePred` (Route D anchor). M3: manifesto draft (seven sections). M4–M6: RCA non-exhaustion + dictionary hub (see `EPIC_GS1_GODEL_SCALE_SUMMIT_PROGRAM_SPEC.md`) |
 | §2.5 summit | `Frontier/ICUniversalTheorem`, `Frontier/ReflexiveArchitectureNecessity`, `Frontier/SummitDerivation` | `ic_universal_theorem_summit` (minimal §2.5 conjunction); `ic_universal_theorem_landscape` (maximal aggregation); S1 spine necessity; S2 joint / interface lemmas; S3 `ic_universal_theorem_summit_iff_components` |
 | EPIC_002_BH2 Route B | `MetaProof/*` | **T-B2.1** `summit_bundle_matches_ic_universal_summit`; **T-B3.1** `standard_shape_matches_summit_iff`; **T-B5.1** `summit_requires_dual_poles` |
 | EPIC_003_BH6 Route B continuation | `MetaProof/*` | **T-B6a.1**–**T-B6b.1** necessity + `CrownEligible` spine example; **T-B7.1** `crown_eligible_induces_mirror`; **T-B8.1** `dependencyShapeStandard_minimal`; **T-B9.1** `reflexive_meta_crown` |

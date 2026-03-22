@@ -72,6 +72,9 @@ import InfinityCompression.GeneralMethod.Descent.EllipticCurveDescent
 import InfinityCompression.GeneralMethod.Quillen.FiberLemma
 import InfinityCompression.GeneralMethod.Galois.EmbeddingProblem
 import InfinityCompression.GeneralMethod.Galois.GaloisEmbeddingBridge
+import InfinityCompression.GeneralMethod.RouteD.SelfCertificationHalting
+import InfinityCompression.GeneralMethod.Summit.ReflectiveNonExhaustion
+import InfinityCompression.GeneralMethod.Summit.CrossDomainDictionary
 import InfinityCompression.MetaProof.SummitTargets
 import InfinityCompression.MetaProof.DependencyShape
 import InfinityCompression.MetaProof.AdmissibleDerivations
