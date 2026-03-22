@@ -1,9 +1,27 @@
 /-
-  EPIC_022_OP1 Phase C2 — Elliptic curve descent: 2-torsion fiber architecture.
+  EPIC_022_OP1 Phase C2 — Fiber architecture for the doubling map (toward 2-descent).
 
-  For an abelian group A, the doubling map has fibers that are cosets of the
-  2-torsion subgroup. We formalize this torsor structure and connect it to
-  elliptic curve descent via Mathlib's twoTorsionPolynomial.
+  **Status relative to full 2-descent:**
+
+  Full 2-descent for elliptic curves requires Selmer groups, Kummer sequences,
+  and local-global machinery — none of which are in Mathlib. This module formalizes
+  the **fiber/torsor structure of the doubling map** on an abstract abelian group,
+  which is the algebraic core that 2-descent builds on.
+
+  **What this module proves (genuine theorems, zero sorry):**
+  - `DoublingFiber`: fiber of the doubling map `a ↦ a + a` over a point `p`.
+  - `twoTorsionActOnFiber`: the 2-torsion subgroup acts on fibers.
+  - `twoTorsionAct_free`: the action is free.
+  - `twoTorsionAct_transitive`: the action is transitive (torsor structure).
+  - `doublingFiber_nonempty_iff`: fiber nonempty iff `p` is in the image of `[2]`.
+  - Connection to Mathlib's `twoTorsionPolynomial` (discriminant identity).
+
+  **What this module does NOT prove:**
+  - 2-descent as a theorem about elliptic curves over number fields.
+  - Selmer groups, Kummer maps, or local-global obstructions.
+  - Finiteness of `E(K)/2E(K)` (weak Mordell–Weil).
+
+  The torsor structure is the algebraic foundation; the arithmetic content is future work.
 -/
 
 import Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point
