@@ -73,7 +73,7 @@ theorem mul_eq_cocycle_mul (g₁ g₂ : G) :
   section_mul_eq S σ g₁ g₂
 
 theorem cocycle_identity (g₁ g₂ g₃ : G) :
-    cocycle S σ (g₁ * g₂) g₃ * cocycle S σ g₁ g₂ =
+    cocycle S σ g₁ g₂ * cocycle S σ (g₁ * g₂) g₃ =
     sectionConjAct S σ g₁ (cocycle S σ g₂ g₃) * cocycle S σ g₁ (g₂ * g₃) :=
   sectionCocycle_isMulCocycle₂_conj S σ g₁ g₂ g₃
 

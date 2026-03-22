@@ -4,7 +4,7 @@
   The section cocycle satisfies the multiplicative 2-cocycle identity with
   respect to the conjugation action:
 
-    `c(g₁g₂, g₃) · c(g₁, g₂) = φ_σ(g₁)(c(g₂, g₃)) · c(g₁, g₂g₃)`
+    `c(g₁, g₂) · c(g₁g₂, g₃) = φ_σ(g₁)(c(g₂, g₃)) · c(g₁, g₂g₃)`
 
   This connects our cocycle to Mathlib's `IsMulCocycle₂`.
 -/
@@ -24,31 +24,35 @@ variable (S : GroupExtension N E G)
 
 /-! ### The 2-cocycle identity
 
-Both sides, when mapped through `S.inl` and right-multiplied by `σ(g₁g₂g₃)`,
-equal `σ(g₁) · σ(g₂) · σ(g₃)` after cancellation of intermediate section values.
-
-The LHS cancels `σ(g₁g₂g₃)⁻¹ · σ(g₁g₂g₃)` and `σ(g₁g₂)⁻¹ · σ(g₁g₂)`.
-The RHS cancels `σ(g₁)⁻¹ · σ(g₁)` and `σ(g₂g₃)⁻¹ · σ(g₂g₃)`.
-
--- TODO: Complete the tactic proof. The mathematical content is standard
--- (both sides of the 2-cocycle identity reduce to σ(g₁)·σ(g₂)·σ(g₃)·σ(g₁g₂g₃)⁻¹
--- after cancellation). The difficulty is purely tactic-engineering: Lean 4's
--- `group` tactic treats section values as free generators and cannot perform
--- the cancellations, requiring manual `mul_assoc`/`inv_mul_cancel_left` chains.
+The associativity of the triple product `σ(g₁) * σ(g₂) * σ(g₃)` computed
+two ways yields the cocycle identity. Way 1 (left-associated) gives
+`inl(c₁₂) * inl(c₁₂₃) * σ₁₂₃`, and Way 2 (right-associated with
+conjugation) gives `inl(φ(g₁)(c₂₃)) * inl(c₁_₂₃) * σ₁₂₃`. Cancelling
+`σ₁₂₃` and applying `inl_injective` gives the identity.
 -/
 
 theorem sectionCocycle_isMulCocycle₂_conj (σ : S.Section) (g₁ g₂ g₃ : G) :
-    sectionCocycle S σ (g₁ * g₂) g₃ * sectionCocycle S σ g₁ g₂ =
+    sectionCocycle S σ g₁ g₂ * sectionCocycle S σ (g₁ * g₂) g₃ =
     sectionConjAct S σ g₁ (sectionCocycle S σ g₂ g₃) * sectionCocycle S σ g₁ (g₂ * g₃) := by
   apply S.inl_injective
   rw [map_mul, map_mul, inl_sectionConjAct]
-  rw [sectionCocycle_spec S σ (g₁ * g₂) g₃,
-      sectionCocycle_spec S σ g₁ g₂,
-      sectionCocycle_spec S σ g₂ g₃,
-      sectionCocycle_spec S σ g₁ (g₂ * g₃)]
-  conv_rhs =>
-    rw [show g₁ * (g₂ * g₃) = g₁ * g₂ * g₃ from (mul_assoc g₁ g₂ g₃).symm]
-  sorry
+  -- Goal: inl(c₁₂)*inl(c₁₂₃) = σ₁*inl(c₂₃)*σ₁⁻¹ * inl(c₁_₂₃)
+  -- Strategy: right-multiply both sides by σ(g₁g₂g₃), show both = σ₁*σ₂*σ₃.
+  -- LHS proof: inl(c₁₂)*inl(c₁₂₃)*σ₁₂₃ = σ₁*σ₂*σ₃
+  have lhs : S.inl (sectionCocycle S σ g₁ g₂) * S.inl (sectionCocycle S σ (g₁ * g₂) g₃) *
+             σ.toFun (g₁ * g₂ * g₃) = σ.toFun g₁ * σ.toFun g₂ * σ.toFun g₃ := by
+    rw [mul_assoc, ← section_mul_eq S σ (g₁ * g₂) g₃,
+        ← mul_assoc, ← section_mul_eq S σ g₁ g₂]
+  -- RHS proof: (σ₁*inl(c₂₃)*σ₁⁻¹*inl(c₁_₂₃))*σ(g₁(g₂g₃)) = σ₁*σ₂*σ₃
+  have rhs : (σ.toFun g₁ * S.inl (sectionCocycle S σ g₂ g₃) * (σ.toFun g₁)⁻¹ *
+              S.inl (sectionCocycle S σ g₁ (g₂ * g₃))) *
+             σ.toFun (g₁ * (g₂ * g₃)) = σ.toFun g₁ * σ.toFun g₂ * σ.toFun g₃ := by
+    rw [mul_assoc _ (S.inl (sectionCocycle S σ g₁ (g₂ * g₃)))]
+    rw [← section_mul_eq S σ g₁ (g₂ * g₃)]
+    rw [mul_assoc _ (σ.toFun g₁)⁻¹, inv_mul_cancel_left]
+    rw [mul_assoc, ← section_mul_eq S σ g₂ g₃, ← mul_assoc]
+  apply mul_right_cancel (b := σ.toFun (g₁ * g₂ * g₃))
+  rw [lhs, show g₁ * g₂ * g₃ = g₁ * (g₂ * g₃) from mul_assoc g₁ g₂ g₃, rhs]
 
 /-! ### Cocycle of a splitting is trivial -/
 
