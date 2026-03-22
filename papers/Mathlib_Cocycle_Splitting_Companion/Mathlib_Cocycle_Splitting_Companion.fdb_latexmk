@@ -1,8 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1774200341.48477 "/Users/nova/infinity-compression/infinity-compression-lean/papers/Mathlib_Cocycle_Splitting_Companion/Mathlib_Cocycle_Splitting_Companion.tex" "Mathlib_Cocycle_Splitting_Companion.pdf" "Mathlib_Cocycle_Splitting_Companion" 1774200342.46351 2
+["pdflatex"] 1774208046.52177 "Mathlib_Cocycle_Splitting_Companion.tex" "Mathlib_Cocycle_Splitting_Companion.pdf" "Mathlib_Cocycle_Splitting_Companion" 1774208047.41585 0
   "../suite_macros.tex" 1774151281.77416 4836 f12fe65da311b79b2f7da22561a9e569 ""
   "../suite_preamble.tex" 1774151281.77423 1991 457daeb583bf89b49fd67c23c4b4b4d9 ""
-  "/Users/nova/infinity-compression/infinity-compression-lean/papers/Mathlib_Cocycle_Splitting_Companion/Mathlib_Cocycle_Splitting_Companion.tex" 1774200340.25731 39954 f97c4f24b276c35ca0d2d0cf895579e2 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -220,10 +219,10 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1748572903 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "Mathlib_Cocycle_Splitting_Companion.aux" 1774200342.27728 6610 e1184d1901bd89d4b6be4537aceb8c17 "pdflatex"
-  "Mathlib_Cocycle_Splitting_Companion.out" 1774200342.27812 5666 29d7e0f51cde9bb2693e3841f3cdad17 "pdflatex"
-  "Mathlib_Cocycle_Splitting_Companion.tex" 1774200340.25731 39954 f97c4f24b276c35ca0d2d0cf895579e2 ""
-  "Mathlib_Cocycle_Splitting_Companion.toc" 1774200342.2784 2822 ffc9a28d39c44eacbc5088edc61a7026 "pdflatex"
+  "Mathlib_Cocycle_Splitting_Companion.aux" 1774208047.28469 6653 85b3667a080b814692e2913d89328fe1 "pdflatex"
+  "Mathlib_Cocycle_Splitting_Companion.out" 1774208047.28555 5623 7eee2163b56ffc898238c09c5f14be95 "pdflatex"
+  "Mathlib_Cocycle_Splitting_Companion.tex" 1774208036.36183 39794 5da0ee9e5d349578725c13cd73c65350 ""
+  "Mathlib_Cocycle_Splitting_Companion.toc" 1774208047.28582 2817 96d3490412037f275757b13a3c68939e "pdflatex"
   (generated)
   "Mathlib_Cocycle_Splitting_Companion.aux"
   "Mathlib_Cocycle_Splitting_Companion.log"

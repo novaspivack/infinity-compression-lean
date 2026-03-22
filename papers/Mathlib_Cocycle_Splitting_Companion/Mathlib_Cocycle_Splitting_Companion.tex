@@ -25,7 +25,36 @@
   showstringspaces=false,
   columns=flexible
 }
-\lstset{language=lean}
+\lstset{language=lean,
+  literate=
+    {₁}{{$_1$}}1 {₂}{{$_2$}}1 {₃}{{$_3$}}1
+    {⁻¹}{{$^{-1}$}}1
+    {→}{{$\to$}}1 {←}{{$\leftarrow$}}1
+    {⟶}{{$\longrightarrow$}}1 {⟵}{{$\longleftarrow$}}1
+    {⥤}{{$\Rightarrow$}}1
+    {≫}{{$\gg$}}1
+    {∀}{{$\forall$}}1 {∃}{{$\exists$}}1
+    {⟨}{{$\langle$}}1 {⟩}{{$\rangle$}}1
+    {≤}{{$\le$}}1 {≥}{{$\ge$}}1 {≠}{{$\ne$}}1
+    {∈}{{$\in$}}1 {∉}{{$\notin$}}1
+    {ℕ}{{$\mathbb{N}$}}1 {ℤ}{{$\mathbb{Z}$}}1
+    {⊗}{{$\otimes$}}1 {⊕}{{$\oplus$}}1
+    {≃}{{$\simeq$}}1
+    {∘}{{$\circ$}}1
+    {·}{{$\cdot$}}1
+    {↔}{{$\leftrightarrow$}}1
+    {¹}{{$^1$}}1 {²}{{$^2$}}1
+    {σ}{{$\sigma$}}1
+    {φ}{{$\varphi$}}1
+    {η}{{$\eta$}}1
+    {α}{{$\alpha$}}1
+    {β}{{$\beta$}}1
+    {ε}{{$\varepsilon$}}1
+    {π}{{$\pi$}}1
+    {τ}{{$\tau$}}1
+    {ψ}{{$\psi$}}1
+    {Σ}{{$\Sigma$}}1
+}
 \input{../suite_macros}
 
 \title{Completing the Cohomological Extension Package:\\[0.35em]
@@ -657,10 +686,10 @@ noncomputable \texttt{choose} and instead works entirely through the specificati
 interface.
 
 %=======================================================================
-\section{Toward $H^1$ and $H^2$: Phase~2 Roadmap}\label{sec:roadmap}
+\section{\texorpdfstring{Toward $H^1$ and $H^2$: Phase~2 Roadmap}{Toward H1 and H2: Phase 2 Roadmap}}\label{sec:roadmap}
 %=======================================================================
 
-\subsection{Phase~2a: The $H^1$ bridge}
+\subsection{\texorpdfstring{Phase~2a: The $H^1$ bridge}{Phase 2a: The H1 bridge}}
 
 \textbf{Target theorem:}
 \[
@@ -683,7 +712,7 @@ interface.
 \item Construct the bijection between \texttt{ConjClasses} and $H^1$.
 \end{itemize}
 
-\subsection{Phase~2b: The $H^2$ bridge}
+\subsection{\texorpdfstring{Phase~2b: The $H^2$ bridge}{Phase 2b: The H2 bridge}}
 
 \textbf{Target theorem:}
 \[
@@ -802,7 +831,7 @@ The file structure follows Mathlib conventions:
 
 \begin{lstlisting}
 /-
-  GroupExtension.Cocycle — Section cocycles and
+  GroupExtension.Cocycle -- Section cocycles and
   splitting criteria for group extensions.
 
   ## Main definitions
@@ -820,7 +849,7 @@ The file structure follows Mathlib conventions:
   ## References
 
   See the TODO in `GroupExtension/Defs.lean` (lines 43-52).
-  This module is Phase 1 toward completing the H¹/H²
+  This module is Phase 1 toward completing the H1/H2
   classification theorems documented there.
 -/
 
