@@ -1,0 +1,177 @@
+% Program synthesis paper — map of the Infinity Compression paper suite and Lean artifact.
+\documentclass[11pt]{article}
+\input{../suite_preamble}
+\input{../suite_macros}
+
+\title{Certification, Realization, and Obstruction:\\[0.35em]
+\large A Universal Fiber Architecture}
+\author{Nova Spivack}
+\date{2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This paper closes the editorial loop for a multi-manuscript program in machine-checked
+mathematics. The executive claim is that a single \emph{collapse / refinement / fiber}
+architecture---certification at a bare carrier, strict comparison upstairs, obstruction
+organized as fiber and section data---is instantiated internally in dependent type theory,
+validated on twelve external mathematical families, and then discharged into algebra,
+arithmetic (embedding problems), topology (Quillen for Galois connections), and
+logic/computability (self-certification and halting anchors). We state the role of each
+companion paper, a cross-domain dictionary, route labels used in the program (C/A/B/D),
+and what remains open. The intended reader is an advanced mathematician who has not read
+the series; citations point to the formal manuscripts and the Lean repository.
+\end{abstract}
+
+\keywords{formal verification, certification vs.\ realization, fibers, obstruction,
+  Infinity Compression, Lean~4, program architecture}
+
+\tableofcontents
+\newpage
+
+\section{Executive statement}
+
+\textbf{One-sentence thesis.} Canonical certification at a collapsed bare carrier does not
+exhaust structurally significant information: the gap is organized by a forgetful map,
+nontrivial fibers, and explicit obstructions---and that pattern repeats across internal
+formalization, external benchmarks, and classical mathematical domains.
+
+\section{Certification, realization, and non-exhaustion}
+
+\paragraph{Certification.}
+A \emph{certification} layer is a theorem-level invariant packaged as a canonical record
+(proof-irrelevant at that carrier): many routes may exist, but the official statement
+collapses to a unique bare certificate.
+
+\paragraph{Realization.}
+\emph{Realization} refers to proof-relevant or structured data above that collapse:
+witnesses, roles, sections, or fiber points that are mathematically load-bearing once the
+comparison map is fixed.
+
+\paragraph{Non-exhaustion.}
+\emph{Non-exhaustion} is the proved claim that certification does not determine realization:
+distinct legitimate data can share the same bare image, organized by $\pi$ and fibers.
+
+\section{Flagship internal theorem}
+
+The Infinity Compression flagship paper~\cite{SpivackIC} is the \emph{internal origin
+theorem}: collapse of standard extraction, reflective split, strict refinement of the
+typed forgetful map, and partial fiber classification---all in the library's native
+carriers.
+
+\section{External validation (transferability)}
+
+The twelve-tranche survey~\cite{SpivackValidation} establishes \emph{transferability}:
+the same schema applies to quotients, products, dependent sums, coproducts, subtypes,
+orbit and ideal quotients, pushouts, classifiers, localization, pullbacks, and a
+non-surjective control. Its job is not theorem-level leverage in classical fields; it
+rules out idiosyncrasy.
+
+\section{Algebraic and arithmetic engine}
+
+The group-extension paper~\cite{SpivackFiber} is the \emph{algebraic and arithmetic engine}:
+section cocycles, splitting iff trivial cocycle, embedding problems as extension splitting,
+local-to-global obstruction, and the documented bridge toward Galois-theoretic towers.
+
+\section{Topological discharge}
+
+Quillen's Theorem~A for Galois connections~\cite{SpivackQuillen} is the \emph{topology
+discharge}: nerves, contractible fibers over down-sets, and homotopy-equivalence data at
+the simplicial level for the Galois-connection case.
+
+\section{Logic and computability anchor}
+
+Route~D in the program supplies a computability-facing discharge: self-certification
+phenomena aligned with standard undecidability infrastructure (e.g.\ halting and Rice
+scaffolding in the Mathlib \texttt{ComputablePred} layer), making the analogy to
+classical incompleteness precise without identifying the main theorem with G\"odel's
+syntax. Exact statements live in the Lean \texttt{RouteD/} and \texttt{Summit/} modules;
+this synthesis paper does not restate every definition.
+
+\section{Cross-domain dictionary}
+
+The following table is a navigational index, not a formal commuting diagram.
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{0.22\textwidth}p{0.34\textwidth}p{0.36\textwidth}@{}}
+\toprule
+\textbf{Domain} & \textbf{Carrier intuition} & \textbf{Obstruction / fiber role} \\
+\midrule
+Internal IC & Bare summit certificate vs.\ enriched split & Non-injectivity of $\pi_A$; canonical fiber \\
+External T1--T12 & Baseline vs.\ structured bundle & Fibers, sections, right inverses \\
+Algebra & Group extension & Section cocycle; splitting \\
+Arithmetic bridge & Embedding problem & Solvable iff trivial cocycle \\
+Topology & Galois connection $l \dashv u$ & Contractible down-set fibers \\
+Computability & Self-certification predicates & Undecidability anchors \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Routes C, A, B, and D (program labels)}
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Route C (headline):} reflective non-exhaustion at the flagship carriers.
+  \item \textbf{Route A (infrastructure):} supporting general lemmas (e.g.\ collision
+    patterns, forgetful infrastructure) used by the headline.
+  \item \textbf{Route B (applications):} algebra, topology, arithmetic bridges---the
+    general-method papers.
+  \item \textbf{Route D (logic/computability):} halting and Rice-style scaffolding aligned
+    with computability theory rather than informal metaphor.
+\end{itemize}
+
+\section{Why this is a reusable research instrument}
+
+The architecture is portable because it isolates \emph{where} collapse occurs, \emph{where}
+comparison must move upstairs, and \emph{what} invariant obstructs lifting---independent
+of any single application domain. Lean provides a checkable artifact; the paper suite
+separates internal origin, transferability, domain discharges, and summit-level claims.
+
+\section{What remains open}
+
+Full fiber classification in the flagship setting; complete simplicial homotopy
+formalization behind Quillen; full $H^1$/$H^2$ classification in Mathlib; stronger
+unified quantification across all carriers in a single declaration; publication and Mathlib
+submission scheduling.
+
+\section*{Acknowledgments}
+
+Repository: \url{https://github.com/novaspivack/infinity-compression-lean}.
+
+\bibliographystyle{alpha}
+\begin{thebibliography}{99}
+
+\bibitem{SpivackIC}
+N.~Spivack.
+\newblock \emph{Canonical Certification Does Not Exhaust Reflective Structure:
+  Reflective Split, Strict Refinement, and Fiber Structure in Infinity Compression}.
+\newblock Companion manuscript, 2026.
+
+\bibitem{SpivackValidation}
+N.~Spivack.
+\newblock \emph{External Validation of a Positive-Closure Proof Architecture:
+  A Multi-Tranche Survey}.
+\newblock Companion manuscript, 2026.
+
+\bibitem{SpivackFiber}
+N.~Spivack.
+\newblock \emph{Fiber Architecture for Group Extensions in Lean~4: Cocycles, Splitting,
+  and the Cohomological Bridge}.
+\newblock Companion manuscript, 2026.
+
+\bibitem{SpivackQuillen}
+N.~Spivack.
+\newblock \emph{Quillen's Theorem~A for Galois Connections: A Machine-Checked
+  Formalization in Lean~4}.
+\newblock Companion manuscript, 2026.
+
+\bibitem{SpivackSummit}
+N.~Spivack.
+\newblock \emph{Reflective Non-Exhaustion: Certification, Realization, and the Summit Program}.
+\newblock Program manuscript, 2026.
+
+\end{thebibliography}
+
+\end{document}

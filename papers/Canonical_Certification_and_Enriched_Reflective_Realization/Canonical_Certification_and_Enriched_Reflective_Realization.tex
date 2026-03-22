@@ -27,7 +27,7 @@
 \maketitle
 
 \begin{abstract}
-Many formal theories seek a principal closure or certification theorem: a canonical, theorem-level record that a designated invariant holds. The open question is whether such certification exhausts all structurally significant information in reflective settings. We answer negatively in the Infinity Compression formalization. We prove universal collapse of standard Phase-2 extraction to a unique bare certificate; a reflective split (canonical bare certification alongside nontrivial enriched autonomous mirror structure); strict refinement of the typed forgetful map $\pi_A$ (existence of distinct enriched reflective splits with equal $\pi_A$-image); and a forgetful--fiber layer in which the canonical fiber is nontrivial and role assignments inject into a distinguished standard subfamily. We treat a concrete NEMS-style flagship spine and extend under explicit intermediate crown hypotheses (role-rich and role-pair-diverse classes). Methodologically, the proofs are organized by collapse audits and carrier-sensitive route comparison. The result is a formal theorem of separation between theorem-level invariants and realization-level structure. Companion papers show that the same collapse/refinement/fiber architecture transfers to external mathematics across twelve benchmark families and yields theorem-level results in group extensions, embedding problems, and Quillen's Theorem~A for Galois connections. All main claims are machine-checked in Lean~4 (zero \texttt{sorry} in proof terms under \texttt{InfinityCompression/}; Mathlib and kernel axioms only); \Cref{app:theorem-index} maps paper statements to named definitions and theorems in the artifact.
+Many formal theories seek a principal closure or certification theorem: a canonical, theorem-level record that a designated invariant holds. The open question is whether such certification exhausts all structurally significant information in reflective settings. This paper is the \emph{internal origin theorem} of a larger program: we answer negatively first in the Infinity Compression native environment, where the architecture is proved on the library's named carriers. We prove universal collapse of standard Phase-2 extraction to a unique bare certificate; a reflective split (canonical bare certification alongside nontrivial enriched autonomous mirror structure); strict refinement of the typed forgetful map $\pi_A$ (existence of distinct enriched reflective splits with equal $\pi_A$-image); and a forgetful--fiber layer in which the canonical fiber is nontrivial and role assignments inject into a distinguished standard subfamily. We treat a concrete NEMS-style flagship spine and extend under explicit intermediate crown hypotheses (role-rich and role-pair-diverse classes). Methodologically, the proofs are organized by collapse audits and carrier-sensitive route comparison. The result is a formal theorem of separation between theorem-level invariants and realization-level structure. Companion papers show that the same collapse/refinement/fiber architecture transfers to external mathematics across twelve benchmark families and yields theorem-level results in group extensions, embedding problems, and Quillen's Theorem~A for Galois connections. All main claims are machine-checked in Lean~4 (zero \texttt{sorry} in proof terms under \texttt{InfinityCompression/}; Mathlib and kernel axioms only); \Cref{app:theorem-index} maps paper statements to named definitions and theorems in the artifact.
 \end{abstract}
 
 \keywords{formal verification, proof architecture, certification vs.\ realization, fiber structure, forgetful maps, Lean~4, Mathlib}
@@ -71,7 +71,11 @@ In summary: the bare certification layer collapses to a unique canonical certifi
 The novelty is a \textbf{proved stratification}, not a type-theoretic platitude: collapse at the bare certification carrier (\Cref{thm:canonical-cert-math}), strict refinement via $\pi_A$ on enriched splits (\Cref{thm:strict-refinement}, \Cref{thm:gen-refinement}), and partial fiber classification along a standard subfamily (\Cref{thm:role-inject}). Dependent types admit proof-relevant objects in principle; here the split/refinement/fiber facts are \emph{theorems} about the library's certified carriers and the chosen comparison map---they are not imported as axioms of the framework. See \Cref{sec:intro-comparison} for contrast with barrier theorems and generic quotient talk; scope limits are \Cref{sec:intro-not-claimed}.
 
 \subsection{Place in a broader series}\label{sec:intro-series}
-This paper establishes the internal architecture theorem: collapse at the bare carrier, strict refinement via the forgetful map, and fiber organization of multiplicity above the canonical base. Companion papers extend the same collapse/refinement/fiber analysis beyond the flagship Infinity Compression setting. An external validation paper~\cite{SpivackValidation} demonstrates that the architecture transfers cleanly across twelve independent mathematical families (quotients, products, bundles, coproducts, orbit quotients, pushouts, classifiers, localization, pullbacks). General-method papers~\cite{SpivackFiber,SpivackQuillen} then show that the architecture produces theorem-level results in group extensions (splitting iff trivial cocycle), embedding problems (solvable iff cocycle vanishes), and Quillen-style homotopy equivalence for Galois connections. Together the series moves from internal architecture theorem to external transfer to mathematical leverage on recognized problems.
+\paragraph{Internal origin theorem.}
+This paper establishes the internal architecture theorem---collapse at the bare carrier, strict refinement via the forgetful map, and fiber organization of multiplicity above the canonical base---\emph{in the setting where that architecture is first proved as a load-bearing formal development}. It remains the flagship internal theorem paper; a reader-facing map of how the pieces assemble into one program is given in~\cite{SpivackSynthesis}, with the sharpest summit statement of reflective non-exhaustion in~\cite{SpivackSummit}.
+
+\paragraph{Companion papers.}
+Companion papers extend the same collapse/refinement/fiber analysis beyond the flagship Infinity Compression setting. An external validation paper~\cite{SpivackValidation} demonstrates that the architecture transfers cleanly across twelve independent mathematical families (quotients, products, bundles, coproducts, orbit quotients, pushouts, classifiers, localization, pullbacks). General-method papers~\cite{SpivackFiber,SpivackQuillen} then show that the architecture produces theorem-level results in group extensions (splitting iff trivial cocycle), embedding problems (solvable iff cocycle vanishes), and Quillen-style homotopy equivalence for Galois connections. Together the series moves from internal architecture theorem to external transfer to mathematical leverage on recognized problems.
 
 \subsection{What this paper does not claim (early scope)}\label{sec:intro-not-claimed}
 We state scope early to avoid misreading. We do \emph{not} classify all proof routes in the ambient logic; we do \emph{not} prove surjectivity of role data onto the full fiber; we do \emph{not} assert universal dominance over all formal frameworks; we do \emph{not} claim the strongest possible reflective fixed-point closure. The theorems are conditional on the Infinity Compression architecture, the standard bundle, and the explicit crown-eligible / role hypotheses used in the Lean files. \Cref{sec:limitations} and \Cref{app:collapse-audits} expand this.
@@ -99,7 +103,7 @@ Skeptical readers may still ask whether this is only ``theorem vs.\ proof object
 \end{enumerate}
 
 \subsection{Roadmap}\label{sec:intro-roadmap}
-\Cref{sec:framework}: notation $(\mathcal{E},\mathcal{B},\pi_A,b^\ast_A)$. \Cref{sec:canonical-cert}--\Cref{sec:fiber-structure}: collapse, split, $\pi_A$, fibers. \Cref{sec:flagship}: NEMS + generalization. \Cref{sec:contributions}: methods. \Cref{sec:reflexive-location}: how the development instantiates its own distinction. \Cref{sec:significance}: readings. \Cref{sec:limitations}--\Cref{sec:conclusion}. Appendices: Lean index, architecture sketch, audits, build, excerpts.
+\Cref{sec:framework}: notation $(\mathcal{E},\mathcal{B},\pi_A,b^\ast_A)$. \Cref{sec:canonical-cert}--\Cref{sec:fiber-structure}: collapse, split, $\pi_A$, fibers. \Cref{sec:flagship}: NEMS + generalization. \Cref{sec:contributions}: methods. \Cref{sec:reflexive-location}: how the development instantiates its own distinction. \Cref{sec:significance}: readings. \Cref{sec:limitations}--\Cref{sec:summary}; the extended \Cref{sec:conclusion} closes the paper's program position. Appendices: Lean index, architecture sketch, audits, build, excerpts.
 
 \section{Framework and formal setting}\label{sec:framework}
 
@@ -358,7 +362,7 @@ Stronger comparison laws (dominance between reflective architectures), carrier r
 \paragraph{Fibers locate multiplicity.}
 \Cref{thm:fiber-nontrivial} and \Cref{thm:role-inject} place multiplicity in $\mathrm{Fib}_A(b^\ast_A)$ with partial coordinates, not in generic prose.
 
-\section{Conclusion}\label{sec:conclusion}
+\section{Summary}\label{sec:summary}
 Machine-checked: collapse at $\mathcal{B}(A)$, strict refinement of $\pi_A$, nontrivial $\mathrm{Fib}_A(b^\ast_A)$ with partial role injection. After collapse, compare upstairs in $\mathcal{E}(A)$ and fibers---not by ad hoc bare fields. The development itself exemplifies the distinction it proves: the final certified statements do not exhaust the mathematical content of the route by which they are established (\Cref{sec:reflexive-location}).
 
 \appendix
@@ -468,7 +472,7 @@ This paper establishes a formal theorem of separation between certification and 
 The proved stratification---collapse downstairs, structured comparison and fibers upstairs---is not a type-theoretic platitude about proof relevance. It is a theorem about named carriers in a machine-checked library, with explicit comparison maps and fiber lemmas. The architecture (collapse / split / refinement / fiber) provides a reusable pattern for analyzing the gap between theorem-level invariants and realization-level structure.
 
 \paragraph{How the companion papers extend it.}
-The same collapse/refinement/fiber analysis is not confined to the Infinity Compression flagship setting. An external validation paper~\cite{SpivackValidation} demonstrates transfer across twelve independent mathematical families. General-method papers~\cite{SpivackFiber,SpivackQuillen} then show that the architecture yields theorem-level results: a splitting criterion for group extensions (filling a documented Mathlib gap), an embedding-problem equivalence connecting to inverse Galois theory, and Quillen's Theorem~A for Galois connections. Together the series moves from internal architecture theorem to external transfer to mathematical leverage on recognized problems.
+The same collapse/refinement/fiber analysis is not confined to the Infinity Compression flagship setting. An external validation paper~\cite{SpivackValidation} demonstrates transfer across twelve independent mathematical families. General-method papers~\cite{SpivackFiber,SpivackQuillen} then show that the architecture yields theorem-level results: a splitting criterion for group extensions (filling a documented Mathlib gap), an embedding-problem equivalence connecting to inverse Galois theory, and Quillen's Theorem~A for Galois connections. Together the series moves from internal architecture theorem to external transfer to mathematical leverage on recognized problems. Synthesis and summit manuscripts~\cite{SpivackSynthesis,SpivackSummit} state the unified program map and the candidate summit theorem (reflective non-exhaustion) without displacing this paper's role as the internal origin theorem.
 
 \appendix
 
@@ -535,6 +539,16 @@ N.~Spivack.
 N.~Spivack.
 \newblock \emph{Quillen's Theorem~A for Galois Connections: A Machine-Checked Formalization in Lean~4}.
 \newblock Companion manuscript, 2026.
+
+\bibitem{SpivackSynthesis}
+N.~Spivack.
+\newblock \emph{Certification, Realization, and Obstruction: A Universal Fiber Architecture}.
+\newblock Program synthesis manuscript, 2026.
+
+\bibitem{SpivackSummit}
+N.~Spivack.
+\newblock \emph{Reflective Non-Exhaustion: Certification, Realization, and the Summit Program}.
+\newblock Program manuscript, 2026.
 
 \end{thebibliography}
 

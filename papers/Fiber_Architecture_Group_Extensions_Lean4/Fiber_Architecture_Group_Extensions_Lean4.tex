@@ -83,9 +83,12 @@ cocycle obstruction vanishes; (3)~the \emph{2-cocycle identity} connecting our
 construction to Mathlib's \IsMulCocycle{} predicate; and (4)~a
 \emph{local-to-global obstruction principle} via restriction to subgroups. The
 work fills documented gaps in Mathlib's \lean{GroupExtension} module and takes a
-first step toward the cohomological classification of extensions. Companion
-work applies the same fiber architecture to Quillen's Theorem~A for Galois
-connections. All results are fully machine-checked with zero \lean{sorry}.
+first step toward the cohomological classification of extensions. Beyond
+cocycles and Mathlib gap-filling, this paper is the \emph{algebraic and arithmetic
+engine} of the summit program: embedding problems, the tower/arithmetic bridge to
+inverse Galois theory, and obstruction packaged as fiber/section data. Companion
+work discharges the topological instance (Quillen's Theorem~A)~\cite{SpivackQuillen};
+the program map is~\cite{SpivackSynthesis}. All results are fully machine-checked with zero \lean{sorry}.
 \end{abstract}
 
 \keywords{Lean 4, Mathlib, group extensions, 2-cocycle, splitting criterion,
@@ -192,11 +195,24 @@ flat descent---a \emph{conservative} instance of the same architectural pattern
 where the obstruction vanishes---using existing Mathlib results.
 
 \paragraph{Place in a broader series.}
-This paper isolates the cohomological group-extension and embedding-problem
-component of a broader fiber/section/obstruction architecture. Companion
-work~\cite{SpivackQuillen} applies the same architecture to Quillen's Theorem~A
-for Galois connections, demonstrating that the method reaches beyond extension
-theory into combinatorial topology.
+This paper is the \emph{algebraic and arithmetic engine} of the program: it isolates
+the cohomological group-extension layer, the embedding-problem equivalence (abstract
+inverse Galois lifting as extension splitting), and the arithmetic bridge (tower
+embedding formulations connecting Galois-theoretic data to cocycle obstructions).
+It should be read alongside the internal origin theorem~\cite{SpivackIC} and the
+transferability survey~\cite{SpivackValidation}; topology is discharged
+in~\cite{SpivackQuillen}; the unified map and summit claim are~\cite{SpivackSynthesis,SpivackSummit}.
+
+\subsection{Embedding problems, arithmetic, and summit role}\label{sec:intro-summit}
+Classical inverse Galois theory organizes ``realizing'' a group as a Galois group
+as an \emph{embedding problem}: solvability is a lifting condition on extensions.
+Our formalization makes that identification explicit: an embedding problem is solvable
+if and only if a designated group extension splits, if and only if the associated
+section cocycle is trivial (\S\ref{sec:embedding}). That packages the same
+fiber/section/obstruction pattern used in the flagship certification story---here with
+obstructions valued in kernel data and with a documented path toward Galois towers.
+This is not a side remark on Mathlib infrastructure; it is the arithmetic face of the
+common architecture.
 
 \paragraph{Proof status.}
 The formalization comprises twelve Lean modules totaling approximately 1500 lines
@@ -1130,6 +1146,12 @@ flat descent (conservative forgetful map, no obstruction) demonstrates that the
 architecture accommodates a range of algebraic phenomena, from non-conservative
 to conservative forgetful maps.
 
+\paragraph{Program closure.}
+Readers approaching the Infinity Compression paper suite should treat this manuscript as
+the discharge of algebra and (abstract) arithmetic obstruction into standard group theory,
+with~\cite{SpivackSynthesis} supplying the cross-domain dictionary and~\cite{SpivackSummit}
+stating the summit-level reflective non-exhaustion claim.
+
 \paragraph{Future work.}
 The path toward Mathlib's documented $H^2$ TODO requires: (1)~the $H^2$ bridge
 (section cocycle determines a well-defined class in $H^2(G, N)$ depending only on
@@ -1408,6 +1430,28 @@ D.~J.~S.~Robinson.
 J.~J.~Rotman.
 \newblock \emph{An Introduction to Homological Algebra}.
 \newblock Springer, 2nd edition, 2009.
+
+\bibitem{SpivackIC}
+N.~Spivack.
+\newblock \emph{Canonical Certification Does Not Exhaust Reflective Structure:
+  Reflective Split, Strict Refinement, and Fiber Structure in Infinity Compression}.
+\newblock Companion manuscript, 2026.
+
+\bibitem{SpivackValidation}
+N.~Spivack.
+\newblock \emph{External Validation of a Positive-Closure Proof Architecture:
+  A Multi-Tranche Survey}.
+\newblock Companion manuscript, 2026.
+
+\bibitem{SpivackSynthesis}
+N.~Spivack.
+\newblock \emph{Certification, Realization, and Obstruction: A Universal Fiber Architecture}.
+\newblock Program synthesis manuscript, 2026.
+
+\bibitem{SpivackSummit}
+N.~Spivack.
+\newblock \emph{Reflective Non-Exhaustion: Certification, Realization, and the Summit Program}.
+\newblock Program manuscript, 2026.
 
 \bibitem{SpivackQuillen}
 N.~Spivack.

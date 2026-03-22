@@ -33,6 +33,11 @@
 \maketitle
 
 \begin{abstract}
+\textbf{Transferability paper.} This manuscript establishes that the positive-closure
+architecture is \emph{exportable} to ordinary mathematics outside the flagship
+Infinity Compression modules; it is not the program map and not the venue for
+theorem-level leverage in algebra, topology, or arithmetic---those roles belong to
+the companion general-method papers cited below.
 The Infinity Compression (\IC{}) formalization develops a layered positive-closure proof
 architecture: collapse to a bare certificate, a typed forgetful map, fiber structure over
 that certificate, and, where appropriate, canonical witnesses or sections. A natural
@@ -96,12 +101,14 @@ We do not claim a universal theorem that every closure problem in mathematics mu
 formalized in \IC{}'s types. We claim that, in Lean, on twelve concrete external families,
 the architecture exports cleanly, yields structured theorem bundles beyond flat baselines,
 and aligns with the flagship forgetful / fiber / section narrative~\cite{SpivackIC}.
-This paper establishes \emph{transferability}; companion general-method
-papers~\cite{SpivackFiber,SpivackQuillen} then show that the same architecture becomes
-mathematically load-bearing in theorem-level settings: group extension splitting criteria,
+This paper establishes \emph{transferability} (external validity of the packaging).
+Companion general-method papers~\cite{SpivackFiber,SpivackQuillen} supply the
+theorem-level mathematical leverage: group extension splitting criteria,
 embedding problems from inverse Galois theory, and Quillen's Theorem~A for Galois
-connections. The principal value of the tranche survey is methodological transfer; the
-theorem-level mathematical impact of the architecture is developed in those companion papers.
+connections. A program-level map tying internal origin, transfer, and discharges
+together is~\cite{SpivackSynthesis}; the distilled summit claim is~\cite{SpivackSummit}.
+The principal value of the tranche survey is methodological transfer; it must not be
+read as a substitute for those theorem papers or for the synthesis manuscript.
 
 \section{The positive-closure architecture as a reusable schema}\label{sec:schema}
 
@@ -540,7 +547,7 @@ together they support external validity of the \emph{packaging}.
 
 \begin{itemize}[leftmargin=2em]
   \item \textbf{\IC{} flagship (internal):} the positive-closure architecture and main
-    certification / reflective splits---load-bearing inside the library.
+    certification / reflective splits---load-bearing inside the library~\cite{SpivackIC}.
   \item \textbf{External validation (this paper):} machine-checked demonstrations that the
     same pattern applies \emph{outside} the flagship modules, on quotients, products, dependent
     sums, coproduct discriminants, subtypes, orbit and ideal quotients, pushouts, classifiers,
@@ -550,6 +557,9 @@ together they support external validity of the \emph{packaging}.
     mathematics---group extension splitting, embedding problems, Quillen's
     Theorem~A for Galois connections. These papers demonstrate that the
     architecture is not merely organizational but mathematically load-bearing.
+  \item \textbf{Synthesis and summit:} the cross-domain program map~\cite{SpivackSynthesis}
+    and the reflective non-exhaustion summit statement~\cite{SpivackSummit} (not to be
+    confused with this transferability survey).
   \item \textbf{Strata:} abstract synthesis and bridge laws~\cite{SpivackStrata}.
   \item \textbf{APS:} local-to-global backbone elsewhere in the stack. \textbf{These tranches
     do not test APS directly;} they test reusable positive-closure \emph{packaging} on
@@ -635,7 +645,8 @@ The retrospective tranches do not exhaust all closure or fibration patterns, and
 group extension and descent work are first applications rather than a comprehensive
 treatment. The principal value of the tranche survey is transferability and interface
 validation; theorem-level mathematical leverage is developed in the companion
-general-method papers~\cite{SpivackFiber,SpivackQuillen}. Natural extensions include:
+general-method papers~\cite{SpivackFiber,SpivackQuillen}, and the unified editorial
+closure of the program is~\cite{SpivackSynthesis,SpivackSummit}. Natural extensions include:
 the full $H^2 \leftrightarrow \text{extensions}$ bijection, obstruction-theoretic
 problems in algebraic topology, and effective descent for module categories.
 
@@ -1170,6 +1181,16 @@ N.~Spivack.
 N.~Spivack.
 \newblock \emph{Quillen's Theorem~A for Galois Connections: A Machine-Checked Formalization in Lean~4}.
 \newblock Companion manuscript, 2026.
+
+\bibitem{SpivackSynthesis}
+N.~Spivack.
+\newblock \emph{Certification, Realization, and Obstruction: A Universal Fiber Architecture}.
+\newblock Program synthesis manuscript, 2026.
+
+\bibitem{SpivackSummit}
+N.~Spivack.
+\newblock \emph{Reflective Non-Exhaustion: Certification, Realization, and the Summit Program}.
+\newblock Program manuscript, 2026.
 
 \end{thebibliography}
 

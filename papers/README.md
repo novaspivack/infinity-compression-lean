@@ -12,14 +12,17 @@ Each paper has its **own subdirectory** and main `.tex` file. From a paper direc
 \input{../suite_macros}
 ```
 
-## Layout
+## Layout (series roles)
 
-| Directory | Paper |
-|-----------|--------|
-| `Canonical_Certification_and_Enriched_Reflective_Realization/` | Flagship IC paper (canonical bare certification vs enriched realization; fibers; NEMS spine). |
-| `External_Validation_Positive_Closure_Architecture/` | External validation of the positive-closure architecture (**multi-tranche:** quotient T1, product T2, Sigma T3). |
-| `Fiber_Architecture_Group_Extensions_Lean4/` | EPIC_020_ML1: ITP/CPP paper — fiber architecture for group extensions, cocycles, splitting criterion, cohomological bridge. |
-| `Mathlib_Cocycle_Splitting_Companion/` | EPIC_020_ML1: Mathlib contribution companion — technical note for PR reviewers. |
+| Directory | Role |
+|-----------|------|
+| `Canonical_Certification_and_Enriched_Reflective_Realization/` | **Flagship IC** — internal origin theorem (collapse, split, refinement, fibers) in the native formalization. |
+| `External_Validation_Positive_Closure_Architecture/` | **External validation** — transferability across twelve tranches (T1–T12); not the program map. |
+| `Fiber_Architecture_Group_Extensions_Lean4/` | **Algebraic / arithmetic engine** — cocycles, splitting, embedding problems, Mathlib bridge. |
+| `Quillen_Theorem_A_Galois_Connections/` | **Topology discharge** — Quillen A for Galois connections (nerve / homotopy data). |
+| `Mathlib_Cocycle_Splitting_Companion/` | **Mathlib technical note** — reviewer-facing API for the PR; minimal program rhetoric. |
+| `Certification_Realization_Obstruction_Universal_Fiber_Architecture/` | **Synthesis** — map of the full program, routes C/A/B/D, cross-domain dictionary. |
+| `Reflective_Non_Exhaustion_Summit/` | **Summit** — distilled reflective non-exhaustion thesis, scope, Gödel distinction. |
 
 ## Build (example)
 
@@ -29,4 +32,3 @@ latexmk -pdf Canonical_Certification_and_Enriched_Reflective_Realization.tex
 ```
 
 Normative paper program: `specs/COMPLETE/EPIC_016_WV2_PROGRAM_W_PAPERS_SPEC.md` (parent repo).
-

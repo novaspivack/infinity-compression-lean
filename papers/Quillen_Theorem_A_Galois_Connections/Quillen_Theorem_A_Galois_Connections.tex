@@ -41,7 +41,9 @@
 
 \begin{abstract}
 We present the first machine-checked formalization of Quillen's Theorem~A
-for Galois connections between partial orders. For a Galois connection
+for Galois connections between partial orders, as the \emph{topology discharge}
+of the same fiber/section/obstruction architecture developed for group
+extensions and embedding problems~\cite{SpivackFiber}. For a Galois connection
 $(l,u)$ with $l : P \to Q$ and $u : Q \to P$, we construct the forward and
 backward nerve maps together with explicit 1-simplices (closure edges
 $[p \to u(l(p))]$ and kernel edges $[l(u(q)) \to q]$) that witness the
@@ -51,9 +53,9 @@ with unique edges to the terminal vertex, establishing the fiber
 contractibility that Quillen's theorem requires. The formalization works at
 the simplicial set level; the final step from edge-level homotopy data to a
 full simplicial homotopy is standard but not formalized, as Mathlib does not
-yet define simplicial homotopy as a type. Companion work applies the same
-fiber/section/obstruction architecture to group extension splitting and
-embedding problems. All results are formalized in Lean~4 with Mathlib, with
+yet define simplicial homotopy as a type. See~\cite{SpivackSynthesis,SpivackSummit}
+for the series map and summit claim.
+All results are formalized in Lean~4 with Mathlib, with
 zero \texttt{sorry} placeholders.
 \end{abstract}
 
@@ -98,14 +100,22 @@ placeholders. The main contributions are:
   \item \textbf{Nerve contractibility for terminal categories}
     (\S\ref{sec:nerve}): every vertex is connected to the terminal vertex by a
     unique 1-simplex, and the nerve admits a retraction to the point.
-  \item \textbf{Embedding problems as extension splitting}
-    (\S\ref{sec:embed}): the first Lean formalization connecting embedding
-    problems from inverse Galois theory to group extension splitting with
-    cocycle obstructions.
-  \item \textbf{Descent infrastructure} (\S\ref{sec:descent}): the 2-torsion
-    torsor structure for elliptic curve descent and conservative forgetful maps
-    for faithfully flat descent.
 \end{enumerate}
+
+\noindent
+\textbf{Supplementary material.} Sections~\ref{sec:embed}--\ref{sec:descent} record
+embedding problems and descent infrastructure as further instances of the
+fiber/section pattern; the algebraic engine for embedding problems is
+in~\cite{SpivackFiber}.
+
+\paragraph{Topology discharge in the series.}
+Read alongside~\cite{SpivackFiber}, this paper is the \emph{combinatorial topology}
+instance of the same architecture: Galois connections induce fiber data on posets,
+contractibility feeds Quillen's hypothesis, and the theorem is a homotopy-level
+``collapse vs.\ enriched structure'' story in the order-complex / nerve layer.
+The unified map~\cite{SpivackSynthesis} and summit statement~\cite{SpivackSummit}
+place this discharge in the larger program without diluting the central formalization
+achievement of Theorem~A for Galois connections.
 
 \paragraph{Theorem status.}
 The following results are \textbf{complete theorems} (zero \texttt{sorry}):
@@ -462,6 +472,16 @@ N.~Spivack.
 \newblock Fiber architecture for group extensions in Lean~4: cocycles,
   splitting, and the cohomological bridge.
 \newblock Companion manuscript, 2026.
+
+\bibitem{SpivackSynthesis}
+N.~Spivack.
+\newblock \emph{Certification, Realization, and Obstruction: A Universal Fiber Architecture}.
+\newblock Program synthesis manuscript, 2026.
+
+\bibitem{SpivackSummit}
+N.~Spivack.
+\newblock \emph{Reflective Non-Exhaustion: Certification, Realization, and the Summit Program}.
+\newblock Program manuscript, 2026.
 
 \end{thebibliography}
 

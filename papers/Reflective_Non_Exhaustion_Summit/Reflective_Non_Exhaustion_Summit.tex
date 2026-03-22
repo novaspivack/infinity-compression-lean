@@ -1,0 +1,124 @@
+% Summit / manifesto paper — distilled theoremic and philosophical statement (careful scope).
+\documentclass[11pt]{article}
+\input{../suite_preamble}
+\input{../suite_macros}
+
+\title{Reflective Non-Exhaustion:\\[0.35em]
+\large Certification, Realization, and the Summit Program}
+\author{Nova Spivack}
+\date{2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This short paper states the summit-level \emph{reflective non-exhaustion} thesis in
+clear scope: canonical certification does not exhaust realization when comparison is
+tracked on the right carriers. We distinguish the claim from G\"odel--style barrier
+theorems, from generic dependent-type proof relevance, and from informal slogans about
+``consciousness'' or AGI. Routes C/A/B/D label how the thesis is supported internally,
+in applications, and in computability. For the map of manuscripts and discharges,
+see~\cite{SpivackSynthesis}.
+\end{abstract}
+
+\keywords{reflective non-exhaustion, certification, realization, incompleteness,
+  formal verification, Infinity Compression}
+
+\tableofcontents
+\newpage
+
+\section{Reflective Non-Exhaustion (summit statement)}
+
+\textbf{Thesis.} In structured reflective settings, a principal certified invariant at a
+bare carrier can coexist with nontrivial realization data above that carrier: the
+forgetful comparison map is sound but need not be injective, and multiplicity can be
+organized in fibers with explicit obstructions to trivializing lifts.
+
+\noindent
+The Lean artifact instantiates this thesis with named definitions and theorems; the
+flagship paper~\cite{SpivackIC} is the internal mathematical origin.
+
+\section{Broad structural class}
+
+The class of phenomena is not tied to a single domain: collapse/refinement/fiber appears
+in the internal library~\cite{SpivackIC}, in twelve external benchmarks~\cite{SpivackValidation},
+and in algebra/topology discharges~\cite{SpivackFiber,SpivackQuillen}. What unifies them is
+\emph{packaging}: the same layered analysis applies when $\pi$, fibers, and sections are
+made mathematically explicit.
+
+\section{Exact scope}
+
+This summit paper is \textbf{not} a substitute for formal statements in Lean. It does not
+add new axioms. It does not assert that every formal system or every epistemic agent must
+exhibit non-exhaustion. It summarizes a research program whose precise carriers and
+hypotheses are documented in the repository and companion manuscripts.
+
+\section{Distinction from G\"odel}
+
+G\"odelian incompleteness exhibits \emph{limits} of formal systems (undecidable sentences,
+non-recursive theories, etc.). The present program exhibits a \emph{positive} stratification:
+where collapse occurs, where it does not, and how obstruction is organized. Route~D aligns
+computability anchors with the classical story, but reflective non-exhaustion is not
+``G\"odel's theorem in a new notation.''
+
+\section{Not merely dependent-type proof relevance}
+
+Dependent type theory admits proof-relevant types; that observation alone is not the
+contribution. The contribution is a \emph{theorem} about specific carriers in a
+machine-checked library: collapse at $\mathcal{B}_{\mathrm{can}}$, strict refinement of
+$\pi_A$, and fiber lemmas with the hypotheses used in development~\cite{SpivackIC}.
+
+\section{Why it matters across fields}
+
+Algebra: cocycle obstructions to splitting. Topology: contractible fibers in Quillen's
+hypotheses. Arithmetic: embedding problems as liftability. Verification: audit trails
+above bare certificates. The same architectural lens travels because the layers are
+mathematically standard once $\pi$ and fibers are fixed.
+
+\section{Self-modeling, consciousness, and AGI (delimited)}
+
+Any analogy to self-modeling or subjective experience is \textbf{speculative} and
+\emph{not} a theorem of this program. What \emph{is} formalized are mathematical carriers
+and comparison maps in Lean. Philosophical reading is optional; the summit claim stands
+on the formal discharges and the validation survey.
+
+\section*{Program map}
+
+See~\cite{SpivackSynthesis} for the full manuscript architecture and dictionary.
+
+\bibliographystyle{alpha}
+\begin{thebibliography}{99}
+
+\bibitem{SpivackIC}
+N.~Spivack.
+\newblock \emph{Canonical Certification Does Not Exhaust Reflective Structure:
+  Reflective Split, Strict Refinement, and Fiber Structure in Infinity Compression}.
+\newblock Companion manuscript, 2026.
+
+\bibitem{SpivackValidation}
+N.~Spivack.
+\newblock \emph{External Validation of a Positive-Closure Proof Architecture:
+  A Multi-Tranche Survey}.
+\newblock Companion manuscript, 2026.
+
+\bibitem{SpivackFiber}
+N.~Spivack.
+\newblock \emph{Fiber Architecture for Group Extensions in Lean~4: Cocycles, Splitting,
+  and the Cohomological Bridge}.
+\newblock Companion manuscript, 2026.
+
+\bibitem{SpivackQuillen}
+N.~Spivack.
+\newblock \emph{Quillen's Theorem~A for Galois Connections: A Machine-Checked
+  Formalization in Lean~4}.
+\newblock Companion manuscript, 2026.
+
+\bibitem{SpivackSynthesis}
+N.~Spivack.
+\newblock \emph{Certification, Realization, and Obstruction: A Universal Fiber Architecture}.
+\newblock Program synthesis manuscript, 2026.
+
+\end{thebibliography}
+
+\end{document}
