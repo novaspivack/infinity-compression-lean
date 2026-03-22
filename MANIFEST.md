@@ -1,7 +1,7 @@
 # infinity-compression-lean — Full artifact manifest
 
-**Toolchain:** leanprover/lean4 — pinned in `lakefile.toml` / `lean-toolchain`  
-**Mathlib:** v4.29.0-rc3 (via lake)  
+**Toolchain:** `leanprover/lean4:v4.29.0-rc6` (see `lean-toolchain`)  
+**Mathlib:** v4.29.0-rc6 (via lake)  
 **Build:** From this directory: `lake build`. **Program W validation only (fast):** pass each `InfinityCompression.Validation.*` module from the table below as a `lake build` target (twelve files; there is no single `Validation.lean` wrapper). Do **not** use a partial build as a substitute for a full release check of the whole library.  
 **Root import:** `InfinityCompression.lean` (imports every production module below)  
 **Last verified:** 2026-03-22 — Program W papers: consolidated external validation **T1–T12** (`papers/External_Validation_Positive_Closure_Architecture/`). **Wave 1:** EPIC_015_WV1 (`QuotientFiberBenchmark`). **WV2B:** EPIC_016_WV2 (`ProductProjectionFiberBenchmark`, `SigmaFiberBenchmark`). **Extended:** EPIC_017_EV1 T4–T7. **Second wave:** EPIC_018_XC1 T8–T12.
