@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1774208365.32456 "Canonical_Certification_and_Enriched_Reflective_Realization.tex" "Canonical_Certification_and_Enriched_Reflective_Realization.pdf" "Canonical_Certification_and_Enriched_Reflective_Realization" 1774208366.1229 0
+["pdflatex"] 1774209323.48472 "Canonical_Certification_and_Enriched_Reflective_Realization.tex" "Canonical_Certification_and_Enriched_Reflective_Realization.pdf" "Canonical_Certification_and_Enriched_Reflective_Realization" 1774209324.29932 0
   "../suite_macros.tex" 1774151281.77416 4836 f12fe65da311b79b2f7da22561a9e569 ""
   "../suite_preamble.tex" 1774151281.77423 1991 457daeb583bf89b49fd67c23c4b4b4d9 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
@@ -171,10 +171,10 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1748572903 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "Canonical_Certification_and_Enriched_Reflective_Realization.aux" 1774208365.96844 24287 dfa70d406847fb1b7b5777bd844aebe6 "pdflatex"
-  "Canonical_Certification_and_Enriched_Reflective_Realization.out" 1774208365.9701 14675 c96671faef9123c28f3982a1f782acc5 "pdflatex"
-  "Canonical_Certification_and_Enriched_Reflective_Realization.tex" 1774208271.23371 55382 5da17db96731e07031d01ed79f72b6f3 ""
-  "Canonical_Certification_and_Enriched_Reflective_Realization.toc" 1774208365.97043 6621 1bd55185cc97e5ff34fe30bee31c28a3 "pdflatex"
+  "Canonical_Certification_and_Enriched_Reflective_Realization.aux" 1774209324.14096 24943 61e84a6f69fe6c6bad6c74ac0eb8439a "pdflatex"
+  "Canonical_Certification_and_Enriched_Reflective_Realization.out" 1774209324.14251 14770 76ef44f21f415a87c71e4127cc33109b "pdflatex"
+  "Canonical_Certification_and_Enriched_Reflective_Realization.tex" 1774209143.09723 58232 42f6b3fecd1759bdb4ed774a79c74854 ""
+  "Canonical_Certification_and_Enriched_Reflective_Realization.toc" 1774209324.14287 6904 045ee6228c31c4dba3ed361626db13aa "pdflatex"
   (generated)
   "Canonical_Certification_and_Enriched_Reflective_Realization.aux"
   "Canonical_Certification_and_Enriched_Reflective_Realization.log"

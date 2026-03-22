@@ -2,7 +2,7 @@
 \contentsline {subsection}{\numberline {1.1}The problem}{4}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Main thesis}{4}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}Main results}{4}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}What is new here}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.4}What is new here}{5}{subsection.1.4}%
 \contentsline {subsection}{\numberline {1.5}Place in a broader series}{5}{subsection.1.5}%
 \contentsline {subsection}{\numberline {1.6}What this paper does not claim (early scope)}{5}{subsection.1.6}%
 \contentsline {subsection}{\numberline {1.7}Why scope does not diminish the result}{5}{subsection.1.7}%
@@ -66,5 +66,9 @@
 \contentsline {section}{\numberline {A}Theorem index (paper and Lean)}{14}{appendix.A}%
 \contentsline {section}{\numberline {B}Broader Infinity Compression architecture (sketch)}{16}{appendix.B}%
 \contentsline {section}{\numberline {C}Collapse audits, falsified hypotheses, and open packaging}{16}{appendix.C}%
-\contentsline {section}{\numberline {D}Artifact and build details}{17}{appendix.D}%
-\contentsline {section}{\numberline {E}Selected Lean excerpts}{18}{appendix.E}%
+\contentsline {section}{\numberline {D}Conclusion}{17}{appendix.D}%
+\contentsline {paragraph}{What is proved.}{17}{section*.5}%
+\contentsline {paragraph}{What it means architecturally.}{17}{section*.6}%
+\contentsline {paragraph}{How the companion papers extend it.}{18}{section*.7}%
+\contentsline {section}{\numberline {A}Artifact and build details}{18}{appendix.A}%
+\contentsline {section}{\numberline {B}Selected Lean excerpts}{18}{appendix.B}%

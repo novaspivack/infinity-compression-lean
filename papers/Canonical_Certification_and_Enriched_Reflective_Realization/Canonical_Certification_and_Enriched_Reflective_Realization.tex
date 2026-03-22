@@ -27,8 +27,16 @@
 \maketitle
 
 \begin{abstract}
-Many formal theories seek a principal closure or certification theorem: a canonical, theorem-level record that a designated invariant holds. The open question is whether such certification exhausts all structurally significant information in reflective settings. We answer negatively in the Infinity Compression formalization. We prove universal collapse of standard Phase-2 extraction to a unique bare certificate; a reflective split (canonical bare certification alongside nontrivial enriched autonomous mirror structure); strict refinement of the typed forgetful map $\pi_A$ (existence of distinct enriched reflective splits with equal $\pi_A$-image); and a forgetful--fiber layer in which the canonical fiber is nontrivial and role assignments inject into a distinguished standard subfamily. We treat a concrete NEMS-style flagship spine and extend under explicit intermediate crown hypotheses (role-rich and role-pair-diverse classes). Methodologically, the proofs are organized by collapse audits and carrier-sensitive route comparison. The result is a formal theorem of separation between theorem-level invariants and realization-level structure. All main claims are machine-checked in Lean~4 (zero \texttt{sorry} in proof terms under \texttt{InfinityCompression/}; Mathlib and kernel axioms only); \Cref{app:theorem-index} maps paper statements to named definitions and theorems in the artifact.
+Many formal theories seek a principal closure or certification theorem: a canonical, theorem-level record that a designated invariant holds. The open question is whether such certification exhausts all structurally significant information in reflective settings. We answer negatively in the Infinity Compression formalization. We prove universal collapse of standard Phase-2 extraction to a unique bare certificate; a reflective split (canonical bare certification alongside nontrivial enriched autonomous mirror structure); strict refinement of the typed forgetful map $\pi_A$ (existence of distinct enriched reflective splits with equal $\pi_A$-image); and a forgetful--fiber layer in which the canonical fiber is nontrivial and role assignments inject into a distinguished standard subfamily. We treat a concrete NEMS-style flagship spine and extend under explicit intermediate crown hypotheses (role-rich and role-pair-diverse classes). Methodologically, the proofs are organized by collapse audits and carrier-sensitive route comparison. The result is a formal theorem of separation between theorem-level invariants and realization-level structure. Companion papers show that the same collapse/refinement/fiber architecture transfers to external mathematics across twelve benchmark families and yields theorem-level results in group extensions, embedding problems, and Quillen's Theorem~A for Galois connections. All main claims are machine-checked in Lean~4 (zero \texttt{sorry} in proof terms under \texttt{InfinityCompression/}; Mathlib and kernel axioms only); \Cref{app:theorem-index} maps paper statements to named definitions and theorems in the artifact.
 \end{abstract}
+
+\keywords{formal verification, proof architecture, certification vs.\ realization, fiber structure, forgetful maps, Lean~4, Mathlib}
+\amsclassification{03B70, 18A30, 68V15, 68V20}
+\codeavailability{%
+  Repository: \url{https://github.com/novaspivack/infinity-compression-lean}.
+  Root module: \texttt{InfinityCompression.lean}.
+  Lean toolchain: \texttt{leanprover/lean4:v4.29.0-rc6}.
+  Zero \texttt{sorry} in proof terms under \texttt{InfinityCompression/}.}
 
 \tableofcontents
 \newpage
@@ -55,6 +63,9 @@ Fix a compression architecture $A$ and the standard Phase-2 / roles+extraction i
     \item \textbf{Generalization:} under \texttt{RolePairDiverseCrownEligible} and any $H$, the same non-injectivity conclusion holds; under \texttt{RoleRichCrownEligible}, nonempty enriched splits are obtained \emph{(\Cref{thm:gen-refinement}, \Cref{def:role-rich})}.
 \end{enumerate}
 \end{theorem}
+
+\noindent
+In summary: the bare certification layer collapses to a unique canonical certificate; the enriched realization layer does not collapse---distinct routes produce genuinely distinct enriched witnesses; and the non-collapse is organized by the forgetful map $\pi_A$ and its canonical fiber, where role data injects along a standard subfamily.
 
 \subsection{What is new here}\label{sec:intro-new}
 The novelty is a \textbf{proved stratification}, not a type-theoretic platitude: collapse at the bare certification carrier (\Cref{thm:canonical-cert-math}), strict refinement via $\pi_A$ on enriched splits (\Cref{thm:strict-refinement}, \Cref{thm:gen-refinement}), and partial fiber classification along a standard subfamily (\Cref{thm:role-inject}). Dependent types admit proof-relevant objects in principle; here the split/refinement/fiber facts are \emph{theorems} about the library's certified carriers and the chosen comparison map---they are not imported as axioms of the framework. See \Cref{sec:intro-comparison} for contrast with barrier theorems and generic quotient talk; scope limits are \Cref{sec:intro-not-claimed}.
@@ -447,6 +458,19 @@ The verified Infinity Compression library spans landscape/summit statements, rou
 \textbf{Packaging mirror caveat (audit):} as documented in \texttt{specs/NOTES/IC\_Closed\_Open\_Ledger.md}, several crown/mirror lemmas still use the library standard derivation as a witness interface. This does \emph{not} undermine the Program~C+ split/refinement/fiber theorems proved here, but it bounds claims about \emph{independence} of mirror routes from the principal summit lemma package. The paper states this in \Cref{sec:limitations-packaging}.
 
 \textbf{What remains open:} full classification of $\mathrm{Fib}_A(b^\ast_A)$; surjectivity of role data onto the fiber; stronger mirror-route independence; architecture-dominance comparison laws beyond the hypotheses in \texttt{ReflectiveRouteComparison} / \texttt{GeneralizedReflectiveFiberRefinement}.
+
+\section{Conclusion}\label{sec:conclusion}
+
+\paragraph{What is proved.}
+This paper establishes a formal theorem of separation between certification and realization in the Infinity Compression formalization: bare certification collapses to a unique canonical certificate, while enriched realization retains nontrivial structure above that collapse. The non-collapse is organized by the forgetful map $\pi_A$ and its canonical fiber, with injective role data along a standard subfamily. All results are machine-checked in Lean~4 with zero \texttt{sorry}.
+
+\paragraph{What it means architecturally.}
+The proved stratification---collapse downstairs, structured comparison and fibers upstairs---is not a type-theoretic platitude about proof relevance. It is a theorem about named carriers in a machine-checked library, with explicit comparison maps and fiber lemmas. The architecture (collapse / split / refinement / fiber) provides a reusable pattern for analyzing the gap between theorem-level invariants and realization-level structure.
+
+\paragraph{How the companion papers extend it.}
+The same collapse/refinement/fiber analysis is not confined to the Infinity Compression flagship setting. An external validation paper~\cite{SpivackValidation} demonstrates transfer across twelve independent mathematical families. General-method papers~\cite{SpivackFiber,SpivackQuillen} then show that the architecture yields theorem-level results: a splitting criterion for group extensions (filling a documented Mathlib gap), an embedding-problem equivalence connecting to inverse Galois theory, and Quillen's Theorem~A for Galois connections. Together the series moves from internal architecture theorem to external transfer to mathematical leverage on recognized problems.
+
+\appendix
 
 \section{Artifact and build details}\label{app:artifact}
 \begin{itemize}

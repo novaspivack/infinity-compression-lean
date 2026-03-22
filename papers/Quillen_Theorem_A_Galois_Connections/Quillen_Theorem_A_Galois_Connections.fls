@@ -2,7 +2,7 @@ PWD /Users/nova/infinity-compression/infinity-compression-lean/papers/Quillen_Th
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT Quillen_Theorem_A_Galois_Connections.tex
+INPUT /Users/nova/infinity-compression/infinity-compression-lean/papers/Quillen_Theorem_A_Galois_Connections/Quillen_Theorem_A_Galois_Connections.tex
 OUTPUT Quillen_Theorem_A_Galois_Connections.log
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls

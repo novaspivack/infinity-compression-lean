@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1774208715.02395 "Fiber_Architecture_Group_Extensions_Lean4.tex" "Fiber_Architecture_Group_Extensions_Lean4.pdf" "Fiber_Architecture_Group_Extensions_Lean4" 1774208715.84643 0
+["pdflatex"] 1774209326.74601 "Fiber_Architecture_Group_Extensions_Lean4.tex" "Fiber_Architecture_Group_Extensions_Lean4.pdf" "Fiber_Architecture_Group_Extensions_Lean4" 1774209327.54991 0
   "../suite_macros.tex" 1774151281.77416 4836 f12fe65da311b79b2f7da22561a9e569 ""
   "../suite_preamble.tex" 1774151281.77423 1991 457daeb583bf89b49fd67c23c4b4b4d9 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
@@ -167,10 +167,10 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1748572903 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "Fiber_Architecture_Group_Extensions_Lean4.aux" 1774208715.70349 17489 e99d2f35ea00754582ac97babdfcd4de "pdflatex"
-  "Fiber_Architecture_Group_Extensions_Lean4.out" 1774208715.70469 6384 d3a79f43bf994a050b118ea272b542bb "pdflatex"
-  "Fiber_Architecture_Group_Extensions_Lean4.tex" 1774208704.63614 57360 1fd0f85b28885d2cd849d41cbd1ab0e6 ""
-  "Fiber_Architecture_Group_Extensions_Lean4.toc" 1774208715.70496 4003 91ba015ba97578763c19e108449481c8 "pdflatex"
+  "Fiber_Architecture_Group_Extensions_Lean4.aux" 1774209327.40864 17629 7e2d555b1d90aa83578f129baf4a5423 "pdflatex"
+  "Fiber_Architecture_Group_Extensions_Lean4.out" 1774209327.41012 6384 d3a79f43bf994a050b118ea272b542bb "pdflatex"
+  "Fiber_Architecture_Group_Extensions_Lean4.tex" 1774209215.4808 58149 ee21b2da6a63693d7e53a444699a3db8 ""
+  "Fiber_Architecture_Group_Extensions_Lean4.toc" 1774209327.41056 4074 14f36b1051c88b130223fe2a64d7e035 "pdflatex"
   (generated)
   "Fiber_Architecture_Group_Extensions_Lean4.aux"
   "Fiber_Architecture_Group_Extensions_Lean4.log"

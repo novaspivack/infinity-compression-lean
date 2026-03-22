@@ -40,24 +40,21 @@
 \maketitle
 
 \begin{abstract}
-We present a machine-checked formalization of the homotopy equivalence data
-for Quillen's Theorem~A in the case of Galois connections between partial
-orders. For a Galois connection $(l,u)$ with $l : P \to Q$ and $u : Q \to P$,
-we construct the forward and backward nerve maps together with explicit
-1-simplices (closure edges $[p \to u(l(p))]$ and kernel edges
-$[l(u(q)) \to q]$) that witness the homotopy between each composition and the
-identity at the vertex level. We prove that the nerve of any category with a
-terminal object is connected with unique edges to the terminal vertex,
-establishing the fiber contractibility that Quillen's theorem requires. As
-applications, we formalize embedding problems from inverse Galois theory as
-group extension splitting problems with cocycle obstructions, and establish
-the 2-torsion torsor structure for elliptic curve descent. All results are
-formalized in Lean~4 with Mathlib, with zero \texttt{sorry} placeholders.
-The formalization works at the simplicial set level; the final step from
-edge-level homotopy data to a full simplicial homotopy (or topological
-homotopy equivalence via geometric realization) is stated as an implication
-but not formalized, as Mathlib does not yet define simplicial homotopy as a
-type.
+We present the first machine-checked formalization of Quillen's Theorem~A
+for Galois connections between partial orders. For a Galois connection
+$(l,u)$ with $l : P \to Q$ and $u : Q \to P$, we construct the forward and
+backward nerve maps together with explicit 1-simplices (closure edges
+$[p \to u(l(p))]$ and kernel edges $[l(u(q)) \to q]$) that witness the
+homotopy between each composition and the identity at the vertex level. We
+prove that the nerve of any category with a terminal object is connected
+with unique edges to the terminal vertex, establishing the fiber
+contractibility that Quillen's theorem requires. The formalization works at
+the simplicial set level; the final step from edge-level homotopy data to a
+full simplicial homotopy is standard but not formalized, as Mathlib does not
+yet define simplicial homotopy as a type. Companion work applies the same
+fiber/section/obstruction architecture to group extension splitting and
+embedding problems. All results are formalized in Lean~4 with Mathlib, with
+zero \texttt{sorry} placeholders.
 \end{abstract}
 
 \keywords{Quillen's Theorem~A, Galois connections, order complex, nerve,
@@ -109,6 +106,16 @@ placeholders. The main contributions are:
     torsor structure for elliptic curve descent and conservative forgetful maps
     for faithfully flat descent.
 \end{enumerate}
+
+\paragraph{Theorem status.}
+The following results are \textbf{complete theorems} (zero \texttt{sorry}):
+Quillen's Theorem~A for Galois connections (homotopy equivalence data on
+nerves); nerve connectivity and edge uniqueness for categories with terminal
+objects; embedding-problem solvability iff extension splitting iff cocycle
+vanishing. The following are \textbf{not formalized here}: the general
+Quillen Theorem~A for arbitrary contractible fibers; full topological
+geometric-realization equivalence; the bridge from abstract embedding
+problems to Galois extensions via \texttt{IntermediateField}.
 
 \paragraph{Scope and precision.}
 Our formalization works at the \textbf{simplicial set level}, not the
@@ -336,7 +343,7 @@ For nerves of categories (which are 2-coskeletal by a theorem in
 Mathlib~\cite{Mathlib}), this is equivalent to topological contractibility of
 the geometric realization.
 
-\section{Embedding problems and cocycle obstructions}\label{sec:embed}
+\section{Connection: embedding problems as extension splitting}\label{sec:embed}
 
 An \textbf{embedding problem} in Galois theory asks: given a Galois extension
 $L/K$ with group $G$ and a surjection $\varphi : H \twoheadrightarrow G$, does
@@ -378,7 +385,7 @@ decomposes the problem into layers: the bare layer (known Galois group $G$),
 the enriched layer (target group $H$), the fiber (kernel $N$), and the
 obstruction (cocycle class in $H^2(G, N)$).
 
-\section{Descent infrastructure}\label{sec:descent}
+\section{Broader connections: descent infrastructure}\label{sec:descent}
 
 \subsection{Elliptic curve 2-descent}
 

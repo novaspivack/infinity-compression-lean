@@ -152,6 +152,35 @@ theorems require. Concretely, we add:
   connecting our cocycle to Mathlib's \texttt{IsMulCocycle\textsubscript{2}}.
 \end{enumerate}
 
+\subsection{Included now vs.\ deferred}
+
+\noindent\textbf{Included in this PR:}
+\begin{itemize}[nosep]
+  \item \texttt{Section.cocycle} --- the $N$-valued 2-cocycle of a set-theoretic section
+  \item \texttt{Section.diff} --- pointwise difference between two sections
+  \item \texttt{splits\_iff\_trivial\_cocycle} --- splitting criterion
+  \item \texttt{Section.conjAct} --- conjugation action on $N$ via sections
+  \item \texttt{sectionCocycle\_isMulCocycle\textsubscript{2}\_conj} --- 2-cocycle identity
+\end{itemize}
+
+\noindent\textbf{Deferred to Phase~2:}
+\begin{itemize}[nosep]
+  \item $H^1$ conjugacy-class bridge (splittings $\leftrightarrow$ $H^1(G, N)$)
+  \item $H^2$ extension-class bridge (extensions $\leftrightarrow$ $H^2(G, N)$)
+  \item Full coboundary / change-of-section classification theorem
+\end{itemize}
+
+\subsection{Mathematical significance}
+
+Section cocycles and splitting criteria are central classical ingredients in the
+structure theory of groups. Their clean formalization is a meaningful library
+advance: they are exactly the prerequisite layer for the cohomological
+classifications ($H^1$ and $H^2$) already documented as goals in Mathlib. The
+2-cocycle identity, proved here in its genuinely nonabelian form (with the
+correct factor order for non-commutative kernels), connects the extension-theoretic
+cocycle to Mathlib's representation-theoretic cohomology predicates for the first
+time.
+
 \subsection{Relationship to the TODOs}
 
 The $H^2$ bridge requires: (a)~defining the section cocycle, (b)~proving it satisfies

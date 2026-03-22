@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  22 MAR 2026 15:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  22 MAR 2026 15:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -635,13 +635,13 @@ al/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}])
 
 [3{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }]
-Overfull \hbox (18.80157pt too wide) in paragraph at lines 153--158
+Overfull \hbox (18.80157pt too wide) in paragraph at lines 156--161
 \T1/cmr/m/n/10.95 (-20) All def-i-ni-tions and the-o-rems live in \T1/cmtt/m/n/
 10.95 InfinityCompression/Validation/QuotientFiberBenchmark.lean
  []
 
 
-Overfull \hbox (70.0684pt too wide) in paragraph at lines 153--158
+Overfull \hbox (70.0684pt too wide) in paragraph at lines 156--161
 \T1/cmr/m/n/10.95 (-20) (names-pace \T1/cmtt/m/n/10.95 InfinityCompression.Vali
 dation\T1/cmr/m/n/10.95 (-20) ). Lay-er-ing: \T1/cmtt/m/n/10.95 BareQuotient\T1
 /cmr/m/n/10.95 (-20) , \T1/cmtt/m/n/10.95 EnrichedCarrier\T1/cmr/m/n/10.95 (-20
@@ -658,7 +658,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (9.33641pt too wide) in paragraph at lines 326--329
+Overfull \hbox (9.33641pt too wide) in paragraph at lines 329--332
 \T1/cmr/m/n/10.95 (-20) Given \T1/cmtt/m/n/10.95 MulAction G X\T1/cmr/m/n/10.95
  (-20) , the or-bit re-la-tion \T1/cmtt/m/n/10.95 same_orbit \T1/cmr/m/n/10.95 
 (-20) yields a \T1/cmtt/m/n/10.95 Setoid \T1/cmr/m/n/10.95 (-20) and quo-tient 
@@ -666,19 +666,19 @@ Overfull \hbox (9.33641pt too wide) in paragraph at lines 326--329
  []
 
 
-Overfull \hbox (34.0133pt too wide) in paragraph at lines 341--341
+Overfull \hbox (34.0133pt too wide) in paragraph at lines 344--344
 []|\T1/cmtt/m/n/9 quotient_out_rightInverse_to_orbit_quotient|  
  []
 
 
-Overfull \hbox (10.39407pt too wide) in paragraph at lines 342--342
+Overfull \hbox (10.39407pt too wide) in paragraph at lines 345--345
 []|\T1/cmtt/m/n/9 canonical_orbit_quotient_fiber_witness|  
  []
 
 
 
 [6]
-Overfull \hbox (5.10486pt too wide) in paragraph at lines 375--377
+Overfull \hbox (5.10486pt too wide) in paragraph at lines 378--380
 \T1/cmr/m/n/10.95 (-20) Glueing \T1/cmtt/m/n/10.95 inl a0 \T1/cmr/m/n/10.95 (-2
 0) with \T1/cmtt/m/n/10.95 inr b0 \T1/cmr/m/n/10.95 (-20) in \T1/cmtt/m/n/10.95
  Sum A B \T1/cmr/m/n/10.95 (-20) is pre-sented as the equiv-a-lence gen-er-ated
@@ -686,46 +686,46 @@ Overfull \hbox (5.10486pt too wide) in paragraph at lines 375--377
  []
 
 
-Overfull \hbox (19.84177pt too wide) in paragraph at lines 388--388
+Overfull \hbox (19.84177pt too wide) in paragraph at lines 391--391
 []|\T1/cmtt/m/n/9 quotientOut_rightInverse_forgetToPushout|  
  []
 
 
-Overfull \hbox (24.56561pt too wide) in paragraph at lines 412--412
+Overfull \hbox (24.56561pt too wide) in paragraph at lines 415--415
 []|\T1/cmtt/m/n/9 classifierSection_rightInverse_subtypeVal|  
  []
 
 
-Overfull \hbox (24.56561pt too wide) in paragraph at lines 433--433
+Overfull \hbox (24.56561pt too wide) in paragraph at lines 436--436
 []|\T1/cmtt/m/n/9 sec_rightInverse_forgetPairToLocalization|  
  []
 
 
-Overfull \hbox (5.67023pt too wide) in paragraph at lines 434--434
+Overfull \hbox (5.67023pt too wide) in paragraph at lines 437--437
 []|\T1/cmtt/m/n/9 canonicalLocalizationPairFiberWitness|  
  []
 
 
-Overfull \hbox (19.84177pt too wide) in paragraph at lines 456--456
+Overfull \hbox (19.84177pt too wide) in paragraph at lines 459--459
 []|\T1/cmtt/m/n/9 pullbackSection_rightInverse_pullbackFst|  
  []
 
 
 
 [7]
-Overfull \hbox (57.62335pt too wide) in paragraph at lines 465--468
+Overfull \hbox (57.62335pt too wide) in paragraph at lines 468--471
 \T1/cmtt/m/n/10.95 Nat.succ \T1/cmr/m/n/10.95 (-20) is not sur-jec-tive; fibers
  over \T1/cmtt/m/n/10.95 n > 0 \T1/cmr/m/n/10.95 (-20) are nonempty sin-gle-ton
 s. \T1/cmtt/m/n/10.95 NonSurjectiveSuccFiberBenchmark.lean
  []
 
 
-Overfull \hbox (10.02565pt too wide) in paragraph at lines 504--504
+Overfull \hbox (10.02565pt too wide) in paragraph at lines 507--507
 []|\T1/cmtt/m/n/9 forgetPairToLocalization|  
  []
 
 
-Overfull \hbox (7.55115pt too wide) in paragraph at lines 491--509
+Overfull \hbox (7.55115pt too wide) in paragraph at lines 494--512
  [][] 
  []
 
@@ -734,7 +734,7 @@ Overfull \hbox (7.55115pt too wide) in paragraph at lines 491--509
 [8]
 
 [9]
-Overfull \hbox (5.13313pt too wide) in paragraph at lines 568--572
+Overfull \hbox (5.13313pt too wide) in paragraph at lines 576--580
 []\T1/cmr/m/n/10.95 (-20) We for-mal-ize this in three Lean mod-ules (\T1/cmtt/
 m/n/10.95 GeneralMethod/GroupExtension/{FiberArchitecture,
  []
@@ -743,48 +743,48 @@ m/n/10.95 GeneralMethod/GroupExtension/{FiberArchitecture,
 
 [10]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 630.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 638.
 
-Overfull \hbox (5.77856pt too wide) in paragraph at lines 670--670
+Overfull \hbox (5.77856pt too wide) in paragraph at lines 678--678
 []|\T1/cmtt/m/n/9 quotientOut_rightInverse_forgetToQuotient|  
  []
 
 
 
 [11]
-Overfull \hbox (15.22626pt too wide) in paragraph at lines 818--818
+Overfull \hbox (15.22626pt too wide) in paragraph at lines 826--826
 []|\T1/cmtt/m/n/9 quotient_out_rightInverse_to_orbit_quotient|  
  []
 
 
-Overfull \hbox (53.01703pt too wide) in paragraph at lines 845--845
+Overfull \hbox (53.01703pt too wide) in paragraph at lines 853--853
 []|\T1/cmtt/m/n/9 idealQuotientOut_rightInverse_forgetToIdealQuotient|  
  []
 
 
 
 [12]
-Overfull \hbox (1.05472pt too wide) in paragraph at lines 872--872
+Overfull \hbox (1.05472pt too wide) in paragraph at lines 880--880
 []|\T1/cmtt/m/n/9 quotientOut_rightInverse_forgetToPushout|  
  []
 
 
-Overfull \hbox (5.77856pt too wide) in paragraph at lines 899--899
+Overfull \hbox (5.77856pt too wide) in paragraph at lines 907--907
 []|\T1/cmtt/m/n/9 classifierSection_rightInverse_subtypeVal|  
  []
 
 
-Overfull \hbox (1.05472pt too wide) in paragraph at lines 922--922
+Overfull \hbox (1.05472pt too wide) in paragraph at lines 930--930
 []|\T1/cmtt/m/n/9 forgetPairToLocalization_hasRightInverse|  
  []
 
 
-Overfull \hbox (5.77856pt too wide) in paragraph at lines 923--923
+Overfull \hbox (5.77856pt too wide) in paragraph at lines 931--931
 []|\T1/cmtt/m/n/9 sec_rightInverse_forgetPairToLocalization|  
  []
 
 
-Overfull \hbox (1.05472pt too wide) in paragraph at lines 950--950
+Overfull \hbox (1.05472pt too wide) in paragraph at lines 958--958
 []|\T1/cmtt/m/n/9 pullbackSection_rightInverse_pullbackFst|  
  []
 
@@ -804,11 +804,11 @@ cture.out' has not changed.
 (rerunfilecheck)             Checksum: 36E402D718A44040B0225A702220FA61;7040.
  ) 
 Here is how much of TeX's memory you used:
- 17458 strings out of 473190
- 283309 string characters out of 5715801
- 729371 words of memory out of 5000000
+ 17460 strings out of 473190
+ 283327 string characters out of 5715801
+ 729372 words of memory out of 5000000
  40106 multiletter control sequences out of 15000+600000
- 594979 words of font info for 241 fonts, out of 8000000 for 9000
+ 595056 words of font info for 242 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,12n,82p,1046b,626s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
@@ -845,10 +845,10 @@ uper/sftt1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-sup
 er/sftt1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super
 /sftt1200.pfb>
 Output written on External_Validation_Positive_Closure_Architecture.pdf (16 pag
-es, 630852 bytes).
+es, 632055 bytes).
 PDF statistics:
- 504 PDF objects out of 1000 (max. 8388607)
- 412 compressed objects within 5 object streams
+ 506 PDF objects out of 1000 (max. 8388607)
+ 414 compressed objects within 5 object streams
  108 named destinations out of 1000 (max. 500000)
  70897 words of extra memory for PDF output out of 74296 (max. 10000000)
 
