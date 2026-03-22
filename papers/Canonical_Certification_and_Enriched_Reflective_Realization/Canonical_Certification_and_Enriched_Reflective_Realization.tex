@@ -59,6 +59,9 @@ Fix a compression architecture $A$ and the standard Phase-2 / roles+extraction i
 \subsection{What is new here}\label{sec:intro-new}
 The novelty is a \textbf{proved stratification}, not a type-theoretic platitude: collapse at the bare certification carrier (\Cref{thm:canonical-cert-math}), strict refinement via $\pi_A$ on enriched splits (\Cref{thm:strict-refinement}, \Cref{thm:gen-refinement}), and partial fiber classification along a standard subfamily (\Cref{thm:role-inject}). Dependent types admit proof-relevant objects in principle; here the split/refinement/fiber facts are \emph{theorems} about the library's certified carriers and the chosen comparison map---they are not imported as axioms of the framework. See \Cref{sec:intro-comparison} for contrast with barrier theorems and generic quotient talk; scope limits are \Cref{sec:intro-not-claimed}.
 
+\subsection{Place in a broader series}\label{sec:intro-series}
+This paper establishes the internal architecture theorem: collapse at the bare carrier, strict refinement via the forgetful map, and fiber organization of multiplicity above the canonical base. Companion papers extend the same collapse/refinement/fiber analysis beyond the flagship Infinity Compression setting. An external validation paper~\cite{SpivackValidation} demonstrates that the architecture transfers cleanly across twelve independent mathematical families (quotients, products, bundles, coproducts, orbit quotients, pushouts, classifiers, localization, pullbacks). General-method papers~\cite{SpivackFiber,SpivackQuillen} then show that the architecture produces theorem-level results in group extensions (splitting iff trivial cocycle), embedding problems (solvable iff cocycle vanishes), and Quillen-style homotopy equivalence for Galois connections. Together the series moves from internal architecture theorem to external transfer to mathematical leverage on recognized problems.
+
 \subsection{What this paper does not claim (early scope)}\label{sec:intro-not-claimed}
 We state scope early to avoid misreading. We do \emph{not} classify all proof routes in the ambient logic; we do \emph{not} prove surjectivity of role data onto the full fiber; we do \emph{not} assert universal dominance over all formal frameworks; we do \emph{not} claim the strongest possible reflective fixed-point closure. The theorems are conditional on the Infinity Compression architecture, the standard bundle, and the explicit crown-eligible / role hypotheses used in the Lean files. \Cref{sec:limitations} and \Cref{app:collapse-audits} expand this.
 
@@ -482,6 +485,21 @@ def forgetToBareCanonical {BD : Type u} {n : Nat} {A : CompressionArchitecture B
 N.~Spivack.
 \newblock \emph{Canonical Certification Does Not Exhaust Reflective Structure (Infinity Compression)}.
 \newblock Manuscript, 2026.
+
+\bibitem{SpivackValidation}
+N.~Spivack.
+\newblock \emph{External Validation of a Positive-Closure Proof Architecture: A Multi-Tranche Survey}.
+\newblock Companion manuscript, 2026.
+
+\bibitem{SpivackFiber}
+N.~Spivack.
+\newblock \emph{Fiber Architecture for Group Extensions in Lean~4: Cocycles, Splitting, and the Cohomological Bridge}.
+\newblock Companion manuscript, 2026.
+
+\bibitem{SpivackQuillen}
+N.~Spivack.
+\newblock \emph{Quillen's Theorem~A for Galois Connections: A Machine-Checked Formalization in Lean~4}.
+\newblock Companion manuscript, 2026.
 
 \end{thebibliography}
 

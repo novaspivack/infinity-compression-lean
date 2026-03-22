@@ -23,7 +23,28 @@
   showstringspaces=false,
   columns=flexible
 }
-\lstset{language=lean}
+\lstset{language=lean,
+  literate=
+    {₁}{{$_1$}}1 {₂}{{$_2$}}1 {₃}{{$_3$}}1
+    {⁻¹}{{$^{-1}$}}1
+    {→}{{$\to$}}1 {←}{{$\leftarrow$}}1
+    {⟶}{{$\longrightarrow$}}1 {⟵}{{$\longleftarrow$}}1
+    {⥤}{{$\Rightarrow$}}1
+    {≫}{{$\gg$}}1
+    {∀}{{$\forall$}}1 {∃}{{$\exists$}}1
+    {⟨}{{$\langle$}}1 {⟩}{{$\rangle$}}1
+    {≤}{{$\le$}}1 {≥}{{$\ge$}}1 {≠}{{$\ne$}}1
+    {∈}{{$\in$}}1 {∉}{{$\notin$}}1
+    {ℕ}{{$\mathbb{N}$}}1 {ℤ}{{$\mathbb{Z}$}}1
+    {↔}{{$\leftrightarrow$}}1
+    {≃}{{$\simeq$}}1
+    {∘}{{$\circ$}}1
+    {·}{{$\cdot$}}1
+    {σ}{{$\sigma$}}1
+    {φ}{{$\varphi$}}1
+    {π}{{$\pi$}}1
+    {¬}{{$\neg$}}1
+}
 \input{../suite_macros}
 
 \newcommand{\Ext}{\mathrm{Ext}}

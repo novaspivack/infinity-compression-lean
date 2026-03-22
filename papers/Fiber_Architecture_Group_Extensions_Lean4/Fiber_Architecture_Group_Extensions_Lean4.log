@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  22 MAR 2026 13:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  22 MAR 2026 15:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -459,24 +459,24 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 (./Fiber_Architecture_Group_Extensions_Lean4.aux)
 \openout1 = `Fiber_Architecture_Group_Extensions_Lean4.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -512,20 +512,20 @@ LaTeX Font Info:    ... okay on input line 43.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 43.
-Package microtype Info: Applying patch `item' on input line 43.
-Package microtype Info: Applying patch `toc' on input line 43.
-Package microtype Info: Applying patch `eqnum' on input line 43.
-Package microtype Info: Applying patch `footnote' on input line 43.
-Package microtype Info: Applying patch `verbatim' on input line 43.
-LaTeX Info: Redefining \microtypesetup on input line 43.
+LaTeX Info: Redefining \microtypecontext on input line 66.
+Package microtype Info: Applying patch `item' on input line 66.
+Package microtype Info: Applying patch `toc' on input line 66.
+Package microtype Info: Applying patch `eqnum' on input line 66.
+Package microtype Info: Applying patch `footnote' on input line 66.
+Package microtype Info: Applying patch `verbatim' on input line 66.
+LaTeX Info: Redefining \microtypesetup on input line 66.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 43.
+LaTeX Info: Redefining \showhyphens on input line 66.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -585,7 +585,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: pdftex.def on input line 149.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx))
-Package hyperref Info: Link coloring ON on input line 43.
+Package hyperref Info: Link coloring ON on input line 66.
 
 (./Fiber_Architecture_Group_Extensions_Lean4.out)
 (./Fiber_Architecture_Group_Extensions_Lean4.out)
@@ -593,7 +593,7 @@ Package hyperref Info: Link coloring ON on input line 43.
 \openout3 = `Fiber_Architecture_Group_Extensions_Lean4.out'.
 
 \c@lstlisting=\count330
-LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 69.
 
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -602,7 +602,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 69.
 
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -616,10 +616,10 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (118.81772pt too wide) in paragraph at lines 70--70
-\T1/cmr/m/n/10.95 (-20) tory un-der \T1/cmtt/m/n/10.95 InfinityCompression/Gene
-ralMethod/GroupExtension/ \T1/cmr/m/n/10.95 (-20) and \T1/cmtt/m/n/10.95 Infini
-tyCompression/GeneralMethod/Descent/\T1/cmr/m/n/10.95 (-20) . 
+Overfull \hbox (68.0323pt too wide) in paragraph at lines 93--93
+\T1/cmtt/m/n/10.95 InfinityCompression/GeneralMethod/GroupExtension/ \T1/cmr/m/
+n/10.95 (-20) and \T1/cmtt/m/n/10.95 InfinityCompression/GeneralMethod/Descent/
+\T1/cmr/m/n/10.95 (-20) .
  []
 
 (./Fiber_Architecture_Group_Extensions_Lean4.toc
@@ -634,13 +634,13 @@ al/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}])
 
 
 [2]
-Overfull \hbox (51.45181pt too wide) in paragraph at lines 94--98
+Overfull \hbox (51.45181pt too wide) in paragraph at lines 117--121
 \T1/cmr/m/it/10.95 (-20) and \T1/cmtt/m/it/10.95 groupCohomology.H2 \T1/cmr/m/i
 t/10.95 (-20) (which is also stated as a TODO in \T1/cmtt/m/it/10.95 GroupCohom
 ology/LowDegree.lean\T1/cmr/m/it/10.95 (-20) ).''
  []
 
-LaTeX Font Info:    Trying to load font information for U+euf on input line 111
+LaTeX Font Info:    Trying to load font information for U+euf on input line 145
 .
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
@@ -651,36 +651,46 @@ File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 )
 
 [3]
-Overfull \hbox (95.652pt too wide) in paragraph at lines 211--213
+Overfull \hbox (95.652pt too wide) in paragraph at lines 249--251
 \T1/cmr/m/n/10.95 (-20) Mathlib's for-mal-iza-tion, due to Ya-mazaki [[]], pro-
 vides the fol-low-ing struc-tures in \T1/cmtt/m/n/10.95 Mathlib.GroupTheory.Gro
 upExtension\T1/cmr/m/n/10.95 (-20) : 
  []
 
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `cmtt' (encoding: TS1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
 
-Overfull \hbox (10.51744pt too wide) in paragraph at lines 225--227
+
+[4]
+Overfull \hbox (5.39243pt too wide) in paragraph at lines 264--268
+[]\T1/cmtt/m/n/10.95 GroupExtension.Splitting\T1/cmr/m/n/10.95 (-20) : a sec-ti
+on that is also a group ho-mo-mor-phism, bundling a \T1/cmtt/m/n/10.95 MonoidHo
+m
+ []
+
+
+Overfull \hbox (10.51744pt too wide) in paragraph at lines 269--274
 []\T1/cmtt/m/n/10.95 GroupExtension.conjAct\T1/cmr/m/n/10.95 (-20) : the con-ju
 -ga-tion ac-tion $\OML/cmm/m/it/10.95 E \OMS/cmsy/m/n/10.95 ![] []\OT1/cmr/m/n/
 10.95 (-20) (\OML/cmm/m/it/10.95 N\OT1/cmr/m/n/10.95 (-20) )$\T1/cmr/m/n/10.95 
 (-20) , de-fined via \T1/cmtt/m/n/10.95 MulAut.conjNormal\T1/cmr/m/n/10.95 (-20
-) . 
+) .
  []
 
 
+Overfull \hbox (75.57414pt too wide) in paragraph at lines 284--289
+\T1/cmtt/m/n/10.95 Function.surjInv \T1/cmr/m/n/10.95 (-20) (the non-com-putabl
+e right in-verse of a sur-jec-tive func-tion), and \T1/cmtt/m/n/10.95 Section.m
+ul_inv_mem_range_inl\T1/cmr/m/n/10.95 (-20) ,
+ []
 
-[4{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 273.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 322.
+
+
+[5{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/it' in size <10> not available
-(Font)              Font shape `T1/cmtt/m/it' tried instead on input line 281.
+(Font)              Font shape `T1/cmtt/m/it' tried instead on input line 330.
 
-
-[5]
 
 [6]
 
@@ -689,114 +699,77 @@ LaTeX Font Info:    Font shape `T1/cmtt/bx/it' in size <10> not available
 [8]
 
 [9]
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
 
 [10]
 
 [11]
 
-! LaTeX Error: Invalid UTF-8 byte sequence (Â\lst@EC¬).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.786     Â¬Nonempty 
-                     S.Splitting
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-
 [12]
-
-! LaTeX Error: Invalid UTF-8 byte sequence (Â\lst@EC¬).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.862     (h : Â¬Nonempty
-                         
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! LaTeX Error: Invalid UTF-8 byte sequence (Â\lst@EC¬).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.864     Â¬Nonempty 
-                     S.Splitting
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
 
 [13]
 
 [14]
 
 [15]
-Overfull \hbox (10.14384pt too wide) in paragraph at lines 1077--1077
+Overfull \hbox (10.14384pt too wide) in paragraph at lines 1123--1123
 []|\T1/cmtt/m/n/10.95 rightHom_surjective_hasRightInverse|  
  []
 
 
-Overfull \hbox (21.46059pt too wide) in paragraph at lines 1097--1097
+Overfull \hbox (21.46059pt too wide) in paragraph at lines 1143--1143
 []|\T1/cmtt/m/n/10.95 splitting_iff_section_is_homomorphism|  
  []
 
 
-Overfull \hbox (21.46059pt too wide) in paragraph at lines 1165--1165
+Overfull \hbox (21.46059pt too wide) in paragraph at lines 1211--1211
 []|\T1/cmtt/m/n/10.95 not_splits_of_all_cocycles_nontrivial|  
  []
 
 [16]
-Overfull \hbox (7.57213pt too wide) in paragraph at lines 1193--1196
-[]\T1/cmr/m/n/10.95 (-20) All source files are lo-cated un-der \T1/cmtt/m/n/10.
-95 InfinityCompression/GeneralMethod/GroupExtension/ \T1/cmr/m/n/10.95 (-20) (g
-roup
- []
-
-
-Overfull \hbox (21.01852pt too wide) in paragraph at lines 1215--1221
+Overfull \hbox (21.01852pt too wide) in paragraph at lines 1260--1268
 \T1/cmtt/m/n/10.95 FiberArchitecture.lean \T1/cmr/m/n/10.95 (-20) is the root; 
 it de-pends only on \T1/cmtt/m/n/10.95 Mathlib.GroupTheory.GroupExtension.Basic
 
  []
 
 
-Underfull \hbox (badness 7851) in paragraph at lines 1241--1245
+
+[17]
+Underfull \hbox (badness 7851) in paragraph at lines 1288--1292
 []\T1/cmr/m/n/10.95 (+20) Y. Ya-mazaki.  Group ex-ten-sions in Math-lib.  Con-t
 ri-bu-tion to Math-lib 4,
  []
 
 
-Underfull \hbox (badness 5203) in paragraph at lines 1247--1251
+Underfull \hbox (badness 5203) in paragraph at lines 1294--1298
 []\T1/cmr/m/n/10.95 (+20) S. Kull.  Low-degree group co-ho-mol-ogy in Math-lib.
   Con-tri-bu-tion to Math-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1251
+Underfull \hbox (badness 10000) in paragraph at lines 1294--1298
 \T1/cmr/m/n/10.95 (+20) lib 4, 2024.  [][]$\T1/cmtt/m/n/10.95 https : / / leanp
 rover-[]community . github . io / mathlib4 _ docs / Mathlib /
  []
 
 
+Underfull \hbox (badness 5519) in paragraph at lines 1300--1304
+[]\T1/cmr/m/n/10.95 (+20) A. Liv-ingston.  Group co-ho-mol-ogy in Math-lib.  Co
+n-tri-bu-tion to Math-lib 4,
+ []
 
-[17]
+
+Underfull \hbox (badness 10000) in paragraph at lines 1300--1304
+\T1/cmr/m/n/10.95 (+20) 2022--2024.  [][]$\T1/cmtt/m/n/10.95 https : / / leanpr
+over-[]community . github . io / mathlib4 _ docs / Mathlib /
+ []
+
+
 
 [18] (./Fiber_Architecture_Group_Extensions_Lean4.aux)
  ***********
@@ -805,47 +778,52 @@ L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `Fiber_Architecture_Group_Extensions_Lean4.ou
 t' has not changed.
-(rerunfilecheck)             Checksum: 9A750604EDFC86D5AEB9E86D56EA4A40;6509.
+(rerunfilecheck)             Checksum: 64C47944FEC9546F26040A56B2FB48E0;6122.
  ) 
 Here is how much of TeX's memory you used:
- 18144 strings out of 473190
- 292809 string characters out of 5715801
- 861929 words of memory out of 5000000
- 40591 multiletter control sequences out of 15000+600000
- 589775 words of font info for 223 fonts, out of 8000000 for 9000
+ 18185 strings out of 473190
+ 293203 string characters out of 5715801
+ 869089 words of memory out of 5000000
+ 40635 multiletter control sequences out of 15000+600000
+ 592934 words of font info for 232 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,12n,82p,1038b,2083s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,12n,82p,1038b,2131s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
 usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
 r/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/l
-ocal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
-cal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/loca
-l/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/
-texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/loca
-l/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/
-local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/lo
-cal/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/loca
-l/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/
-texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/te
-xlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texl
-ive/2025/texmf-dist/fonts/type1/public/cm-super/sfit1000.pfb></usr/local/texliv
-e/2025/texmf-dist/fonts/type1/public/cm-super/sfit1095.pfb></usr/local/texlive/
-2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/20
-25/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025
-/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/t
-exmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2025/tex
-mf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2025/texmf
--dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-d
-ist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2025/texmf-dis
-t/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2025/texmf-dist/
-fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on Fiber_Architecture_Group_Extensions_Lean4.pdf (18 pages, 5218
-71 bytes).
+ocal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/loca
+l/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
+/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/t
+exlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
+live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texli
+ve/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/tex
+live/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local
+/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/t
+exlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/tex
+live/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texli
+ve/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive
+/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2
+025/texmf-dist/fonts/type1/public/cm-super/sfit1000.pfb></usr/local/texlive/202
+5/texmf-dist/fonts/type1/public/cm-super/sfit1095.pfb></usr/local/texlive/2025/
+texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/te
+xmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texm
+f-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-
+dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/texmf-di
+st/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist
+/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-dist/f
+onts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2025/texmf-dist/fon
+ts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2025/texmf-dist/fonts
+/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/t
+ype1/public/cm-super/sftt0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/typ
+e1/public/cm-super/sftt1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1
+/public/cm-super/sftt1095.pfb>
+Output written on Fiber_Architecture_Group_Extensions_Lean4.pdf (18 pages, 5801
+86 bytes).
 PDF statistics:
- 808 PDF objects out of 1000 (max. 8388607)
- 726 compressed objects within 8 object streams
- 323 named destinations out of 1000 (max. 500000)
- 48913 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 833 PDF objects out of 1000 (max. 8388607)
+ 741 compressed objects within 8 object streams
+ 320 named destinations out of 1000 (max. 500000)
+ 53505 words of extra memory for PDF output out of 61914 (max. 10000000)
 
