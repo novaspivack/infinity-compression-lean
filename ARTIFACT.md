@@ -4,7 +4,7 @@
 
 ## What this artifact is
 
-Lean 4 formalization of the **Infinity Compression** program (EPIC_001) and the **General Method** program (EPICs 019–022). Root import: `InfinityCompression.lean`. Papers live under `papers/`; external-validation benchmarks under `InfinityCompression/Validation/`; general-method modules under `InfinityCompression/GeneralMethod/`.
+Lean 4 formalization of the **Infinity Compression** program (EPIC_001) and the **General Method** program (EPICs 019–022). Root import: `InfinityCompression.lean`. Papers live under `papers/`; external-validation benchmarks under `InfinityCompression/Validation/`; general-method modules under `InfinityCompression/GeneralMethod/`. The **Gödel-scale summit program** (EPIC_GS1) is tracked in `specs/IN-PROCESS/EPIC_GS1_GODEL_SCALE_SUMMIT_PROGRAM_SPEC.md`; Milestone 1 arithmetic bridge is in `GeneralMethod/Galois/GaloisEmbeddingBridge.lean`.
 
 ## Authoritative inventories
 

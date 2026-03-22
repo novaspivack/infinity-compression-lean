@@ -27,7 +27,7 @@
 | Meta | `InfinityCompression/Meta/` | 013–014 |
 | MetaProof | `InfinityCompression/MetaProof/` | EPIC_002_BH2 Route B + EPIC_003_BH6 continuation |
 | Validation | `InfinityCompression/Validation/` | EPIC_015_WV1 (T1) + EPIC_016_WV2 (T2–T3) + EPIC_017_EV1 (T4–T7) + EPIC_018_XC1 (T8–T12) Program W benchmarks |
-| GeneralMethod | `InfinityCompression/GeneralMethod/` | EPIC_019_GA1 — positive-closure architecture as general proof method (group extensions) |
+| GeneralMethod | `InfinityCompression/GeneralMethod/` | EPIC_019_GA1 — positive-closure architecture as general proof method (group extensions); EPIC_GS1 Milestone 1 — `Galois/GaloisEmbeddingBridge.lean` |
 | Frontier | `InfinityCompression/Frontier/` | 015–019 + §2.5 summit |
 | Root import | `InfinityCompression.lean` | — |
 | Papers (LaTeX) | `papers/` | EPIC_016_WV2 — shared `suite_preamble` / `suite_macros`; per-paper subdirs (see `papers/README.md`) |
@@ -134,6 +134,7 @@
 | `Descent/EllipticCurveDescent.lean` | EPIC_022_OP1 (infrastructure): `DoublingFiber`, `TwoTorsionSet`, `twoTorsionActOnFiber`, `twoTorsionAct_free`, `twoTorsionAct_transitive` — fiber/torsor for doubling map; NOT full 2-descent |
 | `Quillen/FiberLemma.lean` | EPIC_022_OP1 (infrastructure): `PosetFiberBelow/At`, `surjective_iff_fiberAt_nonempty`, `fiberBelowMono`, `compFiberBelow` — poset fiber data toward Quillen Theorem A; NOT the full theorem |
 | `Galois/EmbeddingProblem.lean` | EPIC_022_OP1 (theorem): `EmbeddingProblem`, `solvable_iff_splits`, `solvable_iff_trivial_cocycle`, `solvable_of_split` — embedding problems as extension splitting (genuine theorem) |
+| `Galois/GaloisEmbeddingBridge.lean` | EPIC_GS1 Milestone 1: `galois_restrictNormalHom_surjective`, `galois_restrictNormalHom_ker` — Galois restriction ↔ embedding problem (Mathlib re-exports + packaging note) |
 
 ### Frontier (`InfinityCompression/Frontier/`)
 
@@ -205,6 +206,7 @@
 | EPIC_020_ML1 (Mathlib bridge) | `GeneralMethod/GroupExtension/{ConjugationAction,CocycleIdentity,MathlibAdapter}` | Conjugation action, cocycle identity, Mathlib `IsCocycle₂` adapter — IN PROGRESS |
 | EPIC_021_NR1 (new results) | `GeneralMethod/GroupExtension/{NonAbelianObstruction,SchurMultiplier}` | Q₈ boundary, central extensions, Schur multiplier concepts |
 | EPIC_022_OP1 (famous problems) | `GeneralMethod/Quillen/FiberLemma`, `GeneralMethod/Descent/EllipticCurveDescent`, `GeneralMethod/Galois/EmbeddingProblem` | Poset fiber infrastructure (toward Quillen A), doubling-map torsor (toward 2-descent), embedding problems ↔ splitting (genuine theorem) |
+| EPIC_GS1 (Gödel-scale summit program) | `GeneralMethod/Galois/GaloisEmbeddingBridge.lean` (+ depends on EPIC_019–022 stack) | Milestone 1 arithmetic bridge: restriction surjectivity + kernel vs fixing subgroup; ties `EmbeddingProblem` to actual `IntermediateField` / `Gal` data (see spec) |
 | §2.5 summit | `Frontier/ICUniversalTheorem`, `Frontier/ReflexiveArchitectureNecessity`, `Frontier/SummitDerivation` | `ic_universal_theorem_summit` (minimal §2.5 conjunction); `ic_universal_theorem_landscape` (maximal aggregation); S1 spine necessity; S2 joint / interface lemmas; S3 `ic_universal_theorem_summit_iff_components` |
 | EPIC_002_BH2 Route B | `MetaProof/*` | **T-B2.1** `summit_bundle_matches_ic_universal_summit`; **T-B3.1** `standard_shape_matches_summit_iff`; **T-B5.1** `summit_requires_dual_poles` |
 | EPIC_003_BH6 Route B continuation | `MetaProof/*` | **T-B6a.1**–**T-B6b.1** necessity + `CrownEligible` spine example; **T-B7.1** `crown_eligible_induces_mirror`; **T-B8.1** `dependencyShapeStandard_minimal`; **T-B9.1** `reflexive_meta_crown` |

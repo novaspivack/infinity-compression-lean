@@ -71,6 +71,7 @@ import InfinityCompression.GeneralMethod.Descent.FaithfullyFlatDescent
 import InfinityCompression.GeneralMethod.Descent.EllipticCurveDescent
 import InfinityCompression.GeneralMethod.Quillen.FiberLemma
 import InfinityCompression.GeneralMethod.Galois.EmbeddingProblem
+import InfinityCompression.GeneralMethod.Galois.GaloisEmbeddingBridge
 import InfinityCompression.MetaProof.SummitTargets
 import InfinityCompression.MetaProof.DependencyShape
 import InfinityCompression.MetaProof.AdmissibleDerivations
