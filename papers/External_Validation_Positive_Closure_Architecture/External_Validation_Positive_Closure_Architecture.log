@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  22 MAR 2026 12:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  22 MAR 2026 12:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -739,51 +739,52 @@ Overfull \hbox (5.13313pt too wide) in paragraph at lines 562--566
 m/n/10.95 GeneralMethod/GroupExtension/{FiberArchitecture,
  []
 
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 612.
 
-Overfull \hbox (5.77856pt too wide) in paragraph at lines 652--652
+
+[10]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 624.
+
+Overfull \hbox (5.77856pt too wide) in paragraph at lines 664--664
 []|\T1/cmtt/m/n/9 quotientOut_rightInverse_forgetToQuotient|  
  []
 
 
 
-[10]
-
 [11]
-Overfull \hbox (15.22626pt too wide) in paragraph at lines 800--800
+Overfull \hbox (15.22626pt too wide) in paragraph at lines 812--812
 []|\T1/cmtt/m/n/9 quotient_out_rightInverse_to_orbit_quotient|  
  []
 
 
-Overfull \hbox (53.01703pt too wide) in paragraph at lines 827--827
+Overfull \hbox (53.01703pt too wide) in paragraph at lines 839--839
 []|\T1/cmtt/m/n/9 idealQuotientOut_rightInverse_forgetToIdealQuotient|  
  []
 
 
-Overfull \hbox (1.05472pt too wide) in paragraph at lines 854--854
+Overfull \hbox (1.05472pt too wide) in paragraph at lines 866--866
 []|\T1/cmtt/m/n/9 quotientOut_rightInverse_forgetToPushout|  
- []
-
-
-Overfull \hbox (5.77856pt too wide) in paragraph at lines 881--881
-[]|\T1/cmtt/m/n/9 classifierSection_rightInverse_subtypeVal|  
  []
 
 
 
 [12]
-Overfull \hbox (1.05472pt too wide) in paragraph at lines 904--904
+Overfull \hbox (5.77856pt too wide) in paragraph at lines 893--893
+[]|\T1/cmtt/m/n/9 classifierSection_rightInverse_subtypeVal|  
+ []
+
+
+Overfull \hbox (1.05472pt too wide) in paragraph at lines 916--916
 []|\T1/cmtt/m/n/9 forgetPairToLocalization_hasRightInverse|  
  []
 
 
-Overfull \hbox (5.77856pt too wide) in paragraph at lines 905--905
+Overfull \hbox (5.77856pt too wide) in paragraph at lines 917--917
 []|\T1/cmtt/m/n/9 sec_rightInverse_forgetPairToLocalization|  
  []
 
 
-Overfull \hbox (1.05472pt too wide) in paragraph at lines 932--932
+Overfull \hbox (1.05472pt too wide) in paragraph at lines 944--944
 []|\T1/cmtt/m/n/9 pullbackSection_rightInverse_pullbackFst|  
  []
 
@@ -791,21 +792,23 @@ Overfull \hbox (1.05472pt too wide) in paragraph at lines 932--932
 
 [14]
 
-[15] (./External_Validation_Positive_Closure_Architecture.aux)
+[15]
+
+[16] (./External_Validation_Positive_Closure_Architecture.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `External_Validation_Positive_Closure_Archite
 cture.out' has not changed.
-(rerunfilecheck)             Checksum: D75670FCB793082C6FB32643C219483E;6859.
+(rerunfilecheck)             Checksum: 36E402D718A44040B0225A702220FA61;7040.
  ) 
 Here is how much of TeX's memory you used:
- 17445 strings out of 473190
- 283131 string characters out of 5715801
- 730194 words of memory out of 5000000
- 40101 multiletter control sequences out of 15000+600000
- 594751 words of font info for 239 fonts, out of 8000000 for 9000
+ 17452 strings out of 473190
+ 283221 string characters out of 5715801
+ 728299 words of memory out of 5000000
+ 40104 multiletter control sequences out of 15000+600000
+ 594858 words of font info for 240 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,12n,82p,1046b,626s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
@@ -841,11 +844,11 @@ cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm
 uper/sftt1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-sup
 er/sftt1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super
 /sftt1200.pfb>
-Output written on External_Validation_Positive_Closure_Architecture.pdf (15 pag
-es, 621488 bytes).
+Output written on External_Validation_Positive_Closure_Architecture.pdf (16 pag
+es, 624366 bytes).
 PDF statistics:
- 490 PDF objects out of 1000 (max. 8388607)
- 400 compressed objects within 4 object streams
- 104 named destinations out of 1000 (max. 500000)
- 70889 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 500 PDF objects out of 1000 (max. 8388607)
+ 408 compressed objects within 5 object streams
+ 106 named destinations out of 1000 (max. 500000)
+ 70897 words of extra memory for PDF output out of 74296 (max. 10000000)
 

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1774195516.62786 "External_Validation_Positive_Closure_Architecture.tex" "External_Validation_Positive_Closure_Architecture.pdf" "External_Validation_Positive_Closure_Architecture" 1774195517.34741 0
+["pdflatex"] 1774196019.79584 "External_Validation_Positive_Closure_Architecture.tex" "External_Validation_Positive_Closure_Architecture.pdf" "External_Validation_Positive_Closure_Architecture" 1774196020.4918 0
   "../suite_macros.tex" 1774151281.77416 4836 f12fe65da311b79b2f7da22561a9e569 ""
   "../suite_preamble.tex" 1774151281.77423 1991 457daeb583bf89b49fd67c23c4b4b4d9 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
@@ -168,10 +168,10 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1748572903 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "External_Validation_Positive_Closure_Architecture.aux" 1774195517.21974 14220 c97f3d6e4322dace47230d224a74eb4d "pdflatex"
-  "External_Validation_Positive_Closure_Architecture.out" 1774195517.2208 6859 d75670fcb793082c6fb32643c219483e "pdflatex"
-  "External_Validation_Positive_Closure_Architecture.tex" 1774195509.4465 51869 bb965f7d23b4147c02b212274c020c2c ""
-  "External_Validation_Positive_Closure_Architecture.toc" 1774195517.22114 3281 58e6998afbac5bb49761d805d452bfdb "pdflatex"
+  "External_Validation_Positive_Closure_Architecture.aux" 1774196020.36364 14506 5693a020157f4c04aa723a7e00502c0f "pdflatex"
+  "External_Validation_Positive_Closure_Architecture.out" 1774196020.36472 7040 36e402d718a44040b0225a702220fa61 "pdflatex"
+  "External_Validation_Positive_Closure_Architecture.tex" 1774196012.69823 52764 5804d1b5d689c053c6f7414be124fe3e ""
+  "External_Validation_Positive_Closure_Architecture.toc" 1774196020.36499 3373 cbd2610a17edf2ce94e42efdba79d261 "pdflatex"
   (generated)
   "External_Validation_Positive_Closure_Architecture.aux"
   "External_Validation_Positive_Closure_Architecture.log"

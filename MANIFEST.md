@@ -124,6 +124,8 @@
 | `GroupExtension/FiberArchitecture.lean` | EPIC_019_GA1: `ExtensionFiber`, `extension_fiber_nonempty`, `canonicalFiberWitness`, `kernelAct_free`, `kernelAct_transitive` (N-torsor), `splitting_iff_section_is_homomorphism` |
 | `GroupExtension/SchurZassenhaus.lean` | EPIC_019_GA1: `sectionCocycle`, `sectionCocycle_spec`, `section_mul_eq`, `splits_iff_trivial_cocycle` (splitting iff cocycle trivial) |
 | `GroupExtension/LocalGlobal.lean` | EPIC_019_GA1: `directProductExtension`, `directProductSplitting`, `not_splits_of_all_cocycles_nontrivial`, `pullbackSubgroup`, `restrictExtension`, `splitting_restricts`, `global_split_implies_local_split`, `local_nonsplit_obstructs_global` |
+| `GroupExtension/CocycleCoboundary.lean` | EPIC_019_GA1: `sectionDiff`, `sectionDiff_spec`, `section_eq_inl_diff_mul`, `splitting_independent_of_section`, `splits_of_any_trivial_cocycle` |
+| `Descent/FaithfullyFlatDescent.lean` | EPIC_019_GA1: `faithfullyFlat_reflects_injective`, `faithfullyFlat_reflects_surjective`, `faithfullyFlat_reflects_bijective` — conservative forgetful map via Mathlib descent |
 
 ### Frontier (`InfinityCompression/Frontier/`)
 

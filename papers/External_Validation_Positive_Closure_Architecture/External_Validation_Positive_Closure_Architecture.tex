@@ -584,26 +584,38 @@ building on Mathlib's \texttt{GroupExtension} API. The main results, all with ze
     splitting.
   \item \textbf{Direct product example.} \texttt{directProductExtension} is the trivially
     split extension $1 \to N \to N \times G \to G \to 1$ with identically trivial cocycle.
+  \item \textbf{Section difference and independence.} \texttt{sectionDiff} extracts the
+    $N$-valued difference between two sections (both land in the same fiber).
+    \texttt{splitting\_independent\_of\_section}: the splitting question depends only on
+    the existence of \emph{some} section with trivial cocycle, not on a specific choice.
 \end{itemize}
 
-\noindent
-The architecture's contribution here is not a single new tactic but a \textbf{structured
-decomposition} that makes the gap between set-theoretic and algebraic sections visible as
-a layer, with the cocycle as the precise invariant separating them. The restriction and
-contrapositive theorems show how the fiber language organizes the local-to-global question:
-global splitting implies local splitting over every subgroup, and a single non-splitting
-restriction obstructs the global section.
+\subsection{Faithfully flat descent}\label{sec:descent}
+
+A second application domain: for a faithfully flat algebra map $R \to S$, base change
+reflects injectivity, surjectivity, and bijectivity of ring homomorphisms. In the
+architecture's language, the forgetful map (base change) is \textbf{conservative}---it
+reflects all three fundamental properties, not merely surjectivity. This is a stronger
+form of the pattern than group extensions, where the forgetful map is surjective but does
+not reflect the splitting property.
+
+We formalize this in \texttt{GeneralMethod/Descent/FaithfullyFlatDescent.lean}, packaging
+Mathlib's descent theorems (\texttt{codescendsAlong\_injective}, etc.) as architecture
+statements. The two application domains together demonstrate the architecture's range:
+group extensions exhibit a \emph{non-conservative} forgetful map (set-theoretic section
+always exists, algebraic section may not), while faithfully flat descent exhibits a
+\emph{conservative} one (bare properties fully determine enriched properties).
 
 \section{Limitations and future work}\label{sec:limits}
 
-The twelve retrospective tranches do not exhaust all closure or fibration patterns, and the
-group extension work is a first application rather than a comprehensive treatment. Natural
-extensions include: the full $H^2 \leftrightarrow \text{extensions}$ bijection (connecting
-the cocycle to Mathlib's group cohomology API), effective descent for modules over ring maps,
-and obstruction-theoretic problems in algebraic topology where the architecture's
-collapse/fiber/section layers map onto Postnikov towers. Such work would extend the
-\emph{evidence base} and, in the group extension case, fill further gaps in Mathlib's
-formalization of classical algebra.
+The retrospective tranches do not exhaust all closure or fibration patterns, and the
+group extension and descent work are first applications rather than a comprehensive
+treatment. Natural extensions include: the full $H^2 \leftrightarrow \text{extensions}$
+bijection (connecting the cocycle to Mathlib's group cohomology API), obstruction-theoretic
+problems in algebraic topology where the architecture's collapse/fiber/section layers map
+onto Postnikov towers, and effective descent for module categories (not just ring
+homomorphism properties). Such work would extend the \emph{evidence base} and fill further
+gaps in Mathlib's formalization of classical algebra.
 
 \appendix
 
