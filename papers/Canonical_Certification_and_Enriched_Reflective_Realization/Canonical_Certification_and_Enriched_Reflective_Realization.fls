@@ -219,6 +219,7 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm1
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecti1000.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
@@ -229,6 +230,7 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx1095.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecti1095.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ectt1095.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
@@ -244,9 +246,11 @@ INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
 OUTPUT Canonical_Certification_and_Enriched_Reflective_Realization.toc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecti1095.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbi1095.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecit1095.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
@@ -266,8 +270,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm0900.tfm
@@ -278,7 +280,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmss9.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecti0900.tfm
@@ -298,6 +299,7 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb
@@ -313,6 +315,7 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb

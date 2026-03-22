@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  22 MAR 2026 16:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  22 MAR 2026 17:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -456,14 +456,7 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count323
 \l__pdf_internal_box=\box66
 )
-(./Canonical_Certification_and_Enriched_Reflective_Realization.aux
-
-LaTeX Warning: Label `sec:conclusion' multiply defined.
-
-
-LaTeX Warning: Label `sec:conclusion@cref' multiply defined.
-
-)
+(./Canonical_Certification_and_Enriched_Reflective_Realization.aux)
 \openout1 = `Canonical_Certification_and_Enriched_Reflective_Realization.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -623,7 +616,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (35.17433pt too wide) in paragraph at lines 39--39
+Overfull \hbox (35.17433pt too wide) in paragraph at lines 42--42
 \T1/cmr/bx/n/10.95 (-20) Code/Data avail-abil-ity: \T1/cmr/m/n/10.95 (-20) Repo
 s-i-tory: [][]$\T1/cmtt/m/n/10.95 https : / / github . com / novaspivack / infi
 nity-[]compression-[]lean$[][]\T1/cmr/m/n/10.95 (-20) .
@@ -643,7 +636,7 @@ al/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
 
 
 [3]
-Overfull \hbox (58.75632pt too wide) in paragraph at lines 58--59
+Overfull \hbox (58.75632pt too wide) in paragraph at lines 61--62
 []\T1/cmr/bx/it/10.95 (-20) Collapse / canon-i-cal cer-ti-fi-ca-tion: \T1/cmr/m
 /it/10.95 (-20) for all skele-tons $\OML/cmm/m/it/10.95 s$ \T1/cmr/m/it/10.95 (
 -20) and ex-trac-tions $\OML/cmm/m/it/10.95 H$\T1/cmr/m/it/10.95 (-20) , $[]\OT
@@ -664,14 +657,14 @@ Package microtype Info: Loading generic protrusion settings for font family
 }]
 
 [7]
-Overfull \hbox (41.48401pt too wide) in paragraph at lines 153--154
+Overfull \hbox (41.48401pt too wide) in paragraph at lines 178--179
 \T1/cmr/m/it/10.95 (-20) Lean: \T1/cmtt/m/n/10.95 admissibleFrom_skeleton_eq_ad
 missibleStandard \T1/cmr/m/n/10.95 (-20) (\T1/cmtt/m/n/10.95 MetaProof/LocalToG
 lobalDerivation.lean\T1/cmr/m/n/10.95 (-20) );
  []
 
 
-Overfull \hbox (36.9065pt too wide) in paragraph at lines 160--161
+Overfull \hbox (36.9065pt too wide) in paragraph at lines 185--186
 \T1/cmr/m/n/10.95 (-20) stan-dard pack-aged record. Then $[]\OT1/cmr/m/n/10.95 
 (-20) (\OML/cmm/m/it/10.95 d\OT1/cmr/m/n/10.95 (-20) )$ \T1/cmr/m/n/10.95 (-20)
  means $\OML/cmm/m/it/10.95 d \OT1/cmr/m/n/10.95 (-20) = \OML/cmm/m/it/10.95 b[
@@ -680,7 +673,7 @@ mmitCertification
  []
 
 
-Overfull \hbox (5.3785pt too wide) in paragraph at lines 164--165
+Overfull \hbox (5.3785pt too wide) in paragraph at lines 189--190
 []\T1/cmr/bx/n/10.95 (-20) Theorem 3.3 \T1/cmr/m/n/10.95 (-20) (Phase-2 canon-i
 -cal cer-ti-fi-ca-tion prin-ci-ple)\T1/cmr/bx/n/10.95 (-20) . []\T1/cmr/m/it/10
 .95 (-20) For fixed $\OML/cmm/m/it/10.95 A$\T1/cmr/m/it/10.95 (-20) , ev-ery \T
@@ -688,7 +681,7 @@ Overfull \hbox (5.3785pt too wide) in paragraph at lines 164--165
  []
 
 
-Overfull \hbox (187.63623pt too wide) detected at line 168
+Overfull \hbox (187.63623pt too wide) detected at line 193
 \OMS/cmsy/m/n/10.95 8\OML/cmm/m/it/10.95 s; H: []\OT1/cmr/m/n/10.95 ([](\OML/cm
 m/m/it/10.95 s; H\OT1/cmr/m/n/10.95 ))\OML/cmm/m/it/10.95 ;  \OMS/cmsy/m/n/10.9
 5 8[]\OML/cmm/m/it/10.95 ; H: []\OT1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.95 :[]\O
@@ -697,38 +690,41 @@ T1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.95 ; H\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10
  []
 
 
-Overfull \hbox (6.92406pt too wide) in paragraph at lines 172--173
+
+[8]
+Overfull \hbox (6.92406pt too wide) in paragraph at lines 197--198
 \T1/cmr/m/it/10.95 (-20) Lean: \T1/cmtt/m/n/10.95 canonical_certification_princ
 iple_phase2 \T1/cmr/m/n/10.95 (-20) (\T1/cmtt/m/n/10.95 MetaProof/CanonicalCert
 ification.lean\T1/cmr/m/n/10.95 (-20) ). 
  []
 
 
-Overfull \hbox (18.42271pt too wide) in paragraph at lines 184--185
+Overfull \hbox (18.42271pt too wide) in paragraph at lines 209--210
 \T1/cmr/m/n/10.95 (-20) tion is canon-i-cally cer-ti-fied and $\OML/cmm/m/it/10
 .95 m$ \T1/cmr/m/n/10.95 (-20) is an au-tonomous sum-mit mir-ror (Lean: \T1/cmt
 t/m/n/10.95 ReflectiveSplitAutonomous\T1/cmr/m/n/10.95 (-20) ). 
  []
 
 
-
-[8]
-Overfull \hbox (25.03036pt too wide) detected at line 191
+Overfull \hbox (25.03036pt too wide) detected at line 216
 [][][]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^Z; H\OT1/cmr/m/n/10.95 )[]\OML/
 cmm/m/it/10.95 :
  []
 
 
-Overfull \hbox (65.62555pt too wide) in paragraph at lines 204--205
+Overfull \hbox (65.62555pt too wide) in paragraph at lines 229--230
 \T1/cmr/m/it/10.95 (-20) Lean: \T1/cmtt/m/n/10.95 nems_distinct_autonomous_spli
 ts_same_canonical_bare \T1/cmr/m/n/10.95 (-20) (\T1/cmtt/m/n/10.95 MetaProof/En
 richedIrreducibility.lean\T1/cmr/m/n/10.95 (-20) ,
  []
 
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 221.
 
-Overfull \hbox (51.72334pt too wide) in paragraph at lines 220--222
+
+[9]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 246.
+
+Overfull \hbox (51.72334pt too wide) in paragraph at lines 245--247
 \T1/cmr/bx/n/10.95 (-20) DQ4.1\T1/cmr/m/n/10.95 (-20) ); \T1/cmr/bx/n/10.95 (-2
 0) align-ment of the for-get-ful pro-jec-tion with \T1/cmtt/m/n/10.95 bridge.de
 rivation \T1/cmr/m/n/10.95 (-20) (\T1/cmtt/m/n/10.95 forgetToBareCanonical_soun
@@ -736,43 +732,43 @@ d\T1/cmr/m/n/10.95 (-20) ,
  []
 
 
-Overfull \hbox (148.6303pt too wide) in paragraph at lines 220--222
+Overfull \hbox (148.6303pt too wide) in paragraph at lines 245--247
 \T1/cmr/bx/n/10.95 (-20) T-DQ4.2\T1/cmr/m/n/10.95 (-20) ); and equal-ity of for
 -get-ful im-ages from equal bridge deriva-tions (\T1/cmtt/m/n/10.95 forgetToBar
 eCanonical_eq_of_bridge_derivation_eq\T1/cmr/m/n/10.95 (-20) ).
  []
 
 
-Overfull \hbox (44.39178pt too wide) in paragraph at lines 220--222
+Overfull \hbox (44.39178pt too wide) in paragraph at lines 245--247
 \T1/cmr/m/n/10.95 (-20) On the stan-dard de-vel-op-ment, en-riched splits built
  from roles+extraction for-get to \T1/cmtt/m/n/10.95 canonicalBareCertificate
  []
 
 
-Overfull \hbox (222.74767pt too wide) in paragraph at lines 220--222
+Overfull \hbox (222.74767pt too wide) in paragraph at lines 245--247
 \T1/cmr/m/n/10.95 (-20) (\T1/cmtt/m/n/10.95 enriched_reflective_split_forgets_t
 o_canonical_bare_certificate\T1/cmr/m/n/10.95 (-20) , \T1/cmtt/m/n/10.95 from_r
 oles_standard_forgets_to_canonical_bare_certificate\T1/cmr/m/n/10.95 (-20) ). 
  []
 
 
-
-[9]
-Overfull \hbox (69.77pt too wide) in paragraph at lines 228--229
+Overfull \hbox (69.77pt too wide) in paragraph at lines 253--254
 \T1/cmr/m/it/10.95 (-20) Lean: \T1/cmtt/m/n/10.95 nems_reflective_route_not_inj
 ective_to_bare \T1/cmr/m/n/10.95 (-20) and \T1/cmtt/m/n/10.95 nems_reflective_r
 oute_strictly_refines_bare\T1/cmr/m/n/10.95 (-20) ,
  []
 
 
-Overfull \hbox (24.5089pt too wide) in paragraph at lines 246--247
+
+[10]
+Overfull \hbox (24.5089pt too wide) in paragraph at lines 271--272
 \T1/cmr/m/it/10.95 (-20) Lean: \T1/cmtt/m/n/10.95 nems_fiber_over_canonical_non
 trivial \T1/cmr/m/n/10.95 (-20) (\T1/cmtt/m/n/10.95 MetaProof/ReflectiveFiberCl
 assification.lean\T1/cmr/m/n/10.95 (-20) ),
  []
 
 
-Overfull \hbox (133.2954pt too wide) in paragraph at lines 258--259
+Overfull \hbox (133.2954pt too wide) in paragraph at lines 283--284
 \T1/cmr/m/it/10.95 (-20) Lean: \T1/cmtt/m/n/10.95 splitInCanonicalFiber_roles_i
 njective \T1/cmr/m/n/10.95 (-20) (\T1/cmr/bx/n/10.95 (-20) T-FC.4\T1/cmr/m/n/10
 .95 (-20) ); NEMS corol-lary \T1/cmtt/m/n/10.95 nems_roles_injective_into_canon
@@ -780,9 +776,7 @@ ical_fiber\T1/cmr/m/n/10.95 (-20) .
  []
 
 
-
-[10]
-Overfull \hbox (69.08214pt too wide) in paragraph at lines 273--274
+Overfull \hbox (69.08214pt too wide) in paragraph at lines 298--299
 []\T1/cmr/bx/n/10.95 (-20) Definition 7.1 \T1/cmr/m/n/10.95 (-20) (Role-rich / 
 role--pair--di-verse crown el-i-gi-bil-ity)\T1/cmr/bx/n/10.95 (-20) . []\T1/cmr
 /m/it/10.95 (-20) Role-rich crown el-i-gi-bil-ity \T1/cmr/m/n/10.95 (-20) (\T1/
@@ -790,7 +784,7 @@ cmtt/m/n/10.95 RoleRichCrownEligible\T1/cmr/m/n/10.95 (-20) )
  []
 
 
-Overfull \hbox (61.51895pt too wide) in paragraph at lines 273--274
+Overfull \hbox (61.51895pt too wide) in paragraph at lines 298--299
 \T1/cmr/m/it/10.95 (-20) i-gi-bil-ity \T1/cmr/m/n/10.95 (-20) (\T1/cmtt/m/n/10.
 95 RolePairDiverseCrownEligible\T1/cmr/m/n/10.95 (-20) ) is \T1/cmtt/m/n/10.95 
 CrownEligible \T1/cmr/m/n/10.95 (-20) to-gether with \T1/cmr/m/it/10.95 (-20) t
@@ -798,7 +792,9 @@ wo \T1/cmr/m/n/10.95 (-20) dis-tinct \T1/cmtt/m/n/10.95 RoleSeparatedSkeleton
  []
 
 
-Overfull \hbox (216.74266pt too wide) in paragraph at lines 284--285
+
+[11]
+Overfull \hbox (216.74266pt too wide) in paragraph at lines 309--310
 \T1/cmr/m/it/10.95 (-20) Lean: \T1/cmtt/m/n/10.95 role_pair_diverse_crown_eligi
 ble_strict_refinement \T1/cmr/m/n/10.95 (-20) (\T1/cmr/bx/n/10.95 (-20) T-GR.3\
 T1/cmr/m/n/10.95 (-20) ), \T1/cmtt/m/n/10.95 role_pair_diverse_crown_eligible_p
@@ -806,7 +802,7 @@ roper_extension_forget
  []
 
 
-Overfull \hbox (48.20448pt too wide) in paragraph at lines 284--285
+Overfull \hbox (48.20448pt too wide) in paragraph at lines 309--310
 \T1/cmr/m/n/10.95 (-20) (\T1/cmr/bx/n/10.95 (-20) T-GR.4\T1/cmr/m/n/10.95 (-20)
  , \T1/cmtt/m/n/10.95 ProperExtensionViaForgetful\T1/cmr/m/n/10.95 (-20) ); NEM
 S in-stances \T1/cmtt/m/n/10.95 nems_role_pair_diverse_strict_refinement\T1/cmr
@@ -814,18 +810,16 @@ S in-stances \T1/cmtt/m/n/10.95 nems_role_pair_diverse_strict_refinement\T1/cmr
  []
 
 
-Overfull \hbox (209.94081pt too wide) in paragraph at lines 284--285
+Overfull \hbox (209.94081pt too wide) in paragraph at lines 309--310
 \T1/cmtt/m/n/10.95 nems_spine_role_pair_diverse_crown_eligible \T1/cmr/m/n/10.9
 5 (-20) (\T1/cmr/bx/n/10.95 (-20) T-GR.7\T1/cmr/m/n/10.95 (-20) ). Role-rich: \
 T1/cmtt/m/n/10.95 role_rich_crown_eligible_obtains_enriched_reflective_split
  []
 
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 286.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 311.
 
-
-[11]
-Overfull \hbox (6.05327pt too wide) in paragraph at lines 300--301
+Overfull \hbox (6.05327pt too wide) in paragraph at lines 325--326
 \T1/cmr/bx/n/10.95 (-20) Theorem pat-tern: \T1/cmtt/m/n/10.95 autonomous_reflec
 tive_split_records_non_monopolar_standard \T1/cmr/m/n/10.95 (-20) (\T1/cmr/bx/n
 /10.95 (-20) T-C+.4\T1/cmr/m/n/10.95 (-20) )
@@ -836,270 +830,270 @@ tive_split_records_non_monopolar_standard \T1/cmr/m/n/10.95 (-20) (\T1/cmr/bx/n
 [12]
 
 [13]
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 371.
 
-Underfull \hbox (badness 10000) in paragraph at lines 371--372
+[14]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 400.
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--401
 []|\T1/cmr/bx/n/9 (+20) Module (un-der
  []
 
 
-Overfull \hbox (17.2129pt too wide) in alignment at lines 369--373
+Overfull \hbox (17.2129pt too wide) in alignment at lines 398--402
  [] [] [] [] 
  []
 
 
-Overfull \hbox (17.2129pt too wide) in alignment at lines 373--377
+Overfull \hbox (17.2129pt too wide) in alignment at lines 402--406
  [] [] [] [] 
  []
 
 
-Overfull \hbox (17.2129pt too wide) in alignment at lines 377--379
+Overfull \hbox (17.2129pt too wide) in alignment at lines 406--408
  [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 380--380
+Underfull \hbox (badness 10000) in paragraph at lines 409--409
 []|\T1/cmr/m/n/9 (+20) Phase-2 skele-ton path equals
  []
 
 
-Overfull \hbox (90.43938pt too wide) in paragraph at lines 380--380
+Overfull \hbox (90.43938pt too wide) in paragraph at lines 409--409
 []|\T1/cmtt/m/n/9 admissibleFrom_skeleton_eq_admissibleStandard
  []
 
 
-Overfull \hbox (66.76239pt too wide) in paragraph at lines 380--381
+Overfull \hbox (66.76239pt too wide) in paragraph at lines 409--410
 []|\T1/cmtt/m/n/9 MetaProof/LocalToGlobalDerivation.lean| 
  []
 
 
-Overfull \hbox (118.78246pt too wide) in paragraph at lines 381--381
+Overfull \hbox (118.78246pt too wide) in paragraph at lines 410--410
 []|\T1/cmtt/m/n/9 admissibleFrom_skeleton_eq_irrespective_of_skeleton| 
  []
 
 
-Overfull \hbox (66.82014pt too wide) in paragraph at lines 382--382
+Overfull \hbox (66.82014pt too wide) in paragraph at lines 411--411
 []|\T1/cmtt/m/n/9 canonical_certification_principle_phase2
  []
 
 
-Overfull \hbox (62.03854pt too wide) in paragraph at lines 382--383
+Overfull \hbox (62.03854pt too wide) in paragraph at lines 411--412
 []|\T1/cmtt/m/n/9 MetaProof/CanonicalCertification.lean| 
  []
 
 
-Overfull \hbox (104.61092pt too wide) in paragraph at lines 383--383
+Overfull \hbox (104.61092pt too wide) in paragraph at lines 412--412
 []|\T1/cmtt/m/n/9 fromRoles_extraction_bridge_derivation_canonical| 
  []
 
 
-Overfull \hbox (38.47707pt too wide) in paragraph at lines 384--384
+Overfull \hbox (38.47707pt too wide) in paragraph at lines 413--413
 []|\T1/cmtt/m/n/9 IsCanonicalBareSummitCertification
  []
 
 
-Overfull \hbox (47.92476pt too wide) in paragraph at lines 385--385
+Overfull \hbox (47.92476pt too wide) in paragraph at lines 414--414
 []|\T1/cmtt/m/n/9 reflective_split_from_roles_standard
  []
 
 
-Overfull \hbox (28.97162pt too wide) in paragraph at lines 385--386
+Overfull \hbox (28.97162pt too wide) in paragraph at lines 414--415
 []|\T1/cmtt/m/n/9 MetaProof/ReflectiveSplit.lean| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 387--387
+Underfull \hbox (badness 10000) in paragraph at lines 416--416
 []|\T1/cmtt/m/n/9 ReflectiveMirrorWitness\T1/cmr/m/n/9 (+20) ,
  []
 
 
-Overfull \hbox (24.30553pt too wide) in paragraph at lines 387--387
+Overfull \hbox (24.30553pt too wide) in paragraph at lines 416--416
 \T1/cmtt/m/n/9 fromRolesAndExtraction_standard| 
  []
 
 
-Overfull \hbox (66.76239pt too wide) in paragraph at lines 387--388
+Overfull \hbox (66.76239pt too wide) in paragraph at lines 416--417
 []|\T1/cmtt/m/n/9 MetaProof/ReflectiveMirrorWitness.lean| 
  []
 
 
-Overfull \hbox (118.78246pt too wide) in paragraph at lines 388--388
+Overfull \hbox (118.78246pt too wide) in paragraph at lines 417--417
 []|\T1/cmtt/m/n/9 nems_distinct_autonomous_splits_same_canonical_bare
  []
 
 
-Overfull \hbox (62.03854pt too wide) in paragraph at lines 388--389
+Overfull \hbox (62.03854pt too wide) in paragraph at lines 417--418
 []|\T1/cmtt/m/n/9 MetaProof/EnrichedIrreducibility.lean| 
  []
 
 
-Overfull \hbox (151.84938pt too wide) in paragraph at lines 389--389
+Overfull \hbox (151.84938pt too wide) in paragraph at lines 418--418
 []|\T1/cmtt/m/n/9 autonomous_reflective_split_records_non_monopolar_standard
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 391--391
+Underfull \hbox (badness 10000) in paragraph at lines 420--420
 []|\T1/cmtt/m/n/9 BareCanonicalCertificate\T1/cmr/m/n/9 (+20) ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 391--391
+Underfull \hbox (badness 10000) in paragraph at lines 420--420
 \T1/cmtt/m/n/9 EnrichedReflectiveSplit
  []
 
 
-Overfull \hbox (76.21008pt too wide) in paragraph at lines 391--392
+Overfull \hbox (76.21008pt too wide) in paragraph at lines 420--421
 []|\T1/cmtt/m/n/9 MetaProof/ReflectiveRouteComparison.lean| 
  []
 
 
-Overfull \hbox (5.41014pt too wide) in paragraph at lines 392--392
+Overfull \hbox (5.41014pt too wide) in paragraph at lines 421--421
 []|\T1/cmtt/m/n/9 ProperExtensionViaForgetful
  []
 
 
-Underfull \hbox (badness 5939) in paragraph at lines 393--393
+Underfull \hbox (badness 5939) in paragraph at lines 422--422
 []|\T1/cmtt/m/n/9 forgetToBareCanonical \T1/cmr/m/n/9 (+20) (\T1/cmr/bx/n/9 (+2
 0) D-
  []
 
 
-Overfull \hbox (53.88062pt too wide) in paragraph at lines 394--394
+Overfull \hbox (53.88062pt too wide) in paragraph at lines 423--423
 []|\T1/cmtt/m/n/9 reflective_split_forgets_to_canonical\T1/cmr/m/n/9 (-20) ,
  []
 
 
-Overfull \hbox (5.41014pt too wide) in paragraph at lines 394--394
+Overfull \hbox (5.41014pt too wide) in paragraph at lines 423--423
 \T1/cmtt/m/n/9 forgetToBareCanonical_sound| 
  []
 
 
-Underfull \hbox (badness 3333) in paragraph at lines 395--395
+Underfull \hbox (badness 3333) in paragraph at lines 424--424
 []|\T1/cmr/m/n/9 (+20) Non-injectivity / strict re-fine-ment
  []
 
 
-Overfull \hbox (82.2237pt too wide) in paragraph at lines 395--395
+Overfull \hbox (82.2237pt too wide) in paragraph at lines 424--424
 []|\T1/cmtt/m/n/9 nems_reflective_route_not_injective_to_bare\T1/cmr/m/n/9 (-20
 ) ,
  []
 
 
-Overfull \hbox (80.99168pt too wide) in paragraph at lines 395--395
+Overfull \hbox (80.99168pt too wide) in paragraph at lines 424--424
 \T1/cmtt/m/n/9 nems_reflective_route_strictly_refines_bare| 
  []
 
 
-Overfull \hbox (47.92476pt too wide) in paragraph at lines 397--397
+Overfull \hbox (47.92476pt too wide) in paragraph at lines 426--426
 []|\T1/cmtt/m/n/9 nems_fiber_over_canonical_nontrivial
  []
 
 
-Overfull \hbox (95.10547pt too wide) in paragraph at lines 397--398
+Overfull \hbox (95.10547pt too wide) in paragraph at lines 426--427
 []|\T1/cmtt/m/n/9 MetaProof/ReflectiveFiberClassification.lean| 
  []
 
 
-Overfull \hbox (175.46861pt too wide) in paragraph at lines 398--398
+Overfull \hbox (175.46861pt too wide) in paragraph at lines 427--427
 []|\T1/cmtt/m/n/9 enriched_reflective_split_forgets_to_canonical_bare_certifica
 te
  []
 
 
-Overfull \hbox (71.54399pt too wide) in paragraph at lines 399--399
+Overfull \hbox (71.54399pt too wide) in paragraph at lines 428--428
 []|\T1/cmtt/m/n/9 nems_distinct_roles_distinct_fiber_points
  []
 
 
-Overfull \hbox (52.6486pt too wide) in paragraph at lines 400--400
+Overfull \hbox (52.6486pt too wide) in paragraph at lines 429--429
 []|\T1/cmtt/m/n/9 splitInCanonicalFiber_roles_injective
  []
 
 
-Overfull \hbox (71.54399pt too wide) in paragraph at lines 401--401
+Overfull \hbox (71.54399pt too wide) in paragraph at lines 430--430
 []|\T1/cmtt/m/n/9 nems_roles_injective_into_canonical_fiber| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 402--402
+Underfull \hbox (badness 10000) in paragraph at lines 431--431
 []|\T1/cmtt/m/n/9 fiberAtBare\T1/cmr/m/n/9 (+20) ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 402--402
+Underfull \hbox (badness 10000) in paragraph at lines 431--431
 \T1/cmtt/m/n/9 canonicalBareCertificate\T1/cmr/m/n/9 (+20) ,
  []
 
 
-Overfull \hbox (114.05861pt too wide) in paragraph at lines 404--404
+Overfull \hbox (114.05861pt too wide) in paragraph at lines 433--433
 []|\T1/cmtt/m/n/9 role_pair_diverse_crown_eligible_strict_refinement
  []
 
 
-Overfull \hbox (128.1724pt too wide) in paragraph at lines 404--405
+Overfull \hbox (128.1724pt too wide) in paragraph at lines 433--434
 []|\T1/cmtt/m/n/9 MetaProof/GeneralizedReflectiveFiberRefinement.lean| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--405
+Underfull \hbox (badness 10000) in paragraph at lines 434--434
 []|\T1/cmr/m/n/9 (+20) Pair-diverse $\OMS/cmsy/m/n/9 )$
  []
 
 
-Overfull \hbox (142.40169pt too wide) in paragraph at lines 405--405
+Overfull \hbox (142.40169pt too wide) in paragraph at lines 434--434
 []|\T1/cmtt/m/n/9 role_pair_diverse_crown_eligible_proper_extension_forget
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 406--406
+Underfull \hbox (badness 10000) in paragraph at lines 435--435
 []|\T1/cmtt/m/n/9 RoleRichCrownEligible\T1/cmr/m/n/9 (+20) ,
  []
 
 
-Overfull \hbox (10.13399pt too wide) in paragraph at lines 406--406
+Overfull \hbox (10.13399pt too wide) in paragraph at lines 435--435
 \T1/cmtt/m/n/9 RolePairDiverseCrownEligible| 
  []
 
 
-Overfull \hbox (44.43292pt too wide) in paragraph at lines 407--407
+Overfull \hbox (44.43292pt too wide) in paragraph at lines 436--436
 []|\T1/cmtt/m/n/9 nems_spine_role_rich_crown_eligible\T1/cmr/m/n/9 (-20) ,
  []
 
 
-Overfull \hbox (80.99168pt too wide) in paragraph at lines 407--407
+Overfull \hbox (80.99168pt too wide) in paragraph at lines 436--436
 \T1/cmtt/m/n/9 nems_spine_role_pair_diverse_crown_eligible
  []
 
 
-Overfull \hbox (151.84938pt too wide) in paragraph at lines 408--408
+Overfull \hbox (151.84938pt too wide) in paragraph at lines 437--437
 []|\T1/cmtt/m/n/9 role_rich_crown_eligible_obtains_enriched_reflective_split
  []
 
 
-Overfull \hbox (99.65088pt too wide) in paragraph at lines 409--409
+Overfull \hbox (99.65088pt too wide) in paragraph at lines 438--438
 []|\T1/cmtt/m/n/9 generalized_role_injection_into_canonical_fiber
  []
 
 
-Overfull \hbox (156.57323pt too wide) in paragraph at lines 411--411
+Overfull \hbox (156.57323pt too wide) in paragraph at lines 440--440
 []|\T1/cmtt/m/n/9 skeleton_indexed_fromRoles_derivation_eq_admissibleStandard
  []
 
 
-Overfull \hbox (104.55316pt too wide) in paragraph at lines 411--412
+Overfull \hbox (104.55316pt too wide) in paragraph at lines 440--441
 []|\T1/cmtt/m/n/9 MetaProof/SkeletonIndexedExtractionBridge.lean| 
  []
 
 
-Overfull \hbox (17.2129pt too wide) in alignment at lines 379--412
+Overfull \hbox (17.2129pt too wide) in alignment at lines 408--441
  [] [] [] [] 
  []
 
-
-
-[14] [15]
-Overfull \hbox (84.95436pt too wide) in paragraph at lines 422--423
+[15]
+Overfull \hbox (84.95436pt too wide) in paragraph at lines 451--452
 []\T1/cmr/bx/n/10.95 (-20) Summit / land-scape (\T1/cmtt/m/n/10.95 Frontier/\T1
 /cmr/bx/n/10.95 (-20) ): \T1/cmr/m/n/10.95 (-20) prin-ci-pal cer-ti-fied in-var
 i-ant state-ments (e.g. \T1/cmtt/m/n/10.95 ic_universal_theorem_summit\T1/cmr/m
@@ -1107,7 +1101,7 @@ i-ant state-ments (e.g. \T1/cmtt/m/n/10.95 ic_universal_theorem_summit\T1/cmr/m
  []
 
 
-Overfull \hbox (45.29926pt too wide) in paragraph at lines 423--424
+Overfull \hbox (45.29926pt too wide) in paragraph at lines 452--453
 []\T1/cmr/bx/n/10.95 (-20) Route B meta (\T1/cmtt/m/n/10.95 MetaProof/\T1/cmr/b
 x/n/10.95 (-20) ): \T1/cmr/m/n/10.95 (-20) sum-mit bun-dles (\T1/cmtt/m/n/10.95
  SummitTargets\T1/cmr/m/n/10.95 (-20) ), de-pen-dency shape (\T1/cmtt/m/n/10.95
@@ -1115,21 +1109,23 @@ x/n/10.95 (-20) ): \T1/cmr/m/n/10.95 (-20) sum-mit bun-dles (\T1/cmtt/m/n/10.95
  []
 
 
-Overfull \hbox (28.3564pt too wide) in paragraph at lines 425--426
+
+[16]
+Overfull \hbox (28.3564pt too wide) in paragraph at lines 454--455
 []\T1/cmr/bx/n/10.95 (-20) Program E / 006E (sup-port-ing): \T1/cmtt/m/n/10.95 
 ProgramECrownSummit\T1/cmr/m/n/10.95 (-20) , \T1/cmtt/m/n/10.95 ProgramE006ERef
 lectiveFixedPoint\T1/cmr/m/n/10.95 (-20) ---
  []
 
 
-Overfull \hbox (28.39333pt too wide) in paragraph at lines 426--427
+Overfull \hbox (28.39333pt too wide) in paragraph at lines 455--456
 []\T1/cmr/bx/n/10.95 (-20) Post-summit au-tonomous mir-ror: \T1/cmtt/m/n/10.95 
 ReflectiveMirrorWitness\T1/cmr/m/n/10.95 (-20) , \T1/cmtt/m/n/10.95 AutonomousM
 irrorConstruction\T1/cmr/m/n/10.95 (-20) ;
  []
 
 
-Overfull \hbox (72.93257pt too wide) in paragraph at lines 427--428
+Overfull \hbox (72.93257pt too wide) in paragraph at lines 456--457
 []\T1/cmr/bx/n/10.95 (-20) Program C+ (this pa-per's core): \T1/cmtt/m/n/10.95 
 CanonicalCertification\T1/cmr/m/n/10.95 (-20) , \T1/cmtt/m/n/10.95 ReflectiveSp
 lit\T1/cmr/m/n/10.95 (-20) , \T1/cmtt/m/n/10.95 EnrichedIrreducibility\T1/cmr/m
@@ -1137,7 +1133,7 @@ lit\T1/cmr/m/n/10.95 (-20) , \T1/cmtt/m/n/10.95 EnrichedIrreducibility\T1/cmr/m
  []
 
 
-Overfull \hbox (91.56805pt too wide) in paragraph at lines 429--430
+Overfull \hbox (91.56805pt too wide) in paragraph at lines 458--459
 []\T1/cmr/bx/n/10.95 (-20) Fiber clas-si-fi-ca-tion (EPIC_009): \T1/cmtt/m/n/10
 .95 ReflectiveFiberClassification\T1/cmr/m/n/10.95 (-20) ---\T1/cmtt/m/n/10.95 
 fiberAtBare\T1/cmr/m/n/10.95 (-20) , \T1/cmtt/m/n/10.95 splitInCanonicalFiber\T
@@ -1145,67 +1141,65 @@ fiberAtBare\T1/cmr/m/n/10.95 (-20) , \T1/cmtt/m/n/10.95 splitInCanonicalFiber\T
  []
 
 
-Overfull \hbox (87.39734pt too wide) in paragraph at lines 430--431
+Overfull \hbox (87.39734pt too wide) in paragraph at lines 459--460
 []\T1/cmr/bx/n/10.95 (-20) Generalized re-fine-ment (EPIC_010): \T1/cmtt/m/n/10
 .95 GeneralizedReflectiveFiberRefinement\T1/cmr/m/n/10.95 (-20) ---\T1/cmtt/m/n
 /10.95 RoleRichCrownEligible\T1/cmr/m/n/10.95 (-20) ,
  []
 
 
-Overfull \hbox (19.47334pt too wide) in paragraph at lines 442--442
+Overfull \hbox (19.47334pt too wide) in paragraph at lines 471--471
 []|\T1/cmtt/m/n/9 AdmissibleSummitDerivation
  []
 
 
-Overfull \hbox (5.3018pt too wide) in paragraph at lines 443--443
+Overfull \hbox (5.3018pt too wide) in paragraph at lines 472--472
 []|\T1/cmtt/m/n/9 ReflectiveMirrorWitness
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 443--443
+Underfull \hbox (badness 10000) in paragraph at lines 472--472
 \T1/cmr/m/n/9 (+20) /
  []
 
 
-Overfull \hbox (5.3018pt too wide) in paragraph at lines 443--443
+Overfull \hbox (5.3018pt too wide) in paragraph at lines 472--472
 \T1/cmtt/m/n/9 EnrichedReflectiveSplit| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 444--444
+Underfull \hbox (badness 10000) in paragraph at lines 473--473
 []|\T1/cmtt/m/n/9 fiberAtBare \T1/cmr/m/n/9 (+20) /
  []
 
 
-Overfull \hbox (53.02322pt too wide) in paragraph at lines 450--451
-\T1/cmr/bx/n/10.95 (-20) What col-lapsed (proved): \T1/cmr/m/n/10.95 (-20) For 
-ev-ery \T1/cmtt/m/n/10.95 ConstructiveDerivationSkeleton $\OML/cmm/m/it/10.95 s
-$ \T1/cmr/m/n/10.95 (-20) and \T1/cmtt/m/n/10.95 SummitComponentExtraction
+Overfull \hbox (70.67374pt too wide) in paragraph at lines 479--480
+[]\T1/cmr/bx/n/10.95 (-20) What col-lapsed (proved): \T1/cmr/m/n/10.95 (-20) Fo
+r ev-ery \T1/cmtt/m/n/10.95 ConstructiveDerivationSkeleton $\OML/cmm/m/it/10.95
+ s$ \T1/cmr/m/n/10.95 (-20) and \T1/cmtt/m/n/10.95 SummitComponentExtraction
  []
 
 
-Overfull \hbox (74.46004pt too wide) in paragraph at lines 450--451
+Overfull \hbox (74.46004pt too wide) in paragraph at lines 479--480
 \OML/cmm/m/it/10.95 H$\T1/cmr/m/n/10.95 (-20) , \T1/cmtt/m/n/10.95 admissibleFr
 omSkeleton s H = admissibleStandard \T1/cmr/m/n/10.95 (-20) (\T1/cmtt/m/n/10.95
  admissibleFrom_skeleton_eq_admissibleStandard\T1/cmr/m/n/10.95 (-20) ,
  []
 
 
-Overfull \hbox (68.90103pt too wide) in paragraph at lines 450--451
+Overfull \hbox (68.90103pt too wide) in paragraph at lines 479--480
 \T1/cmr/m/n/10.95 (-20) The-o-rem [][]3.1[][]). For roles+extraction bridges, \
 T1/cmtt/m/n/10.95 skeleton_indexed_fromRoles_derivation_eq_admissibleStandard
  []
 
 
-Overfull \hbox (5.88852pt too wide) in paragraph at lines 450--451
+Overfull \hbox (5.88852pt too wide) in paragraph at lines 479--480
 \T1/cmr/m/n/10.95 (-20) forces the same bare record. The bun-dled state-ment is
  \T1/cmtt/m/n/10.95 canonical_certification_principle_phase2
  []
 
 
-
-[16]
-Overfull \hbox (14.17822pt too wide) in paragraph at lines 454--455
+Overfull \hbox (14.17822pt too wide) in paragraph at lines 483--484
 \T1/cmr/m/n/10.95 (-20) fibers \T1/cmtt/m/n/10.95 fiberAtBare \T1/cmr/m/n/10.95
  (-20) over \T1/cmtt/m/n/10.95 canonicalBareCertificate\T1/cmr/m/n/10.95 (-20) 
 , and role-sensitive maps \T1/cmtt/m/n/10.95 splitInCanonicalFiber\T1/cmr/m/n/1
@@ -1213,29 +1207,29 @@ Overfull \hbox (14.17822pt too wide) in paragraph at lines 454--455
  []
 
 
-Overfull \hbox (9.31519pt too wide) in paragraph at lines 458--459
+
+[17]
+Overfull \hbox (9.31519pt too wide) in paragraph at lines 487--488
 []\T1/cmr/bx/n/10.95 (-20) Packaging mir-ror caveat (au-dit): \T1/cmr/m/n/10.95
  (-20) as doc-u-mented in \T1/cmtt/m/n/10.95 specs/NOTES/IC_Closed_Open_Ledger.
 md\T1/cmr/m/n/10.95 (-20) ,
  []
 
 
-
-[17]
 pdfTeX warning (ext4): destination with the same identifier (name{appendix.A}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.475 \section{Artifact and build details}
+l.498 \section{Artifact and build details}
                                           \label{app:artifact}
-Overfull \hbox (30.99577pt too wide) in paragraph at lines 477--478
+Overfull \hbox (30.99577pt too wide) in paragraph at lines 500--501
 []\T1/cmr/bx/n/10.95 (-20) Repository lay-out: \T1/cmr/m/n/10.95 (-20) the Lean
  project lives at \T1/cmtt/m/n/10.95 infinity-compression/infinity-compression-
 lean/
  []
 
 
-Overfull \hbox (474.46016pt too wide) in paragraph at lines 477--478
+Overfull \hbox (474.46016pt too wide) in paragraph at lines 500--501
 \T1/cmr/m/n/10.95 (-20) rel-a-tive to the \T1/cmtt/m/n/10.95 infinity-compressi
 on \T1/cmr/m/n/10.95 (-20) monorepo root (this pa-per's \T1/cmtt/m/n/10.95 .tex
  \T1/cmr/m/n/10.95 (-20) file is un-der \T1/cmtt/m/n/10.95 infinity-compression
@@ -1244,14 +1238,14 @@ r/m/n/10.95 (-20) ).
  []
 
 
-Overfull \hbox (81.95479pt too wide) in paragraph at lines 479--480
+Overfull \hbox (81.95479pt too wide) in paragraph at lines 502--503
 []\T1/cmr/bx/n/10.95 (-20) Lean toolchain (pinned): \T1/cmtt/m/n/10.95 leanprov
 er/lean4:v4.29.0-rc6 \T1/cmr/m/n/10.95 (-20) (\T1/cmtt/m/n/10.95 infinity-compr
 ession-lean/lean-toolchain\T1/cmr/m/n/10.95 (-20) ). 
  []
 
 
-Overfull \hbox (19.45224pt too wide) in paragraph at lines 482--483
+Overfull \hbox (19.45224pt too wide) in paragraph at lines 505--506
 []\T1/cmtt/m/n/10.95 sorry \T1/cmr/bx/n/10.95 (-20) pol-icy (ver-i-fied): \T1/c
 mtt/m/n/10.95 README.md \T1/cmr/m/n/10.95 (-20) states zero \T1/cmtt/m/n/10.95 
 sorry \T1/cmr/m/n/10.95 (-20) in proof terms un-der \T1/cmtt/m/n/10.95 Infinity
@@ -1259,7 +1253,7 @@ Compression/\T1/cmr/m/n/10.95 (-20) ;
  []
 
 
-Overfull \hbox (22.48653pt too wide) in paragraph at lines 484--485
+Overfull \hbox (22.48653pt too wide) in paragraph at lines 507--508
 []\T1/cmr/bx/n/10.95 (-20) Theorem in-ven-tory cross-check: \T1/cmtt/m/n/10.95 
 specs/NOTES/EPIC_THEOREM_INVENTORY_LEAN_PAPER_PREP.md
  []
@@ -1269,12 +1263,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{appendix.B})
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.488 \section{Selected Lean excerpts}
+l.511 \section{Selected Lean excerpts}
                                       \label{app:lean-snippets}
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 491.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 514.
 
-Overfull \hbox (45.5689pt too wide) in paragraph at lines 503--504
+
+[18]
+Overfull \hbox (45.5689pt too wide) in paragraph at lines 526--527
 \T1/cmtt/m/n/10.95 x.property.left \T1/cmr/m/n/10.95 (-20) is the \T1/cmtt/m/n/
 10.95 IsCanonicalBareSummitCertification \T1/cmr/m/n/10.95 (-20) com-po-nent of
  \T1/cmtt/m/n/10.95 ReflectiveSplitAutonomous
@@ -1282,29 +1278,23 @@ Overfull \hbox (45.5689pt too wide) in paragraph at lines 503--504
 
 
 
-[18]
-
 [19] (./Canonical_Certification_and_Enriched_Reflective_Realization.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `Canonical_Certification_and_Enriched_Reflect
 ive_Realization.out' has not changed.
-(rerunfilecheck)             Checksum: 76EF44F21F415A87C71E4127CC33109B;14770.
+(rerunfilecheck)             Checksum: 8961493BF77750E44B8C8481F865D2B7;14755.
  ) 
 Here is how much of TeX's memory you used:
- 18007 strings out of 473190
- 292069 string characters out of 5715801
- 788060 words of memory out of 5000000
- 40566 multiletter control sequences out of 15000+600000
- 601237 words of font info for 281 fonts, out of 8000000 for 9000
+ 18048 strings out of 473190
+ 292634 string characters out of 5715801
+ 787743 words of memory out of 5000000
+ 40576 multiletter control sequences out of 15000+600000
+ 603142 words of font info for 296 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,11n,82p,1779b,1258s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,11n,82p,1472b,2063s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></
@@ -1318,31 +1308,33 @@ ive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
 /2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/
 2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
 025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/202
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025/te
-xmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr/local/texlive/2025/texm
-f-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2025/texmf-
-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2025/texmf-di
-st/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2025/texmf-dist
-/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2025/texmf-dist/f
-onts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2025/texmf-dist/fon
-ts/type1/public/cm-super/sfit1095.pfb></usr/local/texlive/2025/texmf-dist/fonts
-/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/t
-ype1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/typ
-e1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1
-/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/p
-ublic/cm-super/sfrm1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/pub
-lic/cm-super/sfti0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/publi
-c/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/
-cm-super/sftt0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm
--super/sftt1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-s
-uper/sftt1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-sup
-er/sftt1200.pfb>
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025/texm
+f-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr/local/texlive/2025/texmf-
+dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2025/texmf-di
+st/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2025/texmf-dist
+/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2025/texmf-dist/f
+onts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2025/texmf-dist/fon
+ts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts
+/type1/public/cm-super/sfit1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/t
+ype1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/typ
+e1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1
+/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/p
+ublic/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/pub
+lic/cm-super/sfrm1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/publi
+c/cm-super/sfti0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/
+cm-super/sfti1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm
+-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-s
+uper/sftt0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-sup
+er/sftt1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super
+/sftt1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/s
+ftt1200.pfb>
 Output written on Canonical_Certification_and_Enriched_Reflective_Realization.p
-df (19 pages, 685146 bytes).
+df (19 pages, 721547 bytes).
 PDF statistics:
- 802 PDF objects out of 1000 (max. 8388607)
- 706 compressed objects within 8 object streams
- 136 named destinations out of 1000 (max. 500000)
- 78881 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 825 PDF objects out of 1000 (max. 8388607)
+ 725 compressed objects within 8 object streams
+ 138 named destinations out of 1000 (max. 500000)
+ 80929 words of extra memory for PDF output out of 89155 (max. 10000000)
 

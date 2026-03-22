@@ -12,28 +12,33 @@
 \maketitle
 
 \begin{abstract}
-We state and defend a summit-level theoremic claim emerging from a machine-checked
-program in Lean~4: \emph{canonical certification does not, in general, exhaust
-realization}. More precisely, when a mathematical or formal architecture contains
-a bare certification layer, an enriched realization layer, and a sound comparison
-map from the latter to the former, collapse at the bare carrier may coexist with
-nontrivial realized structure above that collapse. When this occurs, the residue
-is not amorphous: it is organized by non-injective forgetful comparison, nontrivial
-fibers, sections, and obstruction laws.
+\textbf{Central claim.}
+We state and defend a summit-level claim from a machine-checked program in Lean~4:
+\emph{canonical certification does not, in general, exhaust realization}. When a
+formal architecture has a bare certification layer, an enriched realization layer,
+and a sound comparison map $\pi : E \to B$, collapse at the bare carrier may coexist
+with nontrivial realized structure above it; the residue is organized by
+non-injective comparison, nontrivial fibers, sections, and obstruction laws.
 
-This paper does not introduce new axioms or replace the companion formal papers.
-Its function is different. It distills the permanent idea of the program into a
-single theoremic synthesis, states exactly what has been proved across the suite,
-explains why the result is not merely a restatement of G\"odelian incompleteness or
-a generic observation about proof relevance in dependent type theory, and argues
-that the collapse/refinement/fiber/obstruction architecture constitutes a reusable
-research instrument. The claim is supported by five completed kinds of discharge:
-the internal origin theorem in Infinity Compression, external transfer across
-twelve benchmark families, an algebraic obstruction theorem for group extensions,
-an arithmetic bridge through embedding problems, a topological discharge through
-Quillen's Theorem~A for Galois connections, and a computability anchor via halting
-and Rice-style non-certifiability results. We conclude with the exact scope of the
-claim and the frontier required to sharpen it into its strongest universal form.
+\textbf{Suite support.}
+The claim is supported by six completed kinds of discharge: the internal origin
+theorem in Infinity Compression; external transfer across twelve benchmark families;
+an algebraic obstruction theorem for group extensions; an arithmetic bridge through
+embedding problems; a topological discharge via Quillen's Theorem~A for Galois
+connections; and a computability anchor (halting and Rice-style barriers in
+\texttt{ComputablePred}).
+
+\textbf{This paper's role.}
+It does not introduce new axioms or replace the companion formal papers. It distills
+the architecture into one summit statement, records what has been proved, and
+separates the claim from incompleteness and generic proof relevance in dependent type
+theory. It also explains why the collapse/refinement/fiber/obstruction pattern is a
+reusable research instrument.
+
+\textbf{Frontier.}
+The next step is a strongest universal inevitability theorem over the broadest
+abstract class; this manuscript is synthesis of completed instances and a candidate
+general law, not that closure.
 \end{abstract}
 
 \SuiteSeriesContext{This manuscript is the \emph{summit statement}.}
@@ -51,7 +56,7 @@ claim and the frontier required to sharpen it into its strongest universal form.
 
 The program distilled in this paper is centered on the following claim.
 
-\begin{theorem}[Reflective Non-Exhaustion, program statement]\label{thm:rne}
+\begin{theorem}[Reflective Non-Exhaustion Theorem]\label{thm:rne}
 Let a \emph{reflective certification architecture} consist of:
 \begin{enumerate}[label=(\roman*)]
   \item a bare certification carrier $B$;
@@ -60,23 +65,44 @@ Let a \emph{reflective certification architecture} consist of:
   \item a distinguished canonical region $C \subseteq B$ singled out by the theory's
     certification rules.
 \end{enumerate}
-Then the following phenomenon can occur, and is realized in the companion formal
-developments:
+Then the completed formal instances studied in this program support the following
+uniform law---a dichotomy between total collapse along $\pi$ and genuine
+non-exhaustion:
 \begin{enumerate}[label=(\alph*)]
-  \item the certification layer collapses canonically inside $C$;
-  \item the realization layer remains nontrivial above that collapse;
-  \item the nontriviality is organized by non-injectivity of $\pi$, by nontrivial
-    fibers $\pi^{-1}(b)$ for $b \in C$, and by explicit obstruction or section laws
-    governing when collapse can or cannot be lifted.
+  \item \emph{(collapse regime)} The enriched layer carries no nontrivial residue
+    above certification for the comparison problem governed by $\pi$.
+  \item \emph{(non-exhaustion regime)} Canonical certification collapses inside $C$,
+    the realization layer remains nontrivial above that collapse, and the
+    nontriviality is organized by non-injectivity of $\pi$, by nontrivial fibers
+    $\pi^{-1}(b)$ for $b \in C$, and by explicit obstruction or section laws governing
+    when collapse can or cannot be lifted.
 \end{enumerate}
-In this sense, canonical certification does not exhaust realization.
+In the non-exhaustion regime, canonical certification does not exhaust realization.
+The suite's completed formal discharges instantiate this non-exhaustion regime in
+distinct mathematical domains.
 \end{theorem}
 
 \noindent
-The theorem above is a summit-level synthesis statement. Its fully formal
-instances are proved in the companion papers and Lean modules cited below; this
-paper does not ask the reader to accept it as a slogan detached from formal
-mathematics.
+The completed discharges justify reading this law as the governing synthesis of the
+current program; a strongest universal form over the broadest abstract class remains
+future work (\cref{sec:levels}).
+
+\noindent
+Here \emph{reflective} means that the architecture contains both an official
+certification layer and a structured realization layer connected by an explicit
+comparison map, so that the theory can internally track the relation between what
+is certified and how that certification is realized.
+
+\noindent
+In the non-exhaustion regime, the residue does not live on the bare carrier itself
+but in the fibers of $\pi$; liftability is governed by obstruction theory, not by
+certificate theory alone. Across the suite, this is one shared architecture, not
+family resemblance.
+
+\noindent
+Theorem~\ref{thm:rne} is a summit-level synthesis statement. Its formal instances are
+proved in the companion papers and Lean modules cited below; this paper does not ask
+the reader to accept it as a slogan detached from formal mathematics.
 
 \subsection{Public paraphrase}
 
@@ -87,11 +113,10 @@ A concise public rendering is:
 which that certificate is realized.}
 \end{quote}
 
-A stronger but still careful paraphrase is:
+A stronger paraphrase:
 
 \begin{quote}
-\emph{Canonical certification does not, in general, exhaust realized structure;
-the residue lives in fibers above certification.}
+\emph{Canonical certification does not, in general, exhaust realized structure.}
 \end{quote}
 
 \subsection{What this paper is for}
@@ -101,13 +126,55 @@ popular essay. Its role is to do four things that none of the companion papers,
 taken alone, can do as sharply:
 
 \begin{enumerate}[label=(\arabic*)]
-  \item state the permanent theoremic idea in one place;
+  \item state the permanent theorem-level idea in one place;
   \item show exactly which completed results already support it;
   \item separate it from nearby but different ideas (incompleteness, generic proof
     relevance, informal rhetoric);
   \item explain why the architecture is a reusable research instrument rather than
     a one-off observation.
 \end{enumerate}
+
+\subsection{Program route labels}\label{sec:route-labels}
+
+The suite groups its formal work under named \emph{routes} (navigation labels, not
+routing tables or inference rules). \textbf{Route~C} is the headline reflective
+non-exhaustion claim; \textbf{Routes~A} and \textbf{B} cover infrastructure lemmas
+and the algebra/topology/arithmetic general-method papers; \textbf{Route~D} is the
+logic/computability discharge---halting and Rice scaffolding in Mathlib's
+\texttt{ComputablePred} layer (Lean \texttt{RouteD/}). This vocabulary is fixed here
+so that later mentions of Route~D are not unexplained forward references.
+
+\section{Three levels of claim}\label{sec:levels}
+
+This paper distinguishes three levels; readers should not conflate them.
+
+\paragraph{Instance level.}
+The companion papers prove specific theorems on named carriers in Lean.
+
+\paragraph{Synthesis level.}
+This paper identifies the common architecture those theorems instantiate and states
+it as the summit thesis (Theorem~\ref{thm:rne}).
+
+\paragraph{Frontier level.}
+A stronger universal inevitability theorem over the broadest abstract class remains
+future work.
+
+\section{Why this counts as theorem-level synthesis}\label{sec:theorem-synthesis}
+
+The summit claim is not a narrative imposed after the fact. It is theorem-level
+because:
+\begin{itemize}
+  \item \textbf{Named formal instances.} Companion papers and Lean modules prove
+    concrete theorems on named carriers (zero \texttt{sorry} in the relevant
+    modules).
+  \item \textbf{Shared comparison structure.} The same pattern---bare layer, enriched
+    layer, comparison map $\pi : E \to B$---is instantiated across internal, benchmark,
+    algebraic, arithmetic, topological, and computability-adjacent settings.
+  \item \textbf{Fiber and obstruction law.} Residual structure is located in fibers
+    and controlled by obstruction in each discharge, not by certificate rhetoric
+    alone.
+\end{itemize}
+Theorem~\ref{thm:rne} is the explicit synthesis statement these instances support.
 
 \section{What is actually proved in the suite}\label{sec:proved-suite}
 
@@ -203,20 +270,17 @@ Computability anchor & halting / Rice non-certifiability layer \\
 \end{tabular}
 \end{center}
 
-That is enough to justify a summit paper. The summit claim is no longer a mere
-program aspiration.
+That support is sufficient to justify a summit paper: the summit claim is no
+longer a program aspiration but a synthesis of completed formal discharges.
 
 \section{The architecture itself}\label{sec:architecture}
 
 \subsection{Certification}
 
 A \emph{certification layer} is a carrier of theorem-level or officially packaged
-invariants. It is the layer at which a theory says: this is the certified object,
-certificate, derivation, witness, or verdict.
-
-The defining feature of certification, for the present program, is not simply that
-it exists, but that it may \emph{collapse}: many legitimate routes may project to
-the same canonical certification object.
+invariants---the layer at which a theory certifies an object, witness, or verdict.
+Its defining feature here is that it may \emph{collapse}: many legitimate routes may
+project to the same canonical certification object.
 
 \subsection{Realization}
 
@@ -251,15 +315,16 @@ The fiber over $b \in B$ is
 \[
 \Fib(b) := \pi^{-1}(b).
 \]
-When certification collapses, fibers become the correct place to locate residual
-structure. If $\Fib(b)$ has more than one point, then bare certification fails
-to determine realization uniquely.
+When certification collapses, fibers are where residual structure lives---the usual
+fiber picture in topology~\cite{Steenrod1951}. Multiple points in $\Fib(b)$ mean bare
+certification does not fix realization uniquely.
 
 \subsection{Obstruction}
 
 An \emph{obstruction law} is the theorem governing when one may lift from bare to
-enriched structure. In different domains this obstruction appears in different
-mathematical clothing:
+enriched structure. Lifting and obstruction in the sense of fiber bundles and
+homotopy theory are standard~\cite{Hatcher2002,Steenrod1951}. In different domains
+this obstruction appears in different mathematical clothing:
 \begin{itemize}
   \item a cocycle in group extensions,
   \item fiber contractibility in Quillen-style comparison,
@@ -267,8 +332,8 @@ mathematical clothing:
   \item non-certifiability in computability.
 \end{itemize}
 
-The summit claim is that these are not unrelated accidents. They are instances of
-a common collapse/refinement/fiber/obstruction architecture.
+The summit claim is that these phenomena instantiate one
+collapse/refinement/fiber/obstruction architecture, not unrelated accidents.
 
 \section{The internal origin theorem}\label{sec:internal-origin}
 
@@ -377,22 +442,25 @@ architecture reappears.
 
 \section{Computability anchor}\label{sec:computability}
 
-The summit architecture must not be mistaken for a vague philosophical analogue of
-G\"odel. The computability anchor matters because it gives disciplined contact with
-classical non-certifiability.
+\textbf{Route~D} (\cref{sec:route-labels}) is the computability discharge: halting and
+Rice-style facts in Mathlib's \texttt{ComputablePred} layer, formalized in
+\texttt{RouteD/}. They show semantic phenomena that need not be fully capturable by
+the relevant certification apparatus, with classical landmarks in incompleteness and
+undecidability~\cite{Godel1931,Turing1936,Rice1953}. This prevents the summit
+architecture from being mistaken for a vague philosophical analogue of G\"odel's
+theorem~\cite{Godel1931}.
 
-\subsection{What is anchored}
-
-The current Lean support includes halting and Rice-style facts in a certifiability
-layer relevant to \texttt{ComputablePred}. These show that there are semantic
-phenomena that cannot be fully captured by the relevant certification apparatus.
+In parallel with the other domains, the bare layer is the certifiable predicate
+interface; the enriched layer is semantic behavior of computations; the comparison is
+certification through \texttt{ComputablePred}; the obstruction is classical
+undecidability (halting / Rice).
 
 \subsection{What is not claimed}
 
-The summit theorem is not identical with G\"odel's incompleteness theorem, nor is
-the present program claiming to have subsumed all of classical recursion theory.
-The role of the computability anchor is narrower: it demonstrates that the program's
-language touches standard impossibility terrain in an honest, formal way.
+The summit theorem is not G\"odel's incompleteness theorem~\cite{Godel1931}, nor is
+the present program claiming to subsume all of classical recursion theory. The
+anchor is narrower: the suite's language touches standard impossibility terrain in
+an honest, formal way.
 
 \section{Why this is not just G\"odel}\label{sec:not-godel}
 
@@ -401,7 +469,7 @@ This distinction is central.
 \subsection{G\"odel's contribution}
 
 G\"odel shows that sufficiently rich formal systems face unavoidable limits:
-undecidable statements, incompleteness, and non-recursive truth phenomena.
+undecidable statements, incompleteness, and non-recursive truth phenomena~\cite{Godel1931}.
 
 \subsection{This program's contribution}
 
@@ -417,13 +485,13 @@ That is a positive architecture theorem, not merely a barrier theorem.
 \subsection{The sharp difference}
 
 G\"odel's theorem says, roughly, that certain truths outrun formal provability.
-The summit architecture says that even when a canonical certification exists and
-collapses perfectly at one carrier, realized structure may remain irreducibly
-nontrivial above it---and that this nontriviality is organized by explicit fibers
-and obstructions.
+The summit architecture addresses a different question: where certification
+collapses at one carrier, realized structure may still be nontrivial upstairs, with
+that nontriviality organized by fibers and obstructions (Theorem~\ref{thm:rne},
+non-exhaustion regime).
 
-The two ideas are related in spirit, especially once Route~D is included, but they
-are not the same theorem.
+The two ideas are related in spirit once \textbf{Route~D} (halting and Rice in
+\texttt{ComputablePred}) is in play, but they are not the same theorem.
 
 \section{Why this is not merely proof relevance in type theory}\label{sec:not-dtt}
 
@@ -450,7 +518,7 @@ What is nontrivial is that the library proves:
 
 The summit claim is therefore not ``proof relevance exists.'' It is:
 \begin{quote}
-\emph{this is the correct theoremic architecture for a broad and growing class of
+\emph{this is the correct theorem-level architecture for a broad and growing class of
 comparison problems.}
 \end{quote}
 
@@ -474,20 +542,15 @@ The architecture gives a reusable research workflow:
 
 \subsection{Why this matters}
 
-This turns vague statements like ``there is more structure upstairs'' into a
-precise theorem program. It tells researchers exactly what to look for and where
-to formalize it.
-
-\subsection{Research-instrument claim}
-
-That is why the architecture is best understood not only as a collection of
-results, but as a \emph{research instrument}. It gives a stable way to formulate,
-compare, and attack problems where theorem-level invariants do not obviously
-exhaust the structure that realizes them.
+This turns vague ``more structure upstairs'' claims into a precise program: it tells
+researchers what to formalize and where. The architecture is therefore a
+\emph{research instrument}---a stable way to formulate and attack comparison
+problems where theorem-level invariants do not exhaust realizing structure.
 
 \section{Cross-domain dictionary}\label{sec:dictionary}
 
-A compact dictionary is helpful.
+The following table is a \emph{heuristic} index: it is not a formal theorem, only a
+compact navigation aid.
 
 \begin{center}
 \small
@@ -505,12 +568,14 @@ Computability & certifiable predicate layer & realized semantic behavior & certi
 \end{tabular}
 \end{center}
 
-This table is not itself a formal theorem. It is the best concise representation
-of why the summit architecture is plausible as a unifying language.
+It is nonetheless the best concise representation of why the summit architecture is
+plausible as a unifying language.
 
 \section{Exact scope}\label{sec:scope}
 
-The summit claim is strong, but it is not unlimited.
+The summit claim is strong, but it is not unlimited. The following paragraphs make
+the \emph{synthesis}-level claim of \cref{sec:levels} exact and separate it from the
+\emph{frontier} level.
 
 \subsection{What is claimed}
 
@@ -542,7 +607,7 @@ the formal scope of this paper; they are not part of the proved theorem content.
 \subsection{Why this is enough}
 
 These non-claims do not weaken the summit paper's purpose. A summit statement
-should mark the strongest theoremic language already earned by the completed
+should mark the strongest theorem-level language already earned by the completed
 program, not pretend to have finished all mathematically natural extensions.
 
 \section{Open frontier}\label{sec:frontier}
@@ -573,29 +638,21 @@ new idea, but to strengthen and universalize what is already visible:
 
 \section{Conclusion}\label{sec:conclusion}
 
-The permanent idea of the program can now be stated cleanly.
+The program's permanent theorem-level claim is now stated in one place:
+Theorem~\ref{thm:rne}.
 
-Canonical certification may collapse completely at a bare carrier. That collapse
-does not guarantee exhaustion of realized structure. When realization remains
-nontrivial, the residue is not mysterious: it is organized by explicit comparison
-maps, nontrivial fibers, sections, and obstruction laws.
-
-That is the summit claim.
-
-It is not merely a slogan about proof objects. It is not simply a rebranding of
-G\"odelian incompleteness. It is not an artifact of one internal library. It is
-supported by an internal origin theorem, a transferability survey, theorem-level
-discharges in algebra and topology, an arithmetic bridge, and a computability
-anchor.
-
-The strongest current reading is therefore:
+It is not a slogan about proof objects, a rebranding of G\"odelian incompleteness,
+or an artifact of one library. Six completed discharges support it (internal origin,
+transferability, algebra, arithmetic, topology, computability).
 
 \begin{quote}
 \emph{Collapse downstairs, structured comparison upstairs, and obstruction in the
-fibers is a real, reusable theorem architecture.}
+fibers is a real, reusable theorem-level architecture.}
 \end{quote}
 
-That is why the program deserves a summit paper.
+What survives collapse has a precise mathematical home in the fibers of comparison,
+governed by obstruction. The right language is certification together with the geometry of what
+certification forgets.
 
 \bibliographystyle{alpha}
 \begin{thebibliography}{99}
@@ -623,6 +680,32 @@ N.~Spivack.
 \newblock \emph{Quillen's Theorem~A for Galois Connections: A Machine-Checked
   Formalization in Lean~4}.
 \newblock General-method manuscript, 2026.
+
+\bibitem{Godel1931}
+K.~G\"odel.
+\newblock {\"U}ber formal unentscheidbare S{\"a}tze der \emph{Principia Mathematica} und
+  verwandter Systeme~I.
+\newblock \emph{Monatshefte f\"ur Mathematik und Physik} \textbf{38} (1931), 173--198.
+
+\bibitem{Turing1936}
+A.~M.~Turing.
+\newblock On computable numbers, with an application to the Entscheidungsproblem.
+\newblock \emph{Proc.\ London Math.\ Soc.} (2) \textbf{42} (1936), 230--265.
+
+\bibitem{Rice1953}
+H.~G.~Rice.
+\newblock Classes of recursively enumerable sets and their decision problems.
+\newblock \emph{Trans.\ Amer.\ Math.\ Soc.} \textbf{74} (1953), 358--366.
+
+\bibitem{Steenrod1951}
+N.~Steenrod.
+\newblock \emph{The Topology of Fibre Bundles}.
+\newblock Princeton University Press, 1951.
+
+\bibitem{Hatcher2002}
+A.~Hatcher.
+\newblock \emph{Algebraic Topology}.
+\newblock Cambridge University Press, 2002.
 
 \end{thebibliography}
 
