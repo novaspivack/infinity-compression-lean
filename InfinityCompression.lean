@@ -68,6 +68,7 @@ import InfinityCompression.GeneralMethod.GroupExtension.MathlibAdapter
 import InfinityCompression.GeneralMethod.GroupExtension.NonAbelianObstruction
 import InfinityCompression.GeneralMethod.GroupExtension.SchurMultiplier
 import InfinityCompression.GeneralMethod.Descent.FaithfullyFlatDescent
+import InfinityCompression.GeneralMethod.Descent.EllipticCurveDescent
 import InfinityCompression.GeneralMethod.Quillen.FiberLemma
 import InfinityCompression.GeneralMethod.Galois.EmbeddingProblem
 import InfinityCompression.MetaProof.SummitTargets
