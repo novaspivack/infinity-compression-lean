@@ -58,6 +58,8 @@ import InfinityCompression.Validation.SetClassifierFiberBenchmark
 import InfinityCompression.Validation.LocalizationPairFiberBenchmark
 import InfinityCompression.Validation.PullbackFiberBenchmark
 import InfinityCompression.Validation.NonSurjectiveSuccFiberBenchmark
+import InfinityCompression.GeneralMethod.GroupExtension.FiberArchitecture
+import InfinityCompression.GeneralMethod.GroupExtension.SchurZassenhaus
 import InfinityCompression.MetaProof.SummitTargets
 import InfinityCompression.MetaProof.DependencyShape
 import InfinityCompression.MetaProof.AdmissibleDerivations
@@ -140,6 +142,9 @@ def epic017evExtendedValidationDimensions := ()
 
 /-- EPIC_018_XC1 — second-wave external validation T8–T12 (pushout, classifier, localization, pullback, MODERATE non-surjective). -/
 def epic018xcSecondWaveValidation := ()
+
+/-- EPIC_019_GA1 — Positive-closure architecture as general method: group extension fibers, 2-cocycle obstruction, splitting criterion. -/
+def epic019gaGeneralMethod := ()
 
 /-- EPIC_001 §2.5 — IC Universal Theorem summit (`Frontier/ICUniversalTheorem.lean`). -/
 def epic001UniversalSummit := ()
