@@ -18,6 +18,8 @@ Each paper has its **own subdirectory** and main `.tex` file. From a paper direc
 |-----------|--------|
 | `Canonical_Certification_and_Enriched_Reflective_Realization/` | Flagship IC paper (canonical bare certification vs enriched realization; fibers; NEMS spine). |
 | `External_Validation_Positive_Closure_Architecture/` | External validation of the positive-closure architecture (**multi-tranche:** quotient T1, product T2, Sigma T3). |
+| `Fiber_Architecture_Group_Extensions_Lean4/` | EPIC_020_ML1: ITP/CPP paper — fiber architecture for group extensions, cocycles, splitting criterion, cohomological bridge. |
+| `Mathlib_Cocycle_Splitting_Companion/` | EPIC_020_ML1: Mathlib contribution companion — technical note for PR reviewers. |
 
 ## Build (example)
 

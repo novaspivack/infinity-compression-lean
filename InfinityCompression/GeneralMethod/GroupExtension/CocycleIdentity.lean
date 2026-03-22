@@ -24,8 +24,17 @@ variable (S : GroupExtension N E G)
 
 /-! ### The 2-cocycle identity
 
-Both sides equal `σ(g₁)·σ(g₂)·σ(g₃)·σ(g₁g₂g₃)⁻¹` after cancellation of
-intermediate section values. The proof uses `section_mul_eq` to expand and cancel.
+Both sides, when mapped through `S.inl` and right-multiplied by `σ(g₁g₂g₃)`,
+equal `σ(g₁) · σ(g₂) · σ(g₃)` after cancellation of intermediate section values.
+
+The LHS cancels `σ(g₁g₂g₃)⁻¹ · σ(g₁g₂g₃)` and `σ(g₁g₂)⁻¹ · σ(g₁g₂)`.
+The RHS cancels `σ(g₁)⁻¹ · σ(g₁)` and `σ(g₂g₃)⁻¹ · σ(g₂g₃)`.
+
+-- TODO: Complete the tactic proof. The mathematical content is standard
+-- (both sides of the 2-cocycle identity reduce to σ(g₁)·σ(g₂)·σ(g₃)·σ(g₁g₂g₃)⁻¹
+-- after cancellation). The difficulty is purely tactic-engineering: Lean 4's
+-- `group` tactic treats section values as free generators and cannot perform
+-- the cancellations, requiring manual `mul_assoc`/`inv_mul_cancel_left` chains.
 -/
 
 theorem sectionCocycle_isMulCocycle₂_conj (σ : S.Section) (g₁ g₂ g₃ : G) :
@@ -39,70 +48,7 @@ theorem sectionCocycle_isMulCocycle₂_conj (σ : S.Section) (g₁ g₂ g₃ : G
       sectionCocycle_spec S σ g₁ (g₂ * g₃)]
   conv_rhs =>
     rw [show g₁ * (g₂ * g₃) = g₁ * g₂ * g₃ from (mul_assoc g₁ g₂ g₃).symm]
-  -- Both sides = σ(g₁)*σ(g₂)*σ(g₃)*σ(g₁g₂g₃)⁻¹ after cancellation.
-  -- LHS cancels σ(g₁g₂)⁻¹ * σ(g₁g₂) and σ(g₁g₂g₃)⁻¹ * σ(g₁g₂g₃)⁻¹.
-  -- RHS cancels σ(g₁)⁻¹ * σ(g₁) and σ(g₂g₃)⁻¹ * σ(g₂g₃).
-  -- Both are straightforward group-theoretic cancellations in E.
-  -- We extract the common value by right-multiplying by σ(g₁g₂g₃).
-  have key : ∀ (x : E),
-    x * σ.toFun (g₁ * g₂ * g₃) = σ.toFun g₁ * σ.toFun g₂ * σ.toFun g₃ →
-    x = σ.toFun g₁ * σ.toFun g₂ * σ.toFun g₃ * (σ.toFun (g₁ * g₂ * g₃))⁻¹ := by
-    intro x hx; rw [← hx, mul_assoc, mul_inv_cancel, mul_one]
-  have lhs_cancel : (σ.toFun (g₁ * g₂) * σ.toFun g₃ * (σ.toFun (g₁ * g₂ * g₃))⁻¹ *
-    (σ.toFun g₁ * σ.toFun g₂ * (σ.toFun (g₁ * g₂))⁻¹)) * σ.toFun (g₁ * g₂ * g₃) =
-    σ.toFun g₁ * σ.toFun g₂ * σ.toFun g₃ := by
-    have h12 := section_mul_eq S σ g₁ g₂
-    have h123 := section_mul_eq S σ (g₁ * g₂) g₃
-    -- σ(g₁)*σ(g₂) = inl(c12)*σ(g₁g₂), so σ(g₁)*σ(g₂)*σ(g₁g₂)⁻¹ = inl(c12)
-    -- σ(g₁g₂)*σ(g₃) = inl(c123)*σ(g₁g₂g₃)
-    -- LHS*σ(g₁g₂g₃) = inl(c123)*σ(g₁g₂g₃)*σ(g₁g₂g₃)⁻¹*inl(c12)*σ(g₁g₂g₃)
-    --                 = inl(c123)*inl(c12)*σ(g₁g₂g₃) ... no, let me just compute directly
-    calc (σ.toFun (g₁ * g₂) * σ.toFun g₃ * (σ.toFun (g₁ * g₂ * g₃))⁻¹ *
-           (σ.toFun g₁ * σ.toFun g₂ * (σ.toFun (g₁ * g₂))⁻¹)) * σ.toFun (g₁ * g₂ * g₃)
-        = σ.toFun g₁ * σ.toFun g₂ * (σ.toFun (g₁ * g₂))⁻¹ *
-          (σ.toFun (g₁ * g₂) * σ.toFun g₃ * (σ.toFun (g₁ * g₂ * g₃))⁻¹ *
-           σ.toFun (g₁ * g₂ * g₃)) := by
-          rw [mul_comm (σ.toFun (g₁ * g₂) * σ.toFun g₃ * (σ.toFun (g₁ * g₂ * g₃))⁻¹)
-                       (σ.toFun g₁ * σ.toFun g₂ * (σ.toFun (g₁ * g₂))⁻¹)]
-          rw [mul_assoc]
-      _ = σ.toFun g₁ * σ.toFun g₂ * (σ.toFun (g₁ * g₂))⁻¹ *
-          (σ.toFun (g₁ * g₂) * σ.toFun g₃) := by
-          congr 1
-          rw [mul_assoc, inv_mul_cancel_left]
-      _ = σ.toFun g₁ * σ.toFun g₂ * ((σ.toFun (g₁ * g₂))⁻¹ * (σ.toFun (g₁ * g₂) * σ.toFun g₃)) := by
-          rw [mul_assoc]
-      _ = σ.toFun g₁ * σ.toFun g₂ * ((σ.toFun (g₁ * g₂))⁻¹ * σ.toFun (g₁ * g₂) * σ.toFun g₃) := by
-          rw [mul_assoc (σ.toFun (g₁ * g₂))⁻¹]
-      _ = σ.toFun g₁ * σ.toFun g₂ * (1 * σ.toFun g₃) := by
-          rw [inv_mul_cancel]
-      _ = σ.toFun g₁ * σ.toFun g₂ * σ.toFun g₃ := by
-          rw [one_mul]
-  have rhs_cancel : (σ.toFun g₁ * (σ.toFun g₂ * σ.toFun g₃ * (σ.toFun (g₂ * g₃))⁻¹) *
-    (σ.toFun g₁)⁻¹ *
-    (σ.toFun g₁ * σ.toFun (g₂ * g₃) * (σ.toFun (g₁ * g₂ * g₃))⁻¹)) * σ.toFun (g₁ * g₂ * g₃) =
-    σ.toFun g₁ * σ.toFun g₂ * σ.toFun g₃ := by
-    calc (σ.toFun g₁ * (σ.toFun g₂ * σ.toFun g₃ * (σ.toFun (g₂ * g₃))⁻¹) *
-           (σ.toFun g₁)⁻¹ *
-           (σ.toFun g₁ * σ.toFun (g₂ * g₃) * (σ.toFun (g₁ * g₂ * g₃))⁻¹)) *
-           σ.toFun (g₁ * g₂ * g₃)
-        = σ.toFun g₁ * (σ.toFun g₂ * σ.toFun g₃ * (σ.toFun (g₂ * g₃))⁻¹) *
-          (σ.toFun g₁)⁻¹ *
-          (σ.toFun g₁ * σ.toFun (g₂ * g₃)) := by
-          rw [mul_assoc _ (σ.toFun (g₁ * g₂ * g₃))⁻¹, inv_mul_cancel_left]
-          rw [mul_assoc]
-      _ = σ.toFun g₁ * (σ.toFun g₂ * σ.toFun g₃ * (σ.toFun (g₂ * g₃))⁻¹) *
-          ((σ.toFun g₁)⁻¹ * (σ.toFun g₁ * σ.toFun (g₂ * g₃))) := by
-          rw [mul_assoc]
-      _ = σ.toFun g₁ * (σ.toFun g₂ * σ.toFun g₃ * (σ.toFun (g₂ * g₃))⁻¹) *
-          σ.toFun (g₂ * g₃) := by
-          rw [inv_mul_cancel_left]
-      _ = σ.toFun g₁ * (σ.toFun g₂ * σ.toFun g₃ * ((σ.toFun (g₂ * g₃))⁻¹ * σ.toFun (g₂ * g₃))) := by
-          rw [mul_assoc, mul_assoc (σ.toFun g₂ * σ.toFun g₃)]
-      _ = σ.toFun g₁ * (σ.toFun g₂ * σ.toFun g₃) := by
-          rw [inv_mul_cancel, mul_one]
-      _ = σ.toFun g₁ * σ.toFun g₂ * σ.toFun g₃ := by
-          rw [mul_assoc]
-  exact (key _ lhs_cancel).symm.trans (key _ rhs_cancel)
+  sorry
 
 /-! ### Cocycle of a splitting is trivial -/
 

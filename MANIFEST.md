@@ -125,9 +125,9 @@
 | `GroupExtension/SchurZassenhaus.lean` | EPIC_019_GA1: `sectionCocycle`, `sectionCocycle_spec`, `section_mul_eq`, `splits_iff_trivial_cocycle` (splitting iff cocycle trivial) |
 | `GroupExtension/LocalGlobal.lean` | EPIC_019_GA1: `directProductExtension`, `directProductSplitting`, `not_splits_of_all_cocycles_nontrivial`, `pullbackSubgroup`, `restrictExtension`, `splitting_restricts`, `global_split_implies_local_split`, `local_nonsplit_obstructs_global` |
 | `GroupExtension/CocycleCoboundary.lean` | EPIC_019_GA1: `sectionDiff`, `sectionDiff_spec`, `section_eq_inl_diff_mul`, `splitting_independent_of_section`, `splits_of_any_trivial_cocycle` |
-| `GroupExtension/ConjugationAction.lean` | EPIC_020_ML1: conjugation action on kernel via sections, Mathlib bridge |
-| `GroupExtension/CocycleIdentity.lean` | EPIC_020_ML1: 2-cocycle identity (associativity constraint) — IN PROGRESS |
-| `GroupExtension/MathlibAdapter.lean` | EPIC_020_ML1: adapter connecting our cocycle to Mathlib `IsCocycle₂` types |
+| `GroupExtension/ConjugationAction.lean` | EPIC_020_ML1: `sectionConjAct`, `conjAct_inl` (commutative N), `sectionConjAct_independent`, `splittingConjAct` — conjugation action on kernel via sections |
+| `GroupExtension/CocycleIdentity.lean` | EPIC_020_ML1: `sectionCocycle_isMulCocycle₂_conj` (1 sorry — tactic proof), `sectionCocycle_of_splitting`, `section_triple_product` — 2-cocycle identity |
+| `GroupExtension/MathlibAdapter.lean` | EPIC_020_ML1: Mathlib-style re-exports (`GroupExtensionSection.cocycle`, `splits_iff_trivialCocycle`, etc.) |
 | `GroupExtension/NonAbelianObstruction.lean` | EPIC_021_NR1: Q₈ non-abelian (`decide`), `splitting_implies_trivial_cocycle_general` (forward direction for any kernel), abelian/non-abelian boundary |
 | `GroupExtension/SchurMultiplier.lean` | EPIC_021_NR1: `IsCentralExtension`, central cocycle commutativity, `centralExtension_image_comm`, `S₃_not_abelian` |
 | `Descent/FaithfullyFlatDescent.lean` | EPIC_019_GA1: `faithfullyFlat_reflects_injective/surjective/bijective` — conservative forgetful map via Mathlib descent |
