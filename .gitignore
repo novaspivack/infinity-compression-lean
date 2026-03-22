@@ -1,0 +1,5 @@
+# Lake local cache (use `lake exe cache get` / CI to fetch Mathlib)
+.lake/
+
+# LaTeX sync (local editor)
+*.synctex.gz
