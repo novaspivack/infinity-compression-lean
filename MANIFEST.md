@@ -4,7 +4,7 @@
 **Mathlib:** v4.29.0-rc6 (via lake)  
 **Build:** From this directory: `lake build`. **Program W validation only (fast):** pass each `InfinityCompression.Validation.*` module from the table below as a `lake build` target (twelve files; there is no single `Validation.lean` wrapper). Do **not** use a partial build as a substitute for a full release check of the whole library.  
 **Root import:** `InfinityCompression.lean` (imports every production module below)  
-**Last verified:** 2026-03-22 — Program W papers: consolidated external validation **T1–T12** (`papers/External_Validation_Positive_Closure_Architecture/`). **Wave 1:** EPIC_015_WV1 (`QuotientFiberBenchmark`). **WV2B:** EPIC_016_WV2 (`ProductProjectionFiberBenchmark`, `SigmaFiberBenchmark`). **Extended:** EPIC_017_EV1 T4–T7. **Second wave:** EPIC_018_XC1 T8–T12.
+**Last verified:** 2026-03-22 — Full library build (3400+ jobs, zero sorry). **Program W:** T1–T12 validation benchmarks. **GeneralMethod:** 21 modules across GroupExtension (cocycles, splitting, obstruction, Mathlib bridge), Quillen (Theorem A for Galois connections, nerve contractibility), Galois (embedding problems), Descent (faithfully flat, 2-torsion torsor). **Papers:** 5-paper series (IC flagship, external validation, ITP/CPP group extensions, Mathlib companion, Quillen Theorem A).
 
 ---
 
