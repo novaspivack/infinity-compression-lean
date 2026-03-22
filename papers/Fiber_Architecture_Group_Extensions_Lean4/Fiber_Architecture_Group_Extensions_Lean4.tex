@@ -68,19 +68,24 @@
 \maketitle
 
 \begin{abstract}
-We present a machine-checked formalization of the section 2-cocycle and splitting
-criterion for group extensions in Lean~4~\cite{Lean4}, built on Mathlib's
-\lean{GroupExtension} API~\cite{Mathlib,Yamazaki2024}.  The formalization is organized around a \emph{fiber architecture} that
-decomposes extensions into layers: fibers over quotient elements ($N$-torsors),
-set-theoretic sections (always exist), and homomorphic splittings (may not exist).
-The central result is the \emph{splitting criterion}: an extension splits if and
-only if some section has trivial cocycle.  We also prove the 2-cocycle identity
-connecting our construction to Mathlib's \IsMulCocycle{} predicate, establish
-section-independence of the splitting question, and formalize restriction to
-subgroups with a local-to-global obstruction principle.  The work takes a first
-step toward documented TODOs in Mathlib's \lean{GroupExtension} module regarding
-the cohomological classification of extensions.  All results are fully
-machine-checked with zero \lean{sorry}.
+We present a machine-checked formalization of the section 2-cocycle, splitting
+criterion, and embedding-problem equivalence for group extensions in
+Lean~4~\cite{Lean4}, built on Mathlib's \lean{GroupExtension}
+API~\cite{Mathlib,Yamazaki2024}. The formalization is organized around a
+\emph{fiber architecture} that decomposes extensions into layers: fibers over
+quotient elements ($N$-torsors), set-theoretic sections (always exist), and
+homomorphic splittings (may not exist). The central results are: (1)~the
+\emph{splitting criterion}---an extension splits if and only if some section has
+trivial cocycle; (2)~the \emph{embedding-problem equivalence}---an abstract
+embedding problem (the central lifting problem in inverse Galois theory) is
+solvable if and only if the associated extension splits, if and only if the
+cocycle obstruction vanishes; (3)~the \emph{2-cocycle identity} connecting our
+construction to Mathlib's \IsMulCocycle{} predicate; and (4)~a
+\emph{local-to-global obstruction principle} via restriction to subgroups. The
+work fills documented gaps in Mathlib's \lean{GroupExtension} module and takes a
+first step toward the cohomological classification of extensions. Companion
+work applies the same fiber architecture to Quillen's Theorem~A for Galois
+connections. All results are fully machine-checked with zero \lean{sorry}.
 \end{abstract}
 
 \keywords{Lean 4, Mathlib, group extensions, 2-cocycle, splitting criterion,
@@ -908,6 +913,61 @@ split.  This is a standard technique in group cohomology (restriction maps
 $H^2(G, N) \to H^2(H, N)$), here formalized at the extension level.
 
 %=======================================================================
+\section{Embedding Problems as Extension Splitting}\label{sec:embedding}
+%=======================================================================
+
+An \emph{embedding problem} in Galois theory asks: given a Galois extension
+$L/K$ with group $G$ and a surjection $\varphi : H \twoheadrightarrow G$, does
+there exist a Galois extension $F/K$ with group $H$ extending $L/K$? The kernel
+$N = \ker(\varphi)$ gives a group extension $1 \to N \to H \to G \to 1$, and a
+solution is a homomorphic section $\psi : G \to H$ with
+$\varphi \circ \psi = \id$---exactly a splitting of the extension.
+
+We formalize this connection at the abstract group-theoretic level (not yet
+connected to actual Galois extensions via Mathlib's \lean{IntermediateField}).
+
+\begin{definition}[Embedding problem]\label{def:embedding}
+An \lean{EmbeddingProblem G H} consists of a surjective group homomorphism
+$\varphi : H \to G$. The associated group extension is
+$1 \to \ker(\varphi) \to H \xrightarrow{\varphi} G \to 1$, constructed as
+\lean{ep.toGroupExtension}.
+\end{definition}
+
+\begin{theorem}[Solvability as splitting]\label{thm:solvable-splits}
+An embedding problem is solvable if and only if the associated group extension
+splits:
+\begin{lstlisting}
+theorem solvable_iff_splits (ep : EmbeddingProblem G H) :
+    Nonempty ep.Solution <-> Nonempty ep.toGroupExtension.Splitting
+\end{lstlisting}
+\end{theorem}
+
+\begin{theorem}[Solvability as trivial cocycle]\label{thm:solvable-cocycle}
+Combining with the splitting criterion, an embedding problem is solvable if and
+only if the associated extension has a section with trivial cocycle:
+\begin{lstlisting}
+theorem solvable_iff_trivial_cocycle (ep : EmbeddingProblem G H) :
+    Nonempty ep.Solution <->
+    exists s : ep.toGroupExtension.Section,
+      forall g1 g2 : G,
+        sectionCocycle ep.toGroupExtension s g1 g2 = 1
+\end{lstlisting}
+\end{theorem}
+
+\noindent
+This connects the Galois-theoretic lifting question directly to the cohomological
+obstruction from group extension theory. The architecture decomposes the problem
+into layers: the bare layer (known Galois group $G$), the enriched layer (target
+group $H$), the fiber (kernel $N$), and the obstruction (cocycle class). To our
+knowledge, this is the first Lean formalization connecting embedding problems to
+group extension splitting with cocycle obstructions.
+
+\paragraph{Scope.}
+The formalization works at the abstract group-theoretic level. The bridge to
+actual Galois extensions---connecting \lean{EmbeddingProblem} to Mathlib's
+\lean{IntermediateField} and \lean{IsGalois}---is future work.
+
+%=======================================================================
 \section{Faithfully Flat Descent as Conservative Instance}\label{sec:descent}
 %=======================================================================
 
@@ -1033,57 +1093,40 @@ itself.
 \section{Conclusion}\label{sec:conclusion}
 %=======================================================================
 
-We have presented a machine-checked formalization of the section 2-cocycle and
-splitting criterion for group extensions in Lean~4, organized around a fiber
-architecture that decomposes extensions into layers: fibers ($N$-torsors),
-set-theoretic sections (always exist), homomorphic splittings (may not exist),
-and the 2-cocycle that measures the gap.  The central results---the splitting
-criterion (\lean{splits\_iff\_trivial\_cocycle}), the 2-cocycle identity
-(\lean{sectionCocycle\_isMulCocycle\textsubscript{2}\_conj}), and the
-local-to-global obstruction principle---are all fully machine-checked with zero
-\lean{sorry}, taking a first step toward documented gaps in Mathlib's
-formalization of group extension theory.
+\paragraph{What is proved.}
+We have presented a machine-checked formalization of the section 2-cocycle,
+splitting criterion, embedding-problem equivalence, and local-to-global
+obstruction for group extensions in Lean~4. The central theorem package consists
+of: the splitting criterion \lean{splits\_iff\_trivial\_cocycle} (an extension
+splits iff some section has trivial cocycle); the embedding-problem equivalence
+\lean{solvable\_iff\_trivial\_cocycle} (an embedding problem is solvable iff the
+associated extension splits iff the cocycle vanishes); the 2-cocycle identity
+\lean{sectionCocycle\_isMulCocycle\textsubscript{2}\_conj} (connecting to
+Mathlib's low-degree cohomology predicates); and the local-to-global obstruction
+principle \lean{local\_nonsplit\_obstructs\_global}. All results are fully
+machine-checked with zero \lean{sorry}.
 
-\paragraph{From validation to method.}
-The fiber architecture originated as a proof-engineering pattern for organizing
-fiber/section/obstruction decompositions in formalization.  The group extension
-application demonstrates that the pattern is not merely organizational: the
-distinction between set-theoretic and algebraic sections is \emph{load-bearing},
-and the cocycle is the precise invariant that separates the two layers.  This
-suggests that the architecture can guide formalization of other
-obstruction-theoretic problems where the gap between existence and structure is
-the mathematical content.
+\paragraph{What this means methodologically.}
+The fiber architecture turns the gap between set-theoretic existence and algebraic
+structure into an explicit intermediate invariant: the 2-cocycle. This invariant
+is not merely a classification tool; it is the precise obstruction whose vanishing
+is equivalent to splitting, and whose connection to embedding problems bridges
+group extension theory to inverse Galois theory. The combination with faithfully
+flat descent (conservative forgetful map, no obstruction) demonstrates that the
+architecture accommodates a range of algebraic phenomena, from non-conservative
+to conservative forgetful maps.
 
 \paragraph{Future work.}
-The path toward Mathlib's $H^2$ TODO requires:
-
-\begin{enumerate}[leftmargin=2em]
-  \item \textbf{The $H^2$ bridge}: showing that the section cocycle, viewed as a
-    function $G \times G \to N$ satisfying \IsMulCocycle{},
-    determines a well-defined class in $H^2(G, N)$, and that this class depends
-    only on the equivalence class of the extension.
-
-  \item \textbf{The inverse construction}: given a 2-cocycle $c \in Z^2(G, N)$,
-    constructing the corresponding extension (the twisted product $N \times_c G$)
-    and showing that the round-trip is the identity up to equivalence.
-
-  \item \textbf{The $H^1$ classification}: showing that $N$-conjugacy classes of
-    splittings of a semidirect product extension correspond to $H^1(G, N)$.
-\end{enumerate}
-
-\noindent
-Each of these steps builds on the infrastructure established here: the section
-cocycle, the splitting criterion, the conjugation action, and the coboundary
-calculus.
-
-\paragraph{Broader implications.}
-The combination of group extensions (non-conservative forgetful map, nontrivial
-obstruction) and faithfully flat descent (conservative forgetful map, no
-obstruction) demonstrates that the fiber architecture accommodates a range of
-algebraic phenomena.  We expect the same pattern to apply to other
-obstruction-theoretic settings: Galois cohomology, Brauer groups, and
-characteristic classes in algebraic topology, where the gap between bare existence
-and structured realization is the central mathematical content.
+The path toward Mathlib's documented $H^2$ TODO requires: (1)~the $H^2$ bridge
+(section cocycle determines a well-defined class in $H^2(G, N)$ depending only on
+the equivalence class of the extension); (2)~the inverse construction (twisted
+product $N \times_c G$ from a 2-cocycle); (3)~the $H^1$ classification
+(conjugacy classes of splittings correspond to $H^1(G, N)$). Each step builds on
+the infrastructure established here. The bridge from abstract embedding problems
+to actual Galois extensions via Mathlib's \lean{IntermediateField} is a separate
+direction. Companion work~\cite{SpivackQuillen} applies the same fiber
+architecture to Quillen's Theorem~A for Galois connections, demonstrating that the
+pattern reaches beyond group theory into combinatorial topology.
 
 %=======================================================================
 \appendix
@@ -1231,11 +1274,24 @@ Thm.~\ref{thm:descent} &
   \lean{faithfullyFlat\_reflects\_injective}, etc. &
   \lean{FaithfullyFlatDescent.lean} \\
 
+Def.~\ref{def:embedding} &
+  \lean{EmbeddingProblem}, \lean{toGroupExtension} &
+  \lean{EmbeddingProblem.lean} \\
+
+Thm.~\ref{thm:solvable-splits} &
+  \lean{solvable\_iff\_splits} &
+  \lean{EmbeddingProblem.lean} \\
+
+Thm.~\ref{thm:solvable-cocycle} &
+  \lean{solvable\_iff\_trivial\_cocycle} &
+  \lean{EmbeddingProblem.lean} \\
+
 \end{longtable}
 
 \noindent
 All source files are located under
-\lean{InfinityCompression/GeneralMethod/GroupExtension/} (group extension modules)
+\lean{InfinityCompression/GeneralMethod/GroupExtension/} (group extension modules),
+\lean{InfinityCompression/GeneralMethod/Galois/} (embedding problems),
 and \lean{InfinityCompression/GeneralMethod/Descent/} (faithfully flat descent).
 
 %=======================================================================
@@ -1338,6 +1394,12 @@ D.~J.~S.~Robinson.
 J.~J.~Rotman.
 \newblock \emph{An Introduction to Homological Algebra}.
 \newblock Springer, 2nd edition, 2009.
+
+\bibitem{SpivackQuillen}
+N.~Spivack.
+\newblock \emph{Quillen's Theorem~A for Galois Connections: A Machine-Checked
+  Formalization in Lean~4}.
+\newblock Companion manuscript, 2026.
 
 \end{thebibliography}
 
