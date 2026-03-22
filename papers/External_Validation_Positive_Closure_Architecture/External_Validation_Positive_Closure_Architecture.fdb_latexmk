@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1774192521.21199 "External_Validation_Positive_Closure_Architecture.tex" "External_Validation_Positive_Closure_Architecture.pdf" "External_Validation_Positive_Closure_Architecture" 1774192521.94919 0
+["pdflatex"] 1774193283.04377 "External_Validation_Positive_Closure_Architecture.tex" "External_Validation_Positive_Closure_Architecture.pdf" "External_Validation_Positive_Closure_Architecture" 1774193283.75097 0
   "../suite_macros.tex" 1774151281.77416 4836 f12fe65da311b79b2f7da22561a9e569 ""
   "../suite_preamble.tex" 1774151281.77423 1991 457daeb583bf89b49fd67c23c4b4b4d9 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
@@ -167,10 +167,10 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1748572903 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "External_Validation_Positive_Closure_Architecture.aux" 1774192521.81447 12668 c05ce699db25fbcbaf66268fca27fe2b "pdflatex"
-  "External_Validation_Positive_Closure_Architecture.out" 1774192521.81551 6322 90cd1baef6ccb3d87881299c555357c2 "pdflatex"
-  "External_Validation_Positive_Closure_Architecture.tex" 1774192510.39602 41948 5b4b108c14ed1af5c91aa28c3e2c8dc7 ""
-  "External_Validation_Positive_Closure_Architecture.toc" 1774192521.81578 2608 89084f7cc9c49404a653b43119c16529 "pdflatex"
+  "External_Validation_Positive_Closure_Architecture.aux" 1774193283.62106 13667 ff31b04d70d5a442265be269f44aa715 "pdflatex"
+  "External_Validation_Positive_Closure_Architecture.out" 1774193283.6221 6557 9fc98f16dc54d295c4d23e7709033132 "pdflatex"
+  "External_Validation_Positive_Closure_Architecture.tex" 1774193275.84384 45408 844b9063e42feb97e08ee59225464f2b ""
+  "External_Validation_Positive_Closure_Architecture.toc" 1774193283.62234 3173 7f3c89f5d8ce11c41fda7a85329d9ecf "pdflatex"
   (generated)
   "External_Validation_Positive_Closure_Architecture.aux"
   "External_Validation_Positive_Closure_Architecture.log"

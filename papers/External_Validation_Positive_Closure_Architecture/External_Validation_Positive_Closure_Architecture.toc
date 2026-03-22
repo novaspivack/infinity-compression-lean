@@ -26,3 +26,10 @@
 \contentsline {section}{\numberline {18}Place in the larger program}{9}{section.18}%
 \contentsline {section}{\numberline {19}Limitations and future work}{9}{section.19}%
 \contentsline {section}{\numberline {A}Theorem indices (Lean names by module)}{10}{appendix.A}%
+\contentsline {section}{\numberline {B}A workflow for reusing this pattern}{13}{appendix.B}%
+\contentsline {paragraph}{Scope.}{13}{section*.15}%
+\contentsline {paragraph}{Step 1: isolate the baseline theorem.}{13}{section*.16}%
+\contentsline {paragraph}{Step 2: identify $B$, $E$, and $\pi $.}{13}{section*.17}%
+\contentsline {paragraph}{Step 3: formalize the baseline in Lean.}{13}{section*.18}%
+\contentsline {paragraph}{Step 4: strengthen when possible.}{13}{section*.19}%
+\contentsline {paragraph}{Step 5: open problems and partial progress.}{13}{section*.20}%

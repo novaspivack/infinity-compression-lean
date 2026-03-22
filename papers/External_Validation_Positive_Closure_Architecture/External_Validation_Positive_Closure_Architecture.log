@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  22 MAR 2026 11:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  22 MAR 2026 11:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -782,21 +782,23 @@ Overfull \hbox (1.05472pt too wide) in paragraph at lines 878--878
 
 [12]
 
-[13] (./External_Validation_Positive_Closure_Architecture.aux)
+[13]
+
+[14] (./External_Validation_Positive_Closure_Architecture.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `External_Validation_Positive_Closure_Archite
 cture.out' has not changed.
-(rerunfilecheck)             Checksum: 90CD1BAEF6CCB3D87881299C555357C2;6322.
+(rerunfilecheck)             Checksum: 9FC98F16DC54D295C4D23E7709033132;6557.
  ) 
 Here is how much of TeX's memory you used:
- 17392 strings out of 473190
- 282578 string characters out of 5715801
- 727872 words of memory out of 5000000
- 40092 multiletter control sequences out of 15000+600000
- 593753 words of font info for 225 fonts, out of 8000000 for 9000
+ 17423 strings out of 473190
+ 282918 string characters out of 5715801
+ 727970 words of memory out of 5000000
+ 40095 multiletter control sequences out of 15000+600000
+ 594483 words of font info for 235 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,12n,82p,1046b,626s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
@@ -831,11 +833,11 @@ cm-super/sftt0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm
 -super/sftt1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-s
 uper/sftt1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-sup
 er/sftt1200.pfb>
-Output written on External_Validation_Positive_Closure_Architecture.pdf (13 pag
-es, 595894 bytes).
+Output written on External_Validation_Positive_Closure_Architecture.pdf (14 pag
+es, 600929 bytes).
 PDF statistics:
- 448 PDF objects out of 1000 (max. 8388607)
- 362 compressed objects within 4 object streams
- 88 named destinations out of 1000 (max. 500000)
- 70873 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 468 PDF objects out of 1000 (max. 8388607)
+ 381 compressed objects within 4 object streams
+ 96 named destinations out of 1000 (max. 500000)
+ 70881 words of extra memory for PDF output out of 74296 (max. 10000000)
 

@@ -905,6 +905,58 @@ nonemptiness via \texttt{canonicalQuotientFiberWitness}. \\
 \end{longtable}
 }
 
+\section{A workflow for reusing this pattern}\label{app:recipe}
+
+The benchmarks above do \emph{not} constitute a single new lemma or tactic that resolves
+goals that were previously out of reach. They exhibit a \textbf{reusable organization}:
+choose a surjection or collapse map $\pi : E \to B$, describe the fibers, state a minimal
+existence theorem as baseline, then---when it fits---strengthen the interface with surjectivity
+of $\pi$, existence of a (possibly classical) section, and canonical choices in fibers
+(Section~\ref{sec:method}). This appendix gives a step-by-step way to apply that organization
+to another problem, including problems that remain partly or fully open.
+
+\paragraph{Scope.}
+The workflow clarifies \emph{where} a forgetful map and fiber structure appear, and whether a
+global right inverse is even available. It does not replace domain mathematics: restating a
+conjecture in fiber language rarely proves it. New ideas still come from the field; this
+pattern helps one see which lemmas would sit at the boundary between a coarse certificate and
+the data that varies above it.
+
+\paragraph{Step 1: isolate the baseline theorem.}
+Write the statement a working mathematician would accept as the minimal ``obvious'' layer:
+existence of representatives, existence of preimages under a surjection, or other standard
+representability. That statement is the floor; anything layered on top should imply it, not
+replace it.
+
+\paragraph{Step 2: identify $B$, $E$, and $\pi$.}
+Fix the set or type $B$ of coarse certificates, a type $E$ of richer structure, and a map
+$\pi : E \to B$ whose fibers describe what is not determined by the certificate alone. Use
+Table~\ref{tab:synth} and Section~\ref{sec:synth} as a menu: quotients and glueing, products
+and dependent sums, tags and subtypes, group or ideal quotients, localization via pairs,
+pullbacks, or---when $\pi$ is not onto---the phenomenon illustrated by successor on the natural
+numbers (nonempty fibers only on the image, partial inverses instead of a global section).
+
+\paragraph{Step 3: formalize the baseline in Lean.}
+Prove or import the minimal facts in Mathlib style. If the aim is to check portability of the
+pattern \emph{without} leaning on a large custom library, keep the formalization in a small
+standalone module that depends only on Mathlib (as in the benchmark files accompanying this
+paper).
+
+\paragraph{Step 4: strengthen when possible.}
+When $\pi$ is surjective, it is often natural to record: nonempty fibers, surjectivity of
+$\pi$, existence of a right inverse in the sense of \texttt{HasRightInverse}, a concrete
+\texttt{RightInverse}, and a canonical element of each fiber (Section~\ref{sec:method}). When
+some of this fails, the failure is itself information: for example, there may be no global
+section, only restriction to a subdomain or a one-sided inverse (as with predecessor and
+successor). State that boundary case explicitly rather than forcing a full section bundle.
+
+\paragraph{Step 5: open problems and partial progress.}
+If the main theorem is still open, use the same decomposition to list separate conjectures:
+what belongs to the certificate layer, what belongs to fiber data, what would be a section or
+choice principle. Partial results can attach cleanly to one of these layers. Progress on a
+hard problem may then consist of proving a lemma at that interface---even when the headline
+claim remains open---rather than of relabeling the conjecture.
+
 \begin{thebibliography}{99}
 
 \bibitem{SpivackIC}
