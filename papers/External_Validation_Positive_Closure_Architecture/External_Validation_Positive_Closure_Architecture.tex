@@ -620,16 +620,24 @@ group extensions exhibit a \emph{non-conservative} forgetful map (set-theoretic 
 always exists, algebraic section may not), while faithfully flat descent exhibits a
 \emph{conservative} one (bare properties fully determine enriched properties).
 
+\noindent
+Since the initial development of the group extension material in this paper, companion
+work~\cite{SpivackFiber,SpivackQuillen} has carried the architecture further:
+\texttt{splits\_iff\_trivial\_cocycle} is now complete with zero \texttt{sorry};
+abstract embedding problems have been formalized as extension splitting with cocycle
+obstructions; and Quillen's Theorem~A for Galois connections has been proved using the
+same fiber/section/obstruction pattern. These results confirm that the architecture
+is not merely organizational but mathematically load-bearing.
+
 \section{Limitations and future work}\label{sec:limits}
 
 The retrospective tranches do not exhaust all closure or fibration patterns, and the
 group extension and descent work are first applications rather than a comprehensive
-treatment. Natural extensions include: the full $H^2 \leftrightarrow \text{extensions}$
-bijection (connecting the cocycle to Mathlib's group cohomology API), obstruction-theoretic
-problems in algebraic topology where the architecture's collapse/fiber/section layers map
-onto Postnikov towers, and effective descent for module categories (not just ring
-homomorphism properties). Such work would extend the \emph{evidence base} and fill further
-gaps in Mathlib's formalization of classical algebra.
+treatment. The principal value of the tranche survey is transferability and interface
+validation; theorem-level mathematical leverage is developed in the companion
+general-method papers~\cite{SpivackFiber,SpivackQuillen}. Natural extensions include:
+the full $H^2 \leftrightarrow \text{extensions}$ bijection, obstruction-theoretic
+problems in algebraic topology, and effective descent for module categories.
 
 \appendix
 

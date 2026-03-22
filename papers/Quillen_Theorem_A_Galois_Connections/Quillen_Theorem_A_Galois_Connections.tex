@@ -343,76 +343,31 @@ For nerves of categories (which are 2-coskeletal by a theorem in
 Mathlib~\cite{Mathlib}), this is equivalent to topological contractibility of
 the geometric realization.
 
-\section{Connection: embedding problems as extension splitting}\label{sec:embed}
+\section{Broader applications of the architecture}\label{sec:broader}
 
-An \textbf{embedding problem} in Galois theory asks: given a Galois extension
-$L/K$ with group $G$ and a surjection $\varphi : H \twoheadrightarrow G$, does
-there exist a Galois extension $F/K$ with group $H$ extending $L/K$? The
-kernel $N = \ker(\varphi)$ gives a group extension
-$1 \to N \to H \xrightarrow{\varphi} G \to 1$, and a solution is a
-homomorphic section $\psi : G \to H$ with $\varphi \circ \psi = \mathrm{id}$
----exactly a splitting of the extension.
+The fiber/section/obstruction architecture that organizes the Quillen result
+also applies to other theorem domains. We briefly describe two connections
+formalized in companion modules.
 
-We formalize this connection:
+\paragraph{Embedding problems.}
+An embedding problem in Galois theory asks whether a surjection
+$H \twoheadrightarrow G$ admits a homomorphic section. This is exactly a
+splitting question for the associated group extension
+$1 \to \ker \to H \to G \to 1$. We prove~\cite{SpivackFiber}:
 
 \begin{theorem}[Embedding problems as splitting]\label{thm:embed}
 An embedding problem is solvable if and only if the associated group extension
-splits, if and only if there exists a set-theoretic section whose 2-cocycle is
-identically trivial.
+splits, if and only if there exists a section with trivial cocycle.
 \end{theorem}
 
-\begin{proof}
-In Lean, the equivalence chains through the splitting criterion:
-\begin{lstlisting}
-theorem solvable_iff_trivial_cocycle
-    (ep : EmbeddingProblem G H) :
-    Nonempty ep.Solution
-      <-> exists s : ep.toGroupExtension.Section,
-        forall g1 g2 : G,
-          sectionCocycle ep.toGroupExtension s g1 g2 = 1
-    := by
-  rw [ep.solvable_iff_splits]
-  exact splits_iff_trivial_cocycle ep.toGroupExtension
-\end{lstlisting}
-The theorem \texttt{splits\_iff\_trivial\_cocycle}, proved in a companion
-module~\cite{SpivackFiber}, fills a gap explicitly listed as a TODO in
-Mathlib's \texttt{GroupExtension/Defs.lean}.
-\end{proof}
-
-This connects the Galois-theoretic lifting question directly to the
-cohomological obstruction from group extension theory. The architecture
-decomposes the problem into layers: the bare layer (known Galois group $G$),
-the enriched layer (target group $H$), the fiber (kernel $N$), and the
-obstruction (cocycle class in $H^2(G, N)$).
-
-\section{Broader connections: descent infrastructure}\label{sec:descent}
-
-\subsection{Elliptic curve 2-descent}
-
+\paragraph{Descent infrastructure.}
 For an abelian group $A$, the doubling map $[2] : a \mapsto a + a$ has fibers
-that are cosets of the 2-torsion subgroup $A[2] = \{a \mid 2a = 0\}$. We
-prove the torsor structure:
-
-\begin{theorem}[2-torsion torsor]\label{thm:torsor}
-The 2-torsion subgroup acts freely and transitively on each fiber of the
-doubling map.
-\end{theorem}
-
-This is the algebraic foundation for 2-descent on elliptic curves: the
-quotient $E(K)/2E(K)$ is the starting point of the descent, and the Selmer
-group sits between $E(K)/2E(K)$ and $H^1(K, E[2])$.
-
-\subsection{Faithfully flat descent}
-
-For a faithfully flat algebra map $R \to S$, base change reflects injectivity,
-surjectivity, and bijectivity of ring homomorphisms~\cite{Mathlib}. We package
-Mathlib's existing descent theorems (\texttt{codescendsAlong\_injective}, etc.)
-in the fiber architecture language: the forgetful map (base change) is
-\textbf{conservative}---it reflects all three fundamental properties. This
-contrasts with group extensions, where the forgetful map is surjective but not
-conservative (a set-theoretic section always exists, but a homomorphic one may
-not). The two cases together illustrate the architecture's range: it classifies
-different modes of information loss and recovery under forgetful passage.
+that are cosets of the 2-torsion subgroup $A[2]$. We prove that $A[2]$ acts
+freely and transitively on each fiber (torsor structure)---the algebraic
+foundation for 2-descent on elliptic curves. Separately, faithfully flat
+descent provides a \emph{conservative} instance of the architecture: base
+change reflects injectivity, surjectivity, and bijectivity, contrasting with
+group extensions where the forgetful map is surjective but not conservative.
 
 \section{Lean formalization details}\label{sec:lean}
 

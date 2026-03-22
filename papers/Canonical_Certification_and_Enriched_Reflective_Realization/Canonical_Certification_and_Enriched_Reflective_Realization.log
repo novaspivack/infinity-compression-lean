@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  22 MAR 2026 15:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  22 MAR 2026 16:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1246,7 +1246,7 @@ r/m/n/10.95 (-20) ).
 
 Overfull \hbox (81.95479pt too wide) in paragraph at lines 479--480
 []\T1/cmr/bx/n/10.95 (-20) Lean toolchain (pinned): \T1/cmtt/m/n/10.95 leanprov
-er/lean4:v4.29.0-rc3 \T1/cmr/m/n/10.95 (-20) (\T1/cmtt/m/n/10.95 infinity-compr
+er/lean4:v4.29.0-rc6 \T1/cmr/m/n/10.95 (-20) (\T1/cmtt/m/n/10.95 infinity-compr
 ession-lean/lean-toolchain\T1/cmr/m/n/10.95 (-20) ). 
  []
 
@@ -1298,10 +1298,10 @@ ive_Realization.out' has not changed.
 (rerunfilecheck)             Checksum: 76EF44F21F415A87C71E4127CC33109B;14770.
  ) 
 Here is how much of TeX's memory you used:
- 18003 strings out of 473190
- 292033 string characters out of 5715801
- 788005 words of memory out of 5000000
- 40564 multiletter control sequences out of 15000+600000
+ 18007 strings out of 473190
+ 292069 string characters out of 5715801
+ 788060 words of memory out of 5000000
+ 40566 multiletter control sequences out of 15000+600000
  601237 words of font info for 281 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,11n,82p,1779b,1258s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1339,10 +1339,10 @@ cm-super/sftt0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm
 uper/sftt1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-sup
 er/sftt1200.pfb>
 Output written on Canonical_Certification_and_Enriched_Reflective_Realization.p
-df (19 pages, 683859 bytes).
+df (19 pages, 685146 bytes).
 PDF statistics:
- 799 PDF objects out of 1000 (max. 8388607)
- 703 compressed objects within 8 object streams
- 134 named destinations out of 1000 (max. 500000)
+ 802 PDF objects out of 1000 (max. 8388607)
+ 706 compressed objects within 8 object streams
+ 136 named destinations out of 1000 (max. 500000)
  78881 words of extra memory for PDF output out of 89155 (max. 10000000)
 

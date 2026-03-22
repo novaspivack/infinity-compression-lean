@@ -10,9 +10,8 @@
 \contentsline {subsection}{\numberline {3.1}The algebraic core}{4}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}The homotopy equivalence}{5}{subsection.3.2}%
 \contentsline {section}{\numberline {4}Nerve contractibility for terminal categories}{6}{section.4}%
-\contentsline {section}{\numberline {5}Connection: embedding problems as extension splitting}{7}{section.5}%
-\contentsline {section}{\numberline {6}Broader connections: descent infrastructure}{7}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Elliptic curve 2-descent}{7}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Faithfully flat descent}{7}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Lean formalization details}{8}{section.7}%
-\contentsline {section}{\numberline {8}Conclusion}{8}{section.8}%
+\contentsline {section}{\numberline {5}Broader applications of the architecture}{6}{section.5}%
+\contentsline {paragraph}{Embedding problems.}{7}{section*.5}%
+\contentsline {paragraph}{Descent infrastructure.}{7}{section*.6}%
+\contentsline {section}{\numberline {6}Lean formalization details}{7}{section.6}%
+\contentsline {section}{\numberline {7}Conclusion}{7}{section.7}%

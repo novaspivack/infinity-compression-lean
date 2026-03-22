@@ -33,5 +33,5 @@
 \contentsline {paragraph}{Step 1: isolate the baseline theorem.}{15}{section*.19}%
 \contentsline {paragraph}{Step 2: identify $B$, $E$, and $\pi $.}{15}{section*.20}%
 \contentsline {paragraph}{Step 3: formalize the baseline in Lean.}{15}{section*.21}%
-\contentsline {paragraph}{Step 4: strengthen when possible.}{15}{section*.22}%
+\contentsline {paragraph}{Step 4: strengthen when possible.}{16}{section*.22}%
 \contentsline {paragraph}{Step 5: open problems and partial progress.}{16}{section*.23}%

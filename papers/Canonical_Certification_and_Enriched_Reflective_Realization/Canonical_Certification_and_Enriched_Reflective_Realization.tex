@@ -476,8 +476,8 @@ The same collapse/refinement/fiber analysis is not confined to the Infinity Comp
 \begin{itemize}
     \item \textbf{Repository layout:} the Lean project lives at \texttt{infinity-compression/infinity-compression-lean/} relative to the \texttt{infinity-compression} monorepo root (this paper's \texttt{.tex} file is under \texttt{infinity-compression-lean/papers/Canonical\_Certification\_and\_Enriched\_Reflective\_Realization/}).
     \item \textbf{Root module:} \texttt{InfinityCompression.lean} (import closure of the library).
-    \item \textbf{Lean toolchain (pinned):} \texttt{leanprover/lean4:v4.29.0-rc3} (\texttt{infinity-compression-lean/lean-toolchain}).
-    \item \textbf{Mathlib pin:} \texttt{require mathlib} at tag \texttt{v4.29.0-rc3} in \texttt{lakefile.lean} (same tag family as the Lean toolchain).
+    \item \textbf{Lean toolchain (pinned):} \texttt{leanprover/lean4:v4.29.0-rc6} (\texttt{infinity-compression-lean/lean-toolchain}).
+    \item \textbf{Mathlib pin:} \texttt{require mathlib} at tag \texttt{v4.29.0-rc6} in \texttt{lakefile.lean} (same tag family as the Lean toolchain).
     \item \textbf{Build command:} from \texttt{infinity-compression-lean/}, run \texttt{lake build}
     \item \textbf{\texttt{sorry} policy (verified):} \texttt{README.md} states zero \texttt{sorry} in proof terms under \texttt{InfinityCompression/}; the Program~C+ slice referenced in this paper is part of that scope. Axioms are standard Mathlib + Lean kernel only (no custom axioms for these results).
     \item \textbf{Epistemology / packaging audit:} \texttt{specs/NOTES/IC\_Closed\_Open\_Ledger.md} (mirror packaging, closed vs.\ open claims).
@@ -505,10 +505,21 @@ def forgetToBareCanonical {BD : Type u} {n : Nat} {A : CompressionArchitecture B
 \bibliographystyle{alpha}
 \begin{thebibliography}{99}
 
-\bibitem{SpivackIC}
-N.~Spivack.
-\newblock \emph{Canonical Certification Does Not Exhaust Reflective Structure (Infinity Compression)}.
-\newblock Manuscript, 2026.
+\bibitem{Lean4}
+L.~de Moura and S.~Ullrich.
+\newblock The Lean 4 theorem prover and programming language.
+\newblock In \emph{CADE 28}, volume 12699 of \emph{LNCS}, pages 625--635. Springer, 2021.
+
+\bibitem{Mathlib}
+The Mathlib community.
+\newblock The Lean mathematical library.
+\newblock In \emph{CPP 2020}, pages 367--381, 2020.
+\newblock \url{https://github.com/leanprover-community/mathlib4}.
+
+\bibitem{HoTTBook}
+The Univalent Foundations Program.
+\newblock \emph{Homotopy Type Theory: Univalent Foundations of Mathematics}.
+\newblock Institute for Advanced Study, 2013.
 
 \bibitem{SpivackValidation}
 N.~Spivack.
