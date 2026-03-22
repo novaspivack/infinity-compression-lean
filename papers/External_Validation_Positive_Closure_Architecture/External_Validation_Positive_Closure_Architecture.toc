@@ -12,8 +12,12 @@
 \contentsline {section}{\numberline {6}Tranche T3: Dependent sums and the bundle projection}{5}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Mathematical story}{5}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Hypothesis and classical section}{5}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Comparative synthesis across tranches}{5}{section.7}%
-\contentsline {section}{\numberline {8}Unified validation verdict and the meaning of \textbf {STRONG}}{6}{section.8}%
-\contentsline {section}{\numberline {9}Place in the larger program}{6}{section.9}%
-\contentsline {section}{\numberline {10}Limitations and future work}{6}{section.10}%
-\contentsline {section}{\numberline {A}Theorem indices (Lean names by module)}{6}{appendix.A}%
+\contentsline {section}{\numberline {7}Tranche T4: Sum types and discriminant collapse}{5}{section.7}%
+\contentsline {section}{\numberline {8}Tranche T5: Subtype projection}{6}{section.8}%
+\contentsline {section}{\numberline {9}Tranche T6: Orbit quotient from a group action}{6}{section.9}%
+\contentsline {section}{\numberline {10}Tranche T7: Ideal quotient}{6}{section.10}%
+\contentsline {section}{\numberline {11}Comparative synthesis across tranches}{7}{section.11}%
+\contentsline {section}{\numberline {12}Unified validation verdict and the meaning of \textbf {STRONG}}{7}{section.12}%
+\contentsline {section}{\numberline {13}Place in the larger program}{7}{section.13}%
+\contentsline {section}{\numberline {14}Limitations and future work}{8}{section.14}%
+\contentsline {section}{\numberline {A}Theorem indices (Lean names by module)}{8}{appendix.A}%

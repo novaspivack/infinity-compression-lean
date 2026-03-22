@@ -49,6 +49,10 @@ import InfinityCompression.Frontier.ProofToolValidation
 import InfinityCompression.Validation.QuotientFiberBenchmark
 import InfinityCompression.Validation.ProductProjectionFiberBenchmark
 import InfinityCompression.Validation.SigmaFiberBenchmark
+import InfinityCompression.Validation.SumCoproductFiberBenchmark
+import InfinityCompression.Validation.SubtypeValFiberBenchmark
+import InfinityCompression.Validation.OrbitRelationQuotientFiberBenchmark
+import InfinityCompression.Validation.IdealQuotientFiberBenchmark
 import InfinityCompression.MetaProof.SummitTargets
 import InfinityCompression.MetaProof.DependencyShape
 import InfinityCompression.MetaProof.AdmissibleDerivations
@@ -125,6 +129,9 @@ def epic019ProofToolValidation := ()
 
 /-- EPIC_015_WV1 — Program W external proof-architecture validation (`Validation/QuotientFiberBenchmark`). Not Lean tranche EPIC 015 (`Frontier/PositiveDecomposition`). -/
 def epic015wvProgramW := ()
+
+/-- EPIC_017_EV1 — extended external validation dimensions T4–T7 (`Validation/{SumCoproduct,SubtypeVal,OrbitRelationQuotient,IdealQuotient}FiberBenchmark`). -/
+def epic017evExtendedValidationDimensions := ()
 
 /-- EPIC_001 §2.5 — IC Universal Theorem summit (`Frontier/ICUniversalTheorem.lean`). -/
 def epic001UniversalSummit := ()

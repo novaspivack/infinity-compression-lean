@@ -1,5 +1,7 @@
-% Consolidated external validation paper: quotients (T1), products (T2), dependent sums (T3).
+% Consolidated external validation paper: quotients (T1), products (T2), dependent sums (T3),
+% sums / coproduct discriminant (T4), subtype projection (T5), orbit quotient (T6), ideal quotient (T7).
 % Normative: specs/COMPLETE/EPIC_016_WV2A_EXTERNAL_VALIDATION_BENCHMARK_PAPER_SPEC.md;
+%            extended dimensions: specs/COMPLETE/EPIC_017_EV1_EXTENDED_EXTERNAL_VALIDATION_DIMENSIONS_SPEC.md;
 %            multi-tranche survey content (former EPIC_016_WV2B) merged herein.
 \documentclass[11pt]{article}
 \input{../suite_preamble}
@@ -25,7 +27,7 @@
 \newcommand{\Fib}{\mathrm{Fib}}
 
 \title{External Validation of a Positive-Closure Proof Architecture\\[0.35em]
-\large A Multi-Tranche Survey: Quotients, Products, and Dependent Sums in Lean}
+\large A Multi-Tranche Survey: Seven Benchmark Dimensions in Lean}
 \author{Nova Spivack}
 \date{2026}
 
@@ -39,7 +41,7 @@ architecture: collapse to a bare certificate, a typed forgetful map, fiber struc
 that certificate, and, where appropriate, canonical witnesses or sections. A natural
 methodological concern is that this architecture may be endogenous to the flagship
 NEMS-style case rather than a reusable proof pattern. This paper presents a
-\textbf{consolidated machine-checked external validation}: three independent tranches of
+\textbf{consolidated machine-checked external validation}: seven independent tranches of
 ordinary mathematics, each formalized in Lean without importing the \IC{} spine, each
 comparing a \emph{flat baseline} (the obvious Mathlib-shaped existence or representability
 statement) with an \emph{architecture-guided} theorem bundle (nonempty fibers, surjectivity
@@ -50,9 +52,12 @@ Tranche \textbf{T1} is the setoid quotient benchmark (collapse by an equivalence
 baseline \texttt{Quotient.exists\_rep}). Tranche \textbf{T2} is the Cartesian product with
 first projection (many enriched pairs over one bare image---\emph{multi-route} without
 quotienting). Tranche \textbf{T3} is the dependent sum $\Sigma_{b:B} E\,b$ with
-\texttt{Sigma.fst} (bundle projection; dependent generalization of T2). The contribution is
+\texttt{Sigma.fst} (bundle projection; dependent generalization of T2). Tranches
+\textbf{T4}--\textbf{T7} extend the same rubric to the sum type with discriminant collapse,
+subtype projection, an orbit equivalence quotient from a group action, and a commutative
+ring quotient modulo an ideal. The contribution is
 not a catalog of new classical theorems; it is a demonstration that the same architectural
-lens organizes \emph{all three} external families and yields strengthened, reusable proof
+lens organizes \emph{all seven} external families and yields strengthened, reusable proof
 interfaces in each case. Under the project's validation rubric, the combined evidence
 supports a unified \textbf{STRONG} verdict for methodological transferability. We situate
 the work in the NEMS / APS / IC / Strata stack and state explicitly that APS is not tested
@@ -74,15 +79,16 @@ reusable proof pattern---not merely a custom narrative for the flagship case---a
 claim is supported by multiple independent external benchmarks.}
 
 A single quotient formalization already begins to answer the worry that the architecture
-might be idiosyncratic; this document \emph{consolidates} that quotient tranche with two
-additional standard constructions---Cartesian products and dependent sums---so that the
+might be idiosyncratic; this document \emph{consolidates} that quotient tranche with six
+additional standard constructions---Cartesian products, dependent sums, coproduct discriminants,
+subtypes, orbit quotients, and ideal quotients---so that the
 evidence base is explicitly multi-family. The result is one self-contained validation paper:
 readers need not cross-reference a separate ``survey'' manuscript for the product and bundle
 stories.
 
 \paragraph{Scope.}
 We do not claim a universal theorem that every closure problem in mathematics must be
-formalized in \IC{}'s types. We claim that, in Lean, on three concrete external families,
+formalized in \IC{}'s types. We claim that, in Lean, on seven concrete external families,
 the architecture exports cleanly, yields structured theorem bundles beyond flat baselines,
 and aligns with the flagship forgetful / fiber / section narrative~\cite{SpivackIC}.
 
@@ -255,6 +261,107 @@ fiber point. Bundle: \path{SigmaFiber}, surjectivity, \path{HasRightInverse},
 \label{tab:t3}
 \end{table}
 
+\section{Tranche T4: Sum types and discriminant collapse}\label{sec:t4}
+
+The coproduct \texttt{Sum A B} carries a natural \emph{tag-forgetting} map to \texttt{Bool}
+(\texttt{forgetSumIsLeft}), parallel in spirit to T2's projection but for coproducts rather
+than products: many \texttt{inl} values share the same bare tag. The module is
+\texttt{SumCoproductFiberBenchmark.lean}. Baseline: both sides inhabited to hit both booleans.
+Bundle: \texttt{SumFiberAt}, surjectivity, \texttt{sumSection}, \texttt{RightInverse} law,
+\texttt{canonicalSumFiberWitness}.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.36\textwidth}>{\raggedright\arraybackslash}p{0.56\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\path{forgetSumIsLeft} & collapse \texttt{Sum A B} to a \texttt{Bool} side tag. \\
+\path{SumFiberAt A B b} & fiber over a tag \texttt{b : Bool}. \\
+\path{sumSection} & section \texttt{Bool → Sum A B} at fixed witnesses. \\
+\path{forgetSumIsLeft_surjective} & surjectivity (given \texttt{a0}, \texttt{b0}). \\
+\path{sumSection_rightInverse_forgetSumIsLeft} & \texttt{RightInverse} law. \\
+\path{canonicalSumFiberWitness} & canonical witness in each \texttt{SumFiberAt}. \\
+\bottomrule
+\end{tabular}
+\caption{T4 (sum / coproduct): architecture-guided bundle.}
+\label{tab:t4}
+\end{table}
+
+\section{Tranche T5: Subtype projection}\label{sec:t5}
+
+For a predicate \texttt{p} on a type $\alpha$, \texttt{Subtype.val} forgets proofs. Under the hypothesis
+$\forall a,\ p\ a$, \texttt{Subtype.val} is surjective onto $\alpha$; fibers are
+singletons. Module: \texttt{SubtypeValFiberBenchmark.lean}.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.36\textwidth}>{\raggedright\arraybackslash}p{0.56\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\path{SubtypeFiberAt} & fiber of \texttt{Subtype.val} over \texttt{a :} $\alpha$. \\
+\path{subtype_val_surjective} & surjectivity from $\forall a,\ p\ a$. \\
+\path{subtypeSection} & section sending \texttt{a} to \texttt{<a, h a>}. \\
+\path{subtypeSection_rightInverse_subtypeVal} & \texttt{RightInverse} law. \\
+\path{canonicalSubtypeFiberWitness} & canonical witness in each fiber. \\
+\bottomrule
+\end{tabular}
+\caption{T5 (subtype): architecture-guided bundle.}
+\label{tab:t5}
+\end{table}
+
+\section{Tranche T6: Orbit quotient from a group action}\label{sec:t6}
+
+Given \texttt{MulAction G X}, the orbit relation \texttt{same\_orbit} yields a
+\texttt{Setoid} and quotient \texttt{BareOrbitQuotient}; the collapse map is
+\texttt{to\_orbit\_quotient}. Module: \texttt{OrbitRelationQuotientFiberBenchmark.lean}.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.36\textwidth}>{\raggedright\arraybackslash}p{0.56\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\texttt{same\_orbit} & orbit relation $\exists g,\ g \cdot x = y$. \\
+\texttt{grp\_action\_orbit\_setoid} & \texttt{Setoid} for the orbit relation. \\
+\texttt{to\_orbit\_quotient} & \texttt{Quotient.mk} from \texttt{X} to orbit space. \\
+\texttt{to\_orbit\_quotient\_surjective} & surjectivity. \\
+\texttt{quotient\_out\_rightInverse\_to\_orbit\_quotient} & \texttt{Quotient.out} as \texttt{RightInverse}. \\
+\texttt{canonical\_orbit\_quotient\_fiber\_witness} & canonical witness in each fiber. \\
+\bottomrule
+\end{tabular}
+\caption{T6 (orbit quotient): architecture-guided bundle.}
+\label{tab:t6}
+\end{table}
+
+\section{Tranche T7: Ideal quotient}\label{sec:t7}
+
+For a commutative ring \texttt{R} and ideal \texttt{I}, the map
+\texttt{Ideal.Quotient.mk I} collapses to the quotient $R/I$. This is the standard algebraic
+quotient parallel to T1's setoid quotient. Module: \texttt{IdealQuotientFiberBenchmark.lean}.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.36\textwidth}>{\raggedright\arraybackslash}p{0.56\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\path{forgetToIdealQuotient} & \texttt{Ideal.Quotient.mk I}. \\
+\path{IdealQuotientFiber} & fiber over a bare coset in $R/I$. \\
+\path{forgetToIdealQuotient_surjective} & surjectivity (via \texttt{Quotient.exists\_rep}). \\
+\path{idealQuotientOut_rightInverse_forgetToIdealQuotient} & \texttt{Quotient.out} as \texttt{RightInverse}. \\
+\path{canonicalIdealQuotientFiberWitness} & canonical witness in each fiber. \\
+\bottomrule
+\end{tabular}
+\caption{T7 (ideal quotient): architecture-guided bundle.}
+\label{tab:t7}
+\end{table}
+
 \section{Comparative synthesis across tranches}\label{sec:synth}
 
 \begin{table}[htbp]
@@ -267,16 +374,22 @@ fiber point. Bundle: \path{SigmaFiber}, surjectivity, \path{HasRightInverse},
 T1 & quotient & \texttt{forgetToQuotient} / \texttt{Quotient.mk} & equivalence classes & \texttt{Quotient.out} (canonical) \\
 T2 & $X$ & \texttt{forgetFirst} & second coordinate $y : Y$ & \texttt{productSection y0} (parametric) \\
 T3 & $B$ & \texttt{Sigma.fst} & dependent $E\,b$ & \texttt{sigmaSection} (\texttt{noncomputable}) \\
+T4 & \texttt{Bool} & \texttt{forgetSumIsLeft} & tagged \texttt{Sum} values & \texttt{sumSection} (parametric) \\
+T5 & $\alpha$ & \texttt{Subtype.val} & proof data (singleton fibers) & \texttt{subtypeSection} \\
+T6 & orbit quotient & \texttt{to\_orbit\_quotient} & orbit classes & \texttt{Quotient.out} (canonical) \\
+T7 & $R/I$ & \texttt{forgetToIdealQuotient} & cosets mod $I$ & \texttt{Quotient.out} (canonical) \\
 \bottomrule
 \end{tabular}
-\caption{Side-by-side view: three instantiations of the same architectural schema.}
+\caption{Side-by-side view: seven instantiations of the same architectural schema.}
 \label{tab:synth}
 \end{table}
 
 \noindent
 \textbf{T1} isolates \emph{collapse by an equivalence relation}; \textbf{T2} isolates
 \emph{multi-route} without quotienting; \textbf{T3} is the dependent-type generalization of
-T2. In all three cases the \textbf{STRONG} rubric applies for the same reason: the
+T2; \textbf{T4} is the coproduct-side dual tag story; \textbf{T5} is the subtype refinement
+pattern; \textbf{T6} and \textbf{T7} are quotient benchmarks (group action or ideal).
+In all cases the \textbf{STRONG} rubric applies for the same reason: the
 architecture-guided bundle is strictly richer than the flat baseline as a typed interface.
 
 \section{Unified validation verdict and the meaning of \textbf{STRONG}}\label{sec:verdict}
@@ -285,7 +398,7 @@ Under the project's validation rubric~\cite{EPIC015WV1}, a benchmark is rated \t
 when it exports the architecture cleanly to external mathematics and yields a theorem bundle
 structurally richer than the obvious baseline. Each tranche here satisfies that criterion on
 its own; \emph{collectively}, they strengthen the methodological claim: the pattern is not
-tied to quotients alone.
+tied to a single family of examples.
 
 \textbf{STRONG} encodes methodological transfer and corollary structure, not difficulty of
 raw mathematical content. No tranche proves a new ``summit'' theorem for the \IC{} landscape;
@@ -297,8 +410,8 @@ together they support external validity of the \emph{packaging}.
   \item \textbf{\IC{} flagship (internal):} the positive-closure architecture and main
     certification / reflective splits---load-bearing inside the library.
   \item \textbf{External validation (this paper):} machine-checked demonstrations that the
-    same pattern applies \emph{outside} the flagship modules, on quotients, products, and
-    dependent sums.
+    same pattern applies \emph{outside} the flagship modules, on quotients, products, dependent
+    sums, coproduct discriminants, subtypes, orbit quotients, and ideal quotients.
   \item \textbf{Strata:} abstract synthesis and bridge laws~\cite{SpivackStrata}.
   \item \textbf{APS:} local-to-global backbone elsewhere in the stack. \textbf{These tranches
     do not test APS directly;} they test reusable positive-closure \emph{packaging} on
@@ -308,7 +421,7 @@ together they support external validity of the \emph{packaging}.
 
 \section{Limitations and future work}\label{sec:limits}
 
-Three finite families do not exhaust all closure or fibration patterns. Natural extensions
+Seven finite families do not exhaust all closure or fibration patterns. Natural extensions
 include: settings where sections are non-unique or only locally defined; competing enriched
 layers over one collapse map; and domain-specific benchmarks outside pure type theory. Such
 work would extend the \emph{evidence base} without changing the logical status of the
@@ -423,6 +536,118 @@ nonemptiness via \texttt{canonicalQuotientFiberWitness}. \\
 \texttt{sigmaSection} & global section of the bundle. \\
 \texttt{sigmaSection\_rightInverse\_sigma\_fst} & \texttt{RightInverse} law. \\
 \texttt{canonicalSigmaFiberWitness} & canonical witness in each \texttt{SigmaFiber}. \\
+
+\end{longtable}
+}
+
+\subsection*{\texttt{SumCoproductFiberBenchmark.lean}}
+
+{\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.40\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{c}{\textit{(continued)}} \\
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+\texttt{forgetSumIsLeft} & discriminant collapse \texttt{Sum A B → Bool}. \\
+\texttt{SumFiberAt} & fiber over a side tag. \\
+\texttt{sumSection} & parametric section from \texttt{Bool}. \\
+\texttt{sum\_fiber\_nonempty} & nonempty fibers (given \texttt{a0}, \texttt{b0}). \\
+\texttt{forgetSumIsLeft\_surjective} & surjectivity. \\
+\texttt{forgetSumIsLeft\_hasRightInverse} & \texttt{HasRightInverse}. \\
+\texttt{sumSection\_rightInverse\_forgetSumIsLeft} & \texttt{RightInverse} law. \\
+\texttt{canonicalSumFiberWitness} & canonical witness in each fiber. \\
+
+\end{longtable}
+}
+
+\subsection*{\texttt{SubtypeValFiberBenchmark.lean}}
+
+{\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.40\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{c}{\textit{(continued)}} \\
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+\texttt{SubtypeFiberAt} & fiber of \texttt{Subtype.val} over \texttt{a}. \\
+\texttt{subtype\_fiber\_nonempty} & nonempty fibers from $\forall a,\ p\ a$. \\
+\texttt{subtype\_val\_surjective} & surjectivity of \texttt{Subtype.val}. \\
+\texttt{subtype\_val\_hasRightInverse} & \texttt{HasRightInverse}. \\
+\texttt{subtypeSection} & section sending \texttt{a} to \texttt{<a, h a>}. \\
+\texttt{subtypeSection\_rightInverse\_subtypeVal} & \texttt{RightInverse} law. \\
+\texttt{canonicalSubtypeFiberWitness} & canonical witness in each fiber. \\
+
+\end{longtable}
+}
+
+\subsection*{\texttt{OrbitRelationQuotientFiberBenchmark.lean}}
+
+{\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.40\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{c}{\textit{(continued)}} \\
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+\texttt{same\_orbit} & orbit relation from a \texttt{MulAction}. \\
+\texttt{grp\_action\_orbit\_setoid} & \texttt{Setoid} for orbit equivalence. \\
+\texttt{BareOrbitQuotient} & orbit-space quotient type. \\
+\texttt{to\_orbit\_quotient} & collapse map \texttt{Quotient.mk}. \\
+\texttt{OrbitQuotientFiber} & fiber over an orbit point. \\
+\texttt{orbit\_quotient\_fiber\_nonempty} & nonempty fibers. \\
+\texttt{to\_orbit\_quotient\_surjective} & surjectivity. \\
+\texttt{to\_orbit\_quotient\_hasRightInverse} & \texttt{HasRightInverse}. \\
+\texttt{quotient\_out\_rightInverse\_to\_orbit\_quotient} & \texttt{Quotient.out} as \texttt{RightInverse}. \\
+\texttt{canonical\_orbit\_quotient\_fiber\_witness} & canonical witness in each fiber. \\
+
+\end{longtable}
+}
+
+\subsection*{\texttt{IdealQuotientFiberBenchmark.lean}}
+
+{\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.40\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}@{}}
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{c}{\textit{(continued)}} \\
+\toprule
+\textbf{Lean name} & \textbf{One-line reading} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+\texttt{forgetToIdealQuotient} & \texttt{Ideal.Quotient.mk I}. \\
+\texttt{IdealQuotientFiber} & fiber over a coset in $R/I$. \\
+\texttt{ideal\_quotient\_fiber\_nonempty} & nonempty fibers. \\
+\texttt{forgetToIdealQuotient\_surjective} & surjectivity. \\
+\texttt{forgetToIdealQuotient\_hasRightInverse} & \texttt{HasRightInverse}. \\
+\texttt{idealQuotientOut\_rightInverse\_forgetToIdealQuotient} & \texttt{Quotient.out} as \texttt{RightInverse}. \\
+\texttt{canonicalIdealQuotientFiberWitness} & canonical witness in each fiber. \\
 
 \end{longtable}
 }
