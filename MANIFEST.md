@@ -125,7 +125,15 @@
 | `GroupExtension/SchurZassenhaus.lean` | EPIC_019_GA1: `sectionCocycle`, `sectionCocycle_spec`, `section_mul_eq`, `splits_iff_trivial_cocycle` (splitting iff cocycle trivial) |
 | `GroupExtension/LocalGlobal.lean` | EPIC_019_GA1: `directProductExtension`, `directProductSplitting`, `not_splits_of_all_cocycles_nontrivial`, `pullbackSubgroup`, `restrictExtension`, `splitting_restricts`, `global_split_implies_local_split`, `local_nonsplit_obstructs_global` |
 | `GroupExtension/CocycleCoboundary.lean` | EPIC_019_GA1: `sectionDiff`, `sectionDiff_spec`, `section_eq_inl_diff_mul`, `splitting_independent_of_section`, `splits_of_any_trivial_cocycle` |
-| `Descent/FaithfullyFlatDescent.lean` | EPIC_019_GA1: `faithfullyFlat_reflects_injective`, `faithfullyFlat_reflects_surjective`, `faithfullyFlat_reflects_bijective` — conservative forgetful map via Mathlib descent |
+| `GroupExtension/ConjugationAction.lean` | EPIC_020_ML1: conjugation action on kernel via sections, Mathlib bridge |
+| `GroupExtension/CocycleIdentity.lean` | EPIC_020_ML1: 2-cocycle identity (associativity constraint) — IN PROGRESS |
+| `GroupExtension/MathlibAdapter.lean` | EPIC_020_ML1: adapter connecting our cocycle to Mathlib `IsCocycle₂` types |
+| `GroupExtension/NonAbelianObstruction.lean` | EPIC_021_NR1: Q₈ non-abelian (`decide`), `splitting_implies_trivial_cocycle_general` (forward direction for any kernel), abelian/non-abelian boundary |
+| `GroupExtension/SchurMultiplier.lean` | EPIC_021_NR1: `IsCentralExtension`, central cocycle commutativity, `centralExtension_image_comm`, `S₃_not_abelian` |
+| `Descent/FaithfullyFlatDescent.lean` | EPIC_019_GA1: `faithfullyFlat_reflects_injective/surjective/bijective` — conservative forgetful map via Mathlib descent |
+| `Descent/EllipticCurveDescent.lean` | EPIC_022_OP1 (infrastructure): `DoublingFiber`, `TwoTorsionSet`, `twoTorsionActOnFiber`, `twoTorsionAct_free`, `twoTorsionAct_transitive` — fiber/torsor for doubling map; NOT full 2-descent |
+| `Quillen/FiberLemma.lean` | EPIC_022_OP1 (infrastructure): `PosetFiberBelow/At`, `surjective_iff_fiberAt_nonempty`, `fiberBelowMono`, `compFiberBelow` — poset fiber data toward Quillen Theorem A; NOT the full theorem |
+| `Galois/EmbeddingProblem.lean` | EPIC_022_OP1 (theorem): `EmbeddingProblem`, `solvable_iff_splits`, `solvable_iff_trivial_cocycle`, `solvable_of_split` — embedding problems as extension splitting (genuine theorem) |
 
 ### Frontier (`InfinityCompression/Frontier/`)
 
@@ -193,7 +201,10 @@
 | EPIC_016_WV2 (Program W papers WV2B) | `Validation/ProductProjectionFiberBenchmark`, `Validation/SigmaFiberBenchmark` | **T2**–**T3** product and sigma bundle benchmarks (consolidated LaTeX with WV2A) |
 | EPIC_017_EV1 (extended validation) | `Validation/SumCoproductFiberBenchmark`, `Validation/SubtypeValFiberBenchmark`, `Validation/OrbitRelationQuotientFiberBenchmark`, `Validation/IdealQuotientFiberBenchmark` | **T4**–**T7** — see `specs/COMPLETE/EPIC_017_EV1_EXTENDED_EXTERNAL_VALIDATION_DIMENSIONS_SPEC.md` |
 | EPIC_018_XC1 (second wave) | `Validation/PushoutCoequalizerFiberBenchmark`, `Validation/SetClassifierFiberBenchmark`, `Validation/LocalizationPairFiberBenchmark`, `Validation/PullbackFiberBenchmark`, `Validation/NonSurjectiveSuccFiberBenchmark` | **T8**–**T12** — see `specs/COMPLETE/EPIC_018_XC1_SECOND_WAVE_EXTENDED_VALIDATION_SPEC.md` |
-| EPIC_019_GA1 (general method) | `GeneralMethod/GroupExtension/FiberArchitecture`, `GeneralMethod/GroupExtension/SchurZassenhaus`, `GeneralMethod/GroupExtension/LocalGlobal` | Group extension fiber architecture, 2-cocycle splitting criterion, restriction to subgroups — see `specs/IN-PROCESS/EPIC_019_GA1_POSITIVE_CLOSURE_GENERAL_METHOD_SPEC.md` |
+| EPIC_019_GA1 (general method) | `GeneralMethod/GroupExtension/*`, `GeneralMethod/Descent/FaithfullyFlatDescent` | Group extension fiber architecture, 2-cocycle splitting criterion, restriction to subgroups, faithfully flat descent |
+| EPIC_020_ML1 (Mathlib bridge) | `GeneralMethod/GroupExtension/{ConjugationAction,CocycleIdentity,MathlibAdapter}` | Conjugation action, cocycle identity, Mathlib `IsCocycle₂` adapter — IN PROGRESS |
+| EPIC_021_NR1 (new results) | `GeneralMethod/GroupExtension/{NonAbelianObstruction,SchurMultiplier}` | Q₈ boundary, central extensions, Schur multiplier concepts |
+| EPIC_022_OP1 (famous problems) | `GeneralMethod/Quillen/FiberLemma`, `GeneralMethod/Descent/EllipticCurveDescent`, `GeneralMethod/Galois/EmbeddingProblem` | Poset fiber infrastructure (toward Quillen A), doubling-map torsor (toward 2-descent), embedding problems ↔ splitting (genuine theorem) |
 | §2.5 summit | `Frontier/ICUniversalTheorem`, `Frontier/ReflexiveArchitectureNecessity`, `Frontier/SummitDerivation` | `ic_universal_theorem_summit` (minimal §2.5 conjunction); `ic_universal_theorem_landscape` (maximal aggregation); S1 spine necessity; S2 joint / interface lemmas; S3 `ic_universal_theorem_summit_iff_components` |
 | EPIC_002_BH2 Route B | `MetaProof/*` | **T-B2.1** `summit_bundle_matches_ic_universal_summit`; **T-B3.1** `standard_shape_matches_summit_iff`; **T-B5.1** `summit_requires_dual_poles` |
 | EPIC_003_BH6 Route B continuation | `MetaProof/*` | **T-B6a.1**–**T-B6b.1** necessity + `CrownEligible` spine example; **T-B7.1** `crown_eligible_induces_mirror`; **T-B8.1** `dependencyShapeStandard_minimal`; **T-B9.1** `reflexive_meta_crown` |
