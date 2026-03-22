@@ -53,14 +53,13 @@ criterion for group extensions in Lean~4~\cite{Lean4}, built on Mathlib's
 decomposes extensions into layers: fibers over quotient elements ($N$-torsors),
 set-theoretic sections (always exist), and homomorphic splittings (may not exist).
 The central result is the \emph{splitting criterion}: an extension splits if and
-only if some section has trivial cocycle.  We also state the 2-cocycle identity
-connecting our construction to Mathlib's \IsMulCocycle{} predicate (with one
-tactic-level gap remaining in the proof), establish section-independence of the
-splitting question, and formalize restriction to subgroups with a local-to-global
-obstruction principle.  The work takes a first step toward documented TODOs in
-Mathlib's \lean{GroupExtension} module regarding the cohomological classification
-of extensions.  All results except one tactic-level \lean{sorry} in the 2-cocycle
-identity proof are fully machine-checked.
+only if some section has trivial cocycle.  We also prove the 2-cocycle identity
+connecting our construction to Mathlib's \IsMulCocycle{} predicate, establish
+section-independence of the splitting question, and formalize restriction to
+subgroups with a local-to-global obstruction principle.  The work takes a first
+step toward documented TODOs in Mathlib's \lean{GroupExtension} module regarding
+the cohomological classification of extensions.  All results are fully
+machine-checked with zero \lean{sorry}.
 \end{abstract}
 
 \keywords{Lean 4, Mathlib, group extensions, 2-cocycle, splitting criterion,
@@ -148,8 +147,7 @@ classical algebra uses to analyze extensions.
 
   \item \textbf{Conjugation action and 2-cocycle identity} (\S\ref{sec:conjact}):
     We connect the section cocycle to Mathlib's \IsMulCocycle{}
-    via the conjugation action, proving the identity up to one tactic-level
-    \lean{sorry}.
+    via the conjugation action, proving the 2-cocycle identity in full.
 
   \item \textbf{Restriction to subgroups and local-to-global} (\S\ref{sec:local}):
     We formalize \lean{restrictExtension} via pullback subgroups and prove
@@ -167,12 +165,7 @@ code: six core group extension modules (presented in this paper), two supplement
 modules (\lean{NonAbelianObstruction.lean}, \lean{SchurMultiplier.lean}) exploring
 further directions, an adapter module (\lean{MathlibAdapter.lean}), and an
 independent module for faithfully flat descent.
-All results compile against Mathlib with zero \lean{sorry} except for
-one tactic-level \lean{sorry} in the proof of
-\lean{sectionCocycle\_isMulCocycle\textsubscript{2}\_conj} (the 2-cocycle identity,
-\S\ref{sec:cocycle-identity}).  The mathematical content of that identity is
-standard; the remaining gap is purely tactic-engineering (see the discussion in
-\S\ref{sec:cocycle-identity}).
+All results compile against Mathlib with zero \lean{sorry}.
 
 \paragraph{Outline.}
 Section~\ref{sec:background} reviews group extensions and Mathlib's API.
@@ -215,7 +208,7 @@ of $\iota$ ensures the preimage is unique.
 
 The 2-cocycle satisfies the \emph{cocycle identity}
 \begin{equation}\label{eq:cocycle-identity}
-  \cocy_\sigma(g_1 g_2, g_3) \cdot \cocy_\sigma(g_1, g_2) \;=\;
+  \cocy_\sigma(g_1, g_2) \cdot \cocy_\sigma(g_1 g_2, g_3) \;=\;
   \varphi_\sigma(g_1)\bigl(\cocy_\sigma(g_2, g_3)\bigr) \cdot
   \cocy_\sigma(g_1, g_2 g_3),
 \end{equation}
@@ -705,8 +698,8 @@ For any section $\sigma$:
 \begin{lstlisting}
 theorem sectionCocycle_isMulCocycle2_conj
     (sgm : S.Section) (g1 g2 g3 : G) :
-    sectionCocycle S sgm (g1 * g2) g3 *
-      sectionCocycle S sgm g1 g2 =
+    sectionCocycle S sgm g1 g2 *
+      sectionCocycle S sgm (g1 * g2) g3 =
     sectionConjAct S sgm g1
       (sectionCocycle S sgm g2 g3) *
       sectionCocycle S sgm g1 (g2 * g3)
@@ -723,26 +716,12 @@ $\varphi_\sigma$.
 The proof proceeds by injectivity of $\iota$: both sides, when mapped through
 $\iota$, reduce to $\sigma(g_1) \cdot \sigma(g_2) \cdot \sigma(g_3) \cdot
 \sigma(g_1 g_2 g_3)^{-1}$ after expanding the cocycle specifications and
-performing associativity and cancellation in $E$.  The formalization unfolds
-\lean{sectionCocycle\_spec} for all four cocycle terms and
-\lean{inl\_sectionConjAct} for the conjugation, then requires a chain of
-rewriting steps in the group $E$.
-
-\paragraph{Proof status.}
-\textbf{This theorem is not fully machine-checked.}  The current formalization
-contains one \lean{sorry} at the final rewriting step, meaning Lean accepts the
-theorem statement but the proof is incomplete.  The proof proceeds by injectivity
-of $\iota$: both sides are expanded via \lean{sectionCocycle\_spec} and
-\lean{inl\_sectionConjAct}, and the associativity $g_1 \cdot (g_2 \cdot g_3) =
-(g_1 \cdot g_2) \cdot g_3$ is rewritten.  After these steps, both sides reduce
-to the same expression $\sigma(g_1) \cdot \sigma(g_2) \cdot \sigma(g_3) \cdot
-\sigma(g_1 g_2 g_3)^{-1}$, but the remaining chain of cancellations in $E$ is
-not yet discharged.  The gap is purely tactic-engineering: Lean~4's \lean{group}
-tactic treats section values $\sigma(g_i)$ as free generators and cannot perform
-the required cancellations of intermediate terms like
-$\sigma(g_1 g_2)^{-1} \cdot \sigma(g_1 g_2)$.  Closing this gap requires either
-a manual chain of \lean{mul\_assoc} / \lean{inv\_mul\_cancel\_left} rewrites or a
-custom tactic for cancellation in groups with distinguished subexpressions.
+performing associativity and cancellation in $E$.  The key step is to
+right-multiply both sides by $\sigma(g_1 g_2 g_3)$ and then cancel via
+\lean{section\_mul\_eq}, which collapses the intermediate section values.
+The formalization unfolds \lean{sectionCocycle\_spec} for all four cocycle terms
+and \lean{inl\_sectionConjAct} for the conjugation, then discharges the remaining
+equalities by associativity and cancellation in $E$.
 
 Supporting lemmas that are fully proved include the triple product expansions:
 
@@ -1037,11 +1016,12 @@ We have presented a machine-checked formalization of the section 2-cocycle and
 splitting criterion for group extensions in Lean~4, organized around a fiber
 architecture that decomposes extensions into layers: fibers ($N$-torsors),
 set-theoretic sections (always exist), homomorphic splittings (may not exist),
-and the 2-cocycle that measures the gap.  The central fully-verified
-results---the splitting criterion (\lean{splits\_iff\_trivial\_cocycle}) and the
-local-to-global obstruction principle---together with the 2-cocycle identity
-(stated, with one tactic-level gap remaining in the proof) take a first step
-toward documented gaps in Mathlib's formalization of group extension theory.
+and the 2-cocycle that measures the gap.  The central results---the splitting
+criterion (\lean{splits\_iff\_trivial\_cocycle}), the 2-cocycle identity
+(\lean{sectionCocycle\_isMulCocycle\textsubscript{2}\_conj}), and the
+local-to-global obstruction principle---are all fully machine-checked with zero
+\lean{sorry}, taking a first step toward documented gaps in Mathlib's
+formalization of group extension theory.
 
 \paragraph{From validation to method.}
 The fiber architecture originated as a proof-engineering pattern for organizing
@@ -1054,9 +1034,7 @@ obstruction-theoretic problems where the gap between existence and structure is
 the mathematical content.
 
 \paragraph{Future work.}
-The most immediate next step is completing the 2-cocycle identity proof (closing the
-one remaining \lean{sorry}).  Beyond that, the path toward Mathlib's $H^2$ TODO
-requires:
+The path toward Mathlib's $H^2$ TODO requires:
 
 \begin{enumerate}[leftmargin=2em]
   \item \textbf{The $H^2$ bridge}: showing that the section cocycle, viewed as a
@@ -1092,8 +1070,7 @@ and structured realization is the central mathematical content.
 %=======================================================================
 
 The following table maps paper theorems to their Lean names and source files.
-All results are fully machine-checked unless marked with $\dagger$ (one
-\lean{sorry}).
+All results are fully machine-checked with zero \lean{sorry}.
 
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.14\textwidth}
   >{\raggedright\arraybackslash}p{0.40\textwidth}
@@ -1193,7 +1170,7 @@ Thm.~\ref{thm:conj-independent} &
   \lean{sectionConjAct\_independent} &
   \lean{ConjugationAction.lean} \\
 
-Thm.~\ref{thm:cocycle-identity}$^\dagger$ &
+Thm.~\ref{thm:cocycle-identity} &
   \lean{sectionCocycle\_isMulCocycle\textsubscript{2}\_conj} &
   \lean{CocycleIdentity.lean} \\
 
@@ -1236,10 +1213,6 @@ Thm.~\ref{thm:descent} &
 \end{longtable}
 
 \noindent
-$^\dagger$\,Contains one tactic-level \lean{sorry}; the theorem statement is
-accepted by Lean but the proof is incomplete.  See the discussion in
-\S\ref{sec:cocycle-identity}.
-
 All source files are located under
 \lean{InfinityCompression/GeneralMethod/GroupExtension/} (group extension modules)
 and \lean{InfinityCompression/GeneralMethod/Descent/} (faithfully flat descent).

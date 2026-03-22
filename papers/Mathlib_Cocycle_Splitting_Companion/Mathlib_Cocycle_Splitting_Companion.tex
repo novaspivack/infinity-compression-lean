@@ -1,5 +1,5 @@
 % Mathlib Cocycle Splitting Companion — Technical note for Mathlib reviewers.
-% Normative spec: EPIC_020_ML1 (Paper B).
+% Companion technical note for the Mathlib PR (Paper B).
 \documentclass[11pt]{article}
 \input{../suite_preamble}
 \usepackage{longtable}
@@ -46,9 +46,9 @@ contribution that constitutes \textbf{Phase~1} of completing these TODOs: the
 \emph{section cocycle} associated to a set-theoretic section of a group extension,
 the \emph{splitting criterion} (\texttt{splits\_iff\_trivial\_cocycle}), and supporting
 infrastructure including the section difference function, the conjugation action via
-sections, and the multiplicative 2-cocycle identity. One sorry remains in the
-2-cocycle identity proof (see \Cref{sec:sorry}); all other theorems are fully
-verified. We describe the proposed API surface, design decisions (namespace placement,
+sections, and the multiplicative 2-cocycle identity. All theorems are fully verified
+by the Lean type checker with zero \texttt{sorry}. We describe the proposed API surface,
+design decisions (namespace placement,
 \texttt{@[to\_additive]} strategy, \texttt{@[simp]} candidates), the relationship to
 existing Mathlib infrastructure (\texttt{GroupExtension.Defs},
 \texttt{GroupExtension.Basic}, \texttt{GroupCohomology.LowDegree}), and a roadmap for
@@ -59,8 +59,8 @@ v4.29.0-rc6.
 \keywords{Mathlib, group extensions, section cocycle, splitting criterion, group cohomology, Lean~4}
 \amsclassification{20J06, 18G50, 68V15}
 \codeavailability{%
-\url{https://github.com/novaspivack/infinity-compression} — module
-\texttt{InfinityCompression.GeneralMethod.GroupExtension.MathlibAdapter}}
+\url{https://github.com/novaspivack/infinity-compression} — see
+\texttt{GroupExtension/} modules}
 
 \tableofcontents
 \newpage
@@ -117,11 +117,10 @@ theorems require. Concretely, we add:
 \item \textbf{The 2-cocycle identity} (\texttt{Section.cocycle\_mul\_eq}):
   The multiplicative 2-cocycle condition
   \[
-    c(g_1 g_2, g_3) \cdot c(g_1, g_2) =
+    c(g_1, g_2) \cdot c(g_1 g_2, g_3) =
     \varphi_\sigma(g_1)(c(g_2, g_3)) \cdot c(g_1, g_2 g_3)
   \]
   connecting our cocycle to Mathlib's \texttt{IsMulCocycle\textsubscript{2}}.
-  \textbf{Contains 1 sorry} (see \Cref{sec:sorry}).
 \end{enumerate}
 
 \subsection{Relationship to the TODOs}
@@ -130,7 +129,7 @@ The $H^2$ bridge requires: (a)~defining the section cocycle, (b)~proving it sati
 the 2-cocycle identity, (c)~showing the cohomology class is section-independent (i.e.,
 that changing the section changes the cocycle by a coboundary), and
 (d)~constructing the bijection with equivalence classes of extensions. Our contribution
-covers (a) and provides a sorry-bearing proof of~(b), along with the infrastructure
+covers (a) and proves~(b), along with the infrastructure
 for~(c) (the section difference function). The cocycle change formula and bijection
 construction remain for Phase~2. The $H^1$ bridge requires:
 (a)~the conjugation action via sections, (b)~the section difference function, and
@@ -346,11 +345,10 @@ all proposed new theorems, with their full Lean~4 types.
     Mathlib's \texttt{inl\_conjAct\_comm}. \\[6pt]
 
 \texttt{Section.cocycle\_mul\_eq}
-  & \texttt{cocycle $\sigma$ ($g_1$ * $g_2$) $g_3$ * cocycle $\sigma$ $g_1$ $g_2$ = conjAct $\sigma$ $g_1$ (cocycle $\sigma$ $g_2$ $g_3$) * cocycle $\sigma$ $g_1$ ($g_2$ * $g_3$)} \\[4pt]
+  & \texttt{cocycle $\sigma$ $g_1$ $g_2$ * cocycle $\sigma$ ($g_1$ * $g_2$) $g_3$ = conjAct $\sigma$ $g_1$ (cocycle $\sigma$ $g_2$ $g_3$) * cocycle $\sigma$ $g_1$ ($g_2$ * $g_3$)} \\[4pt]
   & \small The multiplicative 2-cocycle identity with respect to the conjugation action.
     This is the equation required by \texttt{IsMulCocycle\textsubscript{2}} (after
-    uncurrying and extracting the \texttt{MulDistribMulAction}).
-    \textbf{Contains 1 sorry} (see \Cref{sec:sorry}). \\[6pt]
+    uncurrying and extracting the \texttt{MulDistribMulAction}). \\[6pt]
 
 \texttt{sectionCocycle\_of\_splitting}
   & \texttt{$\forall$ $g_1$ $g_2$, cocycle s.toSection $g_1$ $g_2$ = 1} \\[4pt]
@@ -375,10 +373,10 @@ all proposed new theorems, with their full Lean~4 types.
 
 The following shows the proposed Mathlib-style definitions. In our development, the
 corresponding definitions use different names (\texttt{sectionCocycle},
-\texttt{sectionDiff}, \texttt{sectionConjAct}) at the top level of the
-\texttt{InfinityCompression.GeneralMethod} namespace. For the Mathlib PR, these would
-be renamed to use dot notation under \texttt{GroupExtension.Section} and placed in a
-new file \texttt{Mathlib/GroupTheory/GroupExtension/Cocycle.lean}.
+\texttt{sectionDiff}, \texttt{sectionConjAct}) at the top level of the development
+namespace. For the Mathlib PR, these would be renamed to use dot notation under
+\texttt{GroupExtension.Section} and placed in a new file
+\texttt{Mathlib/GroupTheory/GroupExtension/Cocycle.lean}.
 
 \begin{lstlisting}
 variable {N E G : Type*} [Group N] [Group E] [Group G]
@@ -696,7 +694,7 @@ interface.
 \textbf{What we provide (Phase~1):}
 \begin{itemize}[nosep]
 \item \texttt{Section.cocycle}: The $N$-valued 2-cocycle.
-\item \texttt{Section.cocycle\_mul\_eq}: The 2-cocycle identity (with sorry).
+\item \texttt{Section.cocycle\_mul\_eq}: The 2-cocycle identity.
 \item \texttt{Section.diff}: The section difference function.
 \item \texttt{splits\_iff\_trivial\_cocycle}: Splitting iff trivial cocycle class.
 \end{itemize}
@@ -731,7 +729,7 @@ interface.
 \toprule
 \textbf{Phase} & \textbf{Scope} & \textbf{Status} \\
 \midrule
-Phase 1 (this PR) & Cocycle + splitting criterion & Complete (1 sorry) \\
+Phase 1 (this PR) & Cocycle + splitting criterion & Complete (zero sorry) \\
 Phase 2a ($H^1$) & Conjugacy classes $\leftrightarrow$ $H^1$ & Future work \\
 Phase 2b ($H^2$) & Extension classes $\leftrightarrow$ $H^2$ & Future work \\
 \bottomrule
@@ -753,63 +751,48 @@ Mathlib's \texttt{groupCohomology.H2} to a subsequent PR.
 
 The development builds successfully against Mathlib v4.29.0-rc6 (Lean~4 toolchain
 \texttt{leanprover/lean4:v4.18.0-rc2}). All files compile with \texttt{lake build}
-with no errors beyond the single disclosed sorry.
+with no errors and zero \texttt{sorry}.
 
-\subsection{The sorry disclosure}\label{sec:sorry}
+\subsection{Proof status}\label{sec:sorry}
 
-There is exactly \textbf{one sorry} in the development, located in
-\texttt{CocycleIdentity.lean} at the theorem
-\texttt{sectionCocycle\_isMulCocycle\textsubscript{2}\_conj} (proposed Mathlib name:
-\texttt{Section.cocycle\_mul\_eq}).
+All theorems in the development are \textbf{fully verified} by the Lean type checker
+with \textbf{zero \texttt{sorry}}. In particular, the 2-cocycle identity
+(\texttt{Section.cocycle\_mul\_eq}) is completely proved.
+
+The proof proceeds by applying \texttt{S.inl\_injective} to reduce the $N$-level
+equality to an $E$-level equality, then uses a pair of auxiliary \texttt{have} lemmas
+(\texttt{lhs} and \texttt{rhs}) that each simplify one side via
+\texttt{section\_mul\_eq} rewrites and associativity/cancellation steps. The final step
+applies \texttt{mul\_right\_cancel} to equate the two sides.
 
 \begin{lstlisting}
 theorem sectionCocycle_isMulCocycle₂_conj
     (σ : S.Section) (g₁ g₂ g₃ : G) :
-    sectionCocycle S σ (g₁ * g₂) g₃ *
-      sectionCocycle S σ g₁ g₂ =
+    sectionCocycle S σ g₁ g₂ *
+      sectionCocycle S σ (g₁ * g₂) g₃ =
     sectionConjAct S σ g₁
       (sectionCocycle S σ g₂ g₃) *
       sectionCocycle S σ g₁ (g₂ * g₃) := by
   apply S.inl_injective
   rw [map_mul, map_mul, inl_sectionConjAct]
-  rw [sectionCocycle_spec S σ (g₁ * g₂) g₃,
-      sectionCocycle_spec S σ g₁ g₂,
-      sectionCocycle_spec S σ g₂ g₃,
-      sectionCocycle_spec S σ g₁ (g₂ * g₃)]
-  conv_rhs =>
-    rw [show g₁ * (g₂ * g₃) = g₁ * g₂ * g₃
-          from (mul_assoc g₁ g₂ g₃).symm]
-  sorry
+  have lhs : ... := by
+    rw [mul_assoc, ← section_mul_eq S σ (g₁ * g₂) g₃,
+        ← mul_assoc, ← section_mul_eq S σ g₁ g₂]
+  have rhs : ... := by
+    rw [mul_assoc _ (S.inl ...)]
+    rw [← section_mul_eq S σ g₁ (g₂ * g₃)]
+    rw [mul_assoc _ (σ.toFun g₁)⁻¹, inv_mul_cancel_left]
+    rw [mul_assoc, ← section_mul_eq S σ g₂ g₃,
+        ← mul_assoc]
+  apply mul_right_cancel
+    (b := σ.toFun (g₁ * g₂ * g₃))
+  rw [lhs, show g₁ * g₂ * g₃ = g₁ * (g₂ * g₃)
+        from mul_assoc g₁ g₂ g₃, rhs]
 \end{lstlisting}
 
-\textbf{Mathematical status.} The theorem is mathematically standard: both sides of the
-2-cocycle identity, when mapped through \texttt{S.inl} and right-multiplied by
-$\sigma(g_1 g_2 g_3)$, reduce to $\sigma(g_1) \cdot \sigma(g_2) \cdot \sigma(g_3)
-\cdot \sigma(g_1 g_2 g_3)^{-1}$ after cancellation of intermediate section values.
-
-\textbf{Why the sorry remains.} After the \texttt{rw} steps, the goal is an equality
-in $E$ involving products of section values and their inverses. The \texttt{group}
-tactic treats section values $\sigma(g_i)$ as free generators and cannot perform the
-necessary cancellations (e.g., $\sigma(g_1 g_2)^{-1} \cdot \sigma(g_1 g_2) = 1$).
-Closing the sorry requires a manual chain of \texttt{mul\_assoc}, \texttt{mul\_inv\_cancel},
-and \texttt{inv\_mul\_cancel\_left} rewrites---approximately 15--20 steps of associativity
-and cancellation management. This is purely tactic engineering, not mathematical
-difficulty.
-
-\textbf{Options for closing:}
-\begin{enumerate}[nosep]
-\item \textbf{Manual rewrite chain}: Write out the explicit associativity and
-  cancellation steps. Tedious but straightforward.
-\item \textbf{Congruence approach}: Factor the proof through intermediate lemmas that
-  isolate each cancellation step, then compose.
-\item \textbf{Defer to Phase~2}: The sorry does not block the splitting criterion or
-  any other theorem in Phase~1. It blocks only the formal connection to
-  \texttt{IsMulCocycle\textsubscript{2}}, which is a Phase~2 dependency.
-\end{enumerate}
-
-\textbf{Recommendation for the PR}: Option~1 (manual rewrite chain) is the most
-conservative choice. If a reviewer prefers, the theorem can be excluded from the
-initial PR and added in a follow-up once the tactic proof is complete.
+\textbf{Note on factor order.} The correct statement places $c(g_1, g_2)$ before
+$c(g_1 g_2, g_3)$ on the left-hand side. An earlier draft had the factors reversed;
+correcting the order was the key step that enabled the proof to close.
 
 \subsection{Module structure}
 
@@ -857,7 +840,7 @@ is that our \texttt{simp} lemmas rewrite \texttt{S.inl (cocycle ...)} and
 Per Mathlib's policy on AI-assisted contributions, the PR description will disclose
 that AI tools (Claude) were used in the development of this contribution, including
 proof exploration, tactic suggestion, and documentation drafting. All mathematical
-content has been verified by the Lean type checker (modulo the disclosed sorry).
+content has been verified by the Lean type checker with zero \texttt{sorry}.
 
 %=======================================================================
 % Bibliography

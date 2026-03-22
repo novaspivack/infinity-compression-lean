@@ -126,7 +126,7 @@
 | `GroupExtension/LocalGlobal.lean` | EPIC_019_GA1: `directProductExtension`, `directProductSplitting`, `not_splits_of_all_cocycles_nontrivial`, `pullbackSubgroup`, `restrictExtension`, `splitting_restricts`, `global_split_implies_local_split`, `local_nonsplit_obstructs_global` |
 | `GroupExtension/CocycleCoboundary.lean` | EPIC_019_GA1: `sectionDiff`, `sectionDiff_spec`, `section_eq_inl_diff_mul`, `splitting_independent_of_section`, `splits_of_any_trivial_cocycle` |
 | `GroupExtension/ConjugationAction.lean` | EPIC_020_ML1: `sectionConjAct`, `conjAct_inl` (commutative N), `sectionConjAct_independent`, `splittingConjAct` — conjugation action on kernel via sections |
-| `GroupExtension/CocycleIdentity.lean` | EPIC_020_ML1: `sectionCocycle_isMulCocycle₂_conj` (1 sorry — tactic proof), `sectionCocycle_of_splitting`, `section_triple_product` — 2-cocycle identity |
+| `GroupExtension/CocycleIdentity.lean` | EPIC_020_ML1: `sectionCocycle_isMulCocycle₂_conj` (zero sorry), `sectionCocycle_of_splitting`, `section_triple_product`, `section_triple_product'` — 2-cocycle identity and triple product decompositions |
 | `GroupExtension/MathlibAdapter.lean` | EPIC_020_ML1: Mathlib-style re-exports (`GroupExtensionSection.cocycle`, `splits_iff_trivialCocycle`, etc.) |
 | `GroupExtension/NonAbelianObstruction.lean` | EPIC_021_NR1: Q₈ non-abelian (`decide`), `splitting_implies_trivial_cocycle_general` (forward direction for any kernel), abelian/non-abelian boundary |
 | `GroupExtension/SchurMultiplier.lean` | EPIC_021_NR1: `IsCentralExtension`, central cocycle commutativity, `centralExtension_image_comm`, `S₃_not_abelian` |
