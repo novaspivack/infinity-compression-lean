@@ -67,6 +67,7 @@
 \maketitle
 
 \begin{abstract}
+\raggedright
 We present a machine-checked formalization of the section 2-cocycle, splitting
 criterion, and embedding-problem equivalence for group extensions in
 Lean~4~\cite{Lean4}, built on Mathlib's \lean{GroupExtension}
@@ -90,6 +91,8 @@ work discharges the topological instance (Quillen's Theorem~A)~\cite{SpivackQuil
 the program map is~\cite{SpivackSynthesis}. In one line: this paper supplies the
 \emph{algebraic and arithmetic discharge} of the common fiber/section/obstruction architecture,
 not only a Mathlib-shaped formalization milestone. All results are fully machine-checked with zero \lean{sorry}.
+
+\textbf{Trust boundary:} Mathlib API surfaces and namespace paths are version-sensitive; this PDF is keyed to the cited Mathlib/Lean pins in the repository.
 \end{abstract}
 
 \SuiteSeriesContext{This manuscript is the \emph{algebraic and arithmetic engine}.}
@@ -102,6 +105,23 @@ not only a Mathlib-shaped formalization milestone. All results are fully machine
   \texttt{InfinityCompression/GeneralMethod/GroupExtension/} and
   \texttt{InfinityCompression/GeneralMethod/Descent/}.
   The repository will be made publicly available upon publication.}
+
+\section{Premises, disagreement coordinates, and trust boundary}\label{sec:premises-ic-group-ext}
+\begin{keybox}{Where disagreement can (and cannot) live}
+\textbf{Formal spine.}
+Cocycle identities, splitting criteria, and embedding-problem bridges are theorems in named Lean modules under \path{InfinityCompression/GeneralMethod/}.
+
+\medskip
+\textbf{Premise coordinates (for external readers).}
+{\raggedright
+\begin{itemize}[leftmargin=2em]
+\item \textbf{Mathlib evolution.} This paper both fills documented gaps and aligns with Mathlib's \texttt{GroupExtension} API as pinned.
+  \emph{Logical effect:} Port conflicts across Mathlib versions are engineering issues, not automatic falsification of the mathematical claims at the pinned revision.
+\item \textbf{Publication timing vs.\ code.} Public repository availability may lag the PDF; the formal statements remain the authority.
+  \emph{Logical effect:} Request or pin the artifact revision cited in correspondence.
+\end{itemize}
+\par}
+\end{keybox}
 
 \tableofcontents
 \newpage

@@ -40,6 +40,7 @@
 \maketitle
 
 \begin{abstract}
+\raggedright
 We present the first machine-checked formalization of Quillen's Theorem~A
 for Galois connections between partial orders, as the \emph{topology discharge}
 of the same fiber/section/obstruction architecture developed for group
@@ -57,6 +58,8 @@ yet define simplicial homotopy as a type. See~\cite{SpivackSynthesis,SpivackSumm
 for the series map and summit claim.
 All results are formalized in Lean~4 with Mathlib, with
 zero \texttt{sorry} placeholders.
+
+\textbf{Trust boundary:} The formalization stops where noted at simplicial homotopy owing to Mathlib coverage; classical mathematical steps called ``standard'' are not additionally machine-checked.
 \end{abstract}
 
 \SuiteSeriesContext{This manuscript is the \emph{topology discharge}.}
@@ -68,6 +71,23 @@ zero \texttt{sorry} placeholders.
   \url{https://github.com/novaspivack/infinity-compression-lean},
   branch \texttt{dev/epic-019-general-method},
   directory \texttt{InfinityCompression/GeneralMethod/}.}
+
+\section{Premises, disagreement coordinates, and trust boundary}\label{sec:premises-ic-quillen}
+\begin{keybox}{Where disagreement can (and cannot) live}
+\textbf{Formal spine.}
+Nerve constructions, terminal-object connectivity lemmas, and the Quillen-A packaging cited here are checked in the Lean paths referenced by this repository.
+
+\medskip
+\textbf{Premise coordinates (for external readers).}
+{\raggedright
+\begin{itemize}[leftmargin=2em]
+\item \textbf{Homotopy gap.} Edge-level homotopy data are formalized; full simplicial homotopy awaits Mathlib infrastructure.
+  \emph{Logical effect:} Extending the formalization may strengthen the discharge without changing vertex-level lemmas already proved.
+\item \textbf{Series role.} This paper is the topology discharge in a multi-paper program; algebra/arithmetic discharges are separate manuscripts.
+  \emph{Logical effect:} One discharge route does not automatically carry the strength of another.
+\end{itemize}
+\par}
+\end{keybox}
 
 \tableofcontents
 \newpage

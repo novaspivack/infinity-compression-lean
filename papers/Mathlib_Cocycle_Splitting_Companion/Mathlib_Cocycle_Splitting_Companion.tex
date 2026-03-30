@@ -67,6 +67,7 @@
 \maketitle
 
 \begin{abstract}
+\raggedright
 Mathlib's \texttt{GroupExtension/Defs.lean} documents two explicit TODO items:
 a bijection between $N$-conjugacy classes of splittings and $H^1$, and a bijection
 between equivalence classes of group extensions and $H^2$, both for abelian kernel~$N$.
@@ -86,6 +87,8 @@ v4.29.0-rc6. This note is the \emph{technical Mathlib companion}: Mathlib-review
 API documentation, not a program overview; see~\cite{SpivackSynthesis} for how the suite
 fits together. Phase~1 is the exact prerequisite layer for Mathlib's own documented future
 $H^1$/$H^2$ classification theorems.
+
+\textbf{Trust boundary:} This note proposes Mathlib-facing API and Phase~1 lemmas; downstream Mathlib merge status is orthogonal to the internal proof-checking reported here.
 \end{abstract}
 
 \SuiteSeriesContext{This manuscript is the \emph{technical Mathlib companion}.}
@@ -95,6 +98,23 @@ $H^1$/$H^2$ classification theorems.
 \codeavailability{%
 \url{https://github.com/novaspivack/infinity-compression} — see
 \texttt{GroupExtension/} modules}
+
+\section{Premises, disagreement coordinates, and trust boundary}\label{sec:premises-ic-mathlib-companion}
+\begin{keybox}{Where disagreement can (and cannot) live}
+\textbf{Formal spine.}
+Phase~1 lemmas (\texttt{splits\_iff\_trivial\_cocycle}, cocycle identities) are claims about the formal code in the cited repository branch, not about future Mathlib merges.
+
+\medskip
+\textbf{Premise coordinates (for external readers).}
+{\raggedright
+\begin{itemize}[leftmargin=2em]
+\item \textbf{Contribution vs.\ upstream schedule.} Mathlib maintainers may reorganize namespaces; reviewer-facing API text here is a proposal.
+  \emph{Logical effect:} Namespace bikeshedding does not negate the mathematical content at the pinned revision.
+\item \textbf{Phase~2 roadmap.} $H^1$/$H^2$ bridges are explicitly future work relative to this note.
+  \emph{Logical effect:} Absence of Phase~2 in Mathlib is expected, not a silent failure of Phase~1.
+\end{itemize}
+\par}
+\end{keybox}
 
 \tableofcontents
 \newpage

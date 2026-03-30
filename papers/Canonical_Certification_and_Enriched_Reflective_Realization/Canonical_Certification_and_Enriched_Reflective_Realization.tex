@@ -27,8 +27,11 @@
 \maketitle
 
 \begin{abstract}
+\raggedright
 Formal theories often collapse many derivations to a single canonical certified record: the question is whether that \emph{collapse} exhausts everything structurally significant about the realized routes that produced it. This paper is the \emph{internal origin theorem} of a larger program: we prove that it does not, on named machine-checked carriers in the Infinity Compression
 native environment. We prove universal collapse of standard Phase-2 extraction to a unique bare certificate; a reflective split (canonical bare certification alongside nontrivial enriched autonomous mirror structure); strict refinement of the typed forgetful map $\pi_A$ (existence of distinct enriched reflective splits with equal $\pi_A$-image); and a forgetful--fiber layer in which the canonical fiber is nontrivial and role assignments inject into a distinguished standard subfamily. We treat a concrete NEMS-style flagship spine and extend under explicit intermediate crown hypotheses (role-rich and role-pair-diverse classes). Methodologically, the proofs are organized by collapse audits and carrier-sensitive route comparison. The result is a formal theorem of separation between theorem-level invariants and realization-level structure. Companion papers show that the same collapse/refinement/fiber architecture transfers to external mathematics across twelve benchmark families and yields theorem-level results in group extensions, embedding problems, and Quillen's Theorem~A for Galois connections. All main claims are machine-checked in Lean~4 (zero \texttt{sorry} in proof terms under \texttt{InfinityCompression/}; Mathlib and kernel axioms only); \Cref{app:theorem-index} maps paper statements to named definitions and theorems in the artifact.
+
+\textbf{Trust boundary:} Theorem statements are tied to explicit formal interfaces and hypotheses; companion transfer papers test portability, not automatic universality over all mathematics.
 \end{abstract}
 
 \SuiteSeriesContext{This manuscript is the flagship \emph{internal origin theorem} paper.}
@@ -40,6 +43,23 @@ native environment. We prove universal collapse of standard Phase-2 extraction t
   Root module: \texttt{InfinityCompression.lean}.
   Lean toolchain: \texttt{leanprover/lean4:v4.29.0-rc6}.
   Zero \texttt{sorry} in proof terms under \texttt{InfinityCompression/}.}
+
+\section{Premises, disagreement coordinates, and trust boundary}\label{sec:premises-ic-flagship}
+\begin{keybox}{Where disagreement can (and cannot) live}
+\textbf{Formal spine.}
+Machine-checked claims refer to named carriers and hypotheses inside \path{InfinityCompression/}; crown-eligible and role hypotheses are part of the statement ecology, not hidden assumptions.
+
+\medskip
+\textbf{Premise coordinates (for external readers).}
+{\raggedright
+\begin{itemize}[leftmargin=2em]
+\item \textbf{Architecture scope.} Results are conditioned on the Infinity Compression interfaces and the standard bundle used in the development.
+  \emph{Logical effect:} Declining one hypothesis class does not invalidate unrelated companion manuscripts.
+\item \textbf{Living artifact.} Mathlib revision and module paths are pinned in \texttt{lakefile.lean} and repository documentation.
+  \emph{Logical effect:} Use the code-availability URL and appendix index (\Cref{app:theorem-index}) for referee checks.
+\end{itemize}
+\par}
+\end{keybox}
 
 \tableofcontents
 \newpage

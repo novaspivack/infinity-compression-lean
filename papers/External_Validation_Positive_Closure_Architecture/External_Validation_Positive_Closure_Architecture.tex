@@ -33,6 +33,7 @@
 \maketitle
 
 \begin{abstract}
+\raggedright
 \textbf{Transferability paper.} This manuscript establishes that the positive-closure
 architecture is \emph{exportable} to ordinary mathematics outside the flagship
 Infinity Compression modules; it is not the program map and not the venue for
@@ -71,7 +72,36 @@ splitting criteria, embedding problems from inverse Galois theory, and
 Quillen's Theorem~A for Galois connections. We situate
 the work in the NEMS / APS / IC / Strata stack and state explicitly that APS is not tested
 by these tranches.
+
+\textbf{Trust boundary:} This is a twelve-tranche portability survey in Lean; it is not a universality theorem over all mathematical settings and does not subsume APS abstract-indexed separation results.
 \end{abstract}
+
+\keywords{formal verification, positive closure, fibers, external validation,
+  Mathlib, Lean~4, Infinity Compression architecture}
+
+\amsclassification{03B70, 18A30, 68V15}
+
+\codeavailability{%
+  \url{https://github.com/novaspivack/infinity-compression-lean};
+  external-validation tranches under \texttt{InfinityCompression/} (no import of the flagship \texttt{IC} spine per tranche design);
+  \texttt{lake build}; see \texttt{lakefile.lean} and repository \texttt{MANIFEST.md}.}
+
+\section{Premises, disagreement coordinates, and trust boundary}\label{sec:premises-ic-external-validation}
+\begin{keybox}{Where disagreement can (and cannot) live}
+\textbf{Formal spine.}
+Tranche verdicts (\textbf{STRONG} / \textbf{MODERATE}) reference machine-checked bundles in the stated Lean modules, not informal analogy alone.
+
+\medskip
+\textbf{Premise coordinates (for external readers).}
+{\raggedright
+\begin{itemize}[leftmargin=2em]
+\item \textbf{Transfer vs.\ flagship.} Tranches deliberately avoid importing the internal flagship spine; conclusions concern portability of a \emph{pattern}, not identity with NEMS paper claims.
+  \emph{Logical effect:} Rejecting one tranche does not automatically refute the flagship internal-origins paper.
+\item \textbf{Rubric, not omnicoverage.} Twelve families evidence export of an architectural lens; the paper explicitly disclaims a single theorem quantifying over all mathematics.
+  \emph{Logical effect:} Negative search outside the tranche list is independent of this validation's internal logic.
+\end{itemize}
+\par}
+\end{keybox}
 
 \tableofcontents
 \newpage

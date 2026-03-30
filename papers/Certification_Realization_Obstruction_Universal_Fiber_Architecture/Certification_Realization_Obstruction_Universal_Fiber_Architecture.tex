@@ -14,6 +14,7 @@
 \maketitle
 
 \begin{abstract}
+\raggedright
 This paper closes the editorial loop for a multi-manuscript program in machine-checked
 mathematics. The executive claim is that a single \emph{collapse / refinement / fiber}
 architecture---certification at a bare carrier, strict comparison upstairs, obstruction
@@ -24,12 +25,38 @@ logic/computability (self-certification and halting anchors). We state the role 
 companion paper, a cross-domain dictionary, route labels used in the program (C/A/B/D),
 and what remains open. The intended reader is an advanced mathematician who has not read
 the series; citations point to the formal manuscripts and the Lean repository.
+
+\textbf{Trust boundary:} This manuscript is a program map and interpretive synthesis; definitive statements remain in the cited formal papers and Lean modules.
 \end{abstract}
 
 \SuiteSeriesContext{This manuscript is the \emph{synthesis map}.}
 
 \keywords{formal verification, certification vs.\ realization, fibers, obstruction,
   Infinity Compression, Lean~4, program architecture}
+
+\amsclassification{03B70, 18A30, 68V15, 68V20}
+
+\codeavailability{%
+  Repository: \url{https://github.com/novaspivack/infinity-compression-lean}.
+  Root module \texttt{InfinityCompression.lean}; build via \texttt{lake build}.
+  Toolchain pin in \texttt{lakefile.lean}; see \texttt{MANIFEST.md} at repository root.}
+
+\section{Premises, disagreement coordinates, and trust boundary}\label{sec:premises-ic-synthesis}
+\begin{keybox}{Where disagreement can (and cannot) live}
+\textbf{Formal spine.}
+Program-level routing and ``what compresses'' claims summarize formal outputs; they do not replace verification of individual theorem files.
+
+\medskip
+\textbf{Premise coordinates (for external readers).}
+{\raggedright
+\begin{itemize}[leftmargin=2em]
+\item \textbf{Synthesis vs.\ lemma files.} Editorial synthesis may streamline dependencies; proof obligations live in the cited papers.
+  \emph{Logical effect:} Disputing the map is not, by itself, a refutation of a specific formal lemma.
+\item \textbf{Open frontiers.} Explicit open problems in the series are stated in the flagship and summit manuscripts, not erased here.
+  \emph{Logical effect:} This map does not claim a strongest possible inevitability theorem over all frameworks.
+\end{itemize}
+\par}
+\end{keybox}
 
 \tableofcontents
 \newpage

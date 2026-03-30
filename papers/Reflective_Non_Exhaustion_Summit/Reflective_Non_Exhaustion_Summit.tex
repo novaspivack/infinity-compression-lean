@@ -12,6 +12,7 @@
 \maketitle
 
 \begin{abstract}
+\raggedright
 \textbf{Central claim.}
 We state and defend a summit-level claim from a machine-checked program in Lean~4:
 \emph{canonical certification does not, in general, exhaust realization}. When a
@@ -39,6 +40,8 @@ reusable research instrument.
 The next step is a strongest universal inevitability theorem over the broadest
 abstract class; this manuscript is synthesis of completed instances and a candidate
 general law, not that closure.
+
+\textbf{Trust boundary:} Summit prose compresses completed formal discharges; it is not a substitute for the companion papers' Lean anchors or for future strongest-class universal theorems.
 \end{abstract}
 
 \SuiteSeriesContext{This manuscript is the \emph{summit statement}.}
@@ -46,6 +49,28 @@ general law, not that closure.
 \keywords{formal verification, certification, realization, fibers, obstruction,
   reflective systems, Lean~4, Mathlib}
 \amsclassification{03B70, 18A30, 18G50, 68V15, 68V20}
+
+\codeavailability{%
+  \url{https://github.com/novaspivack/infinity-compression-lean};
+  build \texttt{lake build};
+  see \texttt{MANIFEST.md} and \texttt{lakefile.lean} for entry points and toolchain pin.}
+
+\section{Premises, disagreement coordinates, and trust boundary}\label{sec:premises-ic-summit}
+\begin{keybox}{Where disagreement can (and cannot) live}
+\textbf{Formal spine.}
+Completed-instance claims trace to named Lean files in the Infinity Compression program; the ``frontier'' paragraph records what is \emph{not} yet a single abstract universality theorem.
+
+\medskip
+\textbf{Premise coordinates (for external readers).}
+{\raggedright
+\begin{itemize}[leftmargin=2em]
+\item \textbf{Instance vs.\ universal law.} The summit organizes proved cases and candidate law; it does not claim to quantify over every possible formal framework.
+  \emph{Logical effect:} Opting out of the program's architecture is not a mathematical inconsistency claim.
+\item \textbf{Artifact drift.} Tags and default modules may shift; use repository pins with this PDF.
+  \emph{Logical effect:} Prefer the appendix theorem index in each formal paper over prose-only quotation.
+\end{itemize}
+\par}
+\end{keybox}
 
 \tableofcontents
 \newpage
