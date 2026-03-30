@@ -101,9 +101,9 @@ not only a Mathlib-shaped formalization milestone. All results are fully machine
   group cohomology, interactive theorem proving, formal verification}
 \amsclassification{20E22, 20J06, 68V15, 68V20}
 \codeavailability{All Lean source files are available in the supplementary
-  material under
-  \texttt{InfinityCompression/GeneralMethod/GroupExtension/} and
-  \texttt{InfinityCompression/GeneralMethod/Descent/}.
+  material under\linebreak
+  \path{InfinityCompression/GeneralMethod/GroupExtension/} and\linebreak
+  \path{InfinityCompression/GeneralMethod/Descent/}.
   The repository will be made publicly available upon publication.}
 
 \section{Premises, disagreement coordinates, and trust boundary}\label{sec:premises-ic-group-ext}
@@ -146,8 +146,8 @@ classification:
 \begin{quote}
 \itshape
 ``If $N$ is abelian, [\ldots] there is a bijection between equivalence classes of
-group extensions and \lean{groupCohomology.H2} (which is also stated as a TODO in
-\texttt{GroupCohomology/LowDegree.lean}).''
+group extensions and \lean{groupCohomology.H2} (which is also stated as a TODO in\linebreak
+\path{GroupCohomology/LowDegree.lean}).''
 \hfill---\textup{Mathlib, \lean{GroupExtension/Defs.lean}, lines 43--52}
 \end{quote}
 
@@ -251,9 +251,9 @@ common architecture.
 \paragraph{Proof status.}
 The formalization comprises twelve Lean modules totaling approximately 1500 lines
 of code: seven core group extension modules, two supplementary modules
-(\lean{NonAbelianObstruction.lean}, \lean{SchurMultiplier.lean}), an adapter
-module (\lean{MathlibAdapter.lean}), an embedding-problem module
-(\lean{EmbeddingProblem.lean}), and a module for faithfully flat descent.
+(\path{NonAbelianObstruction.lean}, \path{SchurMultiplier.lean}), an adapter
+module (\path{MathlibAdapter.lean}), an embedding-problem module
+(\path{EmbeddingProblem.lean}), and a module for faithfully flat descent.
 All results compile against Mathlib v4.29.0-rc6 with zero \lean{sorry}.
 
 \paragraph{Outline.}
@@ -316,8 +316,9 @@ only on the cohomology class $[\cocy_\sigma] \in H^2(G, N)$.
 \subsection{Mathlib's GroupExtension API}\label{sec:bg-mathlib}
 
 Mathlib's formalization, due to Yamazaki~\cite{Yamazaki2024}, provides the following
-structures in \lean{Mathlib.GroupTheory.GroupExtension}:
+structures in\linebreak\path{Mathlib/GroupTheory/GroupExtension}:
 
+\begingroup\sloppy
 \begin{itemize}[leftmargin=2em]
   \item \lean{GroupExtension N E G}: a structure bundling a group homomorphism
     $\iota : N \to^* E$ (called \lean{inl}), a group homomorphism
@@ -336,10 +337,10 @@ structures in \lean{Mathlib.GroupTheory.GroupExtension}:
     the projection \lean{toSection} recovers the underlying set-theoretic section.
 
   \item \lean{GroupExtension.conjAct}: the conjugation action $E \to^*
-    \Aut(N)$, defined via \lean{MulAut.conjNormal}.  Concretely,
-    $\lean{conjAct}(e)(n) = \iota^{-1}(e \cdot \iota(n) \cdot e^{-1})$;
+    \Aut(N)$, defined via \lean{MulAut.conjNormal}. Concretely, writing $c$ for \lean{conjAct},\linebreak
+    $c(e)(n) = \iota^{-1}(e \cdot \iota(n) \cdot e^{-1})$;
     the key specification lemma is \lean{inl\_conjAct\_comm}:
-    $\iota(\lean{conjAct}(e)(n)) = e \cdot \iota(n) \cdot e^{-1}$.
+    $\iota(c(e)(n)) = e \cdot \iota(n) \cdot e^{-1}$.
 
   \item \lean{GroupExtension.Equiv}: equivalence of extensions via commuting
     diagrams.
@@ -349,6 +350,7 @@ structures in \lean{Mathlib.GroupTheory.GroupExtension}:
   \item \lean{SemidirectProduct.toGroupExtension}: the canonical extension
     $1 \to N \to N \rtimes_\varphi G \to G \to 1$.
 \end{itemize}
+\endgroup
 
 Mathlib also provides \lean{surjInvRightHom}, a canonical set-theoretic section
 constructed via \lean{Function.surjInv} (the noncomputable right inverse of a
@@ -1036,8 +1038,8 @@ group extension splitting with cocycle obstructions.
 \paragraph{Scope (arithmetic bridge).}
 Abstract embedding problems and their equivalence with splitting/trivial cocycle are
 formalized here. The repository also contains a \emph{tower} instance
-(\texttt{TowerEmbeddingProblem.lean}: \texttt{towerEmbeddingProblem} and
-\texttt{towerEmbeddingProblem\_solvable\_iff\_trivial\_cocycle}) packaging normal
+(\path{TowerEmbeddingProblem.lean}: \path{towerEmbeddingProblem} and\linebreak
+\path{towerEmbeddingProblem_solvable_iff_trivial_cocycle}) packaging normal
 \lean{IntermediateField} data; this paper focuses on the abstract group-theoretic engine and
 cites the tower layer as companion infrastructure rather than reproducing it in full detail.
 
@@ -1223,8 +1225,8 @@ The following table maps paper theorems to their Lean names and source files.
 All results are fully machine-checked with zero \lean{sorry}.
 
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.14\textwidth}
-  >{\raggedright\arraybackslash}p{0.40\textwidth}
-  >{\raggedright\arraybackslash}p{0.38\textwidth}@{}}
+  >{\raggedright\arraybackslash}p{0.44\textwidth}
+  >{\raggedright\arraybackslash}p{0.34\textwidth}@{}}
 \toprule
 \textbf{Ref.} & \textbf{Lean name} & \textbf{Source file} \\
 \midrule
@@ -1249,7 +1251,7 @@ Thm.~\ref{thm:fiber-nonempty} &
   \lean{FiberArchitecture.lean} \\
 
 Thm.~\ref{thm:hasri} &
-  \lean{rightHom\_surjective\_hasRightInverse} &
+  \path{rightHom_surjective_hasRightInverse} &
   \lean{FiberArchitecture.lean} \\
 
 Def.~\ref{def:kernel-act} &
@@ -1269,7 +1271,7 @@ Thm.~\ref{thm:section-exists} &
   \lean{FiberArchitecture.lean} \\
 
 Thm.~\ref{thm:split-char} &
-  \lean{splitting\_iff\_section\_is\_homomorphism} &
+  \path{splitting_iff_section_is_homomorphism} &
   \lean{FiberArchitecture.lean} \\
 
 Def.~\ref{def:cocycle} &
@@ -1400,13 +1402,14 @@ dependency structure:
 \end{center}
 
 \noindent
-\lean{FiberArchitecture.lean} is the root; it depends only on
-\lean{Mathlib.GroupTheory.GroupExtension.Basic} and
-\lean{Mathlib.Logic.Function.Basic}.  Three additional modules not discussed in
-this paper (\lean{NonAbelianObstruction.lean}, \lean{SchurMultiplier.lean},
-\lean{MathlibAdapter.lean}) explore further directions and adapter patterns.
-The descent module \lean{FaithfullyFlatDescent.lean} is independent, depending
-only on \lean{Mathlib.RingTheory.Flat.FaithfullyFlat.Descent}.
+\path{FiberArchitecture.lean} is the root; it depends only on\linebreak
+\path{Mathlib/GroupTheory/GroupExtension/Basic} and\linebreak
+\path{Mathlib/Logic/Function/Basic}.
+Three additional modules not discussed in this paper
+(\path{NonAbelianObstruction.lean}, \path{SchurMultiplier.lean},
+\path{MathlibAdapter.lean}) explore further directions and adapter patterns.
+The descent module \path{FaithfullyFlatDescent.lean} is independent, depending
+only on\linebreak\path{Mathlib/RingTheory/Flat/FaithfullyFlat/Descent}.
 
 %=======================================================================
 \begin{thebibliography}{99}

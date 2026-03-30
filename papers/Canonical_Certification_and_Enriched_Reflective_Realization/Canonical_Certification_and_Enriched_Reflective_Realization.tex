@@ -77,13 +77,14 @@ The paper's claim (aligned with the title) is a \emph{provable split}: theorem-l
 \subsection{Main results}\label{sec:intro-package}
 \begin{theorem}[Main results]\label{thm:main-results}
 Fix a compression architecture $A$ and the standard Phase-2 / roles+extraction interfaces of the development. Let $\pi_A : \mathcal{E}(A) \to \mathcal{B}_{\mathrm{can}}(A)$ be the forgetful map \emph{(\Cref{sec:framework-notation})}. The load-bearing spine is:
-\begin{enumerate}[label=(\arabic*)]
-    \item \textbf{Collapse / canonical certification:} for all skeletons $s$ and extractions $H$, $\mathrm{admissibleFromSkeleton}(s,H) = b^\ast_A$; all bundled bridge derivations lie in the canonical bare class $\mathrm{Can}$ \emph{(\Cref{thm:canonical-cert-math}, \Cref{thm:ccp-phase2})}.
-    \item \textbf{Reflective split:} for all \texttt{RoleSeparatedSkeleton} inputs and $H$, the standard witness satisfies the autonomous split predicate \emph{(\Cref{thm:reflective-split})}.
+\begin{enumerate}[label=(\arabic*),itemsep=0.35em]
+    \item \textbf{Collapse / canonical certification:} for all skeletons $s$ and extractions $H$,
+    \newline\phantom{m}\ $\mathrm{admissibleFromSkeleton}(s,H) = b^\ast_A$; all bundled bridge derivations lie in the canonical bare class $\mathrm{Can}$ \emph{(\Cref{thm:canonical-cert-math}, \Cref{thm:ccp-phase2})}.
+    \item \textbf{Reflective split:} for all \path{RoleSeparatedSkeleton} inputs and $H$, the standard witness satisfies the autonomous split predicate \emph{(\Cref{thm:reflective-split})}.
     \item \textbf{Upstairs multiplicity (flagship):} $\exists\, m_1 \neq m_2$ with $m_i.\mathsf{bridge}.\mathsf{derivation}$ equal in $\mathcal{B}(A)$ \emph{(\Cref{thm:enriched-irred})}.
     \item \textbf{Strict refinement:} $\exists\, x_1 \neq x_2 \in \mathcal{E}(A)$ with $\pi_A(x_1) = \pi_A(x_2)$ on the NEMS spine; equivalently $\mathrm{ProperExtensionViaForgetful}(\pi_A)$ \emph{(\Cref{thm:strict-refinement})}.
-    \item \textbf{Fiber geometry:} $\lvert \mathrm{Fib}_A(b^\ast_A) \rvert \geq 2$ on NEMS; along \texttt{splitInCanonicalFiber}, role skeletons embed injectively \emph{(\Cref{thm:fiber-nontrivial}, \Cref{thm:role-inject})}.
-    \item \textbf{Generalization:} under \texttt{RolePairDiverseCrownEligible} and any $H$, the same non-injectivity conclusion holds; under \texttt{RoleRichCrownEligible}, nonempty enriched splits are obtained \emph{(\Cref{thm:gen-refinement}, \Cref{def:role-rich})}.
+    \item \textbf{Fiber geometry:} $\lvert \mathrm{Fib}_A(b^\ast_A) \rvert \geq 2$ on NEMS; along \path{splitInCanonicalFiber}, role skeletons embed injectively \emph{(\Cref{thm:fiber-nontrivial}, \Cref{thm:role-inject})}.
+    \item \textbf{Generalization:} under \path{RolePairDiverseCrownEligible} and any $H$, the same non-injectivity conclusion holds; under \path{RoleRichCrownEligible}, nonempty enriched splits are obtained \emph{(\Cref{thm:gen-refinement}, \Cref{def:role-rich})}.
 \end{enumerate}
 \end{theorem}
 
@@ -114,7 +115,9 @@ Companion papers extend the same collapse/refinement/fiber analysis beyond the f
 We state scope early to avoid misreading. We do \emph{not} classify all proof routes in the ambient logic; we do \emph{not} prove surjectivity of role data onto the full fiber; we do \emph{not} assert universal dominance over all formal frameworks; we do \emph{not} claim the strongest possible reflective fixed-point closure. The theorems are conditional on the Infinity Compression architecture, the standard bundle, and the explicit crown-eligible / role hypotheses used in the Lean files. \Cref{sec:limitations} and \Cref{app:collapse-audits} expand this.
 
 \subsection{Why scope does not diminish the result}\label{sec:intro-scope-value}
+\begin{sloppypar}
 The significance of the paper does \emph{not} require classifying every conceivable reflective framework. It lies in isolating and proving a reusable formal pattern---canonical collapse at one carrier, strict refinement via $\pi_A$ at another, fiber-theoretic organization of multiplicity above a canonical base---together with: \emph{(i)}~a sharp structural distinction (certification vs.\ realization); \emph{(ii)}~the right carriers for the phenomenon; \emph{(iii)}~new comparison laws (forgetful map, non-injectivity, partial fiber classification); \emph{(iv)}~a layered theorem architecture that can be audited and reused; and \emph{(v)}~a witness-rich flagship instance plus an honest generalized hypothesis class. That package is the contribution; broader universality is additional mathematics, not a prerequisite for the present theorems to matter.
+\end{sloppypar}
 
 \subsection{Relation to incompleteness, fixed points, and certification}\label{sec:intro-comparison}
 Classical metamathematics supplies \emph{barrier} theorems (diagonalization, incompleteness): they exhibit limits or failures of closure. Fixed-point constructions yield existence of solutions to self-referential equations; certification in verification collapses many proofs to one output certificate. Those modes do not, by themselves, supply a \emph{positive} classification of what remains above a \emph{chosen} canonical certification carrier.
@@ -188,33 +191,37 @@ Results are proved in Lean~4 with dependent types. They concern a \emph{precisel
 Let $A$ be a compression architecture. The Phase-2 construction \texttt{admissibleFromSkeleton} takes a constructive skeleton $s$ and an extraction interface $H$ (supplying the two named shard witnesses) and produces a bare admissible record in $\mathcal{B}(A)$.
 
 \begin{theorem}[Canonical certification / universal collapse]\label{thm:canonical-cert-math}
-For every constructive skeleton $s$ and every \texttt{SummitComponentExtraction} $H$,
+For every constructive skeleton $s$ and every \path{SummitComponentExtraction} $H$,
 \[
   \mathrm{admissibleFromSkeleton}(s,H) = b^\ast_A,
 \]
-the library standard bare record \texttt{admissibleStandard}. In particular, the bare record is independent of $s$ along this interface.
+the library standard bare record \path{admissibleStandard}. In particular, the bare record is independent of $s$ along this interface.
 \end{theorem}
 
-\noindent\emph{Lean:} \texttt{admissibleFrom\_skeleton\_eq\_admissibleStandard} (\texttt{MetaProof/LocalToGlobalDerivation.lean}); proof is \texttt{simp} after unfolding definitions---the mathematical content is that the two \texttt{Prop} fields are fixed targets, so proof irrelevance collapses all variation at \texttt{AdmissibleSummitDerivation}. See \Cref{app:lean-snippets}.
+\noindent\emph{Lean:} \path{admissibleFrom_skeleton_eq_admissibleStandard} (\path{MetaProof/LocalToGlobalDerivation.lean});\linebreak
+proof is \path{simp} after unfolding definitions---the mathematical content is that the two \path{Prop} fields are fixed targets, so proof irrelevance collapses all variation at \path{AdmissibleSummitDerivation}. See \Cref{app:lean-snippets}.
 
 \subsection{Collapse as a structural law, not a bug}\label{sec:canonical-cert-collapse}
 Here collapse is stratification, not failure: the bare carrier is a quotient-level invariant; irreducibility is tracked on proof-relevant types above it (\Cref{sec:contributions-audit}).
 
 \subsection{Canonical certification principle (bundled interfaces)}\label{sec:canonical-cert-principle}
 \begin{definition}[Canonically certified bare record]\label{def:canonical-cert-principle}
-Write $b^\ast_A := \texttt{admissibleStandard}$ for the library standard packaged record. Then $\mathrm{Can}(d)$ means $d = b^\ast_A$; equivalently \texttt{IsCanonicalBareSummitCertification d} (definitionally $d = \texttt{admissibleStandard}$ in \texttt{CanonicalCertification.lean}).
+Write $b^\ast_A := {}$\path{admissibleStandard} for the library standard packaged record.\linebreak
+Then $\mathrm{Can}(d)$ means $d = b^\ast_A$; equivalently \path{IsCanonicalBareSummitCertification}~$d$ (definitionally $d = \text{\path{admissibleStandard}}$ in \path{CanonicalCertification.lean}).
 \end{definition}
 
 \begin{theorem}[Phase-2 canonical certification principle]\label{thm:ccp-phase2}
-For fixed $A$, every \texttt{admissibleFromSkeleton} path and every roles+extraction bridge derivation lands in $\mathrm{Can}$:
+For fixed $A$, every \path{admissibleFromSkeleton} path and every roles+extraction bridge derivation lands in $\mathrm{Can}$:
 \[
-  \forall s,H.\ \mathrm{Can}(\mathrm{admissibleFromSkeleton}(s,H)), \qquad
-  \forall \mathsf{roles},H.\ \mathrm{Can}(\mathsf{SkeletonIndexedComponentWitness}.\mathsf{fromRolesExtraction}(\mathsf{roles},H).\mathsf{derivation}).
+  \begin{aligned}
+    \forall s,H.\ &\mathrm{Can}(\mathrm{admissibleFromSkeleton}(s,H)),\\
+    \forall \mathsf{roles},H.\ &\mathrm{Can}(\mathsf{SkeletonIndexedComponentWitness}.\mathsf{fromRolesExtraction}(\mathsf{roles},H).\mathsf{derivation}).
+  \end{aligned}
 \]
 \end{theorem}
-\noindent Here \texttt{SkeletonIndexedComponentWitness.fromRolesExtraction} is the library's packaged bridge from \texttt{RoleSeparatedSkeleton} + \texttt{SummitComponentExtraction} to a skeleton-indexed witness whose \texttt{derivation} field is the bare record compared in collapse theorems (\texttt{CanonicalCertification.lean}, \texttt{SkeletonIndexedExtractionBridge.lean}).
+\noindent Here \path{SkeletonIndexedComponentWitness.fromRolesExtraction} is the library's packaged bridge from \path{RoleSeparatedSkeleton} + \path{SummitComponentExtraction} to a skeleton-indexed witness whose \path{derivation} field is the bare record compared in collapse theorems (\path{CanonicalCertification.lean}, \path{SkeletonIndexedExtractionBridge.lean}).
 
-\noindent\emph{Lean:} \texttt{canonical\_certification\_principle\_phase2} (\texttt{MetaProof/CanonicalCertification.lean}).
+\noindent\emph{Lean:} \path{canonical_certification_principle_phase2} (\path{MetaProof/CanonicalCertification.lean}).
 
 \subsection{Consequence}\label{sec:canonical-cert-consequence}
 Irreducible comparison problems for reflective structure cannot be stated as distinctions between bare certificates in this standard-bundle regime. They lift to $\mathcal{E}(A)$ and to $\mathrm{Fib}_A(b^\ast_A)$.
@@ -222,21 +229,24 @@ Irreducible comparison problems for reflective structure cannot be stated as dis
 \section{Enriched reflective realization}\label{sec:enriched-realization}
 
 \subsection{Enriched reflective witnesses}\label{sec:enriched-realization-witnesses}
-An \emph{enriched reflective realization} is a proof-relevant witness (Lean: \texttt{ReflectiveMirrorWitness}) packaging a bridge derivation in $\mathcal{B}(A)$ together with role-separated skeleton data, dependency-shape recording, and autonomous-mirror constraints. It is not a mere annotation of a bare record: inequality of witnesses can occur at fixed bare derivation (\Cref{thm:enriched-irred}).
+An \emph{enriched reflective realization} is a proof-relevant witness (Lean: \path{ReflectiveMirrorWitness}) packaging a bridge derivation in $\mathcal{B}(A)$ together with role-separated skeleton data, dependency-shape recording, and autonomous-mirror constraints. It is not a mere annotation of a bare record: inequality of witnesses can occur at fixed bare derivation (\Cref{thm:enriched-irred}).
 
 \subsection{Reflective split theorem}\label{sec:enriched-realization-split}
 \begin{definition}[Reflective split (autonomous)]\label{def:reflective-split}
-A witness $m$ \emph{splits reflectively} when its bridge derivation is canonically certified and $m$ is an autonomous summit mirror (Lean: \texttt{ReflectiveSplitAutonomous}).
+A witness $m$ \emph{splits reflectively} when its bridge derivation is canonically certified and $m$ is an autonomous summit mirror (Lean: \path{ReflectiveSplitAutonomous}).
 \end{definition}
 
 \begin{theorem}[Standard roles + extraction yield split]\label{thm:reflective-split}
-For every \texttt{RoleSeparatedSkeleton} $\rho$ and every \texttt{SummitComponentExtraction} $H$,
-\[
-  \texttt{ReflectiveSplitAutonomous}\bigl(\texttt{ReflectiveMirrorWitness.fromRolesAndExtraction\_standard}(\rho,H)\bigr).
-\]
+For every \path{RoleSeparatedSkeleton} $\rho$ and every \path{SummitComponentExtraction} $H$,
+\begin{equation*}
+\begin{aligned}
+  &\text{\path{ReflectiveSplitAutonomous}}\\
+  &\quad\bigl(\text{\path{ReflectiveMirrorWitness.fromRolesAndExtraction_standard}}(\rho,H)\bigr).
+\end{aligned}
+\end{equation*}
 \end{theorem}
 
-\noindent\emph{Lean:} \texttt{reflective\_split\_from\_roles\_standard} (\texttt{MetaProof/ReflectiveSplit.lean}).
+\noindent\emph{Lean:} \path{reflective_split_from_roles_standard} (\path{MetaProof/ReflectiveSplit.lean}).
 
 \subsection{Upstairs irreducibility (flagship)}\label{sec:enriched-realization-irreducibility}
 \emph{Upstairs irreducibility} means existence of $m_1 \neq m_2$ with the same bridge derivation in $\mathcal{B}(A)$.
@@ -246,7 +256,10 @@ On the NEMS flagship spine, for suitable extraction $H$, there exist standard wi
 $m_1.\mathsf{bridge}.\mathsf{derivation} = m_2.\mathsf{bridge}.\mathsf{derivation}$.
 \end{theorem}
 
-\noindent\emph{Lean:} \texttt{nems\_distinct\_autonomous\_splits\_same\_canonical\_bare} (\texttt{MetaProof/EnrichedIrreducibility.lean}, \textbf{T-C+.5}); proof composes \texttt{reflective\_split\_from\_roles\_standard} with bridge equality from \texttt{skeleton\_indexed\_fromRoles\_derivation\_eq\_admissibleStandard} and witness inequality from \texttt{reflective\_mirror\_from\_roles\_ne\_of\_roles\_ne} + \texttt{nems\_role\_skeletons\_ne}.
+\noindent\emph{Lean:} \path{nems_distinct_autonomous_splits_same_canonical_bare} (\path{MetaProof/EnrichedIrreducibility.lean}, \textbf{T-C+.5});\linebreak
+proof composes \path{reflective_split_from_roles_standard} with bridge equality from\linebreak
+\path{skeleton_indexed_fromRoles_derivation_eq_admissibleStandard} and witness inequality from\linebreak
+\path{reflective_mirror_from_roles_ne_of_roles_ne} + \path{nems_role_skeletons_ne}.
 
 \subsection{Corollary (theorem-derived)}\label{sec:enriched-realization-interpretation}
 \begin{corollary}[Canonicality of certification does not imply uniqueness of realization]\label{cor:cert-not-unique}
@@ -256,21 +269,21 @@ Bare derivation equality does not force witness equality. \Cref{thm:enriched-irr
 \section{Strict refinement of enriched reflective routes}\label{sec:strict-refinement}
 
 \subsection{Typed route spaces}\label{sec:strict-refinement-routes}
-Work with subtypes for clean equality: $\mathcal{B}_{\mathrm{can}}(A)$ is implemented as \texttt{BareCanonicalCertificate} (bare derivation + \texttt{IsCanonicalBareSummitCertification}), and $\mathcal{E}(A)$ as \texttt{EnrichedReflectiveSplit} (witness + \texttt{ReflectiveSplitAutonomous}). This keeps the comparison map $\pi_A$ a genuine function on typed carriers rather than a loose informal ``forgetting.''
+Work with subtypes for clean equality: $\mathcal{B}_{\mathrm{can}}(A)$ is implemented as \path{BareCanonicalCertificate} (bare derivation + \path{IsCanonicalBareSummitCertification}), and $\mathcal{E}(A)$ as \path{EnrichedReflectiveSplit} (witness + \path{ReflectiveSplitAutonomous}). This keeps the comparison map $\pi_A$ a genuine function on typed carriers rather than a loose informal ``forgetting.''
 
 \subsection{The forgetful map as organizing object}\label{sec:strict-refinement-forgetful}
 Define $\pi_A : \mathcal{E}(A) \to \mathcal{B}_{\mathrm{can}}(A)$ by
 \[
   \pi_A(x) := \bigl(x.\mathsf{val}.\mathsf{bridge}.\mathsf{derivation},\ \text{witness of canonicity}\bigr).
 \]
-Soundness is layered: \textbf{no-loss to canonicity} (\texttt{reflective\_split\_forgets\_to\_canonical}, \textbf{T-DQ4.1}); \textbf{alignment of the forgetful projection with \texttt{bridge.derivation}} (\texttt{forgetToBareCanonical\_sound}, \textbf{T-DQ4.2}); and equality of forgetful images from equal bridge derivations (\texttt{forgetToBareCanonical\_eq\_of\_bridge\_derivation\_eq}). On the standard development, enriched splits built from roles+extraction forget to \texttt{canonicalBareCertificate} (\texttt{enriched\_reflective\_split\_forgets\_to\_canonical\_bare\_certificate}, \texttt{from\_roles\_standard\_forgets\_to\_canonical\_bare\_certificate}).
+Soundness is layered: \textbf{no-loss to canonicity} (\path{reflective_split_forgets_to_canonical}, \textbf{T-DQ4.1}); \textbf{alignment of the forgetful projection with \path{bridge.derivation}} (\path{forgetToBareCanonical_sound}, \textbf{T-DQ4.2}); and equality of forgetful images from equal bridge derivations (\path{forgetToBareCanonical_eq_of_bridge_derivation_eq}). On the standard development, enriched splits built from roles+extraction forget to \path{canonicalBareCertificate} (\path{enriched_reflective_split_forgets_to_canonical_bare_certificate}, \path{from_roles_standard_forgets_to_canonical_bare_certificate}).
 
 \subsection{Strict refinement (non-injectivity)}\label{sec:strict-refinement-thm}
 \begin{theorem}[Strict refinement / proper extension on NEMS]\label{thm:strict-refinement}
 There exist $x_1 \neq x_2 \in \mathcal{E}(A_{\mathrm{NEMS}})$ with $\pi_{A_{\mathrm{NEMS}}}(x_1) = \pi_{A_{\mathrm{NEMS}}}(x_2)$.
 \end{theorem}
 
-\noindent\emph{Lean:} \texttt{nems\_reflective\_route\_not\_injective\_to\_bare} and \texttt{nems\_reflective\_route\_strictly\_refines\_bare}, the latter repackaging the former as \texttt{ProperExtensionViaForgetful} (``$\exists x_1 \neq x_2,\ \pi(x_1)=\pi(x_2)$'').
+\noindent\emph{Lean:} \path{nems_reflective_route_not_injective_to_bare} and \path{nems_reflective_route_strictly_refines_bare}, the latter repackaging the former as \path{ProperExtensionViaForgetful} (``$\exists x_1 \neq x_2,\ \pi(x_1)=\pi(x_2)$'').
 
 \subsection{Why non-injectivity is the right strictness notion}\label{sec:strict-refinement-why}
 Injective $\pi_A$ would mean enriched data is (recoverably) a function of bare certification; then the enriched layer would be redundant up to encoding. Non-injectivity is the precise statement that \emph{more than one} enriched solution exists over the same certified base---a failure of uniqueness for realization even when certification is unique. This matches the fiber viewpoint: fibers have cardinality $>1$ iff $\pi_A$ is not injective over the relevant preimage problem.
@@ -281,17 +294,17 @@ Injective $\pi_A$ would mean enriched data is (recoverably) a function of bare c
 \section{Fiber structure and partial classification}\label{sec:fiber-structure}
 
 \subsection{Basepoint and preimage}\label{sec:fiber-structure-lang}
-Fix $b \in \mathcal{B}_{\mathrm{can}}(A)$. The \emph{fiber} of $\pi_A$ at $b$ is $\mathrm{Fib}_A(b)=\pi_A^{-1}(b)$, implemented as a subtype (\texttt{fiberAtBare}). Program~C+ collapse implies that for standard enriched routes, $\pi_A(x)$ is the distinguished basepoint $b^\ast_A$ (\texttt{canonicalBareCertificate}); thus the induced classification problem is not ``all fibers in sight'' but the \emph{canonical} fiber $\mathrm{Fib}_A(b^\ast_A)$.
+Fix $b \in \mathcal{B}_{\mathrm{can}}(A)$. The \emph{fiber} of $\pi_A$ at $b$ is $\mathrm{Fib}_A(b)=\pi_A^{-1}(b)$, implemented as a subtype (\path{fiberAtBare}). Program~C+ collapse implies that for standard enriched routes, $\pi_A(x)$ is the distinguished basepoint $b^\ast_A$ (\path{canonicalBareCertificate}); thus the induced classification problem is not ``all fibers in sight'' but the \emph{canonical} fiber $\mathrm{Fib}_A(b^\ast_A)$.
 
 \subsection{Nontriviality}\label{sec:fiber-structure-nontrivial}
 \begin{theorem}[Nontrivial canonical fiber (NEMS)]\label{thm:fiber-nontrivial}
 For suitable $H$, the set $\mathrm{Fib}_{A_{\mathrm{NEMS}}}(b^\ast_{A_{\mathrm{NEMS}}})$ contains at least two distinct points.
 \end{theorem}
 
-\noindent\emph{Lean:} \texttt{nems\_fiber\_over\_canonical\_nontrivial} (\texttt{MetaProof/ReflectiveFiberClassification.lean}), repackaging non-injectivity of $\pi$ as inequality of fiber points.
+\noindent\emph{Lean:} \path{nems_fiber_over_canonical_nontrivial} (\path{MetaProof/ReflectiveFiberClassification.lean}), repackaging non-injectivity of $\pi$ as inequality of fiber points.
 
 \subsection{What is (and is not) classified}\label{sec:fiber-structure-classification}
-We do \emph{not} classify all of $\mathrm{Fib}_A(b^\ast_A)$, establish surjectivity of roles onto the fiber, or list all enriched splits. What we prove is a \textbf{role-sensitive partial classification} on the standard subfamily ``roles + extraction + split hypothesis'': embedding roles into the fiber along \texttt{splitInCanonicalFiber} is injective.
+We do \emph{not} classify all of $\mathrm{Fib}_A(b^\ast_A)$, establish surjectivity of roles onto the fiber, or list all enriched splits. What we prove is a \textbf{role-sensitive partial classification} on the standard subfamily ``roles + extraction + split hypothesis'': embedding roles into the fiber along \path{splitInCanonicalFiber} is injective.
 
 \begin{theorem}[Role injection into canonical fiber (general + NEMS corollary)]\label{thm:role-inject}
 Let $H$ be fixed; let $\mathsf{splitInCanonicalFiber}(H,\mathsf{roles},\mathsf{hs})$ denote the standard fiber point from roles + split data. For all $\mathsf{roles}_1,\mathsf{roles}_2$ and admissible split hypotheses $\mathsf{hs}_1,\mathsf{hs}_2$,
@@ -300,7 +313,8 @@ Let $H$ be fixed; let $\mathsf{splitInCanonicalFiber}(H,\mathsf{roles},\mathsf{h
   \implies \mathsf{roles}_1 = \mathsf{roles}_2.
 \]
 \end{theorem}
-\noindent\emph{Lean:} \texttt{splitInCanonicalFiber\_roles\_injective} (\textbf{T-FC.4}); NEMS corollary \texttt{nems\_roles\_injective\_into\_canonical\_fiber}. Distinct roles yield distinct fiber points via \texttt{nems\_distinct\_roles\_distinct\_fiber\_points} (\textbf{T-FC.2}).
+\noindent\emph{Lean:} \path{splitInCanonicalFiber_roles_injective} (\textbf{T-FC.4}); NEMS corollary \path{nems_roles_injective_into_canonical_fiber}.\linebreak
+Distinct roles yield distinct fiber points via \path{nems_distinct_roles_distinct_fiber_points} (\textbf{T-FC.2}).
 
 \subsection{Consequence}\label{sec:fiber-structure-interpretation}
 Along the standard embedding, roles coordinate distinct fiber points; full enumeration of $\mathrm{Fib}_A(b^\ast_A)$ remains open (\Cref{sec:limitations}).
@@ -308,31 +322,36 @@ Along the standard embedding, roles coordinate distinct fiber points; full enume
 \section{Flagship architecture and structural generalization}\label{sec:flagship}
 
 \subsection{Canonical flagship instance (NEMS spine)}\label{sec:flagship-instance}
-The \textbf{NEMS spine} is used not as external authority but as a \emph{witness-rich}, fully formalized architecture: explicit \texttt{RoleSeparatedSkeleton} data, crown-eligible hypotheses, dual poles, and bridge lemmas feeding Program~C+. Its role is analogous to a canonical model in algebra or logic: it shows the abstract structural law is \emph{non-vacuous} and supports the strongest concrete witness theorems in the paper (\Cref{thm:enriched-irred}, \Cref{thm:strict-refinement}, \Cref{thm:fiber-nontrivial}) under explicit extraction hypotheses. It is not assumed universal; it is the first inhabited model in which the phenomenon is exhibited with full skeletal and bridge detail.
+The \textbf{NEMS spine} is used not as external authority but as a \emph{witness-rich}, fully formalized architecture: explicit \path{RoleSeparatedSkeleton} data, crown-eligible hypotheses, dual poles, and bridge lemmas feeding Program~C+.\linebreak
+Its role is analogous to a canonical model in algebra or logic: it shows the abstract structural law is \emph{non-vacuous} and supports the strongest concrete witness theorems in the paper (\Cref{thm:enriched-irred}, \Cref{thm:strict-refinement}, \Cref{thm:fiber-nontrivial}) under explicit extraction hypotheses. It is not assumed universal; it is the first inhabited model in which the phenomenon is exhibited with full skeletal and bridge detail.
 
 \subsection{Why the flagship matters}\label{sec:flagship-matters}
 A comparison law with no inhabited instance would risk vacuity. NEMS forces the split/refinement/fiber pattern in a completely specified development---not a hypothetical sketch.
 
 \subsection{Generalized classes: honest intermediates}\label{sec:flagship-generalization}
 \begin{definition}[Role-rich / role-pair-diverse crown eligibility]\label{def:role-rich}
-\emph{Role-rich crown eligibility} (\texttt{RoleRichCrownEligible}) is \texttt{CrownEligible} together with \texttt{Nonempty (RoleSeparatedSkeleton A)}. \emph{Role-pair-diverse crown eligibility} (\texttt{RolePairDiverseCrownEligible}) is \texttt{CrownEligible} together with \emph{two} distinct \texttt{RoleSeparatedSkeleton} values---the minimal explicit ``two upstairs coordinates'' hypothesis for generic strict refinement (\texttt{GeneralizedReflectiveFiberRefinement.lean}).
+\emph{Role-rich crown eligibility} (\path{RoleRichCrownEligible}) is \path{CrownEligible} together with \path{Nonempty}\allowbreak\ (\path{RoleSeparatedSkeleton}~$A$). \emph{Role-pair-diverse crown eligibility} (\path{RolePairDiverseCrownEligible}) is \path{CrownEligible} together with \emph{two} distinct \path{RoleSeparatedSkeleton} values---the minimal explicit ``two upstairs coordinates'' hypothesis for generic strict refinement (\path{GeneralizedReflectiveFiberRefinement.lean}).
 \end{definition}
 
 \begin{theorem}[Generalized strict refinement]\label{thm:gen-refinement}
-If $A$ satisfies \texttt{RolePairDiverseCrownEligible} and $H : \texttt{SummitComponentExtraction}\,A$, then
+If $A$ satisfies \path{RolePairDiverseCrownEligible} and $H : \text{\path{SummitComponentExtraction}}\,A$, then
 \[
   \exists\, x_1 \neq x_2 \in \mathcal{E}(A),\quad \pi_A(x_1) = \pi_A(x_2),
 \]
-and hence \texttt{ProperExtensionViaForgetful} holds for $\pi_A$.
+and hence \path{ProperExtensionViaForgetful} holds for $\pi_A$.
 \end{theorem}
 
-\noindent\emph{Lean:} \texttt{role\_pair\_diverse\_crown\_eligible\_strict\_refinement} (\textbf{T-GR.3}), \texttt{role\_pair\_diverse\_crown\_eligible\_proper\_extension\_forget} (\textbf{T-GR.4}, \texttt{ProperExtensionViaForgetful}); NEMS instances \texttt{nems\_role\_pair\_diverse\_strict\_refinement}, \texttt{nems\_spine\_role\_pair\_diverse\_crown\_eligible} (\textbf{T-GR.7}). Role-rich: \texttt{role\_rich\_crown\_eligible\_obtains\_enriched\_reflective\_split} (\textbf{T-GR.1}), \texttt{role\_rich\_crown\_eligible\_nonempty\_enriched\_split}. Generalized fiber injection alias: \texttt{generalized\_role\_injection\_into\_canonical\_fiber} (\textbf{T-GR.5}, restates \textbf{T-FC.4}).
+\begin{sloppypar}
+\noindent\emph{Lean:} \path{role_pair_diverse_crown_eligible_strict_refinement} (\textbf{T-GR.3}), \path{role_pair_diverse_crown_eligible_proper_extension_forget} (\textbf{T-GR.4}, \path{ProperExtensionViaForgetful}); NEMS instances \path{nems_role_pair_diverse_strict_refinement}, \path{nems_spine_role_pair_diverse_crown_eligible} (\textbf{T-GR.7}). Role-rich: \path{role_rich_crown_eligible_obtains_enriched_reflective_split} (\textbf{T-GR.1}), \path{role_rich_crown_eligible_nonempty_enriched_split}. Generalized fiber injection alias: \path{generalized_role_injection_into_canonical_fiber} (\textbf{T-GR.5}, restates \textbf{T-FC.4}).
+\end{sloppypar}
 
-\subsection{Why not stop at \texttt{CrownEligible} alone?}\label{sec:flagship-why-not-crown}
-\texttt{CrownEligible} alone does not assert two distinct \texttt{RoleSeparatedSkeleton} values. \Cref{thm:gen-refinement} needs a pair $(r_1,r_2)$ with $r_1 \neq r_2$ so that \texttt{reflective\_mirror\_from\_roles\_ne\_of\_roles\_ne} can separate witnesses while \texttt{skeleton\_indexed\_fromRoles\_derivation\_eq\_admissibleStandard} collapses the bare bridge---that is exactly \texttt{RolePairDiverseCrownEligible}. This is weaker than classifying $\mathrm{Fib}_A(b^\ast_A)$.
+\subsection[Why not stop at CrownEligible alone?]{Why not stop at \path{CrownEligible} alone?}\label{sec:flagship-why-not-crown}
+\path{CrownEligible} alone does not assert two distinct \path{RoleSeparatedSkeleton} values. \Cref{thm:gen-refinement} needs a pair $(r_1,r_2)$ with $r_1 \neq r_2$ so that \path{reflective_mirror_from_roles_ne_of_roles_ne} can separate witnesses while\linebreak
+\path{skeleton_indexed_fromRoles_derivation_eq_admissibleStandard} collapses the bare bridge---that is exactly \path{RolePairDiverseCrownEligible}. This is weaker than classifying $\mathrm{Fib}_A(b^\ast_A)$.
 
 \subsection{Concrete and abstract together}\label{sec:flagship-concrete-abstract}
-The generalized theorems are not ``more fundamental'' than the flagship: \Cref{thm:gen-refinement} isolates the \emph{structural conditions} (crown + two distinct role skeletons + extraction) under which the same non-injectivity pattern necessarily appears. The NEMS spine is the canonical \emph{witness-rich} instance: fully named architectures, explicit skeletons, and the strongest concrete equalities in \Cref{thm:enriched-irred}--\Cref{thm:fiber-nontrivial}. Those flagship results are not mere corollaries of a weaker abstraction---they are the reference model; \texttt{nems\_spine\_role\_pair\_diverse\_crown\_eligible} shows NEMS satisfies the hypotheses of \Cref{thm:gen-refinement}, linking abstract law to inhabited structure.
+The generalized theorems are not ``more fundamental'' than the flagship: \Cref{thm:gen-refinement} isolates the \emph{structural conditions} (crown + two distinct role skeletons + extraction) under which the same non-injectivity pattern necessarily appears. The NEMS spine is the canonical \emph{witness-rich} instance: fully named architectures, explicit skeletons, and the strongest concrete equalities in \Cref{thm:enriched-irred}--\Cref{thm:fiber-nontrivial}. Those flagship results are not mere corollaries of a weaker abstraction---they are the reference model;\linebreak
+\path{nems_spine_role_pair_diverse_crown_eligible} shows NEMS satisfies the hypotheses of \Cref{thm:gen-refinement}, linking abstract law to inhabited structure.
 
 \section{Architectural and methodological contributions}\label{sec:contributions}
 
@@ -414,10 +433,11 @@ This paper's local result, in one line of audit language: Phase-2 collapse at th
 
 \section[Theorem index (paper and Lean)]{Theorem and definition index (paper \texorpdfstring{$\leftrightarrow$}{<->} Lean)}\label{app:theorem-index}
 
-{\footnotesize\raggedright
-\begin{longtable}{@{}p{0.13\textwidth}p{0.33\textwidth}p{0.26\textwidth}p{0.24\textwidth}@{}}
+{\scriptsize\raggedright
+\setlength{\tabcolsep}{1.5pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.09\textwidth}>{\raggedright\arraybackslash}p{0.19\textwidth}>{\raggedright\arraybackslash}p{0.36\textwidth}>{\raggedright\arraybackslash}p{0.31\textwidth}@{}}
 \toprule
-\textbf{Paper ref.} & \textbf{Informal statement} & \textbf{Lean name} & \textbf{Module (under \texttt{InfinityCompression/})} \\
+\textbf{Paper ref.} & \textbf{Informal statement} & \textbf{Lean name} & \textbf{Module (under \path{InfinityCompression/})} \\
 \midrule
 \endfirsthead
 \toprule
@@ -426,38 +446,38 @@ This paper's local result, in one line of audit language: Phase-2 collapse at th
 \endhead
 \bottomrule
 \endlastfoot
-\Cref{thm:canonical-cert-math} & Phase-2 skeleton path equals \texttt{admissibleStandard} & \texttt{admissibleFrom\_skeleton\_eq\_admissibleStandard} (\textbf{T-P3.7}) & \texttt{MetaProof/LocalToGlobalDerivation.lean} \\
---- & Corollary: skeleton-irrelevant equality & \texttt{admissibleFrom\_skeleton\_eq\_irrespective\_of\_skeleton} & same \\
-\Cref{thm:ccp-phase2} & Bundled Phase-2 + roles bridge canonicality & \texttt{canonical\_certification\_principle\_phase2} (\textbf{T-C+.1}) & \texttt{MetaProof/CanonicalCertification.lean} \\
---- & Bridge derivation canonical & \texttt{fromRoles\_extraction\_bridge\_derivation\_canonical} & same \\
-\Cref{def:canonical-cert-principle} & ``Bare equals standard'' predicate & \texttt{IsCanonicalBareSummitCertification} (\textbf{D-C+.1}) & same \\
-\Cref{thm:reflective-split} & Standard roles+extraction $\Rightarrow$ split & \texttt{reflective\_split\_from\_roles\_standard} (\textbf{T-C+.3}) & \texttt{MetaProof/ReflectiveSplit.lean} \\
---- & Split predicate & \texttt{ReflectiveSplitAutonomous} & same \\
---- & Witness type & \texttt{ReflectiveMirrorWitness}, \texttt{fromRolesAndExtraction\_standard} & \texttt{MetaProof/ReflectiveMirrorWitness.lean} \\
-\Cref{thm:enriched-irred} & Two splits, same bare derivation, witnesses $\neq$ & \texttt{nems\_distinct\_autonomous\_splits\_same\_canonical\_bare} (\textbf{T-C+.5}) & \texttt{MetaProof/EnrichedIrreducibility.lean} \\
---- & Non-monopolarity on standard shape & \texttt{autonomous\_reflective\_split\_records\_non\_monopolar\_standard} (\textbf{T-C+.4}) & same \\
+\Cref{thm:canonical-cert-math} & Phase-2 skeleton path equals \path{admissibleStandard} & \path{admissibleFrom_skeleton_eq_admissibleStandard} (\textbf{T-P3.7}) & \path{MetaProof/LocalToGlobalDerivation.lean} \\
+--- & Corollary: skeleton-irrelevant equality & \path{admissibleFrom_skeleton_eq_irrespective_of_skeleton} & same \\
+\Cref{thm:ccp-phase2} & Bundled Phase-2 + roles bridge canonicality & \path{canonical_certification_principle_phase2} (\textbf{T-C+.1}) & \path{MetaProof/CanonicalCertification.lean} \\
+--- & Bridge derivation canonical & \path{fromRoles_extraction_bridge_derivation_canonical} & same \\
+\Cref{def:canonical-cert-principle} & ``Bare equals standard'' predicate & \path{IsCanonicalBareSummitCertification} (\textbf{D-C+.1}) & same \\
+\Cref{thm:reflective-split} & Standard roles+extraction $\Rightarrow$ split & \path{reflective_split_from_roles_standard} (\textbf{T-C+.3}) & \path{MetaProof/ReflectiveSplit.lean} \\
+--- & Split predicate & \path{ReflectiveSplitAutonomous} & same \\
+--- & Witness type & \path{ReflectiveMirrorWitness}, \path{fromRolesAndExtraction_standard} & \path{MetaProof/ReflectiveMirrorWitness.lean} \\
+\Cref{thm:enriched-irred} & Two splits, same bare derivation, witnesses $\neq$ & \path{nems_distinct_autonomous_splits_same_canonical_bare} (\textbf{T-C+.5}) & \path{MetaProof/EnrichedIrreducibility.lean} \\
+--- & Non-monopolarity on standard shape & \path{autonomous_reflective_split_records_non_monopolar_standard} (\textbf{T-C+.4}) & same \\
 \multicolumn{4}{@{}l}{\textit{Route comparison (EPIC\_008 / DQ4)}} \\
---- & Typed bare/enriched routes & \texttt{BareCanonicalCertificate}, \texttt{EnrichedReflectiveSplit} (\textbf{D-DQ4.1--2}) & \texttt{MetaProof/ReflectiveRouteComparison.lean} \\
---- & Proper extension predicate & \texttt{ProperExtensionViaForgetful} (\textbf{D-DQ4.4}) & same \\
---- & Forgetful map $\pi_A$ & \texttt{forgetToBareCanonical} (\textbf{D-DQ4.3}) & same \\
---- & No-loss + soundness & \texttt{reflective\_split\_forgets\_to\_canonical}, \texttt{forgetToBareCanonical\_sound} & same \\
-\Cref{thm:strict-refinement} & Non-injectivity / strict refinement NEMS & \texttt{nems\_reflective\_route\_not\_injective\_to\_bare}, \texttt{nems\_reflective\_route\_strictly\_refines\_bare} & same \\
+--- & Typed bare/enriched routes & \path{BareCanonicalCertificate}, \path{EnrichedReflectiveSplit} (\textbf{D-DQ4.1--2}) & \path{MetaProof/ReflectiveRouteComparison.lean} \\
+--- & Proper extension predicate & \path{ProperExtensionViaForgetful} (\textbf{D-DQ4.4}) & same \\
+--- & Forgetful map $\pi_A$ & \path{forgetToBareCanonical} (\textbf{D-DQ4.3}) & same \\
+--- & No-loss + soundness & \path{reflective_split_forgets_to_canonical}, \path{forgetToBareCanonical_sound} & same \\
+\Cref{thm:strict-refinement} & Non-injectivity / strict refinement NEMS & \path{nems_reflective_route_not_injective_to_bare}, \path{nems_reflective_route_strictly_refines_bare} & same \\
 \multicolumn{4}{@{}l}{\textit{Fiber classification (EPIC\_009 / FC8)}} \\
-\Cref{thm:fiber-nontrivial} & $\lvert \mathrm{Fib}(b^\ast)\rvert \geq 2$ on NEMS & \texttt{nems\_fiber\_over\_canonical\_nontrivial} (\textbf{T-FC.3}) & \texttt{MetaProof/ReflectiveFiberClassification.lean} \\
---- & Forget to canonical bare certificate & \texttt{enriched\_reflective\_split\_forgets\_to\_canonical\_bare\_certificate} (\textbf{T-FC.1a}) & same \\
---- & Distinct roles $\Rightarrow$ distinct fiber points & \texttt{nems\_distinct\_roles\_distinct\_fiber\_points} (\textbf{T-FC.2}) & same \\
-\Cref{thm:role-inject} & Roles injective into fiber embedding & \texttt{splitInCanonicalFiber\_roles\_injective} (\textbf{T-FC.4}) & same \\
---- & NEMS corollary & \texttt{nems\_roles\_injective\_into\_canonical\_fiber} & same \\
---- & Fiber / basepoint & \texttt{fiberAtBare}, \texttt{canonicalBareCertificate}, \texttt{splitInCanonicalFiber} & same \\
+\Cref{thm:fiber-nontrivial} & $\lvert \mathrm{Fib}(b^\ast)\rvert \geq 2$ on NEMS & \path{nems_fiber_over_canonical_nontrivial} (\textbf{T-FC.3}) & \path{MetaProof/ReflectiveFiberClassification.lean} \\
+--- & Forget to canonical bare certificate & \path{enriched_reflective_split_forgets_to_canonical_bare_certificate} (\textbf{T-FC.1a}) & same \\
+--- & Distinct roles $\Rightarrow$ distinct fiber points & \path{nems_distinct_roles_distinct_fiber_points} (\textbf{T-FC.2}) & same \\
+\Cref{thm:role-inject} & Roles injective into fiber embedding & \path{splitInCanonicalFiber_roles_injective} (\textbf{T-FC.4}) & same \\
+--- & NEMS corollary & \path{nems_roles_injective_into_canonical_fiber} & same \\
+--- & Fiber / basepoint & \path{fiberAtBare}, \path{canonicalBareCertificate}, \path{splitInCanonicalFiber} & same \\
 \multicolumn{4}{@{}l}{\textit{Generalized refinement (EPIC\_010 / GR2)}} \\
-\Cref{thm:gen-refinement} & Pair-diverse $\Rightarrow$ strict refinement & \texttt{role\_pair\_diverse\_crown\_eligible\_strict\_refinement} (\textbf{T-GR.3}) & \texttt{MetaProof/GeneralizedReflectiveFiberRefinement.lean} \\
---- & Pair-diverse $\Rightarrow$ \texttt{ProperExtensionViaForgetful} & \texttt{role\_pair\_diverse\_crown\_eligible\_proper\_extension\_forget} (\textbf{T-GR.4}) & same \\
-\Cref{def:role-rich} & Intermediate hypotheses & \texttt{RoleRichCrownEligible}, \texttt{RolePairDiverseCrownEligible} & same \\
---- & NEMS satisfies hypotheses & \texttt{nems\_spine\_role\_rich\_crown\_eligible}, \texttt{nems\_spine\_role\_pair\_diverse\_crown\_eligible} (\textbf{T-GR.7}) & same \\
---- & Role-rich $\Rightarrow$ nonempty splits & \texttt{role\_rich\_crown\_eligible\_obtains\_enriched\_reflective\_split} (\textbf{T-GR.1}) & same \\
---- & Generalized injection alias & \texttt{generalized\_role\_injection\_into\_canonical\_fiber} (\textbf{T-GR.5}) & same \\
+\Cref{thm:gen-refinement} & Pair-diverse $\Rightarrow$ strict refinement & \path{role_pair_diverse_crown_eligible_strict_refinement} (\textbf{T-GR.3}) & \path{MetaProof/GeneralizedReflectiveFiberRefinement.lean} \\
+--- & Pair-diverse $\Rightarrow$ \path{ProperExtensionViaForgetful} & \path{role_pair_diverse_crown_eligible_proper_extension_forget} (\textbf{T-GR.4}) & same \\
+\Cref{def:role-rich} & Intermediate hypotheses & \path{RoleRichCrownEligible}, \path{RolePairDiverseCrownEligible} & same \\
+--- & NEMS satisfies hypotheses & \path{nems_spine_role_rich_crown_eligible}, \path{nems_spine_role_pair_diverse_crown_eligible} (\textbf{T-GR.7}) & same \\
+--- & Role-rich $\Rightarrow$ nonempty splits & \path{role_rich_crown_eligible_obtains_enriched_reflective_split} (\textbf{T-GR.1}) & same \\
+--- & Generalized injection alias & \path{generalized_role_injection_into_canonical_fiber} (\textbf{T-GR.5}) & same \\
 \multicolumn{4}{@{}l}{\textit{Bridge collapse used throughout}} \\
---- & Roles+extraction derivation collapse & \texttt{skeleton\_indexed\_fromRoles\_derivation\_eq\_admissibleStandard} (\textbf{T-P3.5c}) & \texttt{MetaProof/SkeletonIndexedExtractionBridge.lean} \\
+--- & Roles+extraction derivation collapse & \path{skeleton_indexed_fromRoles_derivation_eq_admissibleStandard} (\textbf{T-P3.5c}) & \path{MetaProof/SkeletonIndexedExtractionBridge.lean} \\
 \end{longtable}
 }
 
@@ -467,46 +487,50 @@ The verified Infinity Compression library spans landscape/summit statements, rou
 \medskip
 \noindent Layers are \emph{logical} (not a runtime stack):
 
+\begin{sloppypar}
 \begin{itemize}
-  \item \textbf{Summit / landscape (\texttt{Frontier/}):} principal certified invariant statements (e.g.\ \texttt{ic\_universal\_theorem\_summit}, \texttt{ICUniversalTheorem.lean}); landscape aggregation; anti-translation abstracts.
-  \item \textbf{Route B meta (\texttt{MetaProof/}):} summit bundles (\texttt{SummitTargets}), dependency shape (\texttt{DependencyShape}), admissible records (\texttt{AdmissibleDerivations}), route-B first theorems (\texttt{RouteBFirstTheorems}). Feeds Phase-2 extraction.
-  \item \textbf{Crown / derivation necessity:} \texttt{CrownEligible}, \texttt{ArchitectureDerivationCorrespondence}, \texttt{DerivationNecessity}, \texttt{DerivationInevitability}, \texttt{MetaCrown}.
-  \item \textbf{Program~E / 006E (supporting):} \texttt{ProgramECrownSummit}, \texttt{ProgramE006EReflectiveFixedPoint}---summit-capable mirrors and reflective fixed-point packaging; cited in the paper as \emph{infrastructure}, not as the main headline.
-  \item \textbf{Post-summit autonomous mirror:} \texttt{ReflectiveMirrorWitness}, \texttt{AutonomousMirrorConstruction}; standard bridge lemmas (\texttt{reflective\_mirror\_bridge\_derivation\_eq\_admissibleStandard}).
-  \item \textbf{Program~C+ (this paper's core):} \texttt{CanonicalCertification}, \texttt{ReflectiveSplit}, \texttt{EnrichedIrreducibility}, \texttt{SkeletonIndexedExtractionBridge}, \texttt{LocalToGlobalDerivation}.
-  \item \textbf{Route comparison (EPIC\_008):} \texttt{ReflectiveRouteComparison}---\texttt{forgetToBareCanonical}, \texttt{ProperExtensionViaForgetful}.
-  \item \textbf{Fiber classification (EPIC\_009):} \texttt{ReflectiveFiberClassification}---\texttt{fiberAtBare}, \texttt{splitInCanonicalFiber}, role injection.
-  \item \textbf{Generalized refinement (EPIC\_010):} \texttt{GeneralizedReflectiveFiberRefinement}---\texttt{RoleRichCrownEligible}, \texttt{RolePairDiverseCrownEligible} and generic strict refinement.
+  \item \textbf{Summit / landscape (\path{Frontier/}):} principal certified invariant statements (e.g.\ \path{ic_universal_theorem_summit}, \path{ICUniversalTheorem.lean}); landscape aggregation; anti-translation abstracts.
+  \item \textbf{Route B meta (\path{MetaProof/}):} summit bundles (\path{SummitTargets}), dependency shape (\path{DependencyShape}), admissible records (\path{AdmissibleDerivations}), route-B first theorems (\path{RouteBFirstTheorems}). Feeds Phase-2 extraction.
+  \item \textbf{Crown / derivation necessity:} \path{CrownEligible}, \path{ArchitectureDerivationCorrespondence}, \path{DerivationNecessity}, \path{DerivationInevitability}, \path{MetaCrown}.
+  \item \textbf{Program~E / 006E (supporting):} \path{ProgramECrownSummit}, \path{ProgramE006EReflectiveFixedPoint}---summit-capable mirrors and reflective fixed-point packaging; cited in the paper as \emph{infrastructure}, not as the main headline.
+  \item \textbf{Post-summit autonomous mirror:} \path{ReflectiveMirrorWitness}, \path{AutonomousMirrorConstruction}; standard bridge lemmas (\path{reflective_mirror_bridge_derivation_eq_admissibleStandard}).
+  \item \textbf{Program~C+ (this paper's core):} \path{CanonicalCertification}, \path{ReflectiveSplit}, \path{EnrichedIrreducibility}, \path{SkeletonIndexedExtractionBridge}, \path{LocalToGlobalDerivation}.
+  \item \textbf{Route comparison (EPIC\_008):} \path{ReflectiveRouteComparison}---\path{forgetToBareCanonical}, \path{ProperExtensionViaForgetful}.
+  \item \textbf{Fiber classification (EPIC\_009):} \path{ReflectiveFiberClassification}---\path{fiberAtBare}, \path{splitInCanonicalFiber}, role injection.
+  \item \textbf{Generalized refinement (EPIC\_010):} \path{GeneralizedReflectiveFiberRefinement}---\path{RoleRichCrownEligible}, \path{RolePairDiverseCrownEligible} and generic strict refinement.
 \end{itemize}
+\end{sloppypar}
 
 \section{Collapse audits, falsified hypotheses, and open packaging}\label{app:collapse-audits}
 
 \begin{table}[htbp]
 \centering
 \footnotesize
-\begin{tabular}{@{}p{0.22\textwidth}p{0.34\textwidth}p{0.38\textwidth}@{}}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedright\arraybackslash}p{0.31\textwidth}>{\raggedright\arraybackslash}p{0.31\textwidth}@{}}
 \toprule
 \textbf{Carrier / layer} & \textbf{Rigidity (what collapses)} & \textbf{Where comparison structure lives} \\
 \midrule
-\texttt{AdmissibleSummitDerivation} (Phase-2 + standard bundle) & Uniquely \texttt{admissibleStandard} (\Cref{thm:canonical-cert-math}) & No nontrivial bare certificate comparison \\
-\texttt{ReflectiveMirrorWitness} / \texttt{EnrichedReflectiveSplit} & Bridge derivations still canonical & Distinct witnesses, same bare image (\Cref{thm:enriched-irred}, \Cref{thm:strict-refinement}) \\
-\texttt{fiberAtBare} / \texttt{splitInCanonicalFiber} & Basepoint $b^\ast_A$ fixed for standard routes & Nontrivial fiber; injective roles on standard subfamily (\Cref{thm:fiber-nontrivial}, \Cref{thm:role-inject}) \\
+\path{AdmissibleSummitDerivation} (Phase-2 + standard bundle) & Uniquely \path{admissibleStandard} (\Cref{thm:canonical-cert-math}) & No nontrivial bare certificate comparison \\
+\path{ReflectiveMirrorWitness} / \path{EnrichedReflectiveSplit} & Bridge derivations still canonical & Distinct witnesses, same bare image (\Cref{thm:enriched-irred}, \Cref{thm:strict-refinement}) \\
+\path{fiberAtBare} / \path{splitInCanonicalFiber} & Basepoint $b^\ast_A$ fixed for standard routes & Nontrivial fiber; injective roles on standard subfamily (\Cref{thm:fiber-nontrivial}, \Cref{thm:role-inject}) \\
 \bottomrule
 \end{tabular}
 \caption{Carrier sensitivity at a glance: collapse downstairs vs.\ structured comparison upstairs.}
 \end{table}
 
-\textbf{What collapsed (proved):} For every \texttt{ConstructiveDerivationSkeleton} $s$ and \texttt{SummitComponentExtraction} $H$, \texttt{admissibleFromSkeleton s H = admissibleStandard} (\texttt{admissibleFrom\_skeleton\_eq\_admissibleStandard}, \Cref{thm:canonical-cert-math}). For roles+extraction bridges, \texttt{skeleton\_indexed\_fromRoles\_derivation\_eq\_admissibleStandard} forces the same bare record. The bundled statement is \texttt{canonical\_certification\_principle\_phase2} (\Cref{thm:ccp-phase2}).
+\begin{sloppypar}
+\textbf{What collapsed (proved):} For every \path{ConstructiveDerivationSkeleton} $s$ and \path{SummitComponentExtraction} $H$, \path{admissibleFromSkeleton s H = admissibleStandard} (\path{admissibleFrom_skeleton_eq_admissibleStandard}, \Cref{thm:canonical-cert-math}). For roles+extraction bridges, \path{skeleton_indexed_fromRoles_derivation_eq_admissibleStandard} forces the same bare record. The bundled statement is \path{canonical_certification_principle_phase2} (\Cref{thm:ccp-phase2}).
 
-\textbf{What was falsified (as a design hypothesis):} the expectation that one could read off nontrivial ``in-record'' distinctions from skeleton parameters \emph{at} the type \texttt{AdmissibleSummitDerivation} in the standard-bundle regime; the two \texttt{Prop} shard fields are fixed targets, so proof irrelevance collapses the record.
+\textbf{What was falsified (as a design hypothesis):} the expectation that one could read off nontrivial ``in-record'' distinctions from skeleton parameters \emph{at} the type \path{AdmissibleSummitDerivation} in the standard-bundle regime; the two \path{Prop} shard fields are fixed targets, so proof irrelevance collapses the record.
 
-\textbf{Correct carrier for multiplicity:} \texttt{ReflectiveMirrorWitness} / \texttt{EnrichedReflectiveSplit}, fibers \texttt{fiberAtBare} over \texttt{canonicalBareCertificate}, and role-sensitive maps \texttt{splitInCanonicalFiber}.
+\textbf{Correct carrier for multiplicity:} \path{ReflectiveMirrorWitness} / \path{EnrichedReflectiveSplit}, fibers \path{fiberAtBare} over \path{canonicalBareCertificate}, and role-sensitive maps \path{splitInCanonicalFiber}.
 
-\textbf{Why enriched level is the right carrier:} \texttt{IsCanonicalBareSummitCertification} is definitionally \texttt{d = admissibleStandard}; all standard Phase-2 routes hit that predicate. Distinctions that matter for comparison geometry are therefore tracked on proof-relevant types above that quotient.
+\textbf{Why enriched level is the right carrier:} \path{IsCanonicalBareSummitCertification} is definitionally \path{d = admissibleStandard}; all standard Phase-2 routes hit that predicate. Distinctions that matter for comparison geometry are therefore tracked on proof-relevant types above that quotient.
 
-\textbf{Packaging mirror caveat (audit):} as documented in \texttt{specs/NOTES/IC\_Closed\_Open\_Ledger.md}, several crown/mirror lemmas still use the library standard derivation as a witness interface. This does \emph{not} undermine the Program~C+ split/refinement/fiber theorems proved here, but it bounds claims about \emph{independence} of mirror routes from the principal summit lemma package. The paper states this in \Cref{sec:limitations-packaging}.
+\textbf{Packaging mirror caveat (audit):} as documented in \path{specs/NOTES/IC_Closed_Open_Ledger.md} (repository ledger note), several crown/mirror lemmas still use the library standard derivation as a witness interface. This does \emph{not} undermine the Program~C+ split/refinement/fiber theorems proved here, but it bounds claims about \emph{independence} of mirror routes from the principal summit lemma package. The paper states this in \Cref{sec:limitations-packaging}.
 
-\textbf{What remains open:} full classification of $\mathrm{Fib}_A(b^\ast_A)$; surjectivity of role data onto the fiber; stronger mirror-route independence; architecture-dominance comparison laws beyond the hypotheses in \texttt{ReflectiveRouteComparison} / \texttt{GeneralizedReflectiveFiberRefinement}.
+\textbf{What remains open:} full classification of $\mathrm{Fib}_A(b^\ast_A)$; surjectivity of role data onto the fiber; stronger mirror-route independence; architecture-dominance comparison laws beyond the hypotheses in \path{ReflectiveRouteComparison} / \path{GeneralizedReflectiveFiberRefinement}.
+\end{sloppypar}
 
 \section{Conclusion}\label{sec:conclusion}
 
@@ -517,15 +541,15 @@ This flagship manuscript is where the architecture is first proved as a load-bea
 
 \section{Artifact and build details}\label{app:artifact}
 \begin{itemize}
-    \item \textbf{Repository layout:} the Lean project lives at \texttt{infinity-compression/infinity-compression-lean/} relative to the \texttt{infinity-compression} monorepo root (this paper's \texttt{.tex} file is under \texttt{infinity-compression-lean/papers/Canonical\_Certification\_and\_Enriched\_Reflective\_Realization/}).
-    \item \textbf{Root module:} \texttt{InfinityCompression.lean} (import closure of the library).
-    \item \textbf{Lean toolchain (pinned):} \texttt{leanprover/lean4:v4.29.0-rc6} (\texttt{infinity-compression-lean/lean-toolchain}).
-    \item \textbf{Mathlib pin:} \texttt{require mathlib} at tag \texttt{v4.29.0-rc6} in \texttt{lakefile.lean} (same tag family as the Lean toolchain).
-    \item \textbf{Build command:} from \texttt{infinity-compression-lean/}, run \texttt{lake build}
-    \item \textbf{\texttt{sorry} policy (verified):} \texttt{README.md} states zero \texttt{sorry} in proof terms under \texttt{InfinityCompression/}; the Program~C+ slice referenced in this paper is part of that scope. Axioms are standard Mathlib + Lean kernel only (no custom axioms for these results).
-    \item \textbf{Epistemology / packaging audit:} \texttt{specs/NOTES/IC\_Closed\_Open\_Ledger.md} (mirror packaging, closed vs.\ open claims).
-    \item \textbf{Theorem inventory cross-check:} \texttt{specs/NOTES/EPIC\_THEOREM\_INVENTORY\_LEAN\_PAPER\_PREP.md} (spine names and module paths).
-    \item \textbf{Primary modules for this paper:} \texttt{InfinityCompression/MetaProof/*.lean} as listed in \Cref{app:theorem-index}.
+    \item \textbf{Repository layout:} the Lean project lives at\linebreak\path{infinity-compression/infinity-compression-lean/} relative to the \path{infinity-compression} monorepo root.\linebreak This paper's \path{.tex} file is under\linebreak\path{infinity-compression-lean/papers/Canonical_Certification_and_Enriched_Reflective_Realization/}.
+    \item \textbf{Root module:} \path{InfinityCompression.lean} (import closure of the library).
+    \item \textbf{Lean toolchain (pinned):}\linebreak\path{leanprover/lean4:v4.29.0-rc6} (\path{infinity-compression-lean/lean-toolchain}).
+    \item \textbf{Mathlib pin:} \texttt{require mathlib} at tag \path{v4.29.0-rc6} in \path{lakefile.lean} (same tag family as the Lean toolchain).
+    \item \textbf{Build command:} from \path{infinity-compression-lean/}, run \path{lake build}
+    \item \textbf{\texttt{sorry} policy (verified):} \path{README.md} states zero \texttt{sorry} in proof terms under \path{InfinityCompression/}; the Program~C+ slice referenced in this paper is part of that scope. Axioms are standard Mathlib + Lean kernel only (no custom axioms for these results).
+    \item \textbf{Epistemology / packaging audit:}\linebreak\path{specs/NOTES/IC_Closed_Open_Ledger.md} (mirror packaging, closed vs.\ open claims).
+    \item \textbf{Theorem inventory cross-check:}\linebreak\path{specs/NOTES/EPIC_THEOREM_INVENTORY_LEAN_PAPER_PREP.md} (spine names and module paths).
+    \item \textbf{Primary modules for this paper:} \path{InfinityCompression/MetaProof/} modules (\texttt{*.lean}) as listed in \Cref{app:theorem-index}.
 \end{itemize}
 
 \section{Selected Lean excerpts}\label{app:lean-snippets}

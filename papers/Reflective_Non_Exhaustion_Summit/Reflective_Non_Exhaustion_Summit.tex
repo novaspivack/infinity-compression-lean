@@ -1,5 +1,6 @@
 \documentclass[11pt]{article}
 \input{../suite_preamble}
+\usepackage{graphicx}
 \input{../suite_macros}
 
 \title{Reflective Non-Exhaustion:\\[0.35em]
@@ -578,8 +579,10 @@ The following table is a \emph{heuristic} index: it is not a formal theorem, onl
 compact navigation aid.
 
 \begin{center}
-\small
-\begin{tabular}{@{}p{0.18\textwidth}p{0.20\textwidth}p{0.20\textwidth}p{0.18\textwidth}p{0.18\textwidth}@{}}
+\resizebox{\textwidth}{!}{%
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedright\arraybackslash}p{0.19\textwidth}>{\raggedright\arraybackslash}p{0.21\textwidth}@{}}
 \toprule
 \textbf{Domain} & \textbf{Bare layer} & \textbf{Enriched layer} & \textbf{Comparison map} & \textbf{Fiber / obstruction} \\
 \midrule
@@ -590,7 +593,8 @@ Embedding problems & bare target quotient data & lifting / solution data & solut
 Quillen GC & order-complex / nerve image & homotopy witness data & induced nerve maps & contractible fibers \\
 Computability & certifiable predicate layer & realized semantic behavior & certification comparison & halting / Rice barriers \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{center}
 
 It is nonetheless the best concise representation of why the summit architecture is

@@ -128,14 +128,14 @@ Phase~1 lemmas (\texttt{splits\_iff\_trivial\_cocycle}, cocycle identities) are 
 Mathlib's \texttt{Mathlib.GroupTheory.GroupExtension.Defs} (lines 43--52 as of
 v4.29.0-rc6) contains the following documented TODO:
 
-\begin{quote}\itshape
+\begin{quote}\itshape\small\raggedright
 If $N$ is abelian,
 \begin{itemize}[nosep]
-\item there is a bijection between $N$-conjugacy classes of
-  \texttt{(SemidirectProduct.toGroupExtension $\varphi$).Splitting} and
-  \texttt{groupCohomology.H1}
-\item there is a bijection between equivalence classes of group extensions and
-  \texttt{groupCohomology.H2}
+\item there is a bijection between $N$-conjugacy classes of\linebreak
+  \texttt{(SemidirectProduct.toGroupExtension $\varphi$).Splitting} and\linebreak
+  \path{groupCohomology.H1}
+\item there is a bijection between equivalence classes of group extensions and\linebreak
+  \path{groupCohomology.H2}
 \end{itemize}
 \end{quote}
 
@@ -407,7 +407,8 @@ all proposed new theorems, with their full Lean~4 types.
 \bottomrule
 \end{longtable}
 
-\begin{longtable}{p{4.8cm}p{8.5cm}}
+{\small\begingroup\emergencystretch=4em
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.32\textwidth}>{\raggedright\arraybackslash}p{0.66\textwidth}@{}}
 \caption{Proposed new theorems.}\label{tab:api-thms} \\
 \toprule
 \textbf{Name} & \textbf{Statement} \\
@@ -419,12 +420,18 @@ all proposed new theorems, with their full Lean~4 types.
 \endhead
 
 \texttt{Section.cocycle\_spec}
-  & \texttt{S.inl (cocycle $\sigma$ $g_1$ $g_2$) = $\sigma$\,.toFun $g_1$ * $\sigma$\,.toFun $g_2$ * ($\sigma$\,.toFun ($g_1$ * $g_2$))$^{-1}$} \\[4pt]
-  & \small Defining equation of the cocycle. Candidate for \texttt{@[simp]}. \\[6pt]
+  & \texttt{S.inl (cocycle $\sigma$ $g_1$ $g_2$) =}\linebreak
+    \texttt{$\sigma$\,.toFun $g_1$ *}\linebreak
+    \texttt{$\sigma$\,.toFun $g_2$ *}\linebreak
+    \texttt{($\sigma$\,.toFun ($g_1$ * $g_2$))$^{-1}$} \\[4pt]
+  & \small Defining equation of the cocycle.\linebreak Candidate for \texttt{@[simp]}. \\[6pt]
 
 \texttt{Section.mul\_eq\_cocycle\_mul}
-  & \texttt{$\sigma$\,.toFun $g_1$ * $\sigma$\,.toFun $g_2$ = S.inl (cocycle $\sigma$ $g_1$ $g_2$) * $\sigma$\,.toFun ($g_1$ * $g_2$)} \\[4pt]
-  & \small Decomposition of section products. Rearrangement of \texttt{cocycle\_spec}. \\[6pt]
+  & \texttt{$\sigma$\,.toFun $g_1$ *}\linebreak
+    \texttt{$\sigma$\,.toFun $g_2$ =}\linebreak
+    \texttt{S.inl (cocycle $\sigma$ $g_1$ $g_2$) *}\linebreak
+    \texttt{$\sigma$\,.toFun ($g_1$ * $g_2$)} \\[4pt]
+  & \small Decomposition of section products.\linebreak Rearrangement of \texttt{cocycle\_spec}. \\[6pt]
 
 \texttt{splits\_iff\_trivial\_cocycle}
   & \texttt{Nonempty S.Splitting $\leftrightarrow$ $\exists$ $\sigma$ : S.Section, $\forall$ $g_1$ $g_2$, cocycle $\sigma$ $g_1$ $g_2$ = 1} \\[4pt]
@@ -440,21 +447,26 @@ all proposed new theorems, with their full Lean~4 types.
     Mathlib's \texttt{inl\_conjAct\_comm}. \\[6pt]
 
 \texttt{Section.cocycle\_mul\_eq}
-  & \texttt{cocycle $\sigma$ $g_1$ $g_2$ * cocycle $\sigma$ ($g_1$ * $g_2$) $g_3$ = conjAct $\sigma$ $g_1$ (cocycle $\sigma$ $g_2$ $g_3$) * cocycle $\sigma$ $g_1$ ($g_2$ * $g_3$)} \\[4pt]
-  & \small The multiplicative 2-cocycle identity with respect to the conjugation action.
-    This is the equation required by \texttt{IsMulCocycle\textsubscript{2}} (after
-    uncurrying and extracting the \texttt{MulDistribMulAction}). \\[6pt]
+  & \texttt{cocycle $\sigma$ $g_1$ $g_2$ * cocycle $\sigma$ ($g_1$ * $g_2$) $g_3$ =}\linebreak
+    \texttt{conjAct $\sigma$ $g_1$ (cocycle $\sigma$ $g_2$ $g_3$) *}\linebreak
+    \texttt{cocycle $\sigma$ $g_1$ ($g_2$ * $g_3$)} \\[4pt]
+  & \small The multiplicative 2-cocycle identity (conjugation action).\linebreak
+    Required by \texttt{IsMulCocycle\textsubscript{2}} after uncurrying and extracting \texttt{MulDistribMulAction}. \\[6pt]
 
 \texttt{sectionCocycle\_of\_splitting}
-  & \texttt{$\forall$ $g_1$ $g_2$, cocycle s.toSection $g_1$ $g_2$ = 1} \\[4pt]
-  & \small The cocycle of a splitting's section is trivial. Candidate for \texttt{@[simp]}. \\[6pt]
+  & \texttt{$\forall$ $g_1$ $g_2$,}\linebreak
+    \texttt{cocycle s.toSection $g_1$ $g_2$ = 1} \\[4pt]
+  & \small The cocycle of a splitting's section is trivial.\linebreak Candidate for \texttt{@[simp]}. \\[6pt]
 
 \texttt{Section.conjAct\_independent}
-  & \texttt{[CommGroup N] $\to$ conjAct $\sigma$ g n = conjAct $\sigma'$ g n} \\[4pt]
+  & \texttt{[CommGroup N] $\to$}\linebreak
+    \texttt{conjAct $\sigma$ g n = conjAct $\sigma'$ g n} \\[4pt]
   & \small For abelian $N$, the conjugation action is independent of section choice. \\[6pt]
 
 \texttt{section\_triple\_product}
-  & \texttt{$\sigma$ $g_1$ * $\sigma$ $g_2$ * $\sigma$ $g_3$ = S.inl (cocycle $\sigma$ $g_1$ $g_2$) * $\sigma$ ($g_1$ * $g_2$) * $\sigma$ $g_3$} \\[4pt]
+  & \texttt{$\sigma$ $g_1$ * $\sigma$ $g_2$ * $\sigma$ $g_3$ =}\linebreak
+    \texttt{S.inl (cocycle $\sigma$ $g_1$ $g_2$) * $\sigma$ ($g_1$ * $g_2$) *}\linebreak
+    \texttt{$\sigma$ $g_3$} \\[4pt]
   & \small Triple product decomposition via the cocycle. \\[6pt]
 
 \texttt{section\_triple\_product'}
@@ -463,6 +475,8 @@ all proposed new theorems, with their full Lean~4 types.
 
 \bottomrule
 \end{longtable}
+\endgroup
+}
 
 \subsection{Lean code: core definitions}
 
@@ -501,9 +515,9 @@ end GroupExtension.Section
 \end{lstlisting}
 
 \textbf{Note on membership lemma reuse.} The definition above uses
-\texttt{mul\_mul\_mul\_inv\_mem\_range\_inl} from \texttt{Basic.lean} directly, rather
+\path{mul_mul_mul_inv_mem_range_inl} from \path{Basic.lean} directly, rather
 than re-deriving the membership fact. Similarly, \texttt{Section.diff} would use
-\texttt{mul\_inv\_mem\_range\_inl}. See \Cref{sec:reuse}.
+\path{mul_inv_mem_range_inl}. See \Cref{sec:reuse}.
 
 \subsection{Lean code: the splitting criterion}
 
@@ -844,8 +858,8 @@ Mathlib's \texttt{groupCohomology.H2} to a subsequent PR.
 
 \subsection{Build status}
 
-The development builds successfully against Mathlib v4.29.0-rc6 (Lean~4 toolchain
-\texttt{leanprover/lean4:v4.29.0-rc6}). All files compile with \texttt{lake build}
+The development builds successfully against Mathlib v4.29.0-rc6 (Lean~4 toolchain\linebreak
+\path{leanprover/lean4:v4.29.0-rc6}). All files compile with \path{lake build}
 with no errors and zero \texttt{sorry}.
 
 \subsection{Proof status}\label{sec:sorry}
