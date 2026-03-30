@@ -37,7 +37,7 @@ open InfinityCompression.Meta
   These are logically contradictory if the carrier type `R` is nonempty and the bare layer has
   any two distinct preimages (which the adequacy condition itself forces). -/
 theorem bareCollapsed_not_adequate {BD : Type u} {n : Nat} {A : CompressionArchitecture BD n}
-    {R : Type} (certify : R → BareCanonicalCertificate)
+    {R : Type} (_certify : R → BareCanonicalCertificate)
     (compare : R → EnrichedReflectiveSplit BD n A)
     (hbc : BareCollapsedRoute compare)
     (hnd : RouteNondegeneracy compare) : False := by

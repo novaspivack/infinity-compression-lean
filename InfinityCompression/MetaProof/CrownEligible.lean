@@ -35,6 +35,18 @@ theorem nems_spine_architecture_crown_eligible : CrownEligible nemsSpineChain.to
     fin_cases k <;> simp [nemsSpineChain, CompressionChain.toArchitecture, spineStep,
       nv32InductionProfile]
 
+/-- Alt-terminal spine (`nemsSpineChain_altTerminal`) is also crown-eligible — same `nv32` profile, still has
+  opposite polarities (e.g. nodes 0 and 1). -/
+theorem nems_spine_alt_terminal_architecture_crown_eligible :
+    CrownEligible nemsSpineChain_altTerminal.toArchitecture := by
+  refine ⟨by decide, ?_, ?_⟩
+  · refine ⟨⟨0, by decide⟩, ⟨1, by decide⟩, ?_, ?_⟩
+    · decide
+    · simp [nemsSpineChain_altTerminal, CompressionChain.toArchitecture, spineStep]
+  · intro k
+    fin_cases k <;>
+      simp [nemsSpineChain_altTerminal, CompressionChain.toArchitecture, spineStep, nv32InductionProfile]
+
 /-- **D-B6b.3** — Separation: a one-node architecture cannot be crown-eligible (fails `1 < n`). -/
 theorem not_crown_eligible_architecture_one_node {BD : Type u} (A : CompressionArchitecture BD 1) :
     ¬ CrownEligible A := by

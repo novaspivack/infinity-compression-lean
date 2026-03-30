@@ -142,4 +142,57 @@ theorem nems_role_constructive_skeletons_ne :
   have hp := congrArg ConstructiveDerivationSkeleton.pole₀ h
   simp [nemsRoleSkeleton_1_0, nemsRoleSkeleton_3_2, n1, n3, RoleSeparatedSkeleton.toConstructiveSkeleton] at hp
 
+/-! ### Alt-terminal spine — parallel role skeletons (for a second `concreteICCertificationLayer` host) -/
+
+private def alt_n0 : Fin nemsSpineChain_altTerminal.steps.length := ⟨0, by decide⟩
+private def alt_n1 : Fin nemsSpineChain_altTerminal.steps.length := ⟨1, by decide⟩
+private def alt_n2 : Fin nemsSpineChain_altTerminal.steps.length := ⟨2, by decide⟩
+private def alt_n3 : Fin nemsSpineChain_altTerminal.steps.length := ⟨3, by decide⟩
+
+private theorem nems_alt_terminal_node0_neg :
+    (nemsSpineChain_altTerminal.toArchitecture.nodes alt_n0).polarity = CompressionPolarity.negative := by
+  simp [alt_n0, nemsSpineChain_altTerminal, CompressionChain.toArchitecture, spineStep]
+
+private theorem nems_alt_terminal_node1_pos :
+    (nemsSpineChain_altTerminal.toArchitecture.nodes alt_n1).polarity = CompressionPolarity.positive := by
+  simp [alt_n1, nemsSpineChain_altTerminal, CompressionChain.toArchitecture, spineStep]
+
+private theorem nems_alt_terminal_node2_neg :
+    (nemsSpineChain_altTerminal.toArchitecture.nodes alt_n2).polarity = CompressionPolarity.negative := by
+  simp [alt_n2, nemsSpineChain_altTerminal, CompressionChain.toArchitecture, spineStep]
+
+private theorem nems_alt_terminal_node3_pos :
+    (nemsSpineChain_altTerminal.toArchitecture.nodes alt_n3).polarity = CompressionPolarity.positive := by
+  simp [alt_n3, nemsSpineChain_altTerminal, CompressionChain.toArchitecture, spineStep]
+
+private theorem alt_n01_ne : alt_n0 ≠ alt_n1 := by
+  intro h
+  have hval : (0 : Nat) = 1 := by simpa [alt_n0, alt_n1] using congrArg Fin.val h
+  simp at hval
+
+private theorem alt_n3_ne_n2 : alt_n3 ≠ alt_n2 := by
+  intro h
+  simpa [alt_n3, alt_n2] using congrArg Fin.val h
+
+/-- Role-separated skeleton on **`nemsSpineChain_altTerminal`**, same pole indices as `nemsRoleSkeleton_1_0`. -/
+def nemsAltTerminalRoleSkeleton_1_0 : RoleSeparatedSkeleton nemsSpineChain_altTerminal.toArchitecture where
+  posPole := alt_n1
+  negPole := alt_n0
+  distinct := Ne.symm alt_n01_ne
+  posRole := nems_alt_terminal_node1_pos
+  negRole := nems_alt_terminal_node0_neg
+
+/-- Second role-separated skeleton on the alt-terminal architecture (poles 3 / 2). -/
+def nemsAltTerminalRoleSkeleton_3_2 : RoleSeparatedSkeleton nemsSpineChain_altTerminal.toArchitecture where
+  posPole := alt_n3
+  negPole := alt_n2
+  distinct := alt_n3_ne_n2
+  posRole := nems_alt_terminal_node3_pos
+  negRole := nems_alt_terminal_node2_neg
+
+theorem nems_alt_terminal_role_skeletons_ne : nemsAltTerminalRoleSkeleton_1_0 ≠ nemsAltTerminalRoleSkeleton_3_2 := by
+  intro h
+  have hp := congrArg RoleSeparatedSkeleton.posPole h
+  simp [nemsAltTerminalRoleSkeleton_1_0, nemsAltTerminalRoleSkeleton_3_2, alt_n1, alt_n3] at hp
+
 end InfinityCompression.MetaProof

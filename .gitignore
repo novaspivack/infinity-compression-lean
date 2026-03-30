@@ -3,3 +3,12 @@
 
 # LaTeX sync (local editor)
 *.synctex.gz
+
+# LaTeX build outputs under papers/ (source of truth: .tex)
+papers/**/*.aux
+papers/**/*.fdb_latexmk
+papers/**/*.fls
+papers/**/*.log
+papers/**/*.out
+papers/**/*.toc
+papers/**/*.pdf
