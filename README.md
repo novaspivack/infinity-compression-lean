@@ -44,3 +44,9 @@ lake build
 ## Toolchain
 
 `lean-toolchain` and `lakefile.lean` pin Lean 4 and Mathlib versions.
+<!-- NOVA_ZPO_ZENODO_SOFTWARE_BEGIN -->
+**Archival software (Zenodo):** https://doi.org/10.5281/zenodo.19429241
+<!-- NOVA_ZPO_ZENODO_SOFTWARE_END -->
+<!-- NOVA_ZPO_ZENODO_PAPER_BEGIN -->
+**Archival paper (Zenodo preprint) (Zenodo):** https://doi.org/10.5281/zenodo.19430501
+<!-- NOVA_ZPO_ZENODO_PAPER_END -->
