@@ -1,49 +1,58 @@
 # infinity-compression-lean
 
-Lean 4 formalization of the **Infinity Compression** program (EPIC_001). Root import: `InfinityCompression.lean`.
+Lean 4 formalization of the **Infinity Compression** program. Root import: `InfinityCompression.lean`.
+
+## What it proves
+
+The central result is that **canonical certification does not exhaust reflective structure**: when a formal system has a bare certification layer and a richer realization layer, the two cannot be collapsed. The difference is organized by fibers, sections, and obstruction laws. The summit theorem (`ic_universal_theorem_summit`) is a unified fixed-point result connecting the internal collapse barrier to the external realization gap.
+
+The program also includes:
+- **External validation** across twelve mathematical families (T1–T12 benchmark suite)
+- **Algebraic discharge**: group extensions, section cocycles, splitting criterion, cohomological bridge for Mathlib
+- **Topological discharge**: Quillen's Theorem A for Galois connections (first machine-checked formalization)
+- **Computability anchors**: halting and Rice self-certification
 
 ## Build
 
 ```bash
+lake update
+lake exe cache get   # pre-built Mathlib .olean files (strongly recommended)
 lake build
 ```
 
-**Policy:** zero `sorry` in proof terms under `InfinityCompression/`; standard Mathlib + Lean kernel axioms only.
+**Policy:** Zero `sorry` in proof terms; standard Mathlib + Lean kernel axioms only.
 
-## Release / audit (freeze checklist)
+## Key theorems
 
-- **Build:** `lake build` succeeds.
-- **Manifest:** `MANIFEST.md` — full module inventory, EPIC mapping, open `def`s, summit/landscape theorems, Program W validation **T1–T12**.
-- **Artifact companion:** `ARTIFACT.md` — citation-facing summary, spec/LaTeX pointers, reproducibility note.
-- **Crown reader:** `../specs/NOTES/Crown_Summit_Reader.md`
-- **Closed vs open:** `../specs/NOTES/IC_Closed_Open_Ledger.md`
-- **Route B roadmap (prose):** `../specs/NOTES/Summit_B.md`
-- **Program spec:** `../specs/IN-PROCESS/EPIC_001_X7R_INFINITY_COMPRESSION_PROGRAM_SPEC.md` (§6.1 implementation status)
-- **EPIC_006_CN1 (crown → nonaccidental summit):** `../specs/IN-PROCESS/EPIC_006_CN1_CROWN_NECESSITY_IRREDUCIBILITY_NONACCIDENTAL_SUMMIT_SPEC.md` — Program **E** (`ProgramECrownSummit.lean`); **006E** (`ProgramE006EReflectiveFixedPoint.lean`, **D-E6.5**, **T-E6.5**–**T-E6.8**). **Epistemology:** **T-B7.1** / **T-B9.1** / mirror lemmas still use **`ic_universal_theorem_summit`** for the library standard derivation — see `IC_Closed_Open_Ledger.md` and EPIC **§7.5**.
-- **EPIC_007_AS1 (post-summit — autonomous mirror):** `../specs/IN-PROCESS/EPIC_007_AS1_SUMMIT_INDEPENDENT_REFLECTIVE_MIRROR_SPEC.md` — **Lean v0:** `MetaProof/ReflectiveMirrorWitness.lean`, `MetaProof/AutonomousMirrorConstruction.lean` (**T-F1.1a**–**T-F1.5**). Full summit-independence of the **derivation** witness from **T-P2.7** remains **open** (needs skeleton-dependent extraction).
+| Name | File | Description |
+|------|------|-------------|
+| `ic_universal_theorem_summit` | `Frontier/ICUniversalTheorem.lean` | Central summit: canonical certification ≠ enriched realization |
+| `ic_universal_theorem_landscape` | same | Maximal aggregation |
+| `ic_universal_theorem_summit_iff_components` | same | Summit ↔ two named component shards |
+| `reflexive_architecture_necessity` | `Frontier/ReflexiveArchitectureNecessity.lean` | Canonical spine necessity |
+| `summit_and_spine_necessity_joint` | `Frontier/SummitDerivation.lean` | Joint derivation |
+| `ul3_no_final_positive_compressor_ic_abstract` | `Frontier/ICAntiTranslation.lean` | Anti-translation barrier |
+| `crown_eligible_pin_structural_mirror` | `MetaProof/NonPackagingCorrespondence.lean` | Mirror witness |
+| `nems_meta_summit_provenance_nontrivial` | `MetaProof/MetaSummitProvenance.lean` | Provenance nontriviality |
 
-## Key summit theorems
+See [MANIFEST.md](MANIFEST.md) for the complete theorem inventory.
 
-| Name | File |
-|------|------|
-| `ic_universal_theorem_summit` | `Frontier/ICUniversalTheorem.lean` |
-| `ic_universal_theorem_landscape` | same (maximal aggregation) |
-| `ic_universal_theorem_summit_iff_components` | same (S3: summit ↔ two named shards) |
-| `reflexive_architecture_necessity` | `Frontier/ReflexiveArchitectureNecessity.lean` (S1: canonical spine) |
-| `summit_and_spine_necessity_joint`, `crown_eligible_implies_summit_statement` | `Frontier/SummitDerivation.lean` (S2; see module doc) |
-| `summit_bundle_matches_ic_universal_summit`, `standard_shape_matches_summit_iff`, `summit_requires_dual_poles` | `MetaProof/*` (EPIC_002_BH2 Route B) |
-| `crown_eligible_induces_mirror`, `dependencyShapeStandard_minimal`, `reflexive_meta_crown`, … | `MetaProof/*` (EPIC_003_BH6 Route B continuation; see `MANIFEST.md`) |
-| `crown_eligible_pin_structural_mirror` (**T-P1.1**) | `MetaProof/NonPackagingCorrespondence.lean` (EPIC_004_PM3 Phase 1) |
-| `crown_eligible_nonempty_skeleton` (**T-P2.1**), `crown_eligible_summit_statement_via_extraction` (**T-P2.6**), collapse audit (**T-P2.7**), proof-irrelevance barrier (**T-P3.7**) | `MetaProof/ConstructiveDerivationSkeleton.lean`, `LocalToGlobalDerivation.lean`, `NonPackagingConstruction.lean` (EPIC_004_PM3 Phase 2; **T-P3.7** EPIC_005) |
-| `nems_meta_summit_provenance_nontrivial` (**T-P3.3**), role skeletons (**T-P3.1**–**T-P3.2d**), bridge (**T-P3.5**–**T-P3.6**), enriched tag (**T-P3.8**) | `MetaProof/RoleSeparatedSkeleton.lean`, `MetaProof/MetaSummitProvenance.lean`, `MetaProof/SkeletonIndexedExtractionBridge.lean`, `MetaProof/EnrichedAdmissibleSummitDerivation.lean` (EPIC_005_RK7) |
-| `ul3_no_final_positive_compressor_ic_abstract`, `ul4_internal_compression_without_totalization_ic_abstract` | `Frontier/ICAntiTranslation.lean` |
-| Program **E** (**D-E6.1**, **T-E6.1**–**T-E6.4**), `records_standard_implies_non_degenerate` | `MetaProof/ProgramECrownSummit.lean`, `MetaProof/DerivationNecessity.lean` (EPIC_006_CN1) |
-| **006E** reflective fixed-point (**D-E6.5**, **T-E6.5**–**T-E6.8**) | `MetaProof/ProgramE006EReflectiveFixedPoint.lean` (EPIC_006_CN1) |
-| EPIC_007_AS1 **T-F1** family (**D-F1.1**–**D-F1.3**) | `MetaProof/ReflectiveMirrorWitness.lean`, `MetaProof/AutonomousMirrorConstruction.lean` |
+## Papers
+
+This library accompanies a series of papers published on Zenodo:
+- Canonical Certification Does Not Exhaust Reflective Structure (flagship)
+- External Validation of a Positive-Closure Proof Architecture
+- Fiber Architecture for Group Extensions in Lean 4
+- Completing the Cohomological Extension Package (Mathlib companion)
+- Quillen's Theorem A for Galois Connections
+- Certification, Realization, and Obstruction: A Universal Fiber Architecture
+- Reflective Non-Exhaustion Summit
+
+See [novaspivack.com/research](https://www.novaspivack.com/research) for DOI links.
 
 ## Toolchain
 
-`lean-toolchain` and `lakefile.lean` pin Lean 4 and Mathlib versions.
+`lean-toolchain` and `lakefile.lean` pin Lean 4 and Mathlib versions. See [ARTIFACT.md](ARTIFACT.md) for the exact fingerprint.
 <!-- NOVA_ZPO_ZENODO_SOFTWARE_BEGIN -->
 **Archival software (Zenodo):** https://doi.org/10.5281/zenodo.19429241
 <!-- NOVA_ZPO_ZENODO_SOFTWARE_END -->
