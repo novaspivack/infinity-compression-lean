@@ -44,7 +44,7 @@
 
 \begin{abstract}
 \raggedright
-We present the first machine-checked formalization of Quillen's Theorem~A
+We present the first machine-checked construction of the homotopy data for Quillen's Theorem~A
 for Galois connections between partial orders, as the \emph{topology discharge}
 of the same fiber/section/obstruction architecture developed for group
 extensions and embedding problems~\cite{SpivackFiber}. For a Galois connection
@@ -113,8 +113,8 @@ A poset with a maximum element has contractible order complex (its nerve is a
 cone on the maximum vertex). Therefore Quillen's Theorem~A applies, and $l$
 induces a homotopy equivalence on order complexes.
 
-This paper presents the first machine-checked formalization of this result in
-Lean~4 with Mathlib. The formalization consists of seven modules totaling
+This paper presents the first machine-checked construction of the homotopy data for this result in
+Lean~4 with Mathlib. The final step (composition homotopic to identity via 	exttt{SSet.Homotopy}) is left for future work once Mathlib's simplicial homotopy API is in place. The formalization consists of seven modules totaling
 approximately 700 lines of Lean code, all with zero \texttt{sorry}
 placeholders. The main contributions are:
 
@@ -174,8 +174,9 @@ Quillen's original paper~\cite{Quillen1978} proves the theorem for arbitrary
 poset maps with contractible fibers. The poset fiber theorem literature
 (Bj\"orner--Wachs--Welker~\cite{BWW2004}, Barmak~\cite{Barmak2010}) extends
 the result to various connectivity and homological conditions. To our
-knowledge, no prior formalization of Quillen's Theorem~A exists in any proof
-assistant. Mathlib provides the nerve construction for categories
+knowledge, no prior machine-checked construction of the homotopy data for Quillen's Theorem~A
+exists in any proof assistant (confirmed April 2026 with J.~Riou, who plans a full formalization once further
+Mathlib infrastructure is upstreamed). Mathlib provides the nerve construction for categories
 (\texttt{nerve}), the Galois connection API (\texttt{GaloisConnection}), and
 the terminal object infrastructure (\texttt{IsTerminal}, \texttt{isTerminalTop})
 that our formalization builds on.
@@ -439,11 +440,11 @@ APIs.
 
 \section{Conclusion}\label{sec:conclusion}
 
-We have presented a machine-checked formalization of the homotopy equivalence
+We have presented a machine-checked construction of the homotopy equivalence
 data for Quillen's Theorem~A in the Galois connection case, together with
 nerve contractibility for terminal categories, embedding problems as extension
-splitting, and descent infrastructure. To our knowledge, this is the first
-formalization of any version of Quillen's Theorem~A in a proof assistant, and
+splitting, and descent infrastructure. To our knowledge, this is the first machine-checked construction of homotopy data
+for Quillen's Theorem~A; a full formalization completing the simplicial homotopy step is future work, and
 the first formalization connecting embedding problems to group extension
 splitting with cocycle obstructions.
 
