@@ -1,10 +1,14 @@
 /-
-  EPIC_022_OP1 — Quillen's Theorem A for Galois connections: the complete theorem.
+  Quillen's Theorem A for Galois connections — homotopy data.
 
-  **ZERO SORRY. Complete formalization.**
+  For a Galois connection (l, u) between partial orders, this file constructs
+  the nerve maps and the explicit 1-simplex witnesses (closure and kernel edges)
+  that constitute the homotopy data for Quillen's Theorem A.
 
-  For a Galois connection (l, u) between partial orders, the induced nerve maps
-  form a homotopy equivalence with explicit homotopy data.
+  **Scope and gap:** The construction is complete with zero sorry. The remaining
+  step — proving that the composition of nerve maps is homotopic to the identity
+  using this data — requires simplicial homotopy as a type, which is not yet in
+  Mathlib. The `quillenAData` structure packages everything needed for that step.
 -/
 
 import Mathlib.AlgebraicTopology.SimplicialSet.Nerve
@@ -56,7 +60,7 @@ theorem kernelEdge_source (gc : GaloisConnection l u) (q : Q) :
 theorem kernelEdge_target (gc : GaloisConnection l u) (q : Q) :
     (kernelEdge gc q).obj 1 = q := rfl
 
-/-! ### The complete Quillen Theorem A for Galois connections -/
+/-! ### Homotopy data for Quillen's Theorem A (Galois connection case) -/
 
 structure QuillenAData (l : P → Q) (u : Q → P) where
   forward : nerve P ⟶ nerve Q
@@ -68,17 +72,18 @@ structure QuillenAData (l : P → Q) (u : Q → P) where
   right_source : ∀ q, (right_edge q).obj 0 = l (u q)
   right_target : ∀ q, (right_edge q).obj 1 = q
 
-/-- **Quillen's Theorem A for Galois connections.**
+/-- **Homotopy data for Quillen's Theorem A (Galois connection case).**
 
-For a Galois connection `(l, u)` between partial orders, the lower adjoint `l`
-induces a homotopy equivalence on order complexes (nerves), with `u` as the
-homotopy inverse. The homotopy data consists of:
+For a Galois connection `(l, u)` between partial orders, this packages the
+nerve maps and explicit 1-simplex witnesses needed for Quillen's Theorem A:
+- `forward`/`backward`: the nerve maps induced by `l` and `u`.
 - Closure edges `[p → u(l(p))]` witnessing `u ∘ l ≥ id` on nerve P.
 - Kernel edges `[l(u(q)) → q]` witnessing `l ∘ u ≤ id` on nerve Q.
 
-This is the first complete Lean formalization of Quillen's Theorem A
-for Galois connections. -/
-noncomputable def quillenA (gc : GaloisConnection l u) :
+The remaining step (composition homotopic to identity) requires simplicial
+homotopy as a Lean type, which is not yet available in Mathlib. -/
+-- `quillenA` renamed to `quillenAData` to accurately reflect scope
+noncomputable def quillenAData (gc : GaloisConnection l u) :
     QuillenAData l u where
   forward := nerveL gc
   backward := nerveU gc

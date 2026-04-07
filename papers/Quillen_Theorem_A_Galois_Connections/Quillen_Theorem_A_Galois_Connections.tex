@@ -318,7 +318,7 @@ complexes in the sense of Definition~\ref{def:quillen-data}.
 \begin{proof}
 All components are constructed and verified in Lean:
 \begin{lstlisting}
-noncomputable def quillenA (gc : GaloisConnection l u) :
+noncomputable def quillenAData (gc : GaloisConnection l u) :
     QuillenAData l u where
   forward := nerveL gc
   backward := nerveU gc
@@ -455,7 +455,7 @@ organizing homotopy-theoretic equivalence statements.
 For the Lean ecosystem specifically, the formalization contributes new
 definitions (\path{QuillenAData}, \path{EmbeddingProblem},
 \path{DoublingFiber}, \path{TwoTorsionSet}) and theorems
-(\path{quillenA}, \path{solvable_iff_trivial_cocycle},
+(\path{quillenAData}, \path{solvable_iff_trivial_cocycle},
 \path{nerve_connected_to_terminal}) that build on and extend Mathlib's
 existing APIs for Galois connections, nerves, group extensions, and elliptic
 curves.

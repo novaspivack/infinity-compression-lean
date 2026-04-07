@@ -9,7 +9,7 @@
   |--------|--------------------------------|
   | IC flagship (reflective split vs bare) | `MetaProof/ReflectiveRouteComparison`, `CanonicalCertification`, `ReflectiveSplit` |
   | Algebra (group extensions) | `GroupExtension/SchurZassenhaus` — `splits_iff_trivial_cocycle` |
-  | Topology (Quillen GC) | `Quillen/QuillenTheoremA` — `quillenA` |
+  | Topology (Quillen GC) | `Quillen/QuillenTheoremA` — `quillenAData` |
   | Arithmetic / Galois (embedding problems) | `Galois/EmbeddingProblem` — `EmbeddingProblem.solvable_iff_trivial_cocycle` |
   | Descent (contrast) | `Descent/FaithfullyFlatDescent` — `faithfullyFlat_reflects_bijective` |
   | Logic / computability (Route D) | `RouteD/SelfCertificationHalting` — `routeD_certification_cannot_equal_halting_realization` |
