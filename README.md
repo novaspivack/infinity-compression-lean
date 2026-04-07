@@ -27,7 +27,7 @@ The central result is that **canonical certification does not exhaust reflective
 The program also includes:
 - **External validation** across twelve mathematical families (T1–T12 benchmark suite)
 - **Algebraic discharge**: group extensions, section cocycles, splitting criterion, cohomological bridge for Mathlib
-- **Topological discharge**: Quillen's Theorem A for Galois connections (first machine-checked formalization)
+- **Topological discharge**: Homotopy data for Quillen's Theorem A — Galois connections (nerve maps + 1-simplex witnesses; simplicial homotopy step deferred to future Mathlib work)
 - **Computability anchors**: halting and Rice self-certification
 
 ## Build
@@ -62,7 +62,7 @@ This library accompanies a series of papers published on Zenodo:
 - External Validation of a Positive-Closure Proof Architecture
 - Fiber Architecture for Group Extensions in Lean 4
 - Completing the Cohomological Extension Package (Mathlib companion)
-- Quillen's Theorem A for Galois Connections
+- Homotopy Data for Quillen's Theorem A (Galois connections)
 - Certification, Realization, and Obstruction: A Universal Fiber Architecture
 - Reflective Non-Exhaustion Summit
 
