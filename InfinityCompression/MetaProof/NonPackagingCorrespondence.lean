@@ -6,8 +6,7 @@
 
   **scope: structural bookkeeping** — witnesses for `admissibleStandard` are still the library summit
   proofs; the advance vs B-007 is **explicit pinning**, not independence from `admissibleStandard`.
-  **Phase 2** (separate) aims for a derivation not mediated by that package; see
-  `specs/IN-PROCESS/EPIC_004_PM3_ROUTE_B_POST_B009_FRONTIER_SPEC.md`.
+  **Phase 2** (separate) aims for a derivation not mediated by that package.
 -/
 
 import InfinityCompression.MetaProof.AdmissibleDerivations

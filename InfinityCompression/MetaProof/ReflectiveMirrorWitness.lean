@@ -18,7 +18,6 @@
   **Program C+** (`CanonicalCertification.lean`, `ReflectiveSplit.lean`, `EnrichedIrreducibility.lean`) treats
   bare-record collapse as a **theorem** and formalizes multiplicity in **roles** / enriched witnesses.
 
-  See `specs/IN-PROCESS/EPIC_007_AS1_SUMMIT_INDEPENDENT_REFLECTIVE_MIRROR_SPEC.md`.
 -/
 
 import InfinityCompression.MetaProof.DependencyShape

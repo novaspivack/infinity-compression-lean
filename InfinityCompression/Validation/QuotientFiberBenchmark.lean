@@ -18,8 +18,8 @@
   “collapse then distinguished witness upstairs” template in a way `exists_rep` alone does not
   state as a single typed interface.
 
-  Compare `specs/NOTES/Program_W_Baseline_vs_Architecture_Comparison.md` and
-  `specs/NOTES/Program_W_Validation_Verdict.md`.
+  For narrative comparison of baseline Mathlib facts versus the IC fiber packaging, see the repository README
+  and published papers on Program W validation.
 -/
 
 import Mathlib.Data.Setoid.Basic

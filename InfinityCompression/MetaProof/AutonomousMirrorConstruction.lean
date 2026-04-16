@@ -18,7 +18,6 @@
   `fromRolesExtraction` chain. A future skeleton-dependent `SummitComponentExtraction` is the real
   epistemic upgrade over **T-P2.7**.
 
-  See `specs/IN-PROCESS/EPIC_007_AS1_SUMMIT_INDEPENDENT_REFLECTIVE_MIRROR_SPEC.md`.
 -/
 
 import InfinityCompression.MetaProof.CrownEligible
