@@ -42,7 +42,7 @@ Lean 4 formalization of the **Infinity Compression** program (EPIC_001) and the 
 
 ## Reproducibility
 
-Pin Lean and Mathlib via `lean-toolchain` (`leanprover/lean4:v4.29.0-rc6`), `lakefile.lean`, and **`lake-manifest.json`** — commit them with substantive changes so collaborators resolve identical dependencies.
+Pin Lean and Mathlib via `lean-toolchain` (`leanprover/lean4:v4.29.1`), `lakefile.lean`, and **`lake-manifest.json`** — commit them with substantive changes so collaborators resolve identical dependencies.
 
 ## Archive / DOI
 

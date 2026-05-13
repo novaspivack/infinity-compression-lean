@@ -1,7 +1,7 @@
 # infinity-compression-lean — Full artifact manifest
 
-**Toolchain:** `leanprover/lean4:v4.29.0-rc6` (see `lean-toolchain`)  
-**Mathlib:** v4.29.0-rc6 (via lake)  
+**Toolchain:** `leanprover/lean4:v4.29.1` (see `lean-toolchain`)  
+**Mathlib:** v4.29.1 (via lake)  
 **Build:** From this directory: `lake build`. **Program W validation only (fast):** pass each `InfinityCompression.Validation.*` module from the table below as a `lake build` target (twelve files; there is no single `Validation.lean` wrapper). Do **not** use a partial build as a substitute for a full release check of the whole library.  
 **Root import:** `InfinityCompression.lean` (imports every production module below)  
 **Last verified:** 2026-03-22 — Full library build (3492 jobs, zero sorry). **Program W:** T1–T12 validation benchmarks. **GeneralMethod:** 30 `.lean` modules across GroupExtension (cocycles, splitting, obstruction, Mathlib bridge), Quillen (Theorem A for Galois connections, nerve contractibility), Galois (embedding problems, EPIC_GS1 bridge, **tower `EmbeddingProblem` bundle**), Descent (faithfully flat, 2-torsion torsor), RouteD (halting + Rice computability anchors), Summit (RCA non-exhaustion, obstruction law, cross-domain dictionaries, **Gödel-scale summit bundle**). **Papers:** 5-paper series (IC flagship, external validation, ITP/CPP group extensions, Mathlib companion, Quillen Theorem A).
